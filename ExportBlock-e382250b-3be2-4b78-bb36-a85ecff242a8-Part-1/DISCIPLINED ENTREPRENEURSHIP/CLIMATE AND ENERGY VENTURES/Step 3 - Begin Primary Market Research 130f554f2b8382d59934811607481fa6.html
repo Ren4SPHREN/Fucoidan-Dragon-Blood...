@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Step 3 - Begin Primary Market Research</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="130f554f-2b83-82d5-9934-811607481fa6" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/binoculars_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>Step 3 - Begin Primary Market Research</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80c8-be38-d9cdcc2839cc" class=""><strong>1) Hypotheses and Goals Tables</strong></h2></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8039-9932-d70232107008" class=""><strong>1A) Persona: End User (Valentina)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80f0-ada3-e25692489650" class=""><strong>Hipótesis 1:</strong> “Valentina elige productos para piel sensible principalmente por <em>tolerabilidad percibida</em> (sensación durante/after-use y sensación de ‘riesgo bajo’), y la evidencia (HRIPT/pH/claims) solo incrementa la confianza cuando ya existe una señal sensorial/funcional de que no irritará.”</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-805f-8b3b-f9820b5f2935" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8085-aeb8-fc9af68aa5fd"><th id="pO\f" class="simple-table-header-color simple-table-header">Preguntas de meta (Goals) para investigar</th><th id="fzLr" class="simple-table-header-color simple-table-header">Qué validar/invalidar</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8088-953e-e4d577c5ff97"><td id="pO\f" class="">¿Qué señales sensoriales/funcionales hacen que ‘se sienta segura’?</td><td id="fzLr" class="">pH 5.5, textura, sin picor, airless, rutina compatible, ingredientes “gentiles”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8083-b08d-f04a0a4e558b"><td id="pO\f" class="">¿Qué peso real tiene evidencia vs tolerabilidad percibida?</td><td id="fzLr" class="">% de decisión, orden de importancia, “pero me da confianza”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8016-8aae-fc904cb3b564"><td id="pO\f" class="">¿Qué tipo de evidencia es <em>creíble</em> para ella?</td><td id="fzLr" class="">formato/entendimiento: HRIPT, pruebas, regulatorio, reseñas</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8042-8f62-c9b2f73e7195"><td id="pO\f" class="">¿Cuándo deja de confiar y abandona?</td><td id="fzLr" class="">señales: ardor, empeora rojo, resequedad, brotes</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80f3-91a1-fd2b5c82145c" class=""><strong>Hipótesis 2:</strong> “Para Valentina, la tolerabilidad no es solo ‘no irrita’: es <em>no romper la rutina</em> (limpieza, maquillaje, otros activos) y mantener estabilidad tras 1–3 semanas; la promesa debe venir con ‘cómo usar’.”</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-807a-8456-debecce63f8c" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8071-a0f2-c49bbeb36ad0"><th id="kspy" class="simple-table-header-color simple-table-header">Preguntas de meta (Goals) para investigar</th><th id="~AA\" class="simple-table-header-color simple-table-header">Qué validar/invalidar</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804b-ae23-d1b19399025b"><td id="kspy" class="">¿Qué significa ‘compatible’ en su día a día?</td><td id="~AA\" class="">con protector solar, maquillaje, niacinamida/retinoides, frecuencia</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8034-b4c1-c2906956e065"><td id="kspy" class="">¿Qué expectativas tiene en las primeras 72h/7 días?</td><td id="~AA\" class="">timeline realista y señales de éxito</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8017-b689-e3256697011f"><td id="kspy" class="">¿Qué instrucciones reducen su riesgo?</td><td id="~AA\" class="">patch test, frecuencia progresiva, guía de flare-ups</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8008-8dc8-c5051be3db85"><td id="kspy" class="">¿Qué hace que reintente después de una primera mala señal leve?</td><td id="~AA\" class="">cómo decide “continue/stop”</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80c8-aaf4-f68f59d07a7a" class=""><strong>Hipótesis 3:</strong> “Valentina recompra si el producto supera el ‘momento prueba’: no empeorar durante flare-ups leves y lograr mejora visible gradual (3–4 semanas), más que promesas de ‘instant relief’.”</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-800d-9586-c930a7376125" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f0-94cd-de0e8d0d96bb"><th id="=n]o" class="simple-table-header-color simple-table-header">Preguntas de meta (Goals) para investigar</th><th id="Au|w" class="simple-table-header-color simple-table-header">Qué validar/invalidar</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801a-89f2-e85476267b09"><td id="=n]o" class="">¿Cuál es su umbral de ‘cero empeoramiento’?</td><td id="Au|w" class="">escala 0–10 tolerancia; qué es aceptable</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8078-bccf-d3e040e4f1ed"><td id="=n]o" class="">¿Qué define ‘me funcionó’ en su caso?</td><td id="Au|w" class="">menos ardor, menos rojez, menos sensibilidad</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d3-b51c-ce0902f37d79"><td id="=n]o" class="">¿Qué gatilla la repetición?</td><td id="Au|w" class="">reorder behavior, uso en temporadas, rutina constante</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806d-ba69-cccf446a50fe"><td id="=n]o" class="">¿Qué claims le dan confianza para usarlo en brotes?</td><td id="Au|w" class="">confianza clínica vs marketing</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80f2-9d94-c606f06763cc"/></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80e8-a787-c39b5ddab80e" class=""><strong>1B) Persona: Economic Buyer (Dermatólogo/a / Clínica)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-806a-b471-cbab72c27298" class=""><strong>Hipótesis 1:</strong> “El dermatólogo/consultorio decide recomendar si minimiza <em>riesgo reputacional</em> (incidencias, quejas, empeoramientos) más que por margen/precio; busca evidencia y protocolo para estandarizar resultados.”</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8068-b4d8-fc5f4879d20e" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807a-822b-e64fe5836d39"><th id="Odgi" class="simple-table-header-color simple-table-header">Preguntas de meta (Goals) para investigar</th><th id="ODTq" class="simple-table-header-color simple-table-header">Qué validar/invalidar</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8038-8fb8-eea26c86f460"><td id="Odgi" class="">¿Qué preocupa más al recomendar un tópico nuevo?</td><td id="ODTq" class="">reputación, eventos adversos, seguimiento</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807b-98ca-fe2da3aa8411"><td id="Odgi" class="">¿Qué evidencia/proceso reduce su incertidumbre?</td><td id="ODTq" class="">HRIPT/pH, BPF, trazabilidad, lotes, QA</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806b-8677-f810d000c34f"><td id="Odgi" class="">¿Cómo se convierte evidencia en ‘acción’ para el paciente?</td><td id="ODTq" class="">guía de uso y expectativas</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8037-9bcd-f6cff80dcb25"><td id="Odgi" class="">¿Qué umbrales aceptan para pilotear?</td><td id="ODTq" class="">criterios internos, “si pasa X, escalamos”</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-800b-bcfe-ecd56e32449e" class=""><strong>Hipótesis 2:</strong> “Además del producto, el comprador necesita <em>materiales y protocolo</em> (instrucciones, warnings, timeline) para reducir abandono y quejas; su adopción depende de facilidad operativa y claridad.”</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8036-a105-fbcb170ae224" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f1-ab6e-e15f49d3dd84"><th id="B_Vx" class="simple-table-header-color simple-table-header">Preguntas de meta (Goals) para investigar</th><th id="qXhI" class="simple-table-header-color simple-table-header">Qué validar/invalidar</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809f-a7f6-e16345dd540f"><td id="B_Vx" class="">¿Qué formato de onboarding requiere?</td><td id="qXhI" class="">hoja de instrucciones, capacitación, checklist</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c8-b366-fd145bd39e0d"><td id="B_Vx" class="">¿Qué red flags de etiquetado generan rechazo?</td><td id="qXhI" class="">claims agresivos, falta de guía</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c4-9de2-df21c391ed7b"><td id="B_Vx" class="">¿Cómo comunican patch test/flar-ups?</td><td id="qXhI" class="">paso a paso con wording</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8028-91f6-f269fa8238a3"><td id="B_Vx" class="">¿Qué nivel de soporte espera del proveedor?</td><td id="qXhI" class="">reportes, tiempos respuesta, evidencias</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-801e-ae89-ff609efcdaa9" class=""><strong>Hipótesis 3:</strong> “Los indicadores que mueven adopción/continuidad son métricas clínicas-proxy: baja tasa de eventos, satisfacción del paciente y repetición; el comprador compara ‘riesgo vs previsibilidad’.”</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8063-a99b-f44346b39095" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8090-b9d2-db4935fa89b6"><th id="pex&gt;" class="simple-table-header-color simple-table-header">Preguntas de meta (Goals) para investigar</th><th id="dZRg" class="simple-table-header-color simple-table-header">Qué validar/invalidar</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c4-af3e-fb263e126a4a"><td id="pex&gt;" class="">¿Qué KPIs usan para decidir seguir?</td><td id="dZRg" class="">reorder, NPS, quejas, adherencia</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803d-925a-f91f9050c2a0"><td id="pex&gt;" class="">¿Qué tan importante es el ‘timing’ de resultados?</td><td id="dZRg" class="">3–4 semanas como ventana</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8074-9764-c68b6c8719a0"><td id="pex&gt;" class="">¿Cómo priorizan “tolerabilidad” vs “potencia”?</td><td id="dZRg" class="">preferencia por resultados seguros</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8058-8659-dbb789a4b747"><td id="pex&gt;" class="">¿Qué evidencia/reporting quieren ver al escalar?</td><td id="dZRg" class="">cohortes, reportes de QA, incidencia</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8048-a9e8-dfad30e9e6f7"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-802d-bbf1-d81a2b83c15c" class=""><strong>2) Qualifications Table</strong></h2></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80f6-a774-dd311ea75c48" class=""><strong>Persona End User (Valentina)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80cb-9c2d-f08440d0f291" class=""><strong>Perfil:</strong> 28–45 (ideal), piel sensible con episodios recurrentes (rosácea leve/moderada o dermatitis/irritación), busca tolerabilidad + compatibilidad; prioriza que no pique/arde y que sea usable en su rutina diaria.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8052-bc34-c0af071268b0" class=""><strong>Calificaciones para reclutar:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80c5-9bfb-eed9ebd5e802" class="bulleted-list"><li style="list-style-type:disc">Se considera “piel sensible” o tiene síntomas 1–2 veces/mes</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d6-adde-e914016dfaf0" class="bulleted-list"><li style="list-style-type:disc">Ha probado ≥3 productos “para piel sensible” en el último año</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a9-a8f4-d5b57402674a" class="bulleted-list"><li style="list-style-type:disc">Usa limpiador + hidratante a diario (y a veces maquillaje/protector)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8061-a8e5-dabbc00e4d07" class="bulleted-list"><li style="list-style-type:disc">Disposición a entrevistas (video) y/o encuesta rápida (6–8 min)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8019-b90f-d17f1ea8b155" class="bulleted-list"><li style="list-style-type:disc">México (ideal, para WTP y disponibilidad)</li></ul></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-805f-a242-fe423054edad" class=""><strong>Persona Economic Buyer (Dermatólogo/a / Clínica)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8095-b43e-c0f437407f9d" class=""><strong>Perfil:</strong> 30–60, recomienda tópicos para rosácea/dermatitis; decide por riesgo reputacional y facilidad de adopción/paciente.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80f4-813d-cecf2d8f9f42" class=""><strong>Calificaciones para reclutar:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8023-b3d5-c881e8132ac5" class="bulleted-list"><li style="list-style-type:disc">Dermatólogo/a o director/a de clínica con capacidad de recomendar/prescribir</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8091-9a7e-e84c68a20433" class="bulleted-list"><li style="list-style-type:disc">Atiende pacientes con rosácea/dermatitis (frecuencia semanal)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8052-be99-e7eeaa715da1" class="bulleted-list"><li style="list-style-type:disc">Ha abandonado o evitado un producto por eventos/quejas (aunque sea un caso)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8090-8454-eac5a89cdf26" class="bulleted-list"><li style="list-style-type:disc">Conoce etiquetado regulatorio básico o busca evidencia/QA del proveedor</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-802f-89f1-d3d1145b6d72" class="bulleted-list"><li style="list-style-type:disc">Puede hablar de pricing/margen o al menos de “qué hace sostenible” recomendar</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-807c-a5c2-d355a4a3bedb"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8026-abd0-e46da839469b" class=""><strong>3) Watering Holes Table</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-807b-bc72-e22f1aae60e3" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cc-a080-cd104149d367"><th id="K&gt;gy" class="simple-table-header-color simple-table-header">Persona</th><th id="q;&lt;q" class="simple-table-header-color simple-table-header">Watering holes (México/LatAm)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803d-9269-cf5008ef6cfa"><td id="K&gt;gy" class="">Valentina</td><td id="q;&lt;q" class="">Facebook Groups: “Piel sensible / Rosácea México / Dermatitis / Skincare rutina”; IG: cuentas/hashtags “rosácea”, “piel sensible”; Reddit en español (skincare); ferias de belleza/dermoestética; comunidades de “clean beauty” y “free from fragrance” (si aplica); anuncios de reclutamiento en TikTok/IG (audiencias sensibilidad cutánea)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c6-8686-fef21b194da1"><td id="K&gt;gy" class="">Dermatólogo/a / Clínica</td><td id="q;&lt;q" class="">LinkedIn (grupos de dermatología, private practice, clínicas); directorios médicos (MD privados) + outreach directo; congresos/conferencias de dermatología/estética; asociaciones/colegios médicos (si hay acceso); comunidades de dueños de clínica/DS (eventos locales/online)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80f4-a054-d23e02058dad"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80af-8ad0-d98502c6af19" class=""><strong>4) Outreach Table</strong></h2></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8065-ac51-e72f2ea945db" class=""><strong>4A) End User (Valentina) — mensaje ejemplo</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-807b-8659-dc9d604ba1ee" class=""><strong>Asunto:</strong> Entrevista breve sobre piel sensible (MX) – 15–30 min</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8068-a08c-c98dbd157e9c" class="">Hola, Valentina. Soy [Tu nombre].</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80ef-b323-ea993ed4ff2b" class="">Estamos haciendo investigación para entender cómo las personas con piel sensible deciden si una crema realmente es “tolerable” (sin irritar) y qué señales buscan.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-806e-b2ea-c9447be6c23c" class="">La entrevista dura 15–30 minutos y te ayudaremos a que tu tiempo valga la pena con [compensación si aplica].</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80d8-b03c-db0555d6194e" class="">¿Te interesa? Si me confirmas, te comparto 2–3 horarios para esta semana.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8057-9540-e56759df8693" class="">Gracias,</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80cc-991e-e62b48cf62c2" class="">[Tu nombre] / Fucoidan + Dragon’s Blood Bioactive Cream</p></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80b4-885d-fb2a67742f70" class=""><strong>4B) Economic Buyer (Dermatólogo/a / Clínica) — mensaje ejemplo</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8057-8c01-c1577a9f66bc" class=""><strong>Asunto:</strong> Entrevista 30–45 min: criterios para recomendar tópicos en rosácea/dermatitis</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8048-b2d5-c82e7ee0ca66" class="">Hola, Dr(a). [Apellido].</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8023-9bd6-cde77c69f1c3" class="">Soy [Tu nombre]. Estamos realizando investigación primaria con profesionales de salud para entender qué evidencia y qué protocolos necesitan para recomendar con menor riesgo a pacientes con rosácea/dermatitis.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8027-a7d7-cbcab38e7d92" class="">¿Tendría 30–45 min esta semana para una entrevista? Es 100% para investigación (no venta en el momento). Si usted lo autoriza, grabamos la sesión para registrar notas.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80b4-b199-f46d899b05c1" class="">Gracias por su tiempo,</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8050-946a-c8faf9b95a23" class="">[Tu nombre] | [Proyecto] | [Contacto]</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80fb-9b6f-e29d14bffe68"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-809f-9bcd-f497577a1d3b" class=""><strong>5) Survey Design Table</strong></h2></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8025-9a79-c33dc12a5551" class=""><strong>5A) Valentina — Encuesta (quant rápida)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8054-af83-d28dd85724f1" class=""><strong>Survey Goal:</strong> Cuantificar: (1) prioridad real tolerabilidad vs evidencia; (2) WTP; (3) probabilidad de probar; (4) señales de “deal-breaker”.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80dc-92e3-c15e4cb70f29" class=""><strong>Request Message:</strong> “Encuesta corta (6–8 min) sobre piel sensible para mejorar una crema. No requiere compra.”</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8022-9a95-da8a6a9ccaec" class=""><strong>Target # Responses:</strong> 60–120</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80d5-8efa-f56df7901f24" class=""><strong>Screeners / Core:</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-808a-a33a-c9576df199a4" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80de-bcb6-fd83afef0d0d"><th id="qErS" class="simple-table-header-color simple-table-header">Pregunta</th><th id="R;oC" class="simple-table-header-color simple-table-header">Tipo</th><th id="Bv&gt;@" class="simple-table-header-color simple-table-header">Opciones</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f4-a0cf-e8b324f6e7b4"><td id="qErS" class="">¿Te consideras de piel sensible?</td><td id="R;oC" class="">Single</td><td id="Bv&gt;@" class="">Sí / Más o menos / No</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8048-bab4-ff35cc959777"><td id="qErS" class="">Frecuencia de episodios</td><td id="R;oC" class="">Single</td><td id="Bv&gt;@" class="">Semanal / Mensual / Ocasional (trimestral+) / Casi nunca</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8052-bc82-f4b3aa7c89c2"><td id="qErS" class="">¿Con qué te identificas más?</td><td id="R;oC" class="">Multi</td><td id="Bv&gt;@" class="">Rosácea / Dermatitis / Irritación/ardor / Enrojecimiento / Otro / Ninguna</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802b-bef3-db09419c976b"><td id="qErS" class="">¿Has probado productos “para piel sensible” en el último año?</td><td id="R;oC" class="">Single</td><td id="Bv&gt;@" class="">3+ / 1–2 / No</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8069-8914-d578eefc220a"><td id="qErS" class="">Presupuesto por crema 50g (rango)</td><td id="R;oC" class="">Single</td><td id="Bv&gt;@" class="">≤200 / 201–250 / 251–300 / 301–350 / 351–450 / 450+</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8050-8046-c3cbab6535ea"><td id="qErS" class="">Importancia tolerabilidad</td><td id="R;oC" class="">Likert</td><td id="Bv&gt;@" class="">1 (nada) a 5 (muy alta)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8071-ae61-eecdbcf6011c"><td id="qErS" class="">Importancia evidencia/pruebas</td><td id="R;oC" class="">Likert</td><td id="Bv&gt;@" class="">1 a 5</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ca-ae8b-c6e7e532af18"><td id="qErS" class="">¿Qué te convence más?</td><td id="R;oC" class="">Single</td><td id="Bv&gt;@" class="">Reseñas / Recomendación dermatólogo / Transparencia ingredientes / Pruebas tolerancia / Precio / Otra</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803c-87af-c7fdfe9c3e51"><td id="qErS" class="">Probabilidad de probar (si dice no irritar + evidencia)</td><td id="R;oC" class="">0–10</td><td id="Bv&gt;@" class="">0 a 10</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80da-bcf8-feff6eab53fa"><td id="qErS" class="">Deal-breaker principal</td><td id="R;oC" class="">Multi</td><td id="Bv&gt;@" class="">Ardor / Empeora rojez / Resequedad / Brotes / Perfume fuerte / Otro</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-803a-b147-f721e2049a5e" class=""><strong>Thank You Message:</strong> “¡Gracias! Tus respuestas ayudan mucho a mejorar tolerabilidad y seguridad para piel sensible.”</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8094-8f65-ff31388b29e1"/></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80c8-8d8c-fbd1c187a7ca" class=""><strong>5B) Dermatólogo/a / Clínica — Encuesta (quant rápida)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80c8-b9d9-c4095c750f2d" class=""><strong>Survey Goal:</strong> Cuantificar: criterios de recomendación; importancia de riesgo reputacional; necesidad de protocolo; umbral para pilotear.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-809e-bfec-de67b401ef38" class=""><strong>Request Message:</strong> “Encuesta 6–7 min para entender criterios clínicos de recomendación de tópicos para piel sensible.”</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80e7-859e-cfdad20d9648" class=""><strong>Target # Responses:</strong> 30–60</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80f9-af91-da893b1de335" class=""><strong>Screeners / Core:</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-800b-bb45-ca25733185a1" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8022-b31d-f85e1d30a343"><th id="zkC_" class="simple-table-header-color simple-table-header">Pregunta</th><th id="g|r&gt;" class="simple-table-header-color simple-table-header">Tipo</th><th id="|]Re" class="simple-table-header-color simple-table-header">Opciones</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80dc-85f0-f117d4dde4b5"><td id="zkC_" class="">Tu rol</td><td id="g|r&gt;" class="">Single</td><td id="|]Re" class="">Dermatólogo(a) / Director(a) de clínica / Médico general / Otro</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8043-a6b9-d54a76b10bc6"><td id="zkC_" class="">Atiendes rosácea/dermatitis</td><td id="g|r&gt;" class="">Single</td><td id="|]Re" class="">Sí / No</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8029-aa30-d0d2db2713f5"><td id="zkC_" class="">¿Recomiendas tópicos nuevos frecuentemente?</td><td id="g|r&gt;" class="">Single</td><td id="|]Re" class="">Semanal / Mensual / Rara vez</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c6-81ff-c2fcc5947bef"><td id="zkC_" class="">Principal preocupación al recomendar nuevo producto</td><td id="g|r&gt;" class="">Single</td><td id="|]Re" class="">Riesgo adverso / Quejas / Reputación / Logística / Precio / Ninguna</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8014-b6b4-eb9bb3478230"><td id="zkC_" class="">Importancia evidencia (HRIPT/pH/QA)</td><td id="g|r&gt;" class="">Likert</td><td id="|]Re" class="">1–5</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e6-ad0a-da45efabd27c"><td id="zkC_" class="">Importancia protocolo/onboarding para el paciente</td><td id="g|r&gt;" class="">Likert</td><td id="|]Re" class="">1–5</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d2-a797-de1471155e9e"><td id="zkC_" class="">Qué evidencia te convence más</td><td id="g|r&gt;" class="">Single</td><td id="|]Re" class="">Estudios clínicos / Pruebas de tolerancia / Certificaciones BPF / Reportes QA/lotes / Transparencia ingredientes / Otra</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ae-bdc1-fbe4507918c9"><td id="zkC_" class="">¿Qué tan probable es que pilotearías si hay guía y evidencia?</td><td id="g|r&gt;" class="">0–10</td><td id="|]Re" class="">0 a 10</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8042-b3e6-cbe545319fcc"><td id="zkC_" class="">KPI que más usas para decidir continuar</td><td id="g|r&gt;" class="">Single</td><td id="|]Re" class="">Repetición/uso / NPS/satisfacción / Quejas / Resultados clínicos / Facilidad operativa</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8038-9094-f79c87bacdeb" class=""><strong>Thank You Message:</strong> “Gracias por tu tiempo. Esto ayudará a diseñar un producto y un protocolo listos para clínica.”</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8025-bee1-c6bcc86d01a9"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-801a-9de3-ead0e2981f2d" class=""><strong>6) Explanation Table (Sesgos y cómo revisar)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8025-af9f-ff15c54a2565" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800e-a5d3-f811cd99a5a2"><th id="=x;k" class="simple-table-header-color simple-table-header">Sección/pregunta que puede introducir sesgo</th><th id="qht|" class="simple-table-header-color simple-table-header">Riesgo</th><th id="Z~;Q" class="simple-table-header-color simple-table-header">Cómo revisarla / mejorar neutralidad</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a5-8f91-ee4e3aa9b66a"><td id="=x;k" class="">Encuesta Valentina: “si dice no irritar + evidencia”</td><td id="qht|" class="">Priming: empuja a responder positivamente</td><td id="Z~;Q" class="">Separar en 2 bloques: “mensaje tolerancia” vs “evidencia” y medir efecto incremental; o formularlo como “con claims combinados” sin sugerir resultado</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ca-b587-eac8750fe839"><td id="=x;k" class="">Preguntas WTP con rangos</td><td id="qht|" class="">Sesgo de anclaje</td><td id="Z~;Q" class="">Incluir opción “No sé” y validar con pregunta abierta posterior (“¿cómo lo definiste?”)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a1-bc1e-ee19f7190946"><td id="=x;k" class="">Preguntas deal-breaker</td><td id="qht|" class="">Sesgo de selección</td><td id="Z~;Q" class="">Permitir 2–3 máximos; agregar “Otro (¿cuál?)”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8075-968e-f1c36ab4347d"><td id="=x;k" class="">Encuesta clínicos: mencionando HRIPT</td><td id="qht|" class="">Knowledge bias</td><td id="Z~;Q" class="">Incluir “pruebas de tolerancia/ensayos/verificación” y preguntar si ya conocen HRIPT; luego profundizar en entrevista</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8033-9fde-f76e396d433b"><td id="=x;k" class="">Likert 1–5</td><td id="qht|" class="">Tendencia a extremos</td><td id="Z~;Q" class="">Usar escala con anclas claras y añadir una pregunta de razón (“por qué”) en entrevistas</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80c1-b558-f381b492f3a5"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8078-a08b-d4b1335633b2" class=""><strong>7) Review Questions Table (¿Listo para pasar de cualitativo a cuantitativo?)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8043-a6d5-cb02c1219f61" class="">Marca si puedes responder “sí” a la mayoría:</p></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8012-9737-c8ad0bda5ce2" class="numbered-list" start="1"><li>¿Ya tienes identificado claramente el “driver” principal de decisión (tolerabilidad vs evidencia) para cada persona?</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8021-9e3e-fc0c78dcf41c" class="numbered-list" start="2"><li>¿Puedes describir con 3–5 “señales” concretas que predicen confianza/compra para usuarios?</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8078-9484-cfc163978ecc" class="numbered-list" start="3"><li>¿Puedes describir el “protocolo mínimo” que un clínico necesita para minimizar riesgo?</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8058-a3a0-d2b44db75c5d" class="numbered-list" start="4"><li>¿Tus hipótesis fueron al menos “tocadas” por ~5–8 entrevistas por persona y empezaste a ver patrones repetidos?</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-80a1-a874-d1f85b5014fc" class="numbered-list" start="5"><li>¿Tienes rangos (WTP, probabilidad, thresholds) que quieres validar con números?</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-803e-b942-c8583d3f98e5" class="numbered-list" start="6"><li>¿Tienes un set de KPIs que usarás luego (reorder, NPS, tasa de quejas/eventos)?</li></ol></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80bd-ab0b-e14add09f227" class="">Si respondes “sí” a 4–6, ya estás listo para cuantificar.</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-809b-a053-e51f2f1895f5"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-807b-8f6a-c9abc5e92c15" class=""><strong>8) Forward Plans Question Table (Next steps tras esta ronda)</strong></h2></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8056-b7de-ea955f9a219a" class="numbered-list" start="1"><li>Cerrar ronda cualitativa: <strong>5–8 entrevistas por persona</strong> (mínimo) y buscar saturación.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-809c-8d31-c3e0503e1db3" class="numbered-list" start="2"><li>Actualizar tu mensaje: convertir hallazgos en 3 variaciones de pitch (DTC) y 1 paquete de “protocol sheet” (clínicas).</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-80c2-bf68-d75230e62c5b" class="numbered-list" start="3"><li>Lanzar encuesta: Valentina (60–120) + Clínicos (30–60).</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8053-9994-f7ba3161b40d" class="numbered-list" start="4"><li>Aterrizar gating para Phase 1: refinar el “deal-breaker” y “timeline de tolerabilidad” como criterios operativos.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-80b9-84cf-fee1167d259f" class="numbered-list" start="5"><li>Preparar materiales de evidencia para clínica: claims permitidos, QA/BPF summary y onboarding.</li></ol></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8017-9989-e8fbc9c53600"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80d3-ac02-e71e79e5bbce" class=""><strong>9) User Research Questions Table (Agrupadas: psicografía, rutina, herramientas, prioridades)</strong></h2></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-804d-803d-e5716df47f8c" class=""><strong>A. Individual Characteristics</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8035-a1a3-ff7a0789db27" class=""><strong>Valentina</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8079-9915-db406d13083b" class="bulleted-list"><li style="list-style-type:disc">¿Cómo describirías tu piel cuando está “bien” vs “en brote”?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80cb-96a5-e6c7b849af61" class="bulleted-list"><li style="list-style-type:disc">¿Qué te hace decir “esto es piel sensible” y no solo irritación temporal?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8037-8f7f-e077a475c58c" class="bulleted-list"><li style="list-style-type:disc">¿Qué historial tienes con productos (ingredientes que te fue peor/mejor)?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8080-a0a8-d9a1da8065ca" class="bulleted-list"><li style="list-style-type:disc">En una escala 0–10, ¿qué tanto te preocupa que un nuevo producto te irrite?</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-800f-8853-ea61be15a2a7" class=""><strong>Clínico</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8098-9cd7-fa013e463289" class="bulleted-list"><li style="list-style-type:disc">¿Qué tipo de paciente/población ve más (rosácea/dermatitis, severidad, edad)?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8061-a097-e34d5611cf22" class="bulleted-list"><li style="list-style-type:disc">¿Qué casos suelen generar quejas o problemas por tolerabilidad?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8080-9f69-c8bb1833b05e" class="bulleted-list"><li style="list-style-type:disc">¿Cómo evalúas riesgo reputacional internamente?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8011-8444-f8cbd5f78edf" class="bulleted-list"><li style="list-style-type:disc">¿Qué te hace sentir cómodo pilotear algo nuevo?</li></ul></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8052-ba73-ebd1e5079be9" class=""><strong>B. Complementary Tools</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8010-b321-e176ac9376a2" class=""><strong>Valentina</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80b0-9819-f44ae25f5fed" class="bulleted-list"><li style="list-style-type:disc">¿Usas parches/patch test? ¿Cómo lo haces?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-804a-96e0-cf0283f4b1db" class="bulleted-list"><li style="list-style-type:disc">¿Qué herramientas usas (dermatólogo, consultorio, redes, ingredientes lists)?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-806d-b75c-e61999754f1e" class="bulleted-list"><li style="list-style-type:disc">¿Qué role juegan reviews y “antes/después”?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8062-8d12-e70b22389d33" class="bulleted-list"><li style="list-style-type:disc">¿Qué tan importante es para ti el empaque (airless, higiene, sensación)?</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80c4-8858-c0ffdbaa244a" class=""><strong>Clínico</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8073-9d03-c10df528066a" class="bulleted-list"><li style="list-style-type:disc">¿Qué evidencia “format” te sirve más (reporte, resumen, dossier, certificado)?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8023-bb3e-cfe01e84d6f5" class="bulleted-list"><li style="list-style-type:disc">¿Qué guías/hojas de instrucción requieren hoy?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8010-8286-ec5f86415e84" class="bulleted-list"><li style="list-style-type:disc">¿Cómo estandarizas seguimiento del paciente?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8052-b412-fe2fdc2b463d" class="bulleted-list"><li style="list-style-type:disc">¿Qué rol tienen pruebas internas o farmacia del consultorio?</li></ul></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8076-91fb-fc6a3528711a" class=""><strong>C. Gathering Places</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-800a-8a23-d97770b09701" class=""><strong>Valentina</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d9-a481-e2e42f4efbc5" class="bulleted-list"><li style="list-style-type:disc">¿Dónde buscas información cuando te irritas? (IG, FB groups, TikTok, foros)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8046-b287-e2daae5d97f0" class="bulleted-list"><li style="list-style-type:disc">¿Quién influye más: dermatólogo, influencer, comunidad, farmacia?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-806e-8974-eb95290c5507" class="bulleted-list"><li style="list-style-type:disc">¿Qué tipo de contenido te convence? (experiencia, evidencia, tutorial)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80c6-a338-cd962c2ef59a" class="bulleted-list"><li style="list-style-type:disc">¿Qué canales te dan “menor riesgo percibido”?</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80ac-a97f-f90ee33ebadb" class=""><strong>Clínico</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80be-b63d-ca5d8d63cf01" class="bulleted-list"><li style="list-style-type:disc">¿Dónde consiguen y evalúan productos nuevos? (proveedores, congresos, representantes)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8053-a672-fc59b902c93f" class="bulleted-list"><li style="list-style-type:disc">¿Qué conversaciones internas influyen la decisión?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80bd-a3b3-f5b81fe38bc0" class="bulleted-list"><li style="list-style-type:disc">¿Qué medios usan para validar reputación del proveedor?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8004-9ddc-e6aaa0188abd" class="bulleted-list"><li style="list-style-type:disc">¿Qué te hace confiar en un vendedor/proveedor nuevo?</li></ul></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80ae-9904-ccb2fcfd8d10" class=""><strong>D. Daily Routine</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8038-99fc-c3047262333a" class=""><strong>Valentina</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ed-a586-dda691b72557" class="bulleted-list"><li style="list-style-type:disc">Camina tu rutina: limpieza → hidratación → protector/maquillaje (y frecuencia).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d1-8c47-c49d5b6ed798" class="bulleted-list"><li style="list-style-type:disc">¿En qué momento del día aplicarías una crema nueva? ¿Por qué?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-802f-9226-f60633b3df92" class="bulleted-list"><li style="list-style-type:disc">¿Con qué ingredientes activos convives (niacinamida, ácidos, retinoides)?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-801a-94db-c3ba44f51e6b" class="bulleted-list"><li style="list-style-type:disc">¿Qué pasa cuando tienes brote: cambias rutina o sigues igual?</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8035-a7ba-f5e91b155a53" class=""><strong>Clínico</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8070-89a0-fda3929dacff" class="bulleted-list"><li style="list-style-type:disc">¿Cómo recomiendas cambios de rutina cuando hay flare?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80fa-bde8-ce17815c6c20" class="bulleted-list"><li style="list-style-type:disc">¿Con qué frecuencia haces seguimiento?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a9-9875-e442e6bf2431" class="bulleted-list"><li style="list-style-type:disc">¿Qué instrucciones das respecto a frecuencia (día por medio vs diario)?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80df-a4ca-e852afa655d3" class="bulleted-list"><li style="list-style-type:disc">¿Qué esperas que el paciente pueda cumplir en casa?</li></ul></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80b8-bff8-cc67b2e1621a" class=""><strong>E. Top Priorities</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80a7-a574-ffa6251de34a" class=""><strong>Valentina</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8064-a06a-f66eb36251eb" class="bulleted-list"><li style="list-style-type:disc">Ordena tus 3 prioridades: tolerabilidad, resultados, precio, evidencia, impacto ambiental.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80c1-ab69-dd0b1c25c9a9" class="bulleted-list"><li style="list-style-type:disc">¿Qué sería un “éxito parcial” para ti en 3–4 semanas?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d5-ac6d-e7c6bab2443d" class="bulleted-list"><li style="list-style-type:disc">¿Qué sería un “deal-breaker” definitivo?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80e5-940d-c9be01c496fd" class="bulleted-list"><li style="list-style-type:disc">¿Qué tan importante es que se sienta premium vs solo funcione?</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80cf-b26e-d1e107285196" class=""><strong>Clínico</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8073-8391-cbc950e4ba20" class="bulleted-list"><li style="list-style-type:disc">Ordena tus 3 prioridades: riesgo reputacional, evidencia, facilidad operativa, precio.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8098-ae0f-cd31e551bcc2" class="bulleted-list"><li style="list-style-type:disc">¿Qué umbral de tolerabilidad esperas antes de escalar recomendación?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ec-a403-cb400d0f0486" class="bulleted-list"><li style="list-style-type:disc">¿Qué evidencia necesitas para sentirte respaldado?</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-808e-8454-e782a92e7424" class="bulleted-list"><li style="list-style-type:disc">¿Qué esperas del proveedor: materiales, seguimiento, reportes?</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80c8-9a35-f7d4acadaafa"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-806f-becf-c6f82bbf3402" class=""><strong>🎤 10 – Interview Script</strong></h1></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80d6-92d5-e5ce6c5e52f2" class=""><strong>👥 Participants</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8086-b375-f88c8d78a76b" class="">Cada llamada incluirá: <strong>(1) un economic buyer</strong> (precio/riesgo/protocolo) <strong>o (1) un user champion</strong> (tolerabilidad/fit).</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8082-84b6-ff386215de95"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-804e-b262-e7d3a696ab1a" class=""><strong>🗣️ Preface (2 min)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80b1-a10e-ec89a8ea79a3" class="">“Describe the purpose of your call and how you plan to use the time. Ask them if it’s ok to record the session for note taking purposes.”</p></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-80ff-82e4-fac4859d2344" class="">Prefacio: “Gracias por tu tiempo. Estamos haciendo investigación sobre cuidado de piel sensible y cómo las personas/profesionales deciden qué producto recomendar o usar. Esto nos ayudará a mejorar el producto y el protocolo. ¿Te parece bien si grabamos la sesión solo para tomar notas?”</blockquote></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-804f-b168-e2efa4f67d91" class="">[After recording starts] “Just to confirm: is it okay if we record this session for note-taking purposes?”</p></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-8000-be1d-f52de22d4c73" class="">“¿Confirmas que está bien que grabemos?”</blockquote></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80c5-9c7e-e7b79c8786d0"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-809b-a607-f3a74ab172d9" class=""><strong>🙋 Introduction (5 min)</strong></h2></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8035-b980-e95aa5360d09" class="bulleted-list"><li style="list-style-type:disc">Presentación: nombre, rol, objetivo.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-807c-a801-f50f9aa75bcc" class="bulleted-list"><li style="list-style-type:disc">Preguntas amplias:<div style="display:contents" dir="auto"><ul id="370f554f-2b83-805e-9592-e765a3db072d" class="bulleted-list"><li style="list-style-type:circle">Valentina: “Cuéntame sobre tu rutina y cómo te afecta la piel sensible en tu día a día.”</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a7-bb9e-f147443539ae" class="bulleted-list"><li style="list-style-type:circle">Clínico: “Cuéntame sobre tus pacientes y cómo decides tratamientos tópicos en rosácea/dermatitis.”</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80d3-a793-db19f68146dc"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-800a-99f2-c0b2a98be064" class=""><strong>💡 Hypotheses and Questions (20 min) — 108 preguntas cualitativas</strong></h2></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80b0-9b89-f738fac6c783" class=""><strong>A) Persona: End User (Valentina)</strong></h3></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-804e-ba59-ddaa3615079a" class=""><strong>Hipótesis 1: “Valentina elige principalmente por tolerabilidad percibida; la evidencia suma confianza después.”</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80c6-bd71-f920b6d1e226" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bd-913f-f3ddf919e2d3"><th id="eX_~" class="simple-table-header-color simple-table-header">Question Type</th><th id="a`Yb" class="simple-table-header-color simple-table-header">Sample Question</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ea-83f2-f617b5886cad"><td id="eX_~" class="">Experience-Based</td><td id="a`Yb" class="">Can you walk me through the last time you tried a “for sensitive skin” cream that irritated you? What happened?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801a-9e8f-cdc9758559d8"><td id="eX_~" class=""></td><td id="a`Yb" class="">What went through your mind when you felt stinging right after applying a product?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803d-8880-e47a94ae20cc"><td id="eX_~" class=""></td><td id="a`Yb" class="">Describe your first experience using a cream marketed for skin sensitivity—what did you notice first (texture, smell, sting, absorption)?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8075-b0d8-d9163d40055c"><td id="eX_~" class="">Behavioral</td><td id="a`Yb" class="">How do you typically approach testing a new sensitive-skin product to reduce risk?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801a-ac47-c0f4b5f249cd"><td id="eX_~" class=""></td><td id="a`Yb" class="">Tell me about a time you tried a new product—what steps did you take before using it regularly?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8016-9d93-f7e0c31eb6bd"><td id="eX_~" class=""></td><td id="a`Yb" class="">What do you do if the first application feels “slightly off” but not terrible?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c0-bc60-c79a62d58faa"><td id="eX_~" class="">Motivational</td><td id="a`Yb" class="">Why did you decide to try this option for your sensitive skin at that moment?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8017-9ac3-e819bfc76bfa"><td id="eX_~" class=""></td><td id="a`Yb" class="">What motivated you to switch from your previous product even if it was working “okay”?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8064-9a20-cbc4d660093b"><td id="eX_~" class=""></td><td id="a`Yb" class="">What outcome were you hoping for (less redness, less burning, fewer flare-ups)?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8031-98c6-e37c9f3cdd1b"><td id="eX_~" class="">Perception-Oriented</td><td id="a`Yb" class="">How did it feel using a “tolerability-focused” product compared to an “active/strong” one?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bc-adad-ea349dab0ebe"><td id="eX_~" class=""></td><td id="a`Yb" class="">What did you expect to happen vs. what did happen in the first 3–7 days?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b1-8325-e98f252a02e9"><td id="eX_~" class=""></td><td id="a`Yb" class="">What was surprising or disappointing about the product’s promises?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f3-93e4-e75885d17d28"><td id="eX_~" class="">Comparative / Preference</td><td id="a`Yb" class="">How does evidence (HRIPT/test claims) compare to user reviews in your decision process?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bd-9dae-cd1cc1c50ed9"><td id="eX_~" class=""></td><td id="a`Yb" class="">If you had to choose between two products—one with stronger clinical claims and one with better perceived tolerability—which would you pick and why?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805c-b983-dd28a880c394"><td id="eX_~" class=""></td><td id="a`Yb" class="">Which trust signal matters more to you: dermatologist recommendation, packaging claims, or sensory experience—and why?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8021-8a47-f255ff661f8d"><td id="eX_~" class="">Probing for Depth</td><td id="a`Yb" class="">Can you tell me more about what “tolerable” means in your body?</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8035-b2b3-fae14cec4a8f" class="">CURSOS</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80d7-bba4-ea7ff19e05e9" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80de-a287-c0f8b83673e7"><th id="ngVT" class="simple-table-header-color simple-table-header">#</th><th id="KsdF" class="simple-table-header-color simple-table-header">Field</th><th id="e~SY" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8071-bd66-e84b62f404d3"><td id="ngVT" class="">1</td><td id="KsdF" class="">Interviewee</td><td id="e~SY" class="">Who did you talk to? Include name, role, and organization (or anonymize if needed).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bc-a3fc-e571afc0fc3c"><td id="ngVT" class="">2</td><td id="KsdF" class="">Stakeholder Role</td><td id="e~SY" class="">What kind of stakeholder are they? (e.g., end user, policy maker, installer, investor, etc.)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ae-81b1-ca0993f449cf"><td id="ngVT" class="">3</td><td id="KsdF" class="">Method</td><td id="e~SY" class="">Was this a formal interview, casual conversation, field visit, etc.?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8068-b735-eeaa73c315a5"><td id="ngVT" class="">4</td><td id="KsdF" class="">Date</td><td id="e~SY" class="">When did the conversation take place?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8099-ad94-e56f1f108358"><td id="ngVT" class="">5</td><td id="KsdF" class="">Key Insights</td><td id="e~SY" class="">What were the most important takeaways from this conversation? Include quotes or stories that capture nuance.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d5-ba7e-f9ea2bcac449"><td id="ngVT" class="">6</td><td id="KsdF" class="">Implications for the Venture</td><td id="e~SY" class="">How might this information affect your problem framing, design choices, or go-to-market strategy?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8085-a439-cf1da4cebf15"><td id="ngVT" class="">7</td><td id="KsdF" class="">Follow-Up</td><td id="e~SY" class="">What’s the next step with this person or area of inquiry? (e.g., reconnect, intro to someone else, test hypothesis)</td></tr></div></tbody></table></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>STEP 7: PRODUCT ROADMAP</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="370f554f-2b83-8071-bc28-f1d181190ff4" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/map_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>STEP 7: PRODUCT ROADMAP</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="370f554f-2b83-8062-9f1e-efeb05676986" class="">A continuación vas a convertir tu idea de producto en un roadmap “now / next / later” con funcionalidades concretas, y luego verificar que esas prioridades estén alineadas con tus metas (HRIPT, pilotos clínicos y lanzamiento DTC simultáneo, entre otras).</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8046-ad8c-f7b2fd24a568"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8094-8da0-f1628e0e2cb6" class=""><strong>1) Product Ideas (todas las funcionalidades/elementos iniciales que contemplas)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80bf-ae90-d8f34df8da6d" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cd-b571-fe74e548943d"><th id="m@dV" class="simple-table-header-color simple-table-header">#</th><th id="~~bQ" class="simple-table-header-color simple-table-header">Producto / Funcionalidad</th><th id="Edzm" class="simple-table-header-color simple-table-header">Qué resuelve / incluye</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cd-a0c2-df5ac4647210"><td id="m@dV" class="">1</td><td id="~~bQ" class="">Especificación y validación del producto (fucoidan + sangre de dragón + crema O/W)</td><td id="Edzm" class="">Asegura estabilidad, pH 5.5, apariencia y consistencia de lote</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e3-a4b0-ef9bc81d7c71"><td id="m@dV" class="">2</td><td id="~~bQ" class="">HRIPT ≥98% (protocolo, reclutamiento y seguimiento)</td><td id="Edzm" class="">Evidencia de tolerabilidad para piel sensible/rosácea/dermatitis</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801a-a154-c65d7ae75eab"><td id="m@dV" class="">3</td><td id="~~bQ" class="">Producción maquila BPF (NOM-259)</td><td id="Edzm" class="">Fabricación bajo controles de calidad, lote a lote</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8005-9a37-c78d06b5d065"><td id="m@dV" class="">4</td><td id="~~bQ" class="">Ensayos/QA y criterios de liberación de lote</td><td id="Edzm" class="">Cumplimiento (pH, criterios visuales, proxy/TEWL)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805f-b2bf-c0a5d10abd65"><td id="m@dV" class="">5</td><td id="~~bQ" class="">Estabilidad + QA/label</td><td id="Edzm" class="">Cumplimiento regulatorio y liberación para venta</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8040-985a-c7b81ec6d71e"><td id="m@dV" class="">6</td><td id="~~bQ" class="">Etiquetado conforme NOM-141 + dossier</td><td id="Edzm" class="">Aterriza documentación final para COFEPRIS/QFB (QFB signoff)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8033-80a0-d8ec1916a06e"><td id="m@dV" class="">7</td><td id="~~bQ" class="">DTC e-commerce (Tienda Nube)</td><td id="Edzm" class="">Canal de venta directo (MX)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8022-a1d3-f7298c83404c"><td id="m@dV" class="">8</td><td id="~~bQ" class="">Pagos (Mercado Pago)</td><td id="Edzm" class="">Checkout operativo y conversión</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805f-b1e6-c6368d67d78f"><td id="m@dV" class="">9</td><td id="~~bQ" class="">Logística y fulfillment (Estafeta warehouse / consignment)</td><td id="Edzm" class="">Entrega y operación de inventario</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8070-8379-d2d58b8b62a5"><td id="m@dV" class="">10</td><td id="~~bQ" class="">CRM (Notion: leads/conversiones)</td><td id="Edzm" class="">Gestión de prospectos, seguimiento y métricas</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8091-9103-e61231a885a7"><td id="m@dV" class="">11</td><td id="~~bQ" class="">Analytics (GA4 + Meta pixel)</td><td id="Edzm" class="">Medición de funnel y optimización de campañas</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8034-ae77-d7d45f714d5f"><td id="m@dV" class="">12</td><td id="~~bQ" class="">Automatizaciones (Zapier → Notion)</td><td id="Edzm" class="">Integrar eventos de web con CRM</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c5-b7ef-dff63840da4e"><td id="m@dV" class="">13</td><td id="~~bQ" class="">Email marketing (Mailchimp: secuencias)</td><td id="Edzm" class="">Educación/retención post-compra (día 3/7/14/30/60)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8014-8782-f0e507130d1a"><td id="m@dV" class="">14</td><td id="~~bQ" class="">SMS (Twilio)</td><td id="Edzm" class="">Recordatorios/seguimiento (p. ej., post-compra/uso)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8052-b8f9-cb6f6628888a"><td id="m@dV" class="">15</td><td id="~~bQ" class="">NPS (Typeform + medición)</td><td id="Edzm" class="">Captura NPS e insumos de iteración</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802f-a9c5-d8b577ed9b4c"><td id="m@dV" class="">16</td><td id="~~bQ" class="">Landing page con evidencia HRIPT/BPF y FAQ</td><td id="Edzm" class="">Conversiones: prueba social y claims “verificados”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8078-9584-d3fa27fcef52"><td id="m@dV" class="">17</td><td id="~~bQ" class="">Kit de muestra + trial clínico (pilotos)</td><td id="Edzm" class="">Entrega, seguimiento y reporte de resultados clínicos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8054-ba2a-d1629b8ef9ba"><td id="m@dV" class="">18</td><td id="~~bQ" class="">Pipeline de clínicas (trial agreements)</td><td id="Edzm" class="">Documentos y operación con 3 clínicas piloto</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8078-831e-f9160521463e"><td id="m@dV" class="">19</td><td id="~~bQ" class="">Criterios de escalamiento de lote (producción run 1 → run 2)</td><td id="Edzm" class="">Activar orden 2,000 unidades si el KPI de recompra se cumple</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ea-8e75-cdd449cf34c6"><td id="m@dV" class="">20</td><td id="~~bQ" class="">Fase de internacionalización (Anteii export cert)</td><td id="Edzm" class="">Preparación para expansión export/import</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8010-b1e8-c53e87ee6453"><td id="m@dV" class="">21</td><td id="~~bQ" class="">Preparación para US Hispanic + B2B</td><td id="Edzm" class="">Roadmap de mercados y expansión comercial</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8083-9f76-d08b77bd7593"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8051-a643-e00467f03c4d" class=""><strong>2) Now (prioridad inmediata: lo más urgente con detalles)</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-80e4-b885-ee1f8fb6a435" class="">Nota: las prioridades se alinean a tu plan de “lanzamiento DTC + pilotos clínicos simultáneos” y a que el valor depende de HRIPT + liberación de lote.</blockquote></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8091-bf06-cd8442d49f41" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f8-b35c-fe439899a533"><th id="X:mW" class="simple-table-header-color simple-table-header">Name</th><th id="nW|:" class="simple-table-header-color simple-table-header">Descripción (claridad para el equipo)</th><th id="p~gD" class="simple-table-header-color simple-table-header">Importancia [1-10]</th><th id="gY[E" class="simple-table-header-color simple-table-header">Facilidad [1-10]</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b3-b5ec-e55afa6efc25"><td id="X:mW" class="">1. Bloque de evidencia: HRIPT + reclutamiento + seguimiento</td><td id="nW|:" class="">Correr HRIPT (30 sujetos) con protocolo, day 0/7/14/21/30 y asegurar gate de ≥98% tolerancia</td><td id="p~gD" class="">10</td><td id="gY[E" class="">6</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807b-932e-f923e484a8f2"><td id="X:mW" class="">2. Especificación + BOM final con Biotech (spec lock)</td><td id="nW|:" class="">Congelar fórmula final/variantes, asegurar consistencia por batch</td><td id="p~gD" class="">10</td><td id="gY[E" class="">5</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bc-8f67-c90715a18d27"><td id="X:mW" class="">3. Producción run 1 (1,000 unidades) con QA/criterios de liberación</td><td id="nW|:" class="">Fabricar bajo NOM-259 BPF (pH 5.5, apariencia, controles) y liberar lote</td><td id="p~gD" class="">10</td><td id="gY[E" class="">4</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8073-a764-f003df9feb93"><td id="X:mW" class="">4. Estabilidad + QA/label + NOM-141 + dossier</td><td id="nW|:" class="">Completar estabilidad 2 semanas, aprobación de etiquetado y documentación (incluye QFB signoff)</td><td id="p~gD" class="">9</td><td id="gY[E" class="">4</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ba-bdac-fdcf0d8c0ee8"><td id="X:mW" class="">5. Landing page + mensajes de evidencia (HRIPT/BPF/origen)</td><td id="nW|:" class="">Landing que explique el producto y “Verified HRIPT ≥98% (Biotech maquila)”, con FAQ y pruebas (sin sobreprometer)</td><td id="p~gD" class="">9</td><td id="gY[E" class="">7</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809e-b756-d20271d99a2a"><td id="X:mW" class="">6. DTC operativo (Tienda Nube + Mercado Pago)</td><td id="nW|:" class="">Checkout funcional, páginas esenciales y operación de ventas</td><td id="p~gD" class="">8</td><td id="gY[E" class="">9</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8094-a8f8-c498e4bf4691"><td id="X:mW" class="">7. Operación logística (Estafeta warehouse/consignment)</td><td id="nW|:" class="">Definir inventario, flujo de pedidos y despacho</td><td id="p~gD" class="">8</td><td id="gY[E" class="">6</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807b-85d7-d734204267a5"><td id="X:mW" class="">8. CRM + tracking del funnel (Notion + GA4 + Meta pixel + Zapier)</td><td id="nW|:" class="">Integrar leads/conversiones y visualizar métricas para optimizar campañas</td><td id="p~gD" class="">8</td><td id="gY[E" class="">7</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80eb-b118-e1af7c952c82"><td id="X:mW" class="">9. Secuencia post-compra (Mailchimp + NPS plan)</td><td id="nW|:" class="">Activar emails día 3/7/14/30/60 y capturar NPS para retroalimentación</td><td id="p~gD" class="">7</td><td id="gY[E" class="">8</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8080-8d0b-f34363e9efc9"><td id="X:mW" class="">10. Pilotos clínicos (3 clínicas) con trial de 30 días</td><td id="nW|:" class="">Trial con kit, observaciones en semanas 1/2/4 y reporte estandarizado</td><td id="p~gD" class="">9</td><td id="gY[E" class="">5</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e4-8535-c4d516291c7b"><td id="X:mW" class="">11. Alianza operacional de comunicación en incidentes de batch</td><td id="nW|:" class="">Escalación: problema de batch → respuesta en 24h (Biotech + comunicación al cliente)</td><td id="p~gD" class="">8</td><td id="gY[E" class="">6</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80ef-8fa8-c9a4030ec9d4" class=""><strong>Review (qué construir primero dentro de “now”)</strong></p></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8016-9ac6-e493a4a402ab" class="numbered-list" start="1"><li>HRIPT + spec lock + camino a liberación de lote (porque habilitan claims y lanzamiento), 2) etiquetado/dossier (NOM-141), 3) DTC/landing/lista de medición para convertir cuando haya stock, 4) pilotos clínicos como co-lanzamiento.</li></ol></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-809b-bcc8-db0f04a8d58b" class=""><strong>Forward plans (qué mover a “next” si hiciera falta)</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8074-a74a-eabc2a79a1dd" class="bulleted-list"><li style="list-style-type:disc">SMS, automatizaciones avanzadas, optimización fina del funnel (A/B iteraciones múltiples), y elementos de B2B/internacionalización.</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80b3-85fb-ea97efbdc8c8"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8007-b00e-ddf2551160c6" class=""><strong>3) Next and Later (prioridad menos urgente con dirección)</strong></h2></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-809d-a8fb-c2b0603c80d2" class=""><strong>Next (lo siguiente razonable una vez que el “lanzamiento” esté habilitado)</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-807d-9088-e611bb192f2b" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ef-8c16-c8f17cbfee94"><th id="_`Rp" class="simple-table-header-color simple-table-header">Name</th><th id="yF`?" class="simple-table-header-color simple-table-header">Descripción</th><th id="EuJ&gt;" class="simple-table-header-color simple-table-header">Valor/impacto esperado</th><th id="i&lt;Cl" class="simple-table-header-color simple-table-header">Importancia [1-10]</th><th id="}f~:" class="simple-table-header-color simple-table-header">Facilidad [1-10]</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802b-ace0-d8271e3744f4"><td id="_`Rp" class="">1. A/B testing sistemático de mensajes de la landing</td><td id="yF`?" class="">Tests A/B de price/posicionamiento (p. ej. $250/$300/$350) y variantes de evidencia</td><td id="EuJ&gt;" class="">Aumentar CVR y velocidad a 50 DTC con ≥40% recompra día 90</td><td id="i&lt;Cl" class="">8</td><td id="}f~:" class="">8</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8046-93df-d479f971ce8a"><td id="_`Rp" class="">2. Optimización de CRM y reporting (dashboard semanal/día)</td><td id="yF`?" class="">Dashboard para leads → conversión → recompra y COCA</td><td id="EuJ&gt;" class="">Mejorar toma de decisiones para run 2</td><td id="i&lt;Cl" class="">8</td><td id="}f~:" class="">7</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8088-9829-fa3c13ddf9c2"><td id="_`Rp" class="">3. Secuencia DTC más “educativa” con segmentación básica</td><td id="yF`?" class="">Ajustar correos por fecha de compra y respuestas (quién entrega NPS, quién pregunta)</td><td id="EuJ&gt;" class="">Reducir fricción y elevar recompra</td><td id="i&lt;Cl" class="">7</td><td id="}f~:" class="">6</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c3-80c0-dec6b11f6cd8"><td id="_`Rp" class="">4. Operación de trial clínico con estandarización de reporte</td><td id="yF`?" class="">Plantillas y flujo para que los reportes sean comparables</td><td id="EuJ&gt;" class="">Calidad de evidencia para Phase 2/marketing</td><td id="i&lt;Cl" class="">7</td><td id="}f~:" class="">5</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8067-a15a-ca05c07c6e18" class=""><strong>Later (dirección de producto/mercado cuando ya exista tracción y evidencia)</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80ff-af03-ee626df1e056" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8033-9b82-ec3085a67ec3"><th id="&lt;;dO" class="simple-table-header-color simple-table-header">Name</th><th id="eA_j" class="simple-table-header-color simple-table-header">Descripción (alto nivel)</th><th id="&gt;=Q`" class="simple-table-header-color simple-table-header">Qué habilita después</th><th id="Setn" class="simple-table-header-color simple-table-header">Importancia [1-10]</th><th id="BUUX" class="simple-table-header-color simple-table-header">Facilidad [1-10]</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804b-ade7-fd626d9e60a0"><td id="&lt;;dO" class="">1. Run 2 (2,000 unidades) activado por KPI</td><td id="eA_j" class="">Escalar producción si se cumple ≥40% reorder al día 90</td><td id="&gt;=Q`" class="">Sostener demanda y márgenes 65–85%</td><td id="Setn" class="">10</td><td id="BUUX" class="">5</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8040-8ab0-d64b8490317a"><td id="&lt;;dO" class="">2. Export certificación (Anteii)</td><td id="eA_j" class="">Preparar expansión fuera de MX con requisitos de export</td><td id="&gt;=Q`" class="">Fase de crecimiento internacional</td><td id="Setn" class="">9</td><td id="BUUX" class="">3</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8034-a198-d1aa601b021c"><td id="&lt;;dO" class="">3. US Hispanic + pruebas B2B (piloto comercial)</td><td id="eA_j" class="">Ajustes de posicionamiento, empaque/operación según canal</td><td id="&gt;=Q`" class="">Nuevo TAM y diversificación</td><td id="Setn" class="">8</td><td id="BUUX" class="">4</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80de-8980-dec97598bc1c"><td id="&lt;;dO" class="">4. B2B “fucoidan” (fucoidan-led)</td><td id="eA_j" class="">Portafolio y acuerdos comerciales para farmacias/estéticas</td><td id="&gt;=Q`" class="">Mayor volumen y LTV</td><td id="Setn" class="">7</td><td id="BUUX" class="">3</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8019-9710-d8e7ef58c865" class=""><strong>Reflection (cómo decides Next vs Later)</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-809d-b1ac-e4fda15a4388" class="bulleted-list"><li style="list-style-type:disc">“Next” = impacta directamente los KPIs de lanzamiento/ventas (CVR, NPS, recompra) y puede hacerse sin bloquear evidencia regulatoria.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-805b-af65-c299cd9246e3" class="bulleted-list"><li style="list-style-type:disc">“Later” = depende de certificaciones/tiempos externos (export, expansión) o requiere que primero validen recompra y velocidad de escalamiento.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-805e-9654-cd1720cbba89" class=""><strong>Forward plans (cuándo mover de Next → Now si cambia el contexto)</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8052-9a91-d1bcddb21617" class="bulleted-list"><li style="list-style-type:disc">Si el KPI de recompra se retrasa, mover acciones de conversión/retención (segmentación y optimización de funnel) hacia “now” en la siguiente semana del lanzamiento.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-806b-96ca-d2446c03b736" class="bulleted-list"><li style="list-style-type:disc">Si el pipeline de clínicas crece (más de 3 pilotos), entonces “trial ops” y capacidades de reporte pasan a “now” para no perder calidad.</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-801a-879e-c127821118f5"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8033-a181-d66d2e8dc5ee" class=""><strong>4) Goals (alineación del roadmap con tus metas)</strong></h2></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-801a-ac41-c19b99e0ee77" class=""><strong>Metas clave (de tu planificación)</strong></h3></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80f3-8644-e338c7c7bb06" class="bulleted-list"><li style="list-style-type:disc">Finalizar spec + BOM con Biotech; producción ~8 semanas con estabilidad + QA/label</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8037-b31c-dbf903de0a78" class="bulleted-list"><li style="list-style-type:disc">HRIPT ≥98% (30 sujetos, paralelo)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-800f-bf14-d6b0e12f74fd" class="bulleted-list"><li style="list-style-type:disc">Landing live en semana 4</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a2-a6e5-c923b47882b5" class="bulleted-list"><li style="list-style-type:disc">120 leads para semana 6</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-803d-9f27-dcefc5138a32" class="bulleted-list"><li style="list-style-type:disc">1,000 unidades listas en semana 8</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8042-ac53-ed0942686cfb" class="bulleted-list"><li style="list-style-type:disc">Lanzamiento simultáneo: clinic pilots + DTC</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8022-9a96-df181c545ae1" class="bulleted-list"><li style="list-style-type:disc">≥40% recompra día 90</li></ul></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80d9-aed4-fc8d7fccc32a" class=""><strong>Revisión: ¿Now se desvía de los objetivos?</strong></h3></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-803b-bf07-da2a7f545fc4" class="bulleted-list"><li style="list-style-type:disc"><strong>No se desvía:</strong> “Now” prioriza exactamente lo que habilita el lanzamiento (evidencia HRIPT, liberación de lote, NOM-141, landing DTC y operación clínica).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8099-8880-c58f3f4c81ea" class="bulleted-list"><li style="list-style-type:disc"><strong>Posible ajuste menor:</strong> si el avance de HRIPT/label se retrasa, entonces parte del marketing/automatización (por ejemplo SMS) se re-secuencia pero <strong>sin cambiar el núcleo</strong> (HRIPT/spec/lote).</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8013-ad5b-c91a71773261" class=""><strong>Forward plans (cómo asegurar alineación futura)</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d7-b691-de862698ccd5" class="bulleted-list"><li style="list-style-type:disc">Cada nueva idea/solicitud entra al roadmap solo si impacta alguno de estos KPIs: HRIPT gate, velocidad de liberación de lote, leads (semana 6), CVR, NPS, o <strong>recompra ≥40% día 90</strong>.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8088-97eb-cc6b416bb158" class="bulleted-list"><li style="list-style-type:disc">Los cambios se revisan semanalmente con Biotech (calidad/producción) y con operación comercial (leads/conversión).</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8073-8b99-fbf9c02b6a23"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80a7-a7a3-e66de63c7458" class=""><strong>Recordatorio (para actualizar y continuar)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80ba-8b59-e1b189e5b0d1" class="">Puedes actualizar tu Startup Idea en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>. Ahí también puedes actualizar los detalles para guardar información crítica (por ejemplo: fórmula objetivo, HRIPT gate, barreras regulatorias y KPIs). Finalmente, puedes usar el chatbot en la parte superior de esa página para pedir cambios a estos resultados. Por favor, usa el botón de abajo para proceder al siguiente paso.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80a0-b95a-f5a24d1e4ba7" class=""><strong>Resumen guardado en esta página (actual):</strong> 50g O/W crema con fucoidan 1% + Croton lechleri 1.5% + Centella 1% + panthenol 3% + bisabolol 0.3% + niacinamide 5%, pH 5.5; HRIPT ≥98% con 30 sujetos; producción run 1 de 1,000 unidades; lanzamiento simultáneo DTC y 3 clínicas piloto (CDMX/MTY/GDL/SLP); objetivo ≥40% recompra al día 90; DTC $300 MXN con márgenes 65–85%.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

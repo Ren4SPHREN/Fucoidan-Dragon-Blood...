@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>BEACHHEAD MARKET TAM</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7c4f554f-2b83-8336-a830-016a8a56209c" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/crop_gray.svg"/></div><h1 class="page-title" dir="auto">BEACHHEAD MARKET TAM</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8094-bad6-d50798916f4f" class="">Este capítulo traduce un mercado inicial en ingresos anuales por usuario y un TAM económico anualizado, usando una triangulación consistente entre precio, presupuesto asignable y comparables.</p></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80f7-87de-f19e0ed9d55e" class=""><strong>Table 1: C04 (1).pdf</strong></p></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-807b-bb5a-fdea7b12105f" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80de-b1c6-f3e6201bfa80"><th id="{Ru{" class="simple-table-header-color simple-table-header">Category</th><th id="^\je" class="simple-table-header-color simple-table-header">Description</th><th id="NJpI" class="simple-table-header-color simple-table-header">Entry</th><th id="ON~X" class="simple-table-header-color simple-table-header">How did you end up at this number/range?</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80da-8f7f-cc55fe308c1c"><td id="{Ru{" class="">Ia</td><td id="^\je" class="">Estimation of price per unit</td><td id="NJpI" class="">$300 MXN por frasco de 50g</td><td id="ON~X" class="">Precio DTC indicado: $300 MXN por 50g.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a1-af21-e17268a934cf"><td id="{Ru{" class="">Ib</td><td id="^\je" class="">Number of units needed per end user</td><td id="NJpI" class="">4.06 unidades/año</td><td id="ON~X" class="">Recompra en 60-90 días: usando 90 días para anualizar conservador: 365/90 = 4.06. (ASSUMPTION—Conservador por ciclo reportado)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e0-a9e9-ff3e5fadd589"><td id="{Ru{" class="">Ic</td><td id="^\je" class="">Average Life Relevant? (assume repurchase)</td><td id="NJpI" class="">Sí (1)</td><td id="ON~X" class="">El caso de uso indica recompra en 60-90 días, por lo que se modela como recurrente dentro del año.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8095-bf54-f0186c96b76e"><td id="{Ru{" class="">Id</td><td id="^\je" class="">Average Life of Product in year</td><td id="NJpI" class="">1 año</td><td id="ON~X" class="">Se anualiza a 1 año como periodo de cálculo para TAM anual.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8065-a1c3-d5b47977fc14"><td id="{Ru{" class="">Ie</td><td id="^\je" class="">Annualized Revenue (Ia * Ib) / Id (Data Point 1)</td><td id="NJpI" class="">$1,218 MXN/año</td><td id="ON~X" class="">$300 × 4.06 / 1 = $1,218 MXN/año.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80ee-a8c5-e9876139bfda" class=""><strong>Table 2: C04 (1).pdf</strong></p></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8087-8f65-c42fb53813b8" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804e-9f94-cf050fa7fe57"><th id="^\kC" class="simple-table-header-color simple-table-header">Category</th><th id="CqPn" class="simple-table-header-color simple-table-header">Description</th><th id="wp`Z" class="simple-table-header-color simple-table-header">Entry</th><th id="MP]V" class="simple-table-header-color simple-table-header">How did you end up at this number/range?</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8007-89d5-f4f9aa9162eb"><td id="^\kC" class="">IIa</td><td id="CqPn" class="">Current Spend per end user (Data Point 2)</td><td id="wp`Z" class="">$1,000 MXN/año</td><td id="MP]V" class="">El enunciado de tu Beachhead TAM ya fija el monetizable anual por usuario: 2.3M × $1,000 = $2.3B MXN/año. (Usado como “revenue per end user” en el TAM)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8086-85c1-c4e6ad166fe2"><td id="^\kC" class="">IIb</td><td id="CqPn" class="">Total budget for the end user</td><td id="wp`Z" class="">$1,000 MXN/año</td><td id="MP]V" class="">Se asume igual al monetizable anual provisto por tu Beachhead TAM (para mantener consistencia dentro del worksheet).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8008-9091-e8f61748db08"><td id="^\kC" class="">IIc</td><td id="CqPn" class="">What % of budget could go to this solution reasonably?</td><td id="wp`Z" class="">20% (ASSUMPTION—Sensitivity base)</td><td id="MP]V" class="">No se proporcionan fuentes para el share del presupuesto asignable a esta crema específica. Sensibilidad con 10%/30%/60% en 3b.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8044-a641-cde7b59d0a4f"><td id="^\kC" class="">IId</td><td id="CqPn" class="">Annualize Revenue (IIb * IIc) (Data Point 3)</td><td id="wp`Z" class="">$200 MXN/año</td><td id="MP]V" class="">$1,000 × 20% = $200 MXN/año.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8015-b3d6-ed961e3f5bc4" class="">3a) Math &amp; Units Validation (inline)</p></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-803c-bc37-fe12282805b9" class="bulleted-list"><li style="list-style-type:disc">IIa ≤ IIb: $1,000 ≤ $1,000 OK</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8098-9d29-ede1011f9db0" class="bulleted-list"><li style="list-style-type:disc">IIc ∈ [0%, 100%]: 20% OK</li></ul></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-804b-bb51-c4d96a39b72c" class="">3b) Budget-share sensitivity (10% / 30% / 60%)</p></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80f4-b9fc-d6f17110e7c1" class="bulleted-list"><li style="list-style-type:disc">Low: IIc = 10% ⇒ IId = $1,000 × 10% = $100 MXN/año</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-801c-b62c-ecade9332168" class="bulleted-list"><li style="list-style-type:disc">Base: IIc = 20% ⇒ IId = $1,000 × 20% = $200 MXN/año</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80a0-b4ea-edfbe1d78f98" class="bulleted-list"><li style="list-style-type:disc">High: IIc = 60% ⇒ IId = $1,000 × 60% = $600 MXN/año</li></ul></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-802d-9df5-e02ccf35dd31" class=""><strong>Table 3: Orbit DE Step 4 Beachhead TAM Size.pdf (Comparables)</strong></p></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-805e-a3db-d59fec407c6e" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8075-9126-d8425bd8d5f7"><th id="CgEe" class="simple-table-header-color simple-table-header">Category</th><th id="~bJU" class="simple-table-header-color simple-table-header">Description</th><th id="Mqun" class="simple-table-header-color simple-table-header">Entry</th><th id="gOn?" class="simple-table-header-color simple-table-header">How did you end up at this number/range?</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80fd-82c3-cba75aad6ca5"><td id="CgEe" class="">IIIa</td><td id="~bJU" class="">Who are the comparables for your business?</td><td id="Mqun" class="">La Mer, Murad (equivalentes importados) y SPHREN</td><td id="gOn?" class="">Referencias provistas en Quantify Value Proposition.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-808b-9291-d107bae03be8"><td id="CgEe" class="">IIIb</td><td id="~bJU" class="">What are the comparable products?</td><td id="Mqun" class="">Importados: $800-$2,500 MXN; SPHREN: $300 MXN</td><td id="gOn?" class="">Precios provistos por el enunciado.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d5-bde7-f8719fd1f541"><td id="CgEe" class="">IIIc</td><td id="~bJU" class="">What is the comparable converted to similar annualize revenue (Data Points 4 plus however many more you deem relevant)</td><td id="Mqun" class="">SPHREN proxy: $1,218 MXN/año; Importados: $3,248-$10,150 MXN/año</td><td id="gOn?" class="">Annualización con el mismo ciclo usado en Table 1: 4.06 compras/año. SPHREN: $300 × 4.06 = $1,218. Importados: $800-$2,500 × 4.06 = $3,248-$10,150.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80ff-98ef-db57b44ad7c4" class="">3d) Comparables conversion &amp; sanity check</p></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-806c-8253-ebb35f705b71" class="bulleted-list"><li style="list-style-type:disc">SPHREN proxy ($1,218 MXN/año) es consistente con tu modelo DTC (Table 1).</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-800d-9b99-d4a73becacb4" class="bulleted-list"><li style="list-style-type:disc">Los equivalentes importados anualizados ($3,248-$10,150 MXN/año) implican un monetizable por usuario mucho mayor que el revenue per end user fijado en tu Beachhead TAM ($1,000 MXN/año). Esto sugiere scope mismatch: esos “equivalentes” probablemente reflejan (a) mix de múltiples SKUs/tamaños, (b) diferentes frecuencias reales, o (c) una cartera de gasto mayor que la captura atribuible a tu crema específica. Sanity Check: no se fuerza a “ajustar” el Beachhead a los importados.</li></ul></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8025-8724-f9f712353092" class=""><strong>Table 4: Orbit DE Step 4 Beachhead TAM Size.pdf (Interpreting the Results)</strong></p></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80d1-ab09-e782f0495161" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d2-9edc-c65122a48931"><th id="QoV|" class="simple-table-header-color simple-table-header">Category</th><th id="tZJ?" class="simple-table-header-color simple-table-header">Description</th><th id="upWv" class="simple-table-header-color simple-table-header">Entry</th><th id="KK|D" class="simple-table-header-color simple-table-header">How did you end up at this number/range?</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8023-8a2b-dd0284b216d8"><td id="QoV|" class="">IVa</td><td id="tZJ?" class="">Consensus on estimate of annualized revenue per end user (a range is fine)</td><td id="upWv" class="">Rango $200-$1,218 MXN/año; consenso $800 MXN/año (est.)</td><td id="KK|D" class="">Triangulación: (A) Observed/price-ciclo (Table 1) = $1,218; (B) Budget share (Table 2) = $200 base (rango por sensibilidad $100-$600); (C) Comparables proxy SPHREN = $1,218. Consenso elegido $800 para reflejar que el share base (Table 2) podría ser bajo si el usuario/crema se vuelve “tolerability hero”, pero evitando igualar siempre el upper proxy. (ASSUMPTION—Conservative consensus)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8058-8152-df370a125303" class=""><strong>Top-Down Estimate of Number of End Users in Beachhead Market</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80c8-b48e-e77b243add91" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-808f-87fb-ee87a705c7be"><th id="MbPE" class="simple-table-header-color simple-table-header">Number of people in your largest demographic</th><th id="KLCv" class="simple-table-header-color simple-table-header">2,300,000 clinic patients (rosacea/atopic dermatitis)</th><th id="ra\p" class="simple-table-header-color simple-table-header">1st segmentation based on end user profile characteristic</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ea-ba69-dd1fde8a2a99"><td id="MbPE" class="">1st segmentation based on end user profile characteristic</td><td id="KLCv" class="">2,300,000</td><td id="ra\p" class="">End users en el Beachhead provisto (clinic patients).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805d-a7e9-c214b1b78560"><td id="MbPE" class="">2nd segmentation based on end user profile characteristic</td><td id="KLCv" class="">2,300,000</td><td id="ra\p" class="">Canal clínico/profesional (CDMX/MTY/GDL/SLP) ya está acotado en tu definición de beachhead.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c6-9da1-e399da4dd7bb"><td id="MbPE" class="">% of pr evious segment</td><td id="KLCv" class="">100%</td><td id="ra\p" class="">Coherencia con el valor provisto para el beachhead.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-802d-b904-fe9e105a36ce"><td id="MbPE" class="">% of pr evious segment</td><td id="KLCv" class="">100%</td><td id="ra\p" class="">Se mantiene por definición.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-803f-b14d-fdad515a4529"><td id="MbPE" class="">3rd segmentation based on end user profile characteristic</td><td id="KLCv" class="">2,300,000</td><td id="ra\p" class="">Urgencia/tolerabilidad + WTP $280-$350 retail (contenido en la definición del beachhead).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c6-8fa7-c1fbde5bd86e"><td id="MbPE" class="">End users in beachhead market =Based on End User Pr o/f_ile characteristic:</td><td id="KLCv" class="">2,300,000</td><td id="ra\p" class="">Conteo provisto por el enunciado.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a6-ba52-cf58a1672fb7"><td id="MbPE" class="">Assumption(s) for calculation</td><td id="KLCv" class="">Sin supuestos adicionales de prevalencia</td><td id="ra\p" class="">Se usa el tamaño de beachhead provisto como conteo final.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8009-919a-c639a5e293a6"><td id="MbPE" class="">Source(s)</td><td id="KLCv" class="">Dato provisto en el enunciado</td><td id="ra\p" class="">“Beachhead TAM: 2.3M clinic patients…”</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-809d-83c3-f2dc54e71c90" class=""><strong>Top-Down TAM Analysis Summary</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8028-8529-e85a30cd5c37" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a6-9f56-cd160fdf40fe"><th id="Pocg" class="simple-table-header-color simple-table-header">#</th><th id="[bYm" class="simple-table-header-color simple-table-header">Field</th><th id="bsT&gt;" class="simple-table-header-color simple-table-header">User Entry</th><th id="[dme" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-800d-bb3e-c7f524717b85"><td id="Pocg" class="">1</td><td id="[bYm" class="">Total # of end users in the broad market segment</td><td id="bsT&gt;" class="">2,300,000</td><td id="[dme" class="">Beachhead ya definido como clinic patients.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e7-961c-d7490e419ec4"><td id="Pocg" class="">2</td><td id="[bYm" class="">Total # of end users in the targeted sub-segment your BHM</td><td id="bsT&gt;" class="">2,300,000</td><td id="[dme" class="">Coincide con el beachhead provisto.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8013-9022-ce1bde254e80"><td id="Pocg" class="">3</td><td id="[bYm" class="">Annual monetizable revenue per end user</td><td id="bsT&gt;" class="">$200-$1,218 MXN/año; consenso $800 MXN/año</td><td id="[dme" class="">Basado en IVa (consenso) y rango por triangulación (Table 1-3 y Table 2 sensibilidad).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8093-b8f3-d8bc51ebce1d"><td id="Pocg" class="">4</td><td id="[bYm" class="">Estimate of Top-Down TAM (line 2 times line 3)</td><td id="bsT&gt;" class="">$0.46B-$2.80B MXN/año; consenso $1.84B MXN/año</td><td id="[dme" class="">Cálculo: 2.3M × $200 = $460M; 2.3M × $1,218 = $2.80B; consenso 2.3M × $800 = $1.84B.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80eb-8e4d-c436505e3db7"><td id="Pocg" class="">5</td><td id="[bYm" class="">Estimate of Range of Profitability for Your Product</td><td id="bsT&gt;" class="">63% to 85%</td><td id="[dme" class="">“Gross margin: 63–85%”. (Alineado al input)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8032-9616-c7068a13ff67"><td id="Pocg" class="">6</td><td id="[bYm" class="">Estimated CAGR (Compound Annual Growth Rate)</td><td id="bsT&gt;" class="">5% to 12% (ASSUMPTION)</td><td id="[dme" class="">No provisto para este nicho; supuesto conservador por crecimiento de skincare premium/clean en LATAM.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80da-9a82-cdb9fdd702e1"><td id="Pocg" class="">7</td><td id="[bYm" class="">Estimated Time to Achieve 20% Market Share</td><td id="bsT&gt;" class="">3 to 5 years (ASSUMPTION)</td><td id="[dme" class="">Canal clínico exige credibilidad, repetición y expansión de clínicas.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804d-916a-faa19304b363"><td id="Pocg" class="">8</td><td id="[bYm" class="">Anticipated Market Share Achieved if You are Reasonably Successful</td><td id="bsT&gt;" class="">1% to 5% in 3 years (ASSUMPTION)</td><td id="[dme" class="">Alineado con Year-1 objetivo ~0.01% (230 pacientes) y escalamiento por segunda maquila + clínicas.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-80b3-bfc2-f761a55524c8" class=""><strong>What are the 3 top assumptions (besides the product itself)?</strong></h3></div><div style="display:contents" dir="auto"><ol type="1" id="36ff554f-2b83-80ce-ade1-c565e88776aa" class="numbered-list" start="1"><li>El ciclo efectivo de recompra dentro del canal (60-90 días) sostiene anualización con un factor cercano a 4.06 unidades/año. (ASSUMPTION por usar 90 días para anualizar)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="36ff554f-2b83-801c-b270-e9cf5487f09a" class="numbered-list" start="2"><li>La fracción del gasto anual que efectivamente captura esta solución (IIc) cae en un rango razonable, con un base 20% pero sensibilidad 10%-60%. (ASSUMPTION—Sensitivity)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="36ff554f-2b83-80d2-b658-dc5aa4712c98" class="numbered-list" start="3"><li>La adopción en canal clínico convierte evidencia HRIPT y resultados de 3-4 semanas en repetición y reducción de churn durante el primer año. (ASSUMPTION)</li></ol></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8054-8873-c2af2be2fb9a" class=""><strong>Checklist after TAM Analysis of Beachhead Market</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-805a-9206-d9556904cf7b" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d5-97ef-dbf3e3175070"><th id="qeSf" class="simple-table-header-color simple-table-header">Question</th><th id="o}T&lt;" class="simple-table-header-color simple-table-header">Yes</th><th id="a\`Y" class="simple-table-header-color simple-table-header">No</th><th id="l;bb" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804d-b355-c06f9fda29e7"><td id="qeSf" class="">Is the market big enough to be interesting?</td><td id="o}T&lt;" class="">Yes</td><td id="a\`Y" class=""></td><td id="l;bb" class="">Beachhead TAM anualizado (consenso) ≈ $1.84B MXN/año (rango $0.46B-$2.80B).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-802e-9ad3-f56ad4b92584"><td id="qeSf" class="">Is it reasonable in size for us to achieve meaningful word of mouth, meaning it is not too big?</td><td id="o}T&lt;" class="">Yes</td><td id="a\`Y" class=""></td><td id="l;bb" class="">El beachhead está restringido a clinic patients y regiones específicas; esto facilita adopción local y referencias.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-808d-978f-cca659f06551"><td id="qeSf" class="">Is it possible to get to cash flow positive in this market in a reasonable period of time?</td><td id="o}T&lt;" class="">Yes</td><td id="a\`Y" class=""></td><td id="l;bb" class="">Gross margin 63%-85% y adquisición por clínica/DMU; cash flow depende de CAC pero el margen bruto es favorable. (ASSUMPTION)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8098-a3c4-cbe55bdaae2f"><td id="qeSf" class="">Do I still feel good about this beachhead market as our initial market?</td><td id="o}T&lt;" class="">Yes</td><td id="a\`Y" class=""></td><td id="l;bb" class="">Es un problema de tolerabilidad con validación HRIPT (≥98%), lo cual suele acelerar conversión clínica.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-807e-8606-d42d6ba3f221" class=""><strong>Advanced Topics: Bottom-Up TAM Analysis Worksheet</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-802e-a0f2-f0abeb01e9b1" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e1-b7b8-c0a4b09efa33"><th id="?vKu" class="simple-table-header-color simple-table-header">Question</th><th id="@_GM" class="simple-table-header-color simple-table-header">User Entry</th><th id="Y`^]" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80da-8678-d142d9293964"><td id="?vKu" class="">What countable unit are you using for end user density?</td><td id="@_GM" class="">1 clínica dermocosmética activa (con pacientes recurrentes)</td><td id="Y`^]" class="">Unidad para densidad operativa en el canal. (ASSUMPTION)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a1-8af8-dd9777b1d428"><td id="?vKu" class="">Instance 1</td><td id="@_GM" class="">3 clínicas piloto (SLP/MTY)</td><td id="Y`^]" class="">Basado en Year 1: 3 clinic pilots.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8070-8c90-c6c3e23b0c96"><td id="?vKu" class="">Instance 2</td><td id="@_GM" class="">3 clínicas adicionales (expansión local)</td><td id="Y`^]" class="">Basado en Phase 2: onboard 3 clinics (usado como bucket de densidad). (ASSUMPTION)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8029-8887-f685aee0395a"><td id="?vKu" class="">Instance 3</td><td id="@_GM" class="">0 clínicas (conservador por falta de conteo explícito)</td><td id="Y`^]" class="">No se inventan clínicas extra más allá del pipeline descrito.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805a-917b-f51cd4401308"><td id="?vKu" class="">Who did you speak to in order to gather this info?</td><td id="@_GM" class="">(ASSUMPTION) contactos/pipeline preliminar en clínicas</td><td id="Y`^]" class="">El input no trae nombres/entrevistas; se asume mapeo operacional.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805c-bf76-ceb1f80e125d"><td id="?vKu" class=""># of end users</td><td id="@_GM" class="">2,300,000</td><td id="Y`^]" class="">Beachhead TAM provisto.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8025-8a8d-fa6651f77e7e"><td id="?vKu" class=""># of people in the countable unit</td><td id="@_GM" class="">6 clínicas</td><td id="Y`^]" class="">3 (Instance 1) + 3 (Instance 2) + 0 (Instance 3) = 6.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b5-b84e-e2f40b101c4e"><td id="?vKu" class="">Density ratio (# end users / # people in countable unit)</td><td id="@_GM" class="">383,333 end users/clínica</td><td id="Y`^]" class="">2,300,000 / 6 = 383,333.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80cf-9bb0-f5c3d2d5905a"><td id="?vKu" class="">How representative of the whole market do you believe this instance is?</td><td id="@_GM" class="">10% to 30% (ASSUMPTION—Sensitivity)</td><td id="Y`^]" class="">Representatividad por clínica no está cuantificada; se usa rango para reflejar incertidumbre.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8052-9be5-c2321d72af49"><td id="?vKu" class="">In this instance, what is your estimate of the annualized revenue per end user?</td><td id="@_GM" class="">$200-$1,218 MXN/año; consenso $800 MXN/año</td><td id="Y`^]" class="">Se mantiene consistente con IVa y el rango de triangulación.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b1-848f-d3939fd95c36"><td id="?vKu" class="">Based on the above table, what is a reasonable estimate of: End user density: ______</td><td id="@_GM" class="">383,333 end users/clínica (rango 230,000-575,000) (ASSUMPTION)</td><td id="Y`^]" class="">Rango por representatividad 10%-30% aplicada como factor de incertidumbre sobre densidad base.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f8-bc50-da12bf8a6bf0"><td id="?vKu" class="">Based on the above table, what is a reasonable estimate of: Annualized revenue per end user: ______</td><td id="@_GM" class="">$200-$1,218 MXN/año (consenso $800)</td><td id="Y`^]" class="">Alineado a IVa y a IId/Tables 1-3.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d9-bfab-e4fbae153bca"><td id="?vKu" class="">Based on the above table, what is a reasonable estimate of: Number of end users in the market: ______</td><td id="@_GM" class="">2,300,000</td><td id="Y`^]" class="">Coincide con beachhead provisto.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804b-a4b2-de98d9e96796"><td id="?vKu" class="">Based on the above table, what is a reasonable estimate of: TAM: ______</td><td id="@_GM" class="">$0.46B-$2.80B MXN/año; consenso $1.84B MXN/año</td><td id="Y`^]" class="">2.3M × (rango de revenue por usuario), usando consenso $800.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80f8-b608-f3ee0db94e71" class="">Reasonable estimate of End user density: 383,333 end users/clínica (rango 230,000-575,000) (ASSUMPTION)</p></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8081-99ea-d86f9a899137" class="">Annualized revenue per end user: $800 MXN/año (rango $200-$1,218) (ASSUMPTION)</p></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-809a-8c30-d15dd831b0ce" class="">Number of end users in the market: 2,300,000</p></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8043-9c54-e725668ca09e" class="">TAM: $1.84B MXN/año (Beachhead TAM, consenso)</p></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-808c-815c-fd01abe44c39" class=""><strong>Four additional factors to consider</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80e4-9e48-c9b2c521825e" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8017-b372-c571e589d0d6"><th id="~cWr" class="simple-table-header-color simple-table-header">Factor</th><th id="PADv" class="simple-table-header-color simple-table-header">Estimate</th><th id=":?J~" class="simple-table-header-color simple-table-header">Based on:</th><th id="wDJh" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8081-b171-c195c1956c64"><td id="~cWr" class="">Estimate of Range of Profitability for Your Product</td><td id="PADv" class="">63% to 85%</td><td id=":?J~" class="">“Gross margin: 63–85%”</td><td id="wDJh" class="">Margen bruto objetivo del producto DTC.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8054-890f-d4c724b021ba"><td id="~cWr" class="">Estimated CAGR (Compound Annual Growth Rate)</td><td id="PADv" class="">5% to 12% (ASSUMPTION)</td><td id=":?J~" class="">No provisto</td><td id="wDJh" class="">Crecimiento moderado del mercado premium/clean en LATAM (est.).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8081-925d-cdc56e17b209"><td id="~cWr" class="">Estimated Time to Achieve 20% Market Share</td><td id="PADv" class="">3 to 5 years (ASSUMPTION)</td><td id=":?J~" class="">Canal clínico + credibilidad</td><td id="wDJh" class="">Requiere expansión de clínicas activas y repetición.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ea-9954-e21a6c67592e"><td id="~cWr" class="">Anticipated Market Share Achieved if You are Reasonably Successful</td><td id="PADv" class="">1% to 5% in 3 years (ASSUMPTION)</td><td id=":?J~" class="">Year-1 0.01% + escalamiento</td><td id="wDJh" class="">Proyección coherente con segundo run y onboarding de clínicas.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-800a-9399-fbb7a181d32e" class=""><strong>Analysis Questions</strong></h2></div><div style="display:contents" dir="auto"><ol type="1" id="36ff554f-2b83-809b-b9f8-d555ce9565f6" class="numbered-list" start="1"><li>Comparing your top-down and bottom-up analyses, which do you believe has more credibility? Why?<div style="display:contents" dir="auto"><p id="36ff554f-2b83-80cb-8c77-e3edfd9bcc5f" class="">Tiene más credibilidad el Top-Down porque el conteo del beachhead (2.3M clinic patients) y la anualización base del revenue se derivan de tus supuestos/entradas del TAM. El Bottom-Up sirve como chequeo estructural, pero la densidad real por clínica y representatividad (10%-30%) es inherentemente supuestal.</p></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="36ff554f-2b83-802f-b503-c7bfa411a0c0" class="numbered-list" start="2"><li>If you blend the two estimations, what is your final TAM size? What factors would make the TAM lower than you calculated? What are the factors that would drive the TAM much higher?<div style="display:contents" dir="auto"><p id="36ff554f-2b83-8070-8cea-c82829c9fd56" class="">TAM final (Beachhead TAM, blended) = $1.84B MXN/año (consenso), con rango $0.46B-$2.80B. TAM sería menor si (a) la recompra efectiva se alarga (menos unidades/año), (b) IIc real es menor que el base 20% (más competencia/importados capturando presupuesto), o (c) la evidencia no convierte en repetición clínica dentro del primer año. TAM sería mucho mayor si (a) la recompra se acerca más a 60 días, aumentando unidades/año, (b) la adopción clínica reduce CAC y mejora retención (sube el IIc “capturable”), y (c) aumentan rápidamente las clínicas activas con adopción sostenida.</p></div></li></ol></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8094-ab6c-f6fcdc85a05b" class="">You can update your Startup Idea at <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>; here you can also update and store critical information (current beachhead, segmentation counts and sources, per-user revenue assumptions/ranges, comparables entered, consensus pick in IVa, and any overrides you’ve applied). Finally, you can use the chatbot at the top of this page to request changes to your results. Please use the button below to proceed to the next step.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

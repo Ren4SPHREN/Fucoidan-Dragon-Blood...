@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>STEP 14: FUNDRAISING</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="370f554f-2b83-809a-948d-f4eb39ad0154" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/cash_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>STEP 14: FUNDRAISING</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80ab-aa56-d87e4edc62c7"/></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8007-b686-f6b7f706a23a" class="">A continuación, organizo la información clave para tu estrategia de fundraising en un set de tablas: fuentes de dinero, hitos (negocio+técnico), mensajes de acercamiento, resumen ejecutivo, y un plan de prospección con inversionistas, intros y pipeline.</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-801d-ac4c-de2948e47fb5"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8039-9797-def114a1de58" class=""><strong>a) Sources of Funding (Fuentes de financiamiento)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8097-bf42-fbc1d2fa415e" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8077-8f49-e503ec2b1dfc"><th id="CR&gt;t" class="simple-table-header-color simple-table-header">Fuente</th><th id="Odb}" class="simple-table-header-color simple-table-header">Fit actual (0-5)</th><th id="`Kmn" class="simple-table-header-color simple-table-header">Fit futuro (0-5)</th><th id="fzi|" class="simple-table-header-color simple-table-header">Dilución vs. payback</th><th id="`}N]" class="simple-table-header-color simple-table-header">Requisitos típicos</th><th id="OfZ&gt;" class="simple-table-header-color simple-table-header">Implicación para tu plan (qué desbloquea)</th><th id="fp|o" class="simple-table-header-color simple-table-header">Ranking sugerido</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801a-81d5-cf370375b835"><td id="CR&gt;t" class=""><strong>SAFE / Convertible (Mar+Fund / Family / ángeles “smart”)</strong></td><td id="Odb}" class="">5</td><td id="`Kmn" class="">5</td><td id="fzi|" class=""><strong>Dilución diferida</strong> (no payback inmediato)</td><td id="`}N]" class="">Milestones, cap/discount, rapidez</td><td id="OfZ&gt;" class="">Ideal para <strong>T1–T3</strong>: lock spec/BOM, run 1 (1,000 u), lanzamiento DTC+pilotos</td><td id="fp|o" class="">1</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804e-8cea-fa21bc8797be"><td id="CR&gt;t" class=""><strong>Equity ángel (pre-seed/seed)</strong></td><td id="Odb}" class="">4</td><td id="`Kmn" class="">4</td><td id="fzi|" class=""><strong>Dilución inmediata</strong>; sin payback</td><td id="`}N]" class="">Valuación, tracción temprana</td><td id="OfZ&gt;" class="">Útil si encuentras ángeles con historial en <strong>health/dermocosmética</strong> o compliance</td><td id="fp|o" class="">2</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8097-89df-c9174352cad8"><td id="CR&gt;t" class=""><strong>Subsidios / programas no dilutivos (gobierno/academia/industria)</strong></td><td id="Odb}" class="">2</td><td id="`Kmn" class="">3</td><td id="fzi|" class=""><strong>No dilutivo</strong></td><td id="`}N]" class="">Documentación, tiempos, burocracia</td><td id="OfZ&gt;" class="">Apoya <strong>labeling/compliance/HRIPT</strong> pero suele ser lento vs. tu timeline</td><td id="fp|o" class="">3</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802b-92b5-d87595a86a6e"><td id="CR&gt;t" class=""><strong>Deuda (préstamo / factoring / crédito mercantil)</strong></td><td id="Odb}" class="">1</td><td id="`Kmn" class="">2</td><td id="fzi|" class=""><strong>Payback sí</strong>, intereses</td><td id="`}N]" class="">Historial, garantías, flujo de caja</td><td id="OfZ&gt;" class="">Solo tendría sentido <strong>cuando hay recompra clara</strong> y margen estable (p.ej. después de day 90 con ≥40%)</td><td id="fp|o" class="">6</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802c-b64b-c145f836da33"><td id="CR&gt;t" class=""><strong>Revenue-based financing (RBF)</strong></td><td id="Odb}" class="">1</td><td id="`Kmn" class="">3</td><td id="fzi|" class=""><strong>Payback por % de ingresos</strong></td><td id="`}N]" class="">Métricas de ventas, proyección</td><td id="OfZ&gt;" class="">Podría ser útil en <strong>Phase 3–4</strong>, cuando COCA/LTV están más confirmados</td><td id="fp|o" class="">5</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d0-b3cf-dffbb630484b"><td id="CR&gt;t" class=""><strong>Línea estratégica / partner corporate (co-inversión B2B)</strong></td><td id="Odb}" class="">2</td><td id="`Kmn" class="">4</td><td id="fzi|" class="">Dilución variable</td><td id="`}N]" class="">Acceso a canales, acuerdos de distribución</td><td id="OfZ&gt;" class="">Potencia <strong>Phase 4 B2B</strong> y reduce CAC si te conectan a clínicas/distribución</td><td id="fp|o" class="">4</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8009-a281-ebb5257d546e"><td id="CR&gt;t" class=""><strong>Crowdfunding (equity o reward)</strong></td><td id="Odb}" class="">2</td><td id="`Kmn" class="">2</td><td id="fzi|" class="">Reward: no dilutivo; Equity: dilutivo</td><td id="`}N]" class="">Story fuerte + logística de recompensas</td><td id="OfZ&gt;" class="">Puede validar demanda, pero compliance/claims en dermocosmética requiere cuidado</td><td id="fp|o" class="">7</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80c3-a2b8-d2028e37c216" class=""><strong>Lectura rápida:</strong> tu caso ya está diseñado por milestones (producción → estabilidad/QA → HRIPT → NOM-141 → piloto DTC/clinics → recompra). Eso favorece <strong>SAFE/convertibles</strong> como fuente principal y <strong>opcionalmente</strong> equity de ángeles para acelerar contactos de nicho (dermocosmética/CLINICS/LatAm health).</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-807f-8e49-fb13a610104a"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-802b-91da-e3cb56b02724" class=""><strong>b) Milestones (Negocio + técnicos vinculados a dinero)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8000-a55f-d63a9e7db7bd" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8054-b374-f67c5dc385c7"><th id="[P==" class="simple-table-header-color simple-table-header">Mes</th><th id="vvV;" class="simple-table-header-color simple-table-header">Presupuesto mensual (MXN) (estimado)</th><th id="ce=e" class="simple-table-header-color simple-table-header">Hito de negocio (qué vendes/validas)</th><th id="}N=b" class="simple-table-header-color simple-table-header">Dinero que desbloquea (MXN)</th><th id="J}_M" class="simple-table-header-color simple-table-header">Fuente recomendada</th><th id="uhg@" class="simple-table-header-color simple-table-header">Hito técnico (qué debes probar/entregar)</th><th id="&gt;NK}" class="simple-table-header-color simple-table-header">Correlación a valuación (pre-money, cualitativa)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c6-97d6-f652f9f28422"><td id="[P==" class="">1</td><td id="vvV;" class="">60k</td><td id="ce=e" class=""><strong>Espec + BOM cerrados</strong> con Biotech; HRIPT protocol activo; agendar 3 pilotos clinic</td><td id="}N=b" class="">1.0M (SAFE 1 trn.)</td><td id="J}_M" class="">SAFE/Familia/Mar+Fund</td><td id="uhg@" class="">Spec lock, BOM, pH 5.5, dossier HRIPT (30 sujetos)</td><td id="&gt;NK}" class="">Sube por “riesgo técnico→mitigado”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e7-8caa-c62ecf9f55ed"><td id="[P==" class="">2</td><td id="vvV;" class="">90k</td><td id="ce=e" class=""><strong>Pipeline de leads</strong> + landing live “evidence-lite”; 120 leads target by week 6</td><td id="}N=b" class="">0.8M (trn. parcial si hay avance)</td><td id="J}_M" class="">SAFE/ángeles estratégicos</td><td id="uhg@" class="">Avance de batch 1; prepare NOM-141 label template + compliance checklist</td><td id="&gt;NK}" class="">Sube por “operabilidad”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8077-83a9-e54b64c7525c"><td id="[P==" class="">3</td><td id="vvV;" class="">110k</td><td id="ce=e" class=""><strong>Pre-lanzamiento</strong>: 3 pilotos con trial agreements firmables; DTC setup (Tienda Nube, GA4, pixel)</td><td id="}N=b" class="">1.2M</td><td id="J}_M" class="">SAFE (trn. 2)</td><td id="uhg@" class="">Estabilidad (2 semanas) + QA/label readiness</td><td id="&gt;NK}" class="">Sube por “calidad + trazabilidad”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8048-99a8-fc8ba8f50121"><td id="[P==" class="">4</td><td id="vvV;" class="">140k</td><td id="ce=e" class=""><strong>Landing live</strong> + <strong>lanzamiento simultáneo</strong> (clinics pilotos + DTC)</td><td id="}N=b" class="">1.0M</td><td id="J}_M" class="">SAFE (trn. 3)</td><td id="uhg@" class="">HRIPT validado ≥98% tolerancia (30 sujetos) + batch release criterios</td><td id="&gt;NK}" class="">Sube por “validación clínica”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8031-866a-de4804e9d009"><td id="[P==" class="">5</td><td id="vvV;" class="">150k</td><td id="ce=e" class="">Tráfico/ads: A/B (250/300/350); objetivo: <strong>recompra inicial</strong></td><td id="}N=b" class="">0.6M</td><td id="J}_M" class="">SAFE/puentes + ángel</td><td id="uhg@" class="">Reporte HRIPT completo; packaging final; farmacovigilancia/procesos operativos</td><td id="&gt;NK}" class="">Sube por “señales de tracción”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b9-8e19-c8ca19e42b5f"><td id="[P==" class="">6</td><td id="vvV;" class="">160k</td><td id="ce=e" class="">Objetivo: <strong>≥40% reorder day 90</strong>; asegurar orden run 2 (2,000 u)</td><td id="}N=b" class="">1.4M</td><td id="J}_M" class="">SAFE (trn. 4)</td><td id="uhg@" class="">Preparar run 2: estabilidad + QA lote 2; logística consignment operando</td><td id="&gt;NK}" class="">Sube por “repetición + escalabilidad”</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-80e0-9993-f607076ba980" class="">Nota: los montos son consistentes con tu <strong>Ask/estructura de SAFE cap ~4M MXN</strong> y con tu cronograma (8 semanas para MVBP 1,000 u y day 90 para el gatillo de run 2). Ajusta números finos si tu model financiero trae un burn mensual diferente.</blockquote></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80e5-bb2c-cc93536c6e3a"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80dc-bec7-fada44ba90f1" class=""><strong>c) Teasers (One-liner, elevator pitch y bullets)</strong></h2></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-807e-aa38-d15d4aaf484e" class=""><strong>One-liner (1 línea)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8001-adb8-e2e0aba799f9" class=""><strong>Crema bioactiva para piel sensible (50g) con tolerancia verificada (HRIPT ≥98%) usando fucoidan + Croton lechleri, hecha en maquila BPF y lista con cumplimiento NOM/label para venta DTC y pilotos clínicos.</strong></p></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80a7-af30-d3d3b32fc1fd" class=""><strong>Elevator pitch (≈60–90s)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8002-9f72-cf6a2c3efa05" class="">“Estamos construyendo una marca de dermocosmética para piel sensible enfocada en <strong>rosácea y dermatitis</strong>, con una crema O/W de <strong>50g</strong> formulada para alta tolerabilidad. Nuestro diferenciador no es solo la bioactividad: contamos con <strong>HRIPT ≥98%</strong> validada en <strong>30 sujetos</strong> y manufactura bajo <strong>BPF (maquila certificada)</strong> con control de calidad (criterios de pH, apariencia y estabilidad). Lanzamos <strong>DTC en $300 MXN</strong> simultáneamente con <strong>pilotos clínicos</strong> en CDMX/MTY/GDL/SLP para convertir evidencia en recompra. El plan es pasar de una corrida inicial de <strong>1,000 unidades</strong> a <strong>run 2 (2,000 u)</strong> si alcanzamos <strong>≥40% reorder a day 90</strong>, y luego escalar a exportación y B2B.”</p></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80f1-b983-dbf002a44db3" class=""><strong>Bullet points (3–5) para inversores</strong></h3></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8083-9f71-f9636247965d" class="bulleted-list"><li style="list-style-type:disc"><strong>Evidencia de tolerancia:</strong> <strong>HRIPT ≥98% (30 sujetos)</strong>, objetivo de piel sensible.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80c5-8886-c0f2a7767214" class="bulleted-list"><li style="list-style-type:disc"><strong>Manufactura y compliance:</strong> <strong>maquila BPF/NOM-259</strong>, pH objetivo <strong>5.5</strong>, procesos y release criteria definidos.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-809c-a83c-d54284cf5227" class="bulleted-list"><li style="list-style-type:disc"><strong>Beachhead clínico claro:</strong> rosácea/dermatitis con pilotos listos para ensayo (CDMX/MTY/GDL/SLP).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80e1-8387-df6e73e8141e" class="bulleted-list"><li style="list-style-type:disc"><strong>Unit economics diseñados:</strong> margen proyectado <strong>65–85%</strong>, <strong>LTV ~$1,230 MXN</strong>, <strong>COCA $150–$400</strong>; breakeven en <strong>1,000 u</strong>.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80b4-998a-e968cbb050f1" class="bulleted-list"><li style="list-style-type:disc"><strong>Go-to-market inmediato y medible:</strong> landing live <strong>week 4</strong>, objetivo <strong>1,000 u ready week 8</strong>, reorder <strong>≥40% day 90</strong>, NPS <strong>≥60</strong>.</li></ul></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8037-9741-d63b0beaaea3" class=""><strong>Tailoring (cómo ajustarlo por contexto)</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-801e-9149-f8cbc89363f7" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f4-8e6c-e61e9e7e236d"><th id="qV^F" class="simple-table-header-color simple-table-header">Tipo de intro</th><th id="s;Vl" class="simple-table-header-color simple-table-header">Qué enfatizar</th><th id="ibjm" class="simple-table-header-color simple-table-header">Qué omitir</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cb-a027-c733f7217da4"><td id="qV^F" class="">Ángles/SAFE rápidos</td><td id="s;Vl" class="">hitos, HRIPT ya en ruta, run 1 listo en 8 semanas</td><td id="ibjm" class="">detalles demasiado regulatorios</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8044-9f0d-d2c04209b23e"><td id="qV^F" class="">Inversionista con thesis health/compliance</td><td id="s;Vl" class="">HRIPT + NOM-141 + BPF + farmacovigilancia</td><td id="ibjm" class="">solo narrativa de marketing</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806a-9f71-c2f44c607b70"><td id="qV^F" class="">Inversionista DTC/ecommerce</td><td id="s;Vl" class="">LTV/COCA, CVR, NPS, repetición</td><td id="ibjm" class="">laboratorio/claims clínicos extensos</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8012-86d5-f2fa4e32fa71"/></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

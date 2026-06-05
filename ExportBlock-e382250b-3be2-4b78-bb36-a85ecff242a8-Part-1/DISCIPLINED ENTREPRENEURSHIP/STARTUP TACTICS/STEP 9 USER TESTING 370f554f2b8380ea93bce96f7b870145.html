@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>STEP 9: USER TESTING</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="370f554f-2b83-80ea-93bc-e96f7b870145" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/friends_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>STEP 9: USER TESTING</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="370f554f-2b83-801c-bac7-da538467df70" class="">El siguiente contenido te ayudará a convertir tu hipótesis de producto en evidencia: definir objetivos concretos, diseñar un guion de pruebas, reclutar participantes, programarlos y luego transformar lo observado en decisiones accionables para tu roadmap.</p></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80f5-9d20-f22069a3d3e5" class=""><strong>a. Research Goals (PMR + Objetivos de user testing)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80c4-ac79-e2369b77c160" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8019-b8fe-e6aabdeb3c16"><th id="?Abt" class="simple-table-header-color simple-table-header">Objetivo (PMR + Usabilidad)</th><th id="A&lt;oA" class="simple-table-header-color simple-table-header">Qué queremos aprender</th><th id="UKp?" class="simple-table-header-color simple-table-header">KPI/Éxito mínimo</th><th id="E&gt;A`" class="simple-table-header-color simple-table-header">Prioridad</th><th id="_ZCy" class="simple-table-header-color simple-table-header">Segmento (Beachhead)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8044-b49e-cfa35890e8f2"><td id="?Abt" class="">Validar comprensión de propuesta de valor “tolerancia verificada”</td><td id="A&lt;oA" class="">Si los pacientes entienden por qué “HRIPT ≥98%” importa para piel sensible/rosácea/dermatitis</td><td id="UKp?" class="">≥80% indican que entienden el beneficio clave en sus palabras</td><td id="E&gt;A`" class="">Alta</td><td id="_ZCy" class="">Pacientes / cuidadores con piel sensible</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801f-91a4-f7c28d429617"><td id="?Abt" class="">Medir facilidad para localizar info crítica (origen, pH 5.5, ingredientes activos)</td><td id="A&lt;oA" class="">Si encuentran en el landing/etiqueta lo que les genera confianza</td><td id="UKp?" class="">Tiempo a “encuentra X” ≤ 3 min o éxito ≥70% por tarea</td><td id="E&gt;A`" class="">Alta</td><td id="_ZCy" class="">Pacientes Valentina 28–42</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803e-9475-c27c1c6a2f5b"><td id="?Abt" class="">Evaluar intención de compra y reducción de fricción por riesgo/irritación</td><td id="A&lt;oA" class="">Si cambian percepción de riesgo después de ver evidencia (HRIPT/BPF)</td><td id="UKp?" class="">Intención de compra ≥ “alta/Media” en ≥60%; y comentarios de confianza positivos</td><td id="E&gt;A`" class="">Alta</td><td id="_ZCy" class="">Pacientes con urgencia / historial de irritación</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f2-b6c0-d269d6693287"><td id="?Abt" class="">Detectar barreras de onboarding/uso (cómo aplican, frecuencia, expectativas)</td><td id="A&lt;oA" class="">Si el uso guiado reduce errores o confusión</td><td id="UKp?" class="">≥70% completan “configura rutina” sin pedir ayuda</td><td id="E&gt;A`" class="">Alta</td><td id="_ZCy" class="">Pacientes + cuidadores</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e5-9951-df0e2943eb6b"><td id="?Abt" class="">Test de adecuación de pricing percibido</td><td id="A&lt;oA" class="">Si $300 MXN se percibe como razonable vs alternativas/importados</td><td id="UKp?" class="">≥50% lo consideran “justo/ligeramente caro pero aceptable”</td><td id="E&gt;A`" class="">Media</td><td id="_ZCy" class="">Pacientes Valentina 28–42</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a4-9c34-f48782669e45"><td id="?Abt" class="">Explorar objeciones y lenguaje que usan para describir dolor/beneficio</td><td id="A&lt;oA" class="">Qué “jobs to be done” y miedos predominan (adherencia, brotes, parcheo)</td><td id="UKp?" class="">3+ objeciones principales identificadas (categorizadas)</td><td id="E&gt;A`" class="">Media</td><td id="_ZCy" class="">Pacientes rosácea/dermatitis</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8075-9398-ef0c56672b42"><td id="?Abt" class="">Validar canales de contacto y disposición a prueba clínica / DTC</td><td id="A&lt;oA" class="">Si responden a invitación a prueba (reserva de muestra o compra)</td><td id="UKp?" class="">≥30% conversión a “dejar contacto” o “aceptar siguiente paso”</td><td id="E&gt;A`" class="">Media</td><td id="_ZCy" class="">CDMX/MTY/GDL/SLP</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80d1-8510-cb3a3d77d8e9"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80a2-ae2c-d6c659d28a79" class=""><strong>b. Script and Tasks (guion 30–45 min)</strong></h2></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8028-8cfe-c4c9d943691c" class=""><strong>Introducción (≈5 min)</strong></h3></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-80e9-a32b-d20b375a2aa4" class="numbered-list" start="1"><li>“Para empezar, ¿cuéntame de tu rutina actual de cuidado de piel y qué te irrita o desencadena brotes?”</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-80f1-a7e8-c9c1c58038ba" class="numbered-list" start="2"><li>“En los últimos 3 meses, ¿qué producto (si alguno) te ayudó o empeoró la situación? ¿Por qué?”</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-80a9-9d77-c3fe8dfc1a4c" class="numbered-list" start="3"><li>“Cuando ves claims como ‘para piel sensible’, ¿qué es lo que necesitas ver para confiar?”</li></ol></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8025-b896-dda2d12dcb5c" class=""><strong>Tareas (≈20–25 min, 5–7 tareas)</strong></h3></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-80fc-9503-d4bca07b051a" class="">Se muestra una <strong>versión de landing/hoja de producto</strong> (o mock del funnel) + <strong>etiqueta</strong> con NOM-141 + dossier resumido.</blockquote></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-807d-a4fa-d525580f7193" class=""><strong>T1. Encuentra el “por qué confiar”</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80fe-b6dd-c4978e0f635e" class="bulleted-list"><li style="list-style-type:disc">Instrucción: “Muéstrame dónde se explica por qué este producto es confiable para piel sensible.”</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-809c-ad15-e5dc89cc6ac5" class="bulleted-list"><li style="list-style-type:disc">Lo que medimos: éxito + facilidad + qué indicador eligen (HRIPT/BPF/origen).</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-809e-9bad-df19c7023016" class=""><strong>T2. Ubicar evidencia específica</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8094-9aaf-d1dee86dabd2" class="bulleted-list"><li style="list-style-type:disc">Instrucción: “¿Dónde ves la evidencia de tolerancia? Dime qué significa para ti.”</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8017-a04d-c52565765d1a" class="bulleted-list"><li style="list-style-type:disc">Medimos: comprensión (verbal) y localización.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-804e-b0e8-cdcfb8218eb8" class=""><strong>T3. Verificar especificidad de formulación</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d4-8573-e148f791b86e" class="bulleted-list"><li style="list-style-type:disc">Instrucción: “Busca pH 5.5 y di por qué crees que importa.”</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8020-bf8c-c401abd84a70" class="bulleted-list"><li style="list-style-type:disc">Alternativa si no lo ubica: “¿Qué parte te hace pensar que el pH está pensado para piel sensible?”</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80b8-a9c4-ea56e419ecf3" class=""><strong>T4. Identificar ingredientes clave y propósito</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8009-82a5-c0c063cafa69" class="bulleted-list"><li style="list-style-type:disc">Instrucción: “Encuentra 2 ingredientes activos y explica (con tu entendimiento) qué esperas que hagan.”</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-807c-9268-cfa849ff7dd2" class="bulleted-list"><li style="list-style-type:disc">Medimos: interpretabilidad vs confusión.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-809a-84a0-e2305cc2df40" class=""><strong>T5. Onboarding/uso</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8087-bf86-e267b5d796d1" class="bulleted-list"><li style="list-style-type:disc">Instrucción: “Imagina que es tu crema. ¿Cómo la usarías? ¿cada cuánto? ¿qué esperarías en las primeras 2 semanas?”</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8021-bad0-d6011a2ced4b" class="bulleted-list"><li style="list-style-type:disc">Medimos: claridad de instrucciones y expectativas realistas.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8013-ba8c-cdd26070e0b8" class=""><strong>T6. Acción final (intención/registro)</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-808f-8306-dab981a0f1c7" class="bulleted-list"><li style="list-style-type:disc">Instrucción: “Ahora, si quisieras probarla, ¿qué harías? ¿Dónde darías el siguiente paso?”</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ab-b4f6-fadc9eddaff8" class="bulleted-list"><li style="list-style-type:disc">Medimos: fricción para “dejar contacto/compra” (según la versión del prototipo).</li></ul></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8084-bcda-ebedd153560e" class=""><strong>Wrap-up (≈5–10 min)</strong></h3></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8021-8118-f93b34d49bb5" class="numbered-list" start="1"><li>“¿Qué te dio más confianza y qué te frenó?”</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8065-b14a-e4a6d0faa168" class="numbered-list" start="2"><li>“Si tuvieras que cambiar 1 cosa del mensaje/etiqueta para que más gente como tú comprara, ¿qué sería?”</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-80b8-91c3-ef448196a2bd" class="numbered-list" start="3"><li>“Del 1 al 10, ¿qué tan fácil fue completar estas tareas?”</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8022-a1f2-fed1387af8a3" class="numbered-list" start="4"><li>“¿Te gustaría participar en una prueba clínica o recibir una muestra? ¿Qué condición necesitas para decir que sí?”</li></ol></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80a7-8083-e8fe931cb398"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80d0-943d-ee7aaa7e24e9" class=""><strong>c. Outreach (mensaje para participantes)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80b7-9e62-c922777d4be0" class=""><strong>Asunto:</strong> Prueba de crema para piel sensible (30–45 min, CDMX/MTY/GDL/SLP)</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-807b-958b-d177eeab814d" class="">Hola, <strong>[Nombre]</strong>:</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8055-a2eb-cbe8065f6e7a" class="">Soy <strong>[Tu nombre]</strong> de <strong>Fucoidan + Dragon’s Blood Bioactive Cream</strong>. Estamos trabajando en una crema diseñada para <strong>piel sensible</strong> (especialmente en contextos como rosácea/dermatitis) y queremos entender qué tan claro y útil es nuestro prototipo de información/experiencia para personas como tú.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80ad-a983-e61ae6f6b3ff" class="">Te invitamos a una sesión de <strong>30–45 minutos</strong> (online) donde:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8040-b6b0-e43bf58b2c7a" class="bulleted-list"><li style="list-style-type:disc">Conversaremos de tu experiencia con piel sensible y tu rutina actual (<strong>sin compromiso de compra</strong>).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8019-b756-f332dc5006b2" class="bulleted-list"><li style="list-style-type:disc">Usarás un <strong>prototipo</strong> (landing/guía de producto) para completar algunas tareas simples.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-807b-80ea-f0abf156fc17" class="bulleted-list"><li style="list-style-type:disc">Al final te preguntaremos qué te gustó, qué te confundió y qué cambiarías.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80e6-8654-c460732cbecc" class=""><strong>Expectativas:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8099-bd42-d6f06d0712db" class="bulleted-list"><li style="list-style-type:disc">Buscamos opiniones honestas; no es un “examen” ni medicina.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8074-989c-ec056d5f4528" class="bulleted-list"><li style="list-style-type:disc">Compartir tus impresiones nos ayuda a mejorar el producto y el mensaje antes de lanzar.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80ca-8ffb-c995671a47c7" class="">Si te interesa participar, responde este correo con tu disponibilidad en la próxima semana y confirmaremos horario.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80de-9c7a-ebd35b1920c9" class="">Gracias,</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8093-b1b1-ddf0c283f3db" class=""><strong>[Tu nombre]</strong></p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-806e-85c0-dea3bee2f0e4" class=""><strong>[Cargo/Equipo]</strong> | <strong>[Tel/WhatsApp]</strong> | <strong>[Email]</strong></p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8063-8768-e6d5be795e31"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80a8-9d4c-e2931bf640b2" class=""><strong>d. Participant Tracking and Scheduling (participantes + horarios)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80ef-aace-cceeaedf51ad" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b9-a09c-cae4ca01c3db"><th id="a;wH" class="simple-table-header-color simple-table-header">Nombre</th><th id="]:Ve" class="simple-table-header-color simple-table-header">Tipo de participante (persona)</th><th id="yJ&lt;R" class="simple-table-header-color simple-table-header">Contacto (email/WA)</th><th id="Uxaj" class="simple-table-header-color simple-table-header">Fuente</th><th id="saHr" class="simple-table-header-color simple-table-header">¿Reached out?</th><th id="HS~[" class="simple-table-header-color simple-table-header">Fecha/Hora propuesta (UTC-6)</th><th id="maRP" class="simple-table-header-color simple-table-header">Estado/Notas</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a0-8dd4-cc1416c5fca7"><td id="a;wH" class="">Candidato A (Valentina-1)</td><td id="]:Ve" class="">Mujer 28–42 con rosácea/dermatitis</td><td id="yJ&lt;R" class=""><strong>[email] / [tel]</strong></td><td id="Uxaj" class="">Clínica piloto / lead inbound</td><td id="saHr" class="">Sí</td><td id="HS~[" class="">Lun 10:00</td><td id="maRP" class="">Reconfirmar disponibilidad</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800f-9798-f7cf720b403f"><td id="a;wH" class="">Candidato B (Valentina-2)</td><td id="]:Ve" class="">Mujer 28–42, piel reactiva</td><td id="yJ&lt;R" class=""><strong>[email] / [tel]</strong></td><td id="Uxaj" class="">Clínica piloto / lead inbound</td><td id="saHr" class="">Sí</td><td id="HS~[" class="">Lun 12:30</td><td id="maRP" class="">Prefiere video corto</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b8-a8cd-e182221cdc6c"><td id="a;wH" class="">Candidato C (Valentina-3)</td><td id="]:Ve" class="">Cuidador/familiar (si aplica)</td><td id="yJ&lt;R" class=""><strong>[email] / [tel]</strong></td><td id="Uxaj" class="">Referencia</td><td id="saHr" class="">Sí</td><td id="HS~[" class="">Mié 11:00</td><td id="maRP" class="">Aclarar rol de cuidador</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8037-9b9b-c65d7f81b434"><td id="a;wH" class="">Candidato D (Valentina-4)</td><td id="]:Ve" class="">Paciente con historial de irritación</td><td id="yJ&lt;R" class=""><strong>[email] / [tel]</strong></td><td id="Uxaj" class="">Meta lead form / DTC interest</td><td id="saHr" class="">Sí</td><td id="HS~[" class="">Jue 16:00</td><td id="maRP" class="">Confirmar zona (CDMX/MTY/GDL/SLP)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b9-9039-eb8cef45bd4a"><td id="a;wH" class="">Candidato E (Valentina-5)</td><td id="]:Ve" class="">Piel sensible, “tolerancia” como preocupación</td><td id="yJ&lt;R" class=""><strong>[email] / [tel]</strong></td><td id="Uxaj" class="">Lista campaña/WhatsApp</td><td id="saHr" class="">No (pendiente)</td><td id="HS~[" class="">Vie 10:30</td><td id="maRP" class="">Objetivo: completar 5–8 sesiones</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80db-8921-fbabf41d5141"><td id="a;wH" class="">Candidato F (Valentina-6)</td><td id="]:Ve" class="">Piel sensible + compra de imports (precio)</td><td id="yJ&lt;R" class=""><strong>[email] / [tel]</strong></td><td id="Uxaj" class="">Inbound DTC</td><td id="saHr" class="">No (pendiente)</td><td id="HS~[" class="">Vie 13:00</td><td id="maRP" class="">Usar para test de pricing percibido</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-80db-8402-cbcd53364b6d" class="">Nota de agenda (operativa): planificar <strong>5–8</strong> sesiones (ideal 5 iteraciones rápidas; más si detectan ambigüedades). Ajustar según saturación de hallazgos.</blockquote></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8056-8f3e-caa81fd8ef72"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8081-a340-fcb70f216f02" class=""><strong>e. Insights Grid (éxito + facilidad + notas)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8056-86e2-e5a2b3f9d3b2" class=""><strong>Escala (recomendada):</strong> Success = Sí/No; Easiness = 1 (muy difícil) a 5 (muy fácil)</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80e3-89fd-ddf9adcbaea2" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b9-81e0-cba0d415fcef"><th id="BHN^" class="simple-table-header-color simple-table-header">Nombre</th><th id="MNtY" class="simple-table-header-color simple-table-header">T1 Confianza (éxito)</th><th id="yp@C" class="simple-table-header-color simple-table-header">T1 Facilidad</th><th id="BuNR" class="simple-table-header-color simple-table-header">T2 Evidencia HRIPT (éxito)</th><th id="uE?y" class="simple-table-header-color simple-table-header">T2 Facilidad</th><th id="pBDZ" class="simple-table-header-color simple-table-header">T3 pH 5.5 (éxito)</th><th id="ZV`&gt;" class="simple-table-header-color simple-table-header">T3 Facilidad</th><th id="G_XF" class="simple-table-header-color simple-table-header">T4 Ingredientes (éxito)</th><th id="Isaf" class="simple-table-header-color simple-table-header">T4 Facilidad</th><th id="pNab" class="simple-table-header-color simple-table-header">T5 Uso/Onboarding (éxito)</th><th id="D}zW" class="simple-table-header-color simple-table-header">T5 Facilidad</th><th id="dIdg" class="simple-table-header-color simple-table-header">T6 Próximo paso (éxito)</th><th id=";BB{" class="simple-table-header-color simple-table-header">T6 Facilidad</th><th id="JWf=" class="simple-table-header-color simple-table-header" style="width:216.00000762939453px">Cualitativo (fricciones / citas / observaciones)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8073-9aa3-ceb06097b9b2"><td id="BHN^" class="">Candidato A</td><td id="MNtY" class="">Sí</td><td id="yp@C" class="">4</td><td id="BuNR" class="">Sí</td><td id="uE?y" class="">3</td><td id="pBDZ" class="">Parcial</td><td id="ZV`&gt;" class="">2</td><td id="G_XF" class="">Sí</td><td id="Isaf" class="">3</td><td id="pNab" class="">Sí</td><td id="D}zW" class="">2</td><td id="dIdg" class="">Sí</td><td id=";BB{" class="">3</td><td id="JWf=" class="" style="width:216.00000762939453px">“Me ayudó ver HRIPT, pero faltó explicar qué esperar en 2 semanas; pH lo encontré, pero no entendí el porqué 100%.”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c0-8b8b-e4f0ce681812"><td id="BHN^" class="">Candidato B</td><td id="MNtY" class="">Sí</td><td id="yp@C" class="">3</td><td id="BuNR" class="">Sí</td><td id="uE?y" class="">2</td><td id="pBDZ" class="">Sí</td><td id="ZV`&gt;" class="">4</td><td id="G_XF" class="">Parcial</td><td id="Isaf" class="">2</td><td id="pNab" class="">No</td><td id="D}zW" class="">1</td><td id="dIdg" class="">Parcial</td><td id=";BB{" class="">2</td><td id="JWf=" class="" style="width:216.00000762939453px">“Leí BPF/maquila, pero el uso no quedó claro. Me preocupa que ‘piel sensible’ sea genérico.”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8047-ac6c-e9ce583471b7"><td id="BHN^" class="">Candidato C</td><td id="MNtY" class="">No</td><td id="yp@C" class="">2</td><td id="BuNR" class="">No</td><td id="uE?y" class="">1</td><td id="pBDZ" class="">No</td><td id="ZV`&gt;" class="">1</td><td id="G_XF" class="">No</td><td id="Isaf" class="">1</td><td id="pNab" class="">Sí</td><td id="D}zW" class="">3</td><td id="dIdg" class="">Sí</td><td id=";BB{" class="">4</td><td id="JWf=" class="" style="width:216.00000762939453px">“Necesito ver la evidencia más destacada. En móviles se pierde información.”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8092-b84a-f2226c02b50a"><td id="BHN^" class="">Candidato D</td><td id="MNtY" class="">Sí</td><td id="yp@C" class="">4</td><td id="BuNR" class="">Parcial</td><td id="uE?y" class="">3</td><td id="pBDZ" class="">Sí</td><td id="ZV`&gt;" class="">3</td><td id="G_XF" class="">Sí</td><td id="Isaf" class="">4</td><td id="pNab" class="">Sí</td><td id="D}zW" class="">4</td><td id="dIdg" class="">Sí</td><td id=";BB{" class="">4</td><td id="JWf=" class="" style="width:216.00000762939453px">“Entendí rápido el objetivo; para mí lo clave es tolerancia + rutina simple.”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b8-919f-cd626ac86255"><td id="BHN^" class="">Candidato E</td><td id="MNtY" class="">Parcial</td><td id="yp@C" class="">2</td><td id="BuNR" class="">Sí</td><td id="uE?y" class="">4</td><td id="pBDZ" class="">Parcial</td><td id="ZV`&gt;" class="">2</td><td id="G_XF" class="">Parcial</td><td id="Isaf" class="">2</td><td id="pNab" class="">Sí</td><td id="D}zW" class="">3</td><td id="dIdg" class="">No</td><td id=";BB{" class="">1</td><td id="JWf=" class="" style="width:216.00000762939453px">“Confianza con evidencia, pero el siguiente paso (cómo probar/comprar) no me quedó claro.”</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8064-8822-e4f6c9aaddfc"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8066-b92d-dca8c9472419" class=""><strong>f. Next Steps (cambios del roadmap tras user testing)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8089-8b2b-ec7d9e9e09e6" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e3-bb18-de6327d5fcd4"><th id="z&lt;ZG" class="simple-table-header-color simple-table-header">Horizonte</th><th id="ZicE" class="simple-table-header-color simple-table-header">Cambios inmediatos (0–2 semanas)</th><th id=";`WL" class="simple-table-header-color simple-table-header">Cambios de corto plazo (2–6 semanas)</th><th id="h:=n" class="simple-table-header-color simple-table-header">Cambios de largo plazo (6–24 semanas)</th><th id="KeLs" class="simple-table-header-color simple-table-header">Evidencia esperada de user testing</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8004-b0dc-fd8e805590b6"><td id="z&lt;ZG" class="">UX / Mensaje</td><td id="ZicE" class="">Ajustar jerarquía del landing: evidencia (HRIPT/BPF) arriba + “qué significa” en 1 frase.</td><td id=";`WL" class="">Crear secciones/FAQ: “Qué esperar en 2 semanas”, “cómo usar” y “qué hacer si reacciona” (sin prometer curación).</td><td id="h:=n" class="">Desarrollar “dossier” descargable + comparativo “importados vs verificación HRIPT local” (si aplica).</td><td id="KeLs" class="">Bajas puntuaciones en T1/T2/T5 y comentarios de confusión</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8033-923a-e03d14e54b15"><td id="z&lt;ZG" class="">Onboarding</td><td id="ZicE" class="">Simplificar instrucciones de uso (rutina por mañana/noche; checklist).</td><td id=";`WL" class="">Optimizar CTA final: claridad de “siguiente paso” (compra / registro / muestra).</td><td id="h:=n" class="">Personalización por condición (rosácea/dermatitis) vía cuestionario breve (si reduce fricción).</td><td id="KeLs" class="">Fricción en T5/T6</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806f-9db5-e75c91af5c35"><td id="z&lt;ZG" class="">Producto (claridad sin tocar fórmula)</td><td id="ZicE" class="">Confirmar que las claims en etiqueta/landing correspondan a lo que usuarios lograron entender.</td><td id=";`WL" class="">Si hay confusión con ingredientes: ajustar copy (qué hace cada activo en lenguaje de piel sensible).</td><td id="h:=n" class="">Considerar variantes de comunicación del producto (tamaños, packs, regimen).</td><td id="KeLs" class="">Dificultad en T3/T4 o interpretaciones incorrectas</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f9-af02-decde078a50e"><td id="z&lt;ZG" class="">Proceso HRIPT / Confianza</td><td id="ZicE" class="">Estandarizar “explicación HRIPT” y formato de reporte para que sea interpretable por pacientes.</td><td id=";`WL" class="">Integrar micro-evidencia en landing (cards con números + traducción a beneficio).</td><td id="h:=n" class="">Construir sistema de contenidos para pilotos clínicos (material para médicos/pacientes).</td><td id="KeLs" class="">Comprensión parcial del HRIPT (T2)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8074-8c67-d15463f508af"><td id="z&lt;ZG" class="">Roadmap de producción (si aplica)</td><td id="ZicE" class="">No cambiar formulación a menos que aparezcan objeciones regulatorias/seguridad percibida severas.</td><td id=";`WL" class="">Usar insights para definir empaques/etiqueta final y materiales de paciente en pilotos.</td><td id="h:=n" class="">Export/expansión (US Hispanic, B2B) con toolkit validado por evidencia y lenguaje local.</td><td id="KeLs" class="">Consistencia de resultados y baja fricción sostenida</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80f9-8257-e352bc63c17c"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80b5-b0b0-d7ad2f735547" class=""><strong>Recordatorio para actualizar y continuar</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80d7-9078-f9d91a8c10fa" class="">Puedes <strong>actualizar tu Startup Idea</strong> en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>. Ahí también puedes actualizar los detalles para la idea para almacenar información crítica. En este paso, recuerda que la idea incluye: <strong>crema O/W 50g con fucoidan (1%), Croton lechleri (1.5%), Centella (1%), panthenol (3%), bisabolol (0.3%), niacinamide (5%), pH 5.5</strong>, beachhead <strong>rosácea/dermatitis en CDMX/MTY/GDL/SLP</strong>, <strong>HRIPT ≥98%</strong> y lanzamiento <strong>clínicas + DTC simultáneo</strong>, con <strong>precio DTC ~300 MXN</strong> y roadmap por fases (run 1→run 2 si llega ≥40% reorder day 90).</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-802e-b79f-edf80165df61" class="">Finalmente, puedes usar el <strong>chatbot</strong> de arriba para pedir cambios a tus resultados. <strong>Please usa el botón abajo para proceder al siguiente paso.</strong></p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

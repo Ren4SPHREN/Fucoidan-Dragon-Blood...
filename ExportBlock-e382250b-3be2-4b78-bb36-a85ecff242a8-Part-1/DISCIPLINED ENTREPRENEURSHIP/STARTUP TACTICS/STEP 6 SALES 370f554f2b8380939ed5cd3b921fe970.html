@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>STEP 6: SALES</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="370f554f-2b83-8093-9ed5-cd3b921fe970" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/cash_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>STEP 6: SALES</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="370f554f-2b83-80e0-82f1-cc2df4e6d8f2" class="">A continuación aterrizamos cómo definir perfiles y pruebas, cómo conseguir y organizar contactos, y cómo construir una salida (outreach) medible con contenido y herramientas, para validar demanda temprano.</p></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80e5-af13-c6e5560a4d8f" class=""><strong>1) Targets (Objetivos / Segmentos / Experimentos)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80a7-9fa3-f0630a251a8d" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8007-bfab-edea3c697438"><th id="HuDd" class="simple-table-header-color simple-table-header">Sección</th><th id="bXrq" class="simple-table-header-color simple-table-header">Contenido sugerido (para completar tu workbook)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8066-85c5-c84a5f54d5bf"><td id="HuDd" class="">Beachhead (enfoque)</td><td id="bXrq" class=""><strong>Clínicas en CDMX, MTY, GDL y SLP</strong> enfocadas en <strong>rosácea / dermatitis / piel sensible</strong>. Objetivo: <strong>pilotos clínicos</strong> + aprendizaje de su lenguaje de dolor y objeciones para mejorar DTC simultáneo.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802b-bb82-c3d42f2f5121"><td id="HuDd" class="">1–3 segmentos de end users (para outreach y experimentos)</td><td id="bXrq" class=""><strong>Segmento A (Decisor clínico / piloto):</strong> Dermatólogo(a) o Médico(a) responsable del consultorio / director(a) médico(a). \n<strong>Segmento B (Referidor clínico):</strong> Coordinador(a) de consultorio, enfermería avanzada o responsable de protocolos/observación (según estructura de la clínica). \n<strong>Segmento C (DTC “tolerancia primero”):</strong> Pacientes <strong>Valentina 28–42</strong> con historial de irritación/dermatitis/rosácea (para experimentos de contenido vía leads inbound + formularios de clínica/captura, no necesariamente outbound directo a “pacientes”).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bd-b460-ca1e10dc3550"><td id="HuDd" class="">Enfoque de experimentos (¿uno o varios perfiles?)</td><td id="bXrq" class=""><strong>Empieza con 2 frentes y 2 tests:</strong> (1) <strong>A vs B</strong> para clínicas: ¿quién responde mejor a la propuesta de piloto? (2) En DTC, test de landing: <strong>Evidencia “HRIPT≥98% + BPF maquila + pH 5.5” vs versión “lite” educativa</strong>.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d8-9540-c1110d0545d3"><td id="HuDd" class="">Cómo abordar experimentos con estos perfiles</td><td id="bXrq" class=""><strong>Clinicas (A/B):</strong> outreach con la misma propuesta cuantificada, pero el <strong>“ask” cambia</strong>: \n- A: “¿Podemos agendar 15 min para proponer protocolo de 30 días + entrega de muestra y reporte médico?” \n- B: “¿Con quién revisamos protocolos/seguimiento de pacientes y cómo reportan observaciones?” \n<strong>DTC (C):</strong> usar leads que lleguen desde clínica/pauta/landing, y medir CVR + tasa de compra + %reorden day 45–60.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8099-aa4e-e129162f2f98"><td id="HuDd" class="">Forward Plans: identificar otros individuos/targets</td><td id="bXrq" class="">1) Si A responde poco: expandir a <strong>subespecialistas</strong> (dermato-cosmética, piel sensible) y <strong>clínicas con programas de dermatitis</strong>. 2) Si B responde mejor: crear lista extendida con <strong>enlaces clínicos/monitores</strong> similares (coordinación de investigación o protocolos). 3) Si la geografía no responde igual: duplicar lista por ciudad y ajustar enfoque (urgencia vs rutina).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805e-ab89-e06abeb7ed48"><td id="HuDd" class="">Forward Plans: qué información querrías de cada individuo</td><td id="bXrq" class="">- Nombre + rol exacto (decisor vs referidor) \n- Especialidad / enfoque (rosácea, dermatitis, piel sensible) \n- Tamaño de práctica (aprox. pacientes/mes) \n- Proceso: ¿hacen protocolos de 30 días? ¿consentimiento? \n- Lenguaje de objeciones (p. ej., “sin HRIPT”, “origen”, “irritación”, “precio”) \n- Preferencias de comunicación (email/WhatsApp/teléfono si aplica) \n- Referencias/credenciales que puedas mencionar (solo si es público).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8031-a785-cecc42dfcbb6"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80bc-896b-c0d8ca082d43" class=""><strong>2) Data Collection (Recolección de datos / presupuesto / método)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80d0-9f51-e5c717b8f033" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8037-990c-d3c233595593"><th id="&gt;n^`" class="simple-table-header-color simple-table-header">Sección</th><th id="vXWT" class="simple-table-header-color simple-table-header">Contenido sugerido (para completar tu workbook)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e1-b46c-f618252fcd42"><td id="&gt;n^`" class="">Métodos para obtener contactos</td><td id="vXWT" class=""><strong>Fuentes primarias/rápidas (clinicas):</strong> \n1) Directorios públicos + webs de clínicas (CDMX/MTY/GDL/SLP). \n2) LinkedIn (búsqueda por cargo: “Dermatólogo”, “Directora médica”, “Coordinación clínica”). \n3) Google Maps + websites (para email institucional si existe). \n4) Contactos por “pilotos”: cuando una clínica acepte, pedir <strong>introducciones</strong> a 2–3 médicos/protocol coordinators similares.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8081-9c14-e2e7b5c05287"><td id="&gt;n^`" class="">Tools online para crear lead list desde bases de contactos (pros/cons)</td><td id="vXWT" class=""><strong>Opciones (para evaluar):</strong> \n- <strong>Clearbit:</strong> datos de empresas y enriquecimiento; puede ayudar si tienes dominio/empresa. <em>Pros:</em> buen enriquecimiento. <em>Contras:</em> costo y límites. \n- <strong>Hunter.io:</strong> encuentra emails de dominios. <em>Pros:</em> rápido para emails. <em>Contras:</em> no siempre hay celular; verificación variable. \n- <strong>Seamless.ai:</strong> base + enrichment. <em>Pros:</em> cobertura; <em>Contras:</em> planes/costo; calidad variable por nicho. \n- <strong>Cognism/Apollo/Reply (más orientados a sales):</strong> útiles para secuencias (más step 7), pero algunos incluyen datos y tracking.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c7-be01-f518af9fe86e"><td id="&gt;n^`" class="">Presupuesto (propuesto)</td><td id="vXWT" class=""><strong>Data collection (1er ciclo para 120 leads):</strong> <strong>$8,000–$15,000 MXN</strong> considerando: \n- 1 tool de búsqueda/enriquecimiento (1 mes) + \n- validación (cuando aplique) + \n- posible outsourcing para extracción de emails desde webs (si no quieres hacerlo tú).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80be-b562-c0cb1039c8dc"><td id="&gt;n^`" class="">Outsourcing: si lo harías, a quién y qué pedir</td><td id="vXWT" class="">Contratar a 1 freelancer/servicio para: (1) extraer emails públicos desde webs, (2) completar rol y ciudad, (3) documentar fuente URL del contacto. Criterio de calidad: al menos <strong>email correcto o razón</strong> (“no encontrado”).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-809c-a89a-f5be5a46f13d"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80b7-9365-d6d66c938dd3" class=""><strong>3) Lead List (Estructura / tamaño temprano)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80ce-9451-cb7a91b7bde8" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ba-bc83-ce6f38a3c2e2"><th id="bRzy" class="simple-table-header-color simple-table-header">Sección</th><th id="bOXP" class="simple-table-header-color simple-table-header">Contenido sugerido (para completar tu workbook)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8047-aef7-f9c8b73a0994"><td id="bRzy" class="">Estructura de lead list (columnas)</td><td id="bOXP" class="">**Name</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bc-b50a-f1ffc6b2161a"><td id="bRzy" class="">Tamaño recomendado para early outbound</td><td id="bOXP" class="">Meta <strong>120 leads para semana 6</strong> (coherente con tu “Landing live semana 4”). Estructura sugerida: \n- <strong>60–70 clínicos (A/B)</strong> \n- <strong>50–60 cuentas/contadores de clínica (coordinación/protocolos) o extensiones</strong> para descubrir decisor real</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80be-ae2f-f2445eebaecf"><td id="bRzy" class="">Cómo medir calidad del lead (antes de enviar)</td><td id="bOXP" class="">- Email válido (o marcar “pendiente validación”) \n- Rol coincide con A o B \n- Ubicación coincide con CDMX/MTY/GDL/SLP \n- Evidencia de enfoque piel sensible/dermatitis (nota rápida).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80fe-a8b6-d0ca9139b310"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80c7-bf45-ff5a39ae671f" class=""><strong>4) Mediums (Canales de contacto / priorización)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80be-b246-c30307abe41e" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a2-a380-d0d3e033b7e0"><th id="[i{i" class="simple-table-header-color simple-table-header">Sección</th><th id="^SA@" class="simple-table-header-color simple-table-header">Contenido sugerido (para completar tu workbook)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80af-9cdd-d03afa7b5dd2"><td id="[i{i" class="">Medios posibles</td><td id="^SA@" class=""><strong>Email</strong> (principal), <strong>teléfono</strong> (si hay número), <strong>WhatsApp/SMS</strong> (solo si el consentimiento y número es claro o si tu investigación lo sugiere), <strong>LinkedIn DM</strong> (secundario), <strong>contacto por formulario</strong> (web de clínica).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ab-bd6b-ee0b4a70a5c3"><td id="[i{i" class="">Prioridad por comfort y probabilidad de respuesta (propuesta)</td><td id="^SA@" class="">1) <strong>Email</strong> (más escalable y medible; usa tu secuencia). \n2) <strong>Llamada corta</strong> (solo a top 20–30 cuando haya alta relevancia: dermatólogos con enfoque claro). \n3) <strong>WhatsApp</strong> como follow-up “ligero” si el email rebotó o si la clínica lo usa públicamente. \n4) <strong>LinkedIn</strong> para roles B (coordinación/protocolos) cuando no haya email directo.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8004-9a98-e5da3e9cdfc3"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8028-877f-f389b09c55bd" class=""><strong>5) Compelling Content (emails + follow-ups + A/B tests + secuencia)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8097-8009-e547f9607639" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f8-9dd6-f4993ab8c41c"><th id="tRXK" class="simple-table-header-color simple-table-header">Sección</th><th id=";Os~" class="simple-table-header-color simple-table-header">Contenido sugerido (para completar tu workbook)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8040-adbb-e4637dbb493c"><td id="tRXK" class="">Objetivo del contenido</td><td id=";Os~" class="">Lograr <strong>respuesta</strong> con un “next step” claro: <strong>agenda 15 min</strong> para piloto clínico (clínicas) o <strong>registro/compra/consulta</strong> (DTC indirecto).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8044-83e8-e04d26879057"><td id="tRXK" class="">Contenido base (para clínicas)</td><td id=";Os~" class=""><strong>Email 1 (Día 1) – Versión “Evidencia”</strong> \n<strong>Asunto A:</strong> “Propuesta de piloto 30 días — HRIPT≥98% (piel sensible)” \n<strong>Cuerpo:</strong> \nHola {{Nombre}}, \nSoy {{Tu Nombre}} de <strong>Sargassum + Fucoidan Bioactive Cream</strong> (maquila biotecnológica BPF, formulación O/W). \nVi que en {{Clínica}} atienden <strong>rosácea/dermatitis/piel sensible</strong>. Quisiera proponer un <strong>piloto de 30 días</strong> con seguimiento y reporte médico. \n<strong>Lo cuantificado:</strong> tolerancia/verificación con <strong>HRIPT ≥98%</strong>, pH <strong>5.5</strong>, y ingredientes diseñados para minimizar irritación (fucoidan 1%, Croton lechleri 1.5%, Centella 1%, pantenol 3%, bisabolol 0.3%, niacinamida 5%). \n<strong>Ask (CTA):</strong> ¿Podemos agendar <strong>15 min</strong> esta semana para validar protocolo y si encaja para sus pacientes? \nLink (dossier/landing): {{Link}} \nGracias, {{Firma}}</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804f-8ae2-f56dc94261db"><td id="tRXK" class="">A/B tests dentro de la secuencia (qué probar y por qué)</td><td id=";Os~" class=""><strong>Test 1 (Asunto + apertura):</strong> \n- <strong>A (Evidencia):</strong> “HRIPT≥98% + BPF” \n- <strong>B (Enfoque problema):</strong> “Piel sensible: piloto 30 días para dermatitis/rosácea” \n<strong>Racional:</strong> tus KPIs dependen de respuesta inicial; separar “evidencia” vs “dolor-clínico” te dice qué ancla convierte mejor en clínica.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8048-bcbb-e4c7c789c9de"><td id="tRXK" class="">Time sequencing y follow-ups (propuesta)</td><td id=";Os~" class="">- <strong>Día 1:</strong> Email 1 (A/B). \n- <strong>Día 3:</strong> Follow-up corto “¿lo viste?” + re-enfatiza ask. \n- <strong>Día 7:</strong> Follow-up con <strong>asset</strong> (landing/página de dossier + bullets de protocolo). \n- <strong>Día 14:</strong> Follow-up “short ask”: “¿con quién debo coordinar protocolos/seguimiento?” (ideal para descubrir decisor real B). \n- <strong>Día 30:</strong> Follow-up final con “retomar en X semanas” o “si no encaja, ¿saben otra clínica?”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f3-b904-d34e91fa01ef"><td id="tRXK" class="">Para Segmento A vs B (personalización del ask)</td><td id=";Os~" class="">- <strong>A (médico):</strong> ask = “agenda 15 min + revisión protocolo 30d”. \n- <strong>B (coordinación/protocolo):</strong> ask = “¿quién revisa y firma el protocolo? ¿podemos enviar dossier?”</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8003-b769-c6c8c6d61cf4"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80f3-8875-e1484d6e9877" class=""><strong>6) Content Checklist (verificación antes de enviar)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8029-8b59-eff20e0846f9" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e0-857b-e2dd343973c7"><th id="TSw?" class="simple-table-header-color simple-table-header">Componente</th><th id="a~x?" class="simple-table-header-color simple-table-header">Checklist para tu outreach</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f2-8c8f-ea7733c56bc4"><td id="TSw?" class="">Explicación de cómo encontraste a la persona</td><td id="a~x?" class="">“Vi que atienden {{rosácea/dermatitis}} en {{clínica/ciudad}}” (con 1 evidencia pública: web/IG).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f0-a303-e383c5e54e6f"><td id="TSw?" class="">Razón de reach out</td><td id="a~x?" class="">“Propuesta de piloto 30 días + seguimiento/reporte médico + evidencia HRIPT”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8075-939a-fc7cb65dfe3a"><td id="TSw?" class="">Nombre de tu empresa</td><td id="a~x?" class="">“{{Marca / empresa}}” (alinear branding SPHREN).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8030-a35e-f64f9105ba14"><td id="TSw?" class="">Value proposition cuantificada</td><td id="a~x?" class="">“HRIPT ≥98%”, “pH 5.5”, “BPF maquila”, “formulación definida”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8089-a400-fb4366bd562b"><td id="TSw?" class="">Datos/estadísticas</td><td id="a~x?" class="">HRIPT, tolerancia, y cualquier dato verificable del pipeline (ej. HRIPT validación 30 sujetos; si aplica en dossier).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b5-a9fc-c8ab9037421b"><td id="TSw?" class="">Link a assets</td><td id="a~x?" class="">Dossier/landing con secciones: HRIPT, protocolo piloto, FAQ.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b0-8f13-fdd8c5198060"><td id="TSw?" class="">Ask claro</td><td id="a~x?" class="">“¿15 min esta semana?” o “¿quién coordina protocolos de seguimiento?”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8078-bf41-cda43e2c9663"><td id="TSw?" class="">Next steps / CTA</td><td id="a~x?" class="">Agendar (Calendly) o responder con disponibilidad + email de protocolo.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808a-bc67-fef6df65f047"><td id="TSw?" class="">Componentes adicionales recomendados (por tu caso)</td><td id="a~x?" class="">- Mini-sección “lo que recibirá la clínica” (muestra, protocolo 30d, reporte). \n- “Claim compliance”: evitar promesas médicas no permitidas; usar lenguaje de tolerancia/validación.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8058-b2a8-c49fdb450242"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-809a-8c1d-fe819998c0e9" class=""><strong>7) Outreach Tooling (herramientas de secuencias + presupuesto + upgrade futuro)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-809b-9461-d37dd0122471" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f3-80c1-ee20a3885d1a"><th id="JAxf" class="simple-table-header-color simple-table-header">Sección</th><th id="HXW`" class="simple-table-header-color simple-table-header">Contenido sugerido (para completar tu workbook)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bd-bb39-d1ec1029cdd6"><td id="JAxf" class="">Herramientas para campañas secuenciadas (lista para evaluar)</td><td id="HXW`" class=""><strong>Reply.io</strong> / <strong>Apollo.io</strong> / <strong>Outreach.io</strong> / <strong>Reply.io</strong> (seguimiento, cadencias, métricas).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803f-a56a-c5dadeae33e6"><td id="JAxf" class="">Pros/cons (en marco de decisión)</td><td id="HXW`" class="">- <strong>Reply.io:</strong> bueno para secuencias y métricas; suele no ser ideal si buscas plan barato “todo incluido” al inicio. \n- <strong>Apollo:</strong> fuerte en datos + outreach (pero costo). \n- <strong>Outreach.io:</strong> enterprise; probablemente sobrecosto temprano.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ac-9e6d-f48172bf9e65"><td id="JAxf" class="">Presupuesto (propuesto)</td><td id="HXW`" class=""><strong>Outreach tooling (primer ciclo 6–8 semanas): $3,000–$8,000 MXN/mes</strong> si eliges algo tipo Reply/Apollo (según plan). Si el costo sube, usar “light stack” (Mailchimp + CRM + GA4/UTMs) para no frenar.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fd-93d0-e75bae7ef508"><td id="JAxf" class="">Qué herramienta usar para tu demanda early-stage</td><td id="HXW`" class="">Para inicio: <strong>secuencia simple + tracking</strong> (Mailchimp + Notion/Sheets + GA4 + pixel Meta). Si necesitas multi-touch avanzado y reporting unificado: mover a <strong>Reply/Apollo</strong>.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bb-aa9b-d72b8674f70b"><td id="JAxf" class="">Forward plan (cuándo upgrade)</td><td id="HXW`" class="">Cuando el volumen supere <strong>200–300 contactos activos</strong> y necesites: (1) cadencias complejas multicanal, (2) reporting por etapa de pipeline, (3) reglas de re-segmentation automáticas.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8027-ab74-d0eefaf15748"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8094-971b-c399d37b63bb" class=""><strong>8) Results (métricas a rastrear + cómo estimar COCA/CPA outbound)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-807c-8d8b-cdd9d8f26a03" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c0-8e06-c0ab3561c2e6"><th id="kOu}" class="simple-table-header-color simple-table-header">Sección</th><th id="b@_]" class="simple-table-header-color simple-table-header">Contenido sugerido (para completar tu workbook)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8050-9318-ddd9cd29f15d"><td id="kOu}" class="">Funnel para clínicas (por cada cohorte)</td><td id="b@_]" class="">Campos: **End User Profile (A/B)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8093-bf46-db9d64e53780"><td id="kOu}" class="">Métricas mínimas por secuencia</td><td id="b@_]" class="">- Emails enviados \n- Respuestas positivas (interés / ask cumplido) \n- Respuestas negativas (no / no por ahora) \n- Sin respuesta \n- CTR a dossier/landing (si aplica) \n- Reuniones agendadas \n- Pilotos iniciados</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8001-8968-c6d0f52f8fe6"><td id="kOu}" class="">Métricas para COCA / “customer acquisition cost” outbound</td><td id="b@_]" class="">1) <strong>Costo total outreach tooling + data collection</strong> (y outsourcing si aplica). \n2) Dividir entre: <strong>#clientes/pilotos activos</strong> (o primer purchase si DTC). \n3) Complemento: calcular también <strong>costo por reunión</strong> para entender eficiencia temprana aunque no cierre inmediato.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806a-93ba-dbf112c2afda"><td id="kOu}" class="">Cómo usar insights</td><td id="b@_]" class="">- Si version A supera B: estandariza copy y asuntos. \n- Si B responde mejor que A: reajusta ranking del lead list (más B-target). \n- Si respuestas no convierten: ajustar el “ask” (15 min vs routing a protocolo) y el asset (dossier más directo).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-805c-955f-d730b077839f"/></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80f2-b812-c44e6b71fc5c" class=""><strong>Nota final (para el siguiente paso)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8075-bfa6-ce1a21c612f3" class="">Puedes actualizar tu <strong>Startup Idea</strong> en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>, donde también puedes revisar/editar los detalles de la idea que ahora mismo estás guardando, incluyendo un resumen de tu producto (composición y pH), beachhead (clínicas CDMX/MTY/GDL/SLP), y metas (120 leads semana 6; 1,000 unidades semana 8; ≥40% reorder day 90; HRIPT ≥98%). Finalmente, puedes usar el chatbot en la parte superior para pedir cambios a tus resultados. <strong>Por favor usa el botón de abajo para proceder al siguiente paso.</strong></p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

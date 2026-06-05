@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>STEP 3: MARKET RESEARCH</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="98bf554f-2b83-830f-9269-81df1d50d5cf" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/binoculars_gray.svg"/></div><h1 class="page-title" dir="auto">STEP 3: MARKET RESEARCH</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8018-bad8-c86327c42a2f" class="">HYPOTHESES — END USER</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80c6-9068-fa79a117e771" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a6-b181-ecf93496ed9d"><th id="{r\Q" class="simple-table-header-color simple-table-header">Hypothesis</th><th id="e`nR" class="simple-table-header-color simple-table-header">Market Research Goal</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a6-8e21-ee5113f6de1c"><td id="{r\Q" class="">H1. La evidencia de tolerabilidad reduce miedo a brotes</td><td id="e`nR" class="">Aprender qué entienden por &quot;tolerabilidad&quot;, qué evidencia les da confianza (HRIPT/proceso/pH) y qué miedos quedan aun con evidencia.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807d-a8f3-c5a0561dbf9b"><td id="{r\Q" class="">H2. La tolerabilidad depende del ritual de introducción (frecuencia/gradualidad/mezclas)</td><td id="e`nR" class="">Identificar las reglas prácticas con las que introducen un producto nuevo (qué hacen día 1–14, qué señales vigilan, cuándo paran).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8033-99fb-d7beabb5b1f0"><td id="{r\Q" class="">H3. El valor percibido sube si la marca traduce la evidencia en instrucciones claras</td><td id="e`nR" class="">Descubrir qué formato de instrucciones reduce fricción y aumenta adherencia (guía de uso, FAQ, dossier QR, expectativas realistas).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8043-8202-cac24ad85220"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8062-8aa2-ea11bf244c56" class="">HYPOTHESES — ECONOMIC BUYER</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-808e-b583-c2ea5aa93383" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8009-ae57-db62ef9e7332"><th id="yAi|" class="simple-table-header-color simple-table-header">Hypothesis</th><th id="=A{w" class="simple-table-header-color simple-table-header">Market Research Goal</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d0-b877-d6bb946b46cd"><td id="yAi|" class="">H1. Recomiendan/aceptan si el proveedor reduce riesgo reputacional (documentación/proceso/trazabilidad)</td><td id="=A{w" class="">Determinar qué documentación y señales operativas requieren para dar &quot;sí&quot; a un piloto y defenderlo ante dirección/equipo/pacientes.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807a-9b83-feba87c0bb4b"><td id="yAi|" class="">H2. El fit clínico está determinado por operación del trial y seguimiento (carga administrativa, check-ins, incidencias)</td><td id="=A{w" class="">Entender qué fricciones hacen fallar pilotos y qué flujo operativo ideal quieren (selección pacientes, frecuencia observación, reporte).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8097-8f65-c1ccd7b2565d"><td id="yAi|" class="">H3. La decisión económica se basa en COCA/recurrencia y adherencia (no solo precio unitario)</td><td id="=A{w" class="">Validar qué indicadores usan para prever recurrencia (adherencia, satisfacción, facilidad de uso) y cómo se traduce a COCA y reorder target.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-806c-b3e0-e6dbdc22309c"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8048-aa55-c255b373d0f3" class="">QUALIFICATIONS — END USER</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-809d-9a66-ddb69ee42a4f" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8096-82d0-d197cc3c4a99"><th id="hwuM" class="simple-table-header-color simple-table-header">Campo</th><th id="gZ}H" class="simple-table-header-color simple-table-header">Especificación</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808c-94fa-d0b4a059ac41"><td id="hwuM" class="">Rol</td><td id="gZ}H" class="">Paciente/usuaria de skincare con piel sensible (rosácea y/o dermatitis, o &quot;piel reactiva&quot;)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808b-b2f0-d0e5d9a77212"><td id="hwuM" class="">Edad objetivo</td><td id="gZ}H" class="">25–45 (alineado a Valentina)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d1-abc9-e687cf09e011"><td id="hwuM" class="">Calificaciones</td><td id="gZ}H" class="">(1) historia de irritación/ardor, (2) al menos 1 cambio de rutina reciente, (3) expresa &quot;prioridad tolerabilidad&quot;, (4) vive en CDMX/MTY/GDL/SLP</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8013-bf80-f110af5b57b1"><td id="hwuM" class="">Disponibilidad</td><td id="gZ}H" class="">Entrevista 20–30 min; acepta hablar sin que sea sesión de venta</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80b1-aa2c-e98ea51181f6"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80f0-8f3d-cd710c60d3df" class="">QUALIFICATIONS — ECONOMIC BUYER</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80a8-8b77-f799ef7fd932" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ab-af6d-e2a38169084a"><th id="sTEH" class="simple-table-header-color simple-table-header">Campo</th><th id="dMBQ" class="simple-table-header-color simple-table-header">Especificación</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803c-9952-df2bcb554b74"><td id="sTEH" class="">Rol</td><td id="dMBQ" class="">Dermatólogo/a, médico/a general enfocada en piel, o coordinador/a de clínica que gestiona pilotos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f9-a255-dd2a65a999e1"><td id="sTEH" class="">Calificaciones</td><td id="dMBQ" class="">(1) atiende rosácea/dermatitis, (2) ha operado trials 30 días o ensayos/validaciones, (3) ciudad: CDMX/MTY/GDL/SLP</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8087-904c-da9265b67276"><td id="sTEH" class="">Disponibilidad</td><td id="dMBQ" class="">Puede explicar criterios de decisión y operación del trial (seguimiento, incidencias, reporte)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80c4-b407-d5ecf2702242"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8079-ad7a-c340ceb89576" class="">WATERING HOLES — END USER</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80d5-b1d7-d4cd47053ddf" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a9-bb07-c909e057c6c1"><th id="[cGJ" class="simple-table-header-color simple-table-header">Fuente</th><th id="VVzq" class="simple-table-header-color simple-table-header">Qué buscar / cómo reclutar</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8054-b0b8-fd79407d3698"><td id="[cGJ" class="">Grupos Facebook</td><td id="VVzq" class="">&quot;Rosácea&quot;, &quot;Dermatitis&quot;, &quot;Piel sensible México&quot; — anuncio + filtro por ciudad/condición</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8046-8c88-f692afc7dc1f"><td id="[cGJ" class="">TikTok/IG</td><td id="VVzq" class="">Contactar por DM a creadores que hablen de tolerancia/irritación; pedir re-share de reclutamiento</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809f-b9b8-e32c7d2dc103"><td id="[cGJ" class="">Reddit/foros en español</td><td id="VVzq" class="">Threads de piel sensible/dermatitis; reclutar por comentarios + mensaje</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802a-a86f-d76f63bbab45"><td id="[cGJ" class="">Comunidades WhatsApp/Telegram</td><td id="VVzq" class="">Anuncio vía admins (requiere permiso); prioriza ciudades beachhead</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801d-a876-d1e0cb3814e2"><td id="[cGJ" class="">Consultas/centros de estética dermocosmético</td><td id="VVzq" class="">Solicitar permiso para reclutamiento posterior a consulta</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80e3-97de-e623ac65734f"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-800b-bcd5-dd2184943483" class="">WATERING HOLES — ECONOMIC BUYER</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80d3-9898-f516941f6b73" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806a-bc97-d3e89733eeeb"><th id="yXMX" class="simple-table-header-color simple-table-header">Fuente</th><th id=";h{D" class="simple-table-header-color simple-table-header">Qué buscar / cómo reclutar</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d6-b7fa-c43ef3b677ad"><td id="yXMX" class="">LinkedIn</td><td id=";h{D" class="">Búsqueda: &quot;Dermatólogo&quot;, &quot;Clínica dermatológica&quot;, &quot;Investigación clínica&quot; por ciudad</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8022-925b-dd69b04b6a76"><td id="yXMX" class="">Asociaciones locales dermatología/salud</td><td id=";h{D" class="">Webinars/eventos; acercamiento con propuesta de piloto 30 días</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8080-b655-c0322edbb0a4"><td id="yXMX" class="">Conferencias médicas regionales</td><td id=";h{D" class="">Networking y follow-up por email/WhatsApp</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8031-b222-e8ebec6d1b27"><td id="yXMX" class="">Directorios de clínicas (Google Maps)</td><td id=";h{D" class="">Búsqueda &quot;dermatología + rosácea&quot; → llamada/solicitud de contacto</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805c-ba7a-cd7614c10a03"><td id="yXMX" class="">Referencias cruzadas</td><td id=";h{D" class="">Cerrar con: &quot;¿me recomienda a alguien que maneje pacientes con rosácea/dermatitis?&quot;</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-803f-b38d-f68847c330b6"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8026-a2d4-c6b9b0418160" class="">OUTREACH — END USER (DM/WhatsApp)</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80da-912d-cabb5042751f" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f5-b11f-de37a8095fb3"><th id="?pkG" class="simple-table-header-color simple-table-header">Opción</th><th id="Eg:M" class="simple-table-header-color simple-table-header">Mensaje</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806c-87ed-f61628d22079"><td id="?pkG" class="">Primer contacto</td><td id="Eg:M" class="">Hola, [Nombre]. Estoy haciendo entrevistas cortas para entender cómo eligen cremas las personas con piel sensible (rosácea/dermatitis) y qué les da confianza para evitar brotes. No es venta ni prueba de producto. ¿Te interesa una entrevista de 20–30 min esta semana?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8004-b11e-e9a3e339ec4b"><td id="?pkG" class="">Seguimiento</td><td id="Eg:M" class="">¡Gracias por responder! En la entrevista hablaremos de tu rutina, miedos y cómo pruebas algo nuevo con piel reactiva (sin hablar de marcas). ¿Qué horario te queda mejor: [2 opciones]?</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80c0-9b08-df978095d641"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8049-b3e3-fe06cda3d07a" class="">OUTREACH — ECONOMIC BUYER (Email/LinkedIn)</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80d5-9902-dfda54eb5c06" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cf-8562-c50b46e00979"><th id="hW~D" class="simple-table-header-color simple-table-header">Opción</th><th id="cnJp" class="simple-table-header-color simple-table-header">Mensaje</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808a-b8ab-d4824e6236f1"><td id="hW~D" class="">Primer contacto</td><td id="cnJp" class="">Estimado/a Dr./Dra. [Apellido], Soy [nombre] de SPHREN. Estamos armando pilotos de 30 días con clínicas para pacientes con rosácea/dermatitis en CDMX/MTY/GDL/SLP. Nuestro enfoque es reducir riesgo reputacional con documentación de proceso (maquila BPF/NOM-259) y evidencia HRIPT (≥98%) en expediente. ¿Podríamos agendar 20 min para entender su criterio de selección, flujo de seguimiento y tipo de reporte que necesitan? Gracias, [Firma + teléfono]</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b0-b403-c4125b6ccd6a"><td id="hW~D" class="">Follow-up</td><td id="cnJp" class="">Gracias de nuevo. Adjunto checklist de operación del trial (selección, check-ins semana 1/2/4, reporte de incidencias). En la llamada revisamos si ese flujo encaja con su clínica.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80b9-b038-efe76387cd6b"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-808b-b089-e8709b92c470" class="">SURVEY DESIGN — END USER</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80d4-81c9-eafc4dcf946f" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b3-a1f2-f54c90fd0f88"><th id="U^pq" class="simple-table-header-color simple-table-header">Campo</th><th id="RfrQ" class="simple-table-header-color simple-table-header">Especificación</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e8-ad6e-f75e2a6c19fc"><td id="U^pq" class="">Survey Goal</td><td id="RfrQ" class="">Cuantificar: drivers de compra (tolerabilidad vs ingredientes vs precio), barreras, WTP y recompra</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807a-92c0-d0b884c2c9a4"><td id="U^pq" class="">Request Message</td><td id="RfrQ" class="">&quot;Encuesta anónima 6–8 min sobre cómo las personas con piel sensible eligen cremas.&quot;</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804f-a0a3-c7678586ac38"><td id="U^pq" class="">Target Responses</td><td id="RfrQ" class="">120–200</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8022-95d4-eaa062e2190e"><td id="U^pq" class="">Screener 1</td><td id="RfrQ" class="">Ciudad (Single): CDMX / MTY / GDL / SLP / Otra</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80af-a1ba-f8dc1dbac7bf"><td id="U^pq" class="">Screener 2</td><td id="RfrQ" class="">Condición (Single): Rosácea / Dermatitis / Piel sensible reactiva / Otra</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a1-b23e-c0229c0a9203"><td id="U^pq" class="">Screener 3</td><td id="RfrQ" class="">Abandono por irritación (Single): Sí / No</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c5-b2f6-c9d67f8e4a47"><td id="U^pq" class="">Screener 4</td><td id="RfrQ" class="">Prioridad tolerabilidad (Single): Sí / No</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808f-9ac4-dd32436c60a6"><td id="U^pq" class="">Q1</td><td id="RfrQ" class="">Importancia evidencia tolerabilidad (Likert 1–5)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8070-978f-d5cc13ab1c2f"><td id="U^pq" class="">Q2</td><td id="RfrQ" class="">¿Qué te convence más? (Multi): HRIPT / pH / BPF/NOM / ingredientes calmantes / instrucciones / testimonios</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b8-963f-cb3ed0c54493"><td id="U^pq" class="">Q3</td><td id="RfrQ" class="">Mayor miedo (Single): ardor inmediato / empeorar rosácea / reacción tardía / otro</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806d-8297-f4734232d5d4"><td id="U^pq" class="">Q4</td><td id="RfrQ" class="">WTP crema 50g (Single anclada): $200–250 / $251–300 / $301–350 / $351+ / depende</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8051-b943-e26882320b88"><td id="U^pq" class="">Q5</td><td id="RfrQ" class="">Intención de recompra 60–90 días (0–10)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807c-b087-c0547aca9b77"><td id="U^pq" class="">Q6</td><td id="RfrQ" class="">NPS proyectado (0–10)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8014-ab7b-d79f9780ff59"><td id="U^pq" class="">Thank You</td><td id="RfrQ" class="">&quot;Gracias. Tus respuestas ayudan a mejorar seguridad y guía para piel sensible.&quot;</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80d5-ba56-ef5afd8b57a6"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80cd-b9b1-d63adaf2ac7f" class="">SURVEY DESIGN — ECONOMIC BUYER</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80f7-af68-d2e0e7e3c18c" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8085-a9bb-ff9e22d339f5"><th id="TwX\" class="simple-table-header-color simple-table-header">Campo</th><th id="q{=T" class="simple-table-header-color simple-table-header">Especificación</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f5-8c5b-db4e9984e2df"><td id="TwX\" class="">Survey Goal</td><td id="q{=T" class="">Cuantificar criterios de recomendación y fricciones operativas; estimar aceptación de un piloto</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cc-b44d-f5e033034fc0"><td id="TwX\" class="">Request Message</td><td id="q{=T" class="">&quot;Encuesta breve para profesionales de salud sobre criterios al recomendar productos para piel sensible.&quot;</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e4-ab6f-e7a4c25806dd"><td id="TwX\" class="">Target Responses</td><td id="q{=T" class="">60–100</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ea-8ec5-c2a47d910714"><td id="TwX\" class="">Screener 1</td><td id="q{=T" class="">Rol (Single): Dermatólogo / Médico general / Coordinador/a / Otro</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80de-a286-ffd93f6ff425"><td id="TwX\" class="">Screener 2</td><td id="q{=T" class="">Ciudad (Single): CDMX / MTY / GDL / SLP / Otra</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8071-b4e6-cab6186919ad"><td id="TwX\" class="">Screener 3</td><td id="q{=T" class="">Atiende rosácea/dermatitis (Single): Semanal / Mensual / Rara vez</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8009-bb1b-c3920b23c99f"><td id="TwX\" class="">Screener 4</td><td id="q{=T" class="">Experiencia con trials (Single): Sí / No</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e7-9b71-e16313387fed"><td id="TwX\" class="">Q1</td><td id="q{=T" class="">Documentación clave (Multi): HRIPT / BPF/NOM-259 / trazabilidad lote / pH / estabilidad / reporte seguridad</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e4-afc9-fb2554463a64"><td id="TwX\" class="">Q2</td><td id="q{=T" class="">Qué pesa más para decidir (Rank): riesgo reputacional / evidencia / operación / reportes / COCA</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808f-ad5b-ca11f1d658d8"><td id="TwX\" class="">Q3</td><td id="q{=T" class="">Qué haría decir &quot;sí&quot; (Multi): dossier completo / facilidad seguimiento / rapidez reportes / consistencia lotes</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8074-9966-f31e796fca08"><td id="TwX\" class="">Q4</td><td id="q{=T" class="">Probabilidad recomendar si HRIPT≥98% (0–10)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80eb-8d6d-f333180bbeb3"><td id="TwX\" class="">Q5</td><td id="q{=T" class="">COCA objetivo o rango aceptable (Likert)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807a-acc7-e08e038a757f"><td id="TwX\" class="">Q6</td><td id="q{=T" class="">Preferencia diseño trial (Single): 30 días / 14 días / otro</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804b-83f3-ef941be40279"><td id="TwX\" class="">Thank You</td><td id="q{=T" class="">&quot;Gracias. Tus respuestas alimentan la estructura del piloto y el dossier.&quot;</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8024-be49-cf3929f7a421"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80d3-a765-f7731652db8f" class="">BIAS REVIEW</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80ba-ba1f-c396f9197663" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e7-8a0d-c05d2bf61cbf"><th id="pgzg" class="simple-table-header-color simple-table-header">Sección propensa a sesgo</th><th id=";cD_" class="simple-table-header-color simple-table-header">Riesgo</th><th id="QW&lt;_" class="simple-table-header-color simple-table-header">Cómo revisar / corregir</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b2-8735-c5b76d8dadeb"><td id="pgzg" class="">Preguntar por HRIPT &quot;a priori&quot;</td><td id=";cD_" class="">Ancla y sesgo de respuesta deseable</td><td id="QW&lt;_" class="">En PMR explorar miedos primero; en encuesta listar HRIPT como opción dentro de multi-select, no como pregunta directa</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e5-8c5a-ed011f01a1d9"><td id="pgzg" class="">WTP sin anclar a contexto</td><td id=";cD_" class="">Respuestas irreales/hipotéticas</td><td id="QW&lt;_" class="">Anclar siempre a &quot;crema 50g para piel sensible con evidencia de tolerabilidad&quot; + rangos ya validados</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8000-8194-df0b037fab36"><td id="pgzg" class="">Preguntas &quot;documentación clave&quot; muy directas</td><td id=";cD_" class="">Se percibe como examen; baja honestidad</td><td id="QW&lt;_" class="">Primero: &quot;qué revisas con proveedores&quot; → luego: &quot;¿qué tan importante es HRIPT/pH/BPF?&quot;</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ec-89e7-e8e1459aa211"><td id="pgzg" class="">Screeners médicos demasiado específicos</td><td id=";cD_" class="">Filtrado incorrecto / incomodidad</td><td id="QW&lt;_" class="">Usar categorías amplias (rosácea/dermatitis/piel reactiva); profundizar solo en entrevista</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-809c-bfd3-eadd28b9518d"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8047-beef-e5da761bac23" class="">SATURATION CHECKLIST</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-806d-835d-c434b1b9849b" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8035-b93d-f7ad45807a34"><th id="D:Cn" class="simple-table-header-color simple-table-header">Checklist</th><th id="qU|&lt;" class="simple-table-header-color simple-table-header">Señal de readiness</th><th id="m&lt;I{" class="simple-table-header-color simple-table-header">Acción</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808d-bac2-e01f883b92c5"><td id="D:Cn" class="">Saturación end user</td><td id="qU|&lt;" class="">5–8 entrevistas con patrones repetidos: miedo principal, reglas de introducción, qué evidencia convence</td><td id="m&lt;I{" class="">Convertir drivers en preguntas Likert/Multi-select</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e6-aff6-c7e0efcc54b3"><td id="D:Cn" class="">Saturación economic buyer</td><td id="qU|&lt;" class="">5–8 entrevistas repiten checklist documental + operación trial (check-ins/reportes/incidencias)</td><td id="m&lt;I{" class="">Convertir a ranking de criterios y aceptación de piloto</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802d-8e38-cb6a50e0fdff"><td id="D:Cn" class="">Lenguaje consistente</td><td id="qU|&lt;" class="">El lenguaje del usuario aparece en copy y encuesta (ej. &quot;paso a paso&quot;, &quot;ardor controlado&quot;)</td><td id="m&lt;I{" class="">Redactar encuesta con ese vocabulario</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8093-88dc-e3c31cdc6b3c"><td id="D:Cn" class="">Objeciones claras</td><td id="qU|&lt;" class="">2–4 objeciones dominantes identificadas (ej. &quot;niacinamide me arde&quot;, &quot;no quiero riesgo&quot;)</td><td id="m&lt;I{" class="">Incluir barreras como opciones en encuesta</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8092-a7ff-d3b64ccb8a0c"><td id="D:Cn" class="">Hipótesis accionables</td><td id="qU|&lt;" class="">Puedes decir qué cambia en producto/guía/piloto según hallazgos</td><td id="m&lt;I{" class="">Diseñar cuantitativo para medir % de impacto</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8046-9b36-fd411311c714"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8054-9860-de63bb264a98" class="">FORWARD PLAN</h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8060-bcc0-c31022c41c92" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808a-9719-ef8bc6b8d190"><th id="YVon" class="simple-table-header-color simple-table-header">Paso</th><th id="Q@[]" class="simple-table-header-color simple-table-header">Qué hacer</th><th id="QlgO" class="simple-table-header-color simple-table-header">Entregable</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bc-b589-fd2d77d8deca"><td id="YVon" class="">1</td><td id="Q@[]" class="">Preparar tracker (Notion/Sheets): hipótesis / rol / tema / quote / tag / val/inval</td><td id="QlgO" class="">Plantilla de análisis PMR</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d4-b9cd-e06826213966"><td id="YVon" class="">2</td><td id="Q@[]" class="">5–8 entrevistas end user (2–3 ciudades) + ajustar mensajes</td><td id="QlgO" class="">Dataset cualitativo + tags</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ee-9e5b-e83387d05743"><td id="YVon" class="">3</td><td id="Q@[]" class="">5–8 entrevistas economic buyer con foco en operación trial</td><td id="QlgO" class="">Checklist operativo + dossier requerido</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8013-bea5-e178a75c0af1"><td id="YVon" class="">4</td><td id="Q@[]" class="">Consolidar insights en Insights Grid (validado/invalidado)</td><td id="QlgO" class="">Matriz para cuantificar</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808c-bc3d-d827aa1b0462"><td id="YVon" class="">5</td><td id="Q@[]" class="">Diseñar y correr encuesta end user (WTP + drivers)</td><td id="QlgO" class="">Dataset cuantitativo</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8090-b9b3-d56a41f2b0d1"><td id="YVon" class="">6</td><td id="Q@[]" class="">Diseñar encuesta economic buyer (aceptación piloto + documentación)</td><td id="QlgO" class="">Dataset B2B/clinic</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-808a-ae0f-d52602a170ae"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8092-b8d5-fd998772e23d" class="">USER RESEARCH QUESTIONS — END USER H1</h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80e6-abea-d1d7861c908e" class=""><strong>H1. La evidencia de tolerabilidad reduce miedo a brotes (y acelera la decisión de probar)</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-808a-bce0-c5d5108d086d" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cc-8f22-f5516a9babb2"><th id="M&lt;fb" class="simple-table-header-color simple-table-header">Tipo</th><th id="rMzw" class="simple-table-header-color simple-table-header">Pregunta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8067-869a-e4b087a227c5"><td id="M&lt;fb" class="">Individual Characteristics</td><td id="rMzw" class="">¿Cómo describirías tu piel en un día normal vs un día reactivo?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ed-9a0f-d921c1e47b2c"><td id="M&lt;fb" class="">Individual Characteristics</td><td id="rMzw" class="">¿Qué te hace sentir que un producto &quot;es para ti&quot; cuando tienes rosácea/dermatitis?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800a-9427-d72f44054b7f"><td id="M&lt;fb" class="">Complementary Tools</td><td id="rMzw" class="">¿Qué haces para &quot;proteger&quot; tu barrera antes de probar algo nuevo?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8093-b0f3-f21284379b0f"><td id="M&lt;fb" class="">Complementary Tools</td><td id="rMzw" class="">¿Qué ingredientes o formatos te han irritado antes (y por qué crees que pasó)?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800f-8d82-c4a2de9c40db"><td id="M&lt;fb" class="">Gathering Places</td><td id="rMzw" class="">¿Dónde te enteras de cosas que &quot;sí funcionan&quot; para piel sensible?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8067-9ea7-e00b5294ea03"><td id="M&lt;fb" class="">Gathering Places</td><td id="rMzw" class="">¿A quién le crees más: experiencias de gente, médicos, o evidencia técnica?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8095-9dc9-de688fadcb71"><td id="M&lt;fb" class="">Daily Routine</td><td id="rMzw" class="">Describe la última vez que decidiste probar algo nuevo: ¿qué cambió para que te animaras?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f0-b9bc-f3cb8b437ac0"><td id="M&lt;fb" class="">Daily Routine</td><td id="rMzw" class="">¿Cómo decides si hoy &quot;vale la pena&quot; intentar o mejor esperar?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8087-bac0-d6b5bbb03a51"><td id="M&lt;fb" class="">Top Priorities</td><td id="rMzw" class="">¿Qué significa para ti &quot;tolerabilidad&quot; en la práctica?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8005-8fcb-f72b95e2d64e"><td id="M&lt;fb" class="">Top Priorities</td><td id="rMzw" class="">¿Qué resultado esperas en los primeros 7–14 días?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8042-8e19-cbba521b4116"><td id="M&lt;fb" class="">Top Priorities</td><td id="rMzw" class="">¿Qué miedos siguen aunque el producto parezca bueno?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800e-96ca-e69c2997ba26"><td id="M&lt;fb" class="">Top Priorities</td><td id="rMzw" class="">Cuando una crema promete seguridad, ¿qué parte te convence de verdad?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cf-a250-cbb50eaf558b"><td id="M&lt;fb" class="">Top Priorities</td><td id="rMzw" class="">¿Qué tan importante es que te den una guía para introducirlo (0–10)?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8038-a247-f1291dd3d0b4"><td id="M&lt;fb" class="">Top Priorities</td><td id="rMzw" class="">¿Qué sería una &quot;señal verde&quot; para continuar usando?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8020-8e78-c48f3769c8cb"><td id="M&lt;fb" class="">Top Priorities</td><td id="rMzw" class="">¿Qué sería una &quot;señal roja&quot; para parar?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8074-a771-dd0b405ff37c"><td id="M&lt;fb" class="">Top Priorities</td><td id="rMzw" class="">¿Qué te haría recomendarlo a alguien con piel sensible?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c4-b81d-f45712414506"><td id="M&lt;fb" class="">Comparative / Preference</td><td id="rMzw" class="">¿En qué se diferencia para ti una crema con evidencia vs una &quot;prometedora por ingredientes&quot;?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8082-abc9-cc6eb79a5d21"><td id="M&lt;fb" class="">Probing for Depth</td><td id="rMzw" class="">¿Me cuentas un ejemplo concreto de una vez que la evidencia (o la falta de ella) cambió tu decisión?</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-809e-9548-cd70fe209427"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-804f-b521-ee52a9ea8813" class="">USER RESEARCH QUESTIONS — END USER H2</h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80a7-9a82-e5af1752fd25" class=""><strong>H2. La tolerabilidad depende del ritual de introducción (frecuencia/gradualidad/evitar mezclas)</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80eb-892f-e0f44d358ae1" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8032-9fe6-d2d6badc3122"><th id="ORhw" class="simple-table-header-color simple-table-header">Tipo</th><th id="@n^&lt;" class="simple-table-header-color simple-table-header">Pregunta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808f-94b9-f61e81cc0199"><td id="ORhw" class="">Individual Characteristics</td><td id="@n^&lt;" class="">¿Qué tan impredecible es tu piel según temporadas/estrés/clima?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80da-9fa8-cbd701ac9826"><td id="ORhw" class="">Individual Characteristics</td><td id="@n^&lt;" class="">¿Identificas triggers personales que empeoran tu tolerancia? ¿Cuáles?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805b-860e-e041aeb6f704"><td id="ORhw" class="">Complementary Tools</td><td id="@n^&lt;" class="">¿Qué productos &quot;acompañantes&quot; usas (calmantes, reparadores, barrera) antes/después?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d5-8bc4-c821505cadca"><td id="ORhw" class="">Complementary Tools</td><td id="@n^&lt;" class="">¿Qué cosas evitas combinar cuando tu piel está reactiva?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802c-bebc-c01bc88ddf3b"><td id="ORhw" class="">Gathering Places</td><td id="@n^&lt;" class="">En tu comunidad, ¿qué reglas recomiendan para &quot;probar sin irritar&quot;?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80dd-a704-f22852b15196"><td id="ORhw" class="">Gathering Places</td><td id="@n^&lt;" class="">¿Qué consejo te ha servido más: paso a paso o &quot;aplica y ya&quot;?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807b-bda4-c93ae31a8d7b"><td id="ORhw" class="">Daily Routine</td><td id="@n^&lt;" class="">Camina conmigo por tu rutina cuando vas a introducir un producto nuevo.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8049-bfdc-e75c5c4a19d7"><td id="ORhw" class="">Daily Routine</td><td id="@n^&lt;" class="">¿Dónde lo aplicas primero (zona pequeña vs toda la cara) y por qué?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8019-84f4-ff7ffc1ea29c"><td id="ORhw" class="">Top Priorities</td><td id="@n^&lt;" class="">¿Qué nivel de ardor consideras &quot;normal&quot; vs &quot;demasiado&quot;?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8035-8213-fcacd5eb2a86"><td id="ORhw" class="">Top Priorities</td><td id="@n^&lt;" class="">¿Cuánto tiempo esperas para decidir si el producto funciona sin empeorar?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f3-ae5d-d699b6167d72"><td id="ORhw" class="">Top Priorities</td><td id="@n^&lt;" class="">¿Cómo decides escalar la frecuencia (cada 2 días, diario, etc.)?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a4-8383-e145bcffcd6c"><td id="ORhw" class="">Top Priorities</td><td id="@n^&lt;" class="">¿Qué te hace abandonar un producto aunque al inicio &quot;no pasó nada&quot;?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8094-873a-e78abdd5f197"><td id="ORhw" class="">Top Priorities</td><td id="@n^&lt;" class="">¿Qué papel juega la textura (cómo se siente) en tu tolerancia?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800f-a8bb-e6bdb13dcef4"><td id="ORhw" class="">Top Priorities</td><td id="@n^&lt;" class="">¿Qué tan importante es que la marca explique cómo mezclar/ordenar la rutina?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8052-a14b-eb2713a66886"><td id="ORhw" class="">Top Priorities</td><td id="@n^&lt;" class="">¿Qué te ayuda a sentir control durante el periodo de prueba?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802d-b50a-c188f38c742f"><td id="ORhw" class="">Top Priorities</td><td id="@n^&lt;" class="">¿Qué tan disciplinada/o eres siguiendo instrucciones cuando estás reactiva/o?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fb-bed5-da06c3b5a7ec"><td id="ORhw" class="">Comparative / Preference</td><td id="@n^&lt;" class="">Si tuvieras que elegir entre &quot;introducción fácil&quot; vs &quot;resultado rápido&quot;, ¿cuál priorizas y por qué?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8098-ad73-e19f8fcae830"><td id="ORhw" class="">Probing for Depth</td><td id="@n^&lt;" class="">¿Qué ajuste harías tú en el uso para que un producto sea tolerable para tu piel?</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8059-bebe-f0b9d4c7fc39"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80f1-8953-f8d99d5afa75" class="">USER RESEARCH QUESTIONS — END USER H3</h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80cc-bf5e-f946ae4f6c3b" class=""><strong>H3. El valor percibido sube si la marca traduce la evidencia en instrucciones claras</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80e0-8de6-c8ffc5a774a2" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c3-8cb7-c749143f38f8"><th id="[vS:" class="simple-table-header-color simple-table-header">Tipo</th><th id="bjCy" class="simple-table-header-color simple-table-header">Pregunta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8078-a8b5-fcd9009bc0d8"><td id="[vS:" class="">Individual Characteristics</td><td id="bjCy" class="">¿Qué sensaciones específicas asocias con &quot;piel calmada&quot;?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f7-8d08-cc3ceb0d61e8"><td id="[vS:" class="">Individual Characteristics</td><td id="bjCy" class="">¿Qué tan técnico vs simple necesitas que sea el mensaje para sentirte segura?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e9-be25-e2c60e3d6308"><td id="[vS:" class="">Complementary Tools</td><td id="bjCy" class="">¿Qué información te tranquiliza al leer empaque/QR/landing?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e9-be18-f6bed95b1a0b"><td id="[vS:" class="">Complementary Tools</td><td id="bjCy" class="">Si vieras un dossier, ¿qué secciones leerías primero y cuáles ignorarías?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b0-8a0e-d3644e0b8070"><td id="[vS:" class="">Gathering Places</td><td id="bjCy" class="">¿Qué formatos te han resultado más útiles (FAQ, video, testimonios, guías)?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bf-82dc-e34383dc41fb"><td id="[vS:" class="">Gathering Places</td><td id="bjCy" class="">¿Qué tan confiable te parece la comunicación cuando está basada en ciencia?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8018-b6b9-d2e67bfcc42e"><td id="[vS:" class="">Daily Routine</td><td id="bjCy" class="">¿Cómo decides si un producto &quot;vale la pena&quot; para tu rutina diaria?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8000-b198-ebfadab02456"><td id="[vS:" class="">Daily Routine</td><td id="bjCy" class="">¿Qué instrucciones te gustaría que existieran para la semana 1 y 2?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8047-b3a1-cabd882611b9"><td id="[vS:" class="">Top Priorities</td><td id="bjCy" class="">¿Qué expectativas necesitas que la marca comunique para evitar decepción?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8055-98c7-e558226825c7"><td id="[vS:" class="">Top Priorities</td><td id="bjCy" class="">¿Qué afirmaciones te parecen exageradas y te generan desconfianza?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ab-af87-ffe3e39657e5"><td id="[vS:" class="">Top Priorities</td><td id="bjCy" class="">¿Qué tan importante es el pH/estabilidad/consistencia en tu mente?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8014-bd5f-cfc93c690d46"><td id="[vS:" class="">Top Priorities</td><td id="bjCy" class="">¿Qué te haría no comprar aunque te guste la historia del producto?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8063-95e1-f63a4c1d968d"><td id="[vS:" class="">Top Priorities</td><td id="bjCy" class="">¿Qué te haría sentir &quot;acompañada&quot; durante el periodo de prueba?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8034-9f57-f54a15450560"><td id="[vS:" class="">Top Priorities</td><td id="bjCy" class="">¿Qué nivel de claridad necesitas sobre &quot;qué hacer si arde&quot;?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8063-aec2-f7372cc2ec75"><td id="[vS:" class="">Top Priorities</td><td id="bjCy" class="">¿Qué tan relevante es la transparencia de lote/maquila/proceso para ti?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8077-99f8-f267187a3c67"><td id="[vS:" class="">Top Priorities</td><td id="bjCy" class="">¿Qué mensaje sería el más convincente para empezar con confianza?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808f-9592-e64947ffb20e"><td id="[vS:" class="">Comparative / Preference</td><td id="bjCy" class="">¿Comparado con otros productos, qué te falta para sentirte igual de segura?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a6-ac26-c906b3b146c3"><td id="[vS:" class="">Probing for Depth</td><td id="bjCy" class="">Si pudieras escribir el FAQ ideal para piel sensible, ¿qué diría?</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8019-9bd8-ec3f30a29600"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-800c-9be8-d86b00de262c" class="">USER RESEARCH QUESTIONS — ECONOMIC BUYER H1</h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8035-96a4-e3f0c9992d59" class=""><strong>H1. Recomiendan/aceptan si el proveedor reduce riesgo reputacional</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80e3-9f19-c9cdd5cc3618" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a3-913b-cd847e81194c"><th id="^QWm" class="simple-table-header-color simple-table-header">Tipo</th><th id="=fSv" class="simple-table-header-color simple-table-header">Pregunta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e3-b979-ecc36edb086d"><td id="^QWm" class="">Individual Characteristics</td><td id="=fSv" class="">¿Cómo describirías el tipo de paciente que ves con rosácea/dermatitis?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8057-9936-f3cd515355a7"><td id="^QWm" class="">Individual Characteristics</td><td id="=fSv" class="">¿Qué te preocupa más al recomendar algo no farmacológico?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808c-9c07-cc69d00199b7"><td id="^QWm" class="">Complementary Tools</td><td id="=fSv" class="">¿Qué documentación te gusta ver antes de iniciar un piloto o recomendación?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808b-84bc-ebb86e17da36"><td id="^QWm" class="">Complementary Tools</td><td id="=fSv" class="">¿Qué información técnica necesita tu equipo para sentirse cómodo?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e6-8adc-e8f8330e82b0"><td id="^QWm" class="">Gathering Places</td><td id="=fSv" class="">¿De dónde vienen normalmente los productos que evalúan en tu clínica?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8038-9f03-e9e9e9288948"><td id="^QWm" class="">Gathering Places</td><td id="=fSv" class="">¿Quién más influye en la decisión interna además de ti?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8054-8a3a-f9a4a7d36d39"><td id="^QWm" class="">Daily Routine</td><td id="=fSv" class="">Describe tu proceso al evaluar un proveedor nuevo para un trial.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ef-a796-d01a513bfe92"><td id="^QWm" class="">Daily Routine</td><td id="=fSv" class="">¿Cuánto tiempo te toma decidir &quot;sí&quot; o &quot;no&quot; típicamente?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fb-a72a-ef57b04d96ea"><td id="^QWm" class="">Top Priorities</td><td id="=fSv" class="">¿Qué significa &quot;riesgo reputacional&quot; en tu contexto?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a6-a9e4-f16b535a0557"><td id="^QWm" class="">Top Priorities</td><td id="=fSv" class="">¿Qué señales te dan confianza sobre consistencia y seguridad?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e9-bdf8-cadd23e0e308"><td id="^QWm" class="">Top Priorities</td><td id="=fSv" class="">¿Qué tanta importancia tiene la trazabilidad de lote y por qué?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d8-b04f-f828ec96fe17"><td id="^QWm" class="">Top Priorities</td><td id="=fSv" class="">¿Qué te haría decir &quot;esto no me da tranquilidad&quot;?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809c-a6b6-d6627deb274c"><td id="^QWm" class="">Top Priorities</td><td id="=fSv" class="">¿Qué documentos serían suficientes para acelerar la decisión?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8069-888a-c034dc80d358"><td id="^QWm" class="">Top Priorities</td><td id="=fSv" class="">¿Qué evidencia te parece defendible ante pacientes?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8040-8dab-f4b0446937cc"><td id="^QWm" class="">Top Priorities</td><td id="=fSv" class="">¿Qué tan crítico es el seguimiento de incidencias?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fd-9074-de4235093a43"><td id="^QWm" class="">Top Priorities</td><td id="=fSv" class="">¿Qué nivel de claridad esperas del proveedor (dossier, checklist, SOP)?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805f-a33a-cc6a8b22e7cb"><td id="^QWm" class="">Comparative / Preference</td><td id="=fSv" class="">¿En qué se diferencia una propuesta &quot;bien documentada&quot; vs una &quot;bonita pero sin sustento&quot;?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8048-b521-fd6f086767b8"><td id="^QWm" class="">Probing for Depth</td><td id="=fSv" class="">Cuéntame una vez que tu decisión se complicó por un tema reputacional y cómo se resolvió.</td></tr></div></tbody></table></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

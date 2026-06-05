@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Step 5 - Social Enterprise Business Models</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="bdef554f-2b83-83f9-9f8d-0164b35488cd" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/burst_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>Step 5 - Social Enterprise Business Models</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80ee-8ee9-e00eb2934817" class=""><strong>Impact Business Model Canvas Matrix</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-800c-a542-d313b9acc867" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b1-9cc0-fc38b71464cd"><th id="wGWp" class="simple-table-header-color simple-table-header">#</th><th id="P{Xn" class="simple-table-header-color simple-table-header">Field</th><th id="z=N?" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a9-903f-d8883c700dfb"><td id="wGWp" class="">1</td><td id="P{Xn" class="">Problem &amp; Mission Fit</td><td id="z=N?" class="">Los pacientes con piel sensible en México tienen acceso limitado a cremas con <strong>tolerabilidad verificada</strong> a un precio alcanzable. A la vez, la acumulación de <strong>Sargassum fluitans</strong> (invasora) agrava una crisis ambiental en ecosistemas marinos del Caribe. <strong>SPHREN</strong> existe para transformar esa “biomasa problema” en un cuidado de la piel bioactivo (fucoidano + <em>Croton lechleri</em>) con <strong>HRIPT ≥98%</strong> y formulación <strong>pH 5.5</strong>, generando impacto ambiental (valorización y reducción de la presión del invasor) y social (acceso + empleo LATAM), sosteniendo el negocio mediante ventas DTC y validación clínica.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8067-8d26-f051f912c516"><td id="wGWp" class="">2</td><td id="P{Xn" class="">Stakeholder Segments</td><td id="z=N?" class="">• <strong>Usuarios/beneficiarios (pacientes)</strong>: personas con rosácea, dermatitis y piel sensible que requieren tolerancia comprobada (principalmente en México; luego expansión). • <strong>Clientes pagadores</strong>: (i) DTC a $300 MXN; (ii) clínicas/dermatólogos para consigna/afiliación; (iii) <strong>B2B</strong> para fucoidano en suministro LATAM. • <strong>Validadores/influenciadores</strong>: dermatólogos, clínicas (consignación y fases de MVBP/Phase 2). • <strong>Operadores de manufactura</strong>: maquila biotecnológica <strong>BPF maquila Biotech</strong> (entrega y escalamiento). • <strong>Socios ambientales</strong>: organizaciones/alianzas tipo <strong>The Seas We Love</strong> (reporte de impacto, métricas y narrativa de economía circular).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8020-b3af-f3fc6c068aee"><td id="wGWp" class="">3</td><td id="P{Xn" class="">Value Proposition (Impact + Benefit)</td><td id="z=N?" class=""><strong>Para pacientes (piel sensible)</strong>: • Impacto social/biológico: acceso a una crema con tolerabilidad verificada (<strong>HRIPT ≥98%</strong>) para reducir riesgo de irritación y fallas por “import guesswork”. • Beneficio funcional/emocional: mejor experiencia con piel sensible (concentraciones objetivo: fucoidano <strong>1%</strong> + <em>Croton lechleri</em> <strong>1.5%</strong>, pH <strong>5.5</strong>) y confianza por evidencia. <strong>Para clínicas</strong>: • Impacto: ofrecer una alternativa con validación y relato de impacto (más valor percibido y adherencia). • Beneficio: productos con indicadores (HRIPT, NPS ≥60, recurrencia ≥40%) que facilitan recomendación. <strong>Para el ecosistema/operadores ambientales</strong>: • Impacto: convertir Sargassum invasor en valor y apoyar recuperación/mitigación mediante una cadena circular. • Beneficio: continuidad operativa y reporte de métricas (p.ej., toneladas valorizadas).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c0-9c5e-de65d2e147ee"><td id="wGWp" class="">4</td><td id="P{Xn" class="">Organizational Structure &amp; Model Type</td><td id="z=N?" class="">Modelo preferido: <strong>empresa social (híbrida en práctica)</strong> con enfoque “impact-first” donde el <strong>negocio</strong> financia la misión. En la práctica operará como: • <strong>For-profit</strong> para ventas (DTC, consigna clínica, B2B), porque necesita margen <strong>65–85%</strong> para sostener extracción, formulación y expansión. • <strong>Impacto anclado</strong> vía reinversión y alianzas (reporte + economía circular), con gobernanza orientada a métricas (HRIPT, toneladas valorizadas, GHG). Esto permite decisión rápida comercial (producto/ventas) sin perder legitimidad de impacto (alianzas ambientales y métricas). *(Estructura legal exacta: a definir entre entidad híbrida vs. corporación con brazo de impacto; se asume orientación de gobierno por métricas de impacto y uso de utilidades).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8027-b1ab-e5c2618f6b7b"><td id="wGWp" class="">5</td><td id="P{Xn" class="">Revenue &amp; Funding Model</td><td id="z=N?" class=""><strong>Ingresos (core):</strong> • <strong>DTC</strong>: 50g a <strong>$300 MXN</strong> (canal inicial y control de marca). • <strong>Consigna clínica</strong>: pricing y rotación con validación profesional. • <strong>B2B</strong>: suministro de fucoidano en LATAM (como flujo de valor adicional y/o materia prima de largo plazo). <strong>Mezcla de financiamiento (impact-first):</strong> • Mar+Fund (tesis blue economy) y/o inversores con enfoque ESG. • <strong>No-dilutivo</strong>: grants (CONACYT, INADEM) y concursos (TRAJECTS, Elemental Accelerator). • SAFE con monto objetivo <strong>~$4M MXN</strong> por hitos (4 tranches). • Reincorporación de utilidades: hacia extracción R&amp;D (p.ej., colaboración con Tec de Monterrey) y alianzas de conservación. Diferencia por ruta: en for-profit, los ingresos cubren operación; en hybrid, puede haber componentes de donación/subsidio para validaciones y pilotos.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801a-a900-e28c2e2b411e"><td id="wGWp" class="">6</td><td id="P{Xn" class="">Cost Structure &amp; Key Resources</td><td id="z=N?" class=""><strong>Costos principales:</strong> • I+D y formulación (ensayos HRIPT, estabilidad, repetibilidad de lote). • Manufactura y control de calidad con la maquila <strong>BPF</strong> (costo por lote para 50g). • Operación de cadena de suministro circular (acopio/transformación de Sargassum, logística y trazabilidad). • Cumplimiento regulatorio y documentación cosmética/biotech. • Marketing/ventas DTC y activación clínica (muestras, onboarding de clínicas). <strong>Recursos clave:</strong> • Conocimiento biotecnológico y capacidades de extracción/formulación (SPHREN + maquila). • Ensayos y sistema de validación tolerancia (HRIPT ≥98%). • Alianzas ambientales (The Seas We Love u otros) para trazabilidad e impacto. • Marca y narrativa (blue economy + piel sensible + transparencia). Costos “must-pay”: QA/HRIPT, manufactura por lote y logística mínima para mantener disponibilidad (sin esto cae la confianza y la recurrencia).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806e-ae65-c0ad715bc237"><td id="wGWp" class="">7</td><td id="P{Xn" class="">Key Activities &amp; Delivery Model</td><td id="z=N?" class="">• <strong>Extracción/valorización</strong> de Sargassum (economía circular, trazabilidad de biomasa). • <strong>Formulación</strong> del bioactivo (fucoidano + <em>Croton lechleri</em>) y estandarización (pH 5.5). • <strong>Validación de tolerabilidad</strong> (HRIPT ≥98%) y ciclos MVBP/Phase 1. • <strong>Despliegue comercial</strong>: DTC (50 DTC en MVBP) + expansión por clínicas (Phase 2). • <strong>Optimización y escalamiento</strong> con maquila (calidad por lote, eficiencia). • <strong>Reporte de impacto</strong> (tons valorizadas, métricas ambientales y sociales; integrando GHG accounting). • <strong>Plan de expansión</strong>: export + SAFE + Phase 4 (US Hispanic + B2B). Estas actividades avanzan impacto al asegurar que el producto sea “confiable” y que la cadena circular sea real y medible.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d3-9ab1-d8d61d5b7093"><td id="wGWp" class="">8</td><td id="P{Xn" class="">Channels &amp; Stakeholder Relationships</td><td id="z=N?" class=""><strong>Canales:</strong> • <strong>DTC</strong> (web + distribución local) para alcanzar MVP temprano y probar recurrencia. • <strong>Clínicas/dermatólogos</strong> (consigna y recomendaciones) para credibilidad y segmentación por condición (rosácea/dermatitis). • <strong>B2B</strong> para suministro de fucoidano y alianzas blue economy/industria. • <strong>Ecosistema ambiental</strong> para reporte e integración de métricas (impact reporting). <strong>Relaciones deseadas:</strong> • Pacientes: relación de uso + comunidad de confianza (objetivo NPS ≥60 y ≥40% reorder). • Clínicas: relación de mediano plazo por resultados clínicos/rotación. • Socios ambientales: relación de largo plazo para trazabilidad, impacto y legitimidad. • Maquila: relación operativa para asegurar consistencia y escalabilidad.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8043-a4ac-f1171b28b3f5"><td id="wGWp" class="">9</td><td id="P{Xn" class="">Partners &amp; Ecosystem Fit</td><td id="z=N?" class="">• <strong>BPF maquila Biotech</strong>: ejecución industrial, escalamiento y aseguramiento de calidad. • <strong>The Seas We Love</strong> (u organización equivalente): medición y narrativa con rigor de impacto (ecosistema marino). • <strong>Universidad/centro</strong>: p.ej., <strong>Tec de Monterrey</strong> para I+D y soporte científico de extracción/valorización. • <strong>Clínicas/dermatólogos</strong>: acceso a cohortes para MVBP y Phase 2 (validación en contexto clínico). • <strong>Funders/vehículos</strong>: Mar+Fund, inversores ESG, programas de grant/competencia; y SAFE con milestone. Diferencia por modelo: en for-profit, los socios de impacto fortalecen reputación, trazabilidad y legitimidad; en hybrid, pueden formalizarse componentes de gobernanza y reinversión con mayor obligación.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c8-8262-cbf0116ddecd"><td id="wGWp" class="">10</td><td id="P{Xn" class="">Impact &amp; Financial Sustainability</td><td id="z=N?" class=""><strong>Impacto (cómo se sostiene y escala):</strong> • Ambiental: valorización de <strong>Sargassum</strong> (meta: <strong>100 toneladas</strong> a Y3) y reducción de presión sobre ecosistemas; sustitución de importaciones con potencial <strong>60–85%</strong> (vía GHG accounting). • Social/económico: creación de empleo LATAM en extracción/procesamiento/retail (indicadores en reporting). • Salud: reducción del riesgo para piel sensible con HRIPT <strong>≥98%</strong>, con señal de satisfacción <strong>NPS ≥60</strong> y <strong>≥40% reorder</strong> (proxy de efectividad/aceptación). <strong>Sostenibilidad financiera (cómo se balancea):</strong> • El margen objetivo <strong>65–85%</strong> permite reinvertir en extracción/R&amp;D y en alianzas de impacto sin depender 100% de donaciones. • Estrategia por fases: Phase 1 (MVBP: <strong>1,000 unidades</strong>, 50 DTC) para confirmar tracción; Phase 2 (clínicas) para validación y credibilidad; Phase 3 (export + SAFE) para escalar unit economics; Phase 4 (US Hispanic + B2B) para diversificar canales y estabilizar demanda. • El balance se gobierna con métricas: si HRIPT/NPS/recurrencia caen, se ajusta formulación/producción; si toneladas valorizadas o reporte bajan, se ajusta suministro y alianzas para asegurar integridad del impacto.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807f-baa8-cc0fe38bbe52"><td id="wGWp" class="">11</td><td id="P{Xn" class="">Go-to-Market Milestones &amp; Scale Plan</td><td id="z=N?" class="">• <strong>MVBP Phase 1</strong>: 1,000 unidades; 50 ventas DTC; objetivo ≥40% reorder y NPS ≥60; consolidar HRIPT ≥98% y narrativa de circularidad. • <strong>Phase 2 (clínicas)</strong>: ganar validación clínica (consigna y adopción por dermatólogos) para ampliar TAM y mejorar conversión. • <strong>Phase 3 (export + SAFE)</strong>: usar capital (~<strong>$4M MXN</strong> en tranches por hitos) para escalar capacidad y entrar mercados adicionales; incorporar rigor de GHG y reporte. • <strong>Phase 4 (US Hispanic + B2B)</strong>: expansión por segmento cultural/mercado y canal B2B para fucoidano, reduciendo dependencia de un solo canal. • <strong>Beachhead</strong>: clínicas para rosácea/dermatitis (TAM estimado <strong>$2.3B MXN</strong>).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8094-91f6-c3d5172725f7" class="">Go to <strong>Update Idea</strong> in the toolbar above to update your idea, description, and additional critical information.</p></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80bd-a648-d845b7b4be8f" class=""><strong>Impact Business Model Canvas Matrix</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8082-9ad0-e0df6401dc68" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808e-ba1b-efa1b3663510"><th id=":TmX" class="simple-table-header-color simple-table-header">#</th><th id="b]If" class="simple-table-header-color simple-table-header">Field</th><th id="DIas" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ac-a7b7-ee3cbe8918a1"><td id=":TmX" class="">1</td><td id="b]If" class="">Problem &amp; Mission Fit</td><td id="DIas" class="">Briefly restate the core problem your venture addresses and why your organization exists in response. Highlight the social or environmental change you aim to create and how your mission anchors both your impact goals and your business model choices.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c8-9d11-d44730353302"><td id=":TmX" class="">2</td><td id="b]If" class="">Stakeholder Segments</td><td id="DIas" class="">Identify the key stakeholder groups you create value for, such as beneficiaries, paying customers, donors, investors, partners, and community members. Note which are users, which are funders, and how this may differ for nonprofit, for-profit, and hybrid models.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8060-a345-edb3b8c67e0b"><td id=":TmX" class="">3</td><td id="b]If" class="">Value Proposition (Impact + Benefit)</td><td id="DIas" class="">Describe the value you offer each priority stakeholder segment. Include both the social or systemic impact created and the functional or emotional benefits that make your solution compelling relative to alternatives.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ec-8eb7-cebe6a99acf1"><td id=":TmX" class="">4</td><td id="b]If" class="">Organizational Structure &amp; Model Type</td><td id="DIas" class="">Specify whether you are envisioning a nonprofit, for-profit, or hybrid structure, or if you are still exploring. Explain how this structure shapes governance, decision-making, ownership, and your ability to pursue both impact and financial sustainability.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8000-98f6-fd9d4a2f43c0"><td id=":TmX" class="">5</td><td id="b]If" class="">Revenue &amp; Funding Model</td><td id="DIas" class="">Outline how resources flow into your venture. Include potential revenue streams such as sales, subscriptions, or licensing, and funding sources such as grants, philanthropy, impact investment, or cross-subsidies. Note how the mix may differ across nonprofit, for-profit, and hybrid paths.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8079-ab14-dad2c5a3954f"><td id=":TmX" class="">6</td><td id="b]If" class="">Cost Structure &amp; Key Resources</td><td id="DIas" class="">Identify your most important costs, such as staff, technology, operations, distribution, and compliance, and the critical resources needed to deliver your value proposition. Flag which costs must be covered reliably for the model to be viable.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f7-a478-ccc60d12bf2a"><td id=":TmX" class="">7</td><td id="b]If" class="">Key Activities &amp; Delivery Model</td><td id="DIas" class="">Describe the core activities required to create and deliver value, such as product development, service delivery, training, platform operations, partnerships, or community engagement. Note how these activities advance both impact and financial goals.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8084-ba3b-d2cae0799156"><td id=":TmX" class="">8</td><td id="b]If" class="">Channels &amp; Stakeholder Relationships</td><td id="DIas" class="">Explain how you reach and interact with stakeholder segments through channels such as community partners, digital platforms, local networks, or agencies. Clarify the types of relationships you seek, such as one-time transactions, long-term partnerships, or membership models.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807a-a595-d947aaaead9c"><td id=":TmX" class="">9</td><td id="b]If" class="">Partners &amp; Ecosystem Fit</td><td id="DIas" class="">Identify critical partners and ecosystem actors, including NGOs, government agencies, community organizations, accelerators, or funders, who help deliver value, access stakeholders, or share risk. Note how partnerships may differ depending on your chosen model.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8063-bc7a-ed826a665219"><td id=":TmX" class="">10</td><td id="b]If" class="">Impact &amp; Financial Sustainability</td><td id="DIas" class="">Summarize how your business model advances your mission over time while remaining financially healthy. Explain how the model supports your intended impact and how you plan to balance impact goals with revenue and cost realities as you grow.</td></tr></div></tbody></table></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

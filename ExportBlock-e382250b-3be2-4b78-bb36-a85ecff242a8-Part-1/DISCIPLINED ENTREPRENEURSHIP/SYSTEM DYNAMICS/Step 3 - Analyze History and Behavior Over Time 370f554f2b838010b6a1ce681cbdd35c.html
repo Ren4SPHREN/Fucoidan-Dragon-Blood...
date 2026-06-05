@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Step 3 - Analyze History and Behavior Over Time</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="370f554f-2b83-8010-b6a1-ce681cbdd35c" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/binoculars_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>Step 3 - Analyze History and Behavior Over Time</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80f5-a94a-c806eefd6c8f" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8084-af3f-c6250d7e609a"><th id="x_ZX" class="simple-table-header-color simple-table-header">#</th><th id="kbvO" class="simple-table-header-color simple-table-header">Variable</th><th id="|SzQ" class="simple-table-header-color simple-table-header">Draft Initial Definition</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d8-8616-c84684f137c8"><td id="x_ZX" class="">1</td><td id="kbvO" class="">Contexto ambiental (sargassum invasivo)</td><td id="|SzQ" class="">En el pasado (2000-2020): aumento progresivo y regional de floraciones/arribazones de sargassum asociados a cambios en corrientes oceánicas y clima, generando degradación local de hábitats costeros. En el reciente (2020-2025): el fenómeno se percibe más frecuente y presiona a actores costeros (limpieza, turismo, pesca), elevando la urgencia por soluciones de valorización. En el futuro (2025-2035): se espera persistencia del problema si no hay cambios estructurales, lo que vuelve más valiosa (y negociable) la cadena de suministro de biomasa para bioactivos.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807d-b493-dc4e83d9ba6c"><td id="x_ZX" class="">2</td><td id="kbvO" class="">Evolución del mercado de skincare para piel sensible</td><td id="|SzQ" class="">En el pasado (2000-2020): oferta dominada por importaciones y categorías genéricas; alta variabilidad en tolerabilidad percibida, con menos evidencia estandarizada. En el reciente (2020-2025): crece el interés por ingredientes “bioactivos” y por claims de seguridad, pero el consumidor sigue desconfiando de “brotes” y reacciones. En el futuro (2025-2035): mayor exigencia por evidencia de tolerabilidad y formulaciones mejor validadas; ventaja competitiva para marcas con métricas (HRIPT ≥98%) y consistencia regulatoria.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8056-8129-c4c137b13d88"><td id="x_ZX" class="">3</td><td id="kbvO" class="">Madurez de evidencia de tolerabilidad (HRIPT)</td><td id="|SzQ" class="">En el pasado (2000-2020): existían pruebas, pero con variabilidad metodológica y costos que limitaban su uso rutinario en emprendimientos. En el reciente (2020-2025): se estandariza y vuelve más “operable” para validar formulaciones con enfoque de tolerancia. En el futuro (2025-2035): la HRIPT se convierte en barrera de entrada práctica para diferenciación (quien valida rápido y robusto gana confianza y repetición).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f7-9d65-f7cacbb1aac6"><td id="x_ZX" class="">4</td><td id="kbvO" class="">Interacción regulatoria (NOM-259 BPF y ruta de maquila)</td><td id="|SzQ" class="">En el pasado (2000-2020): el cumplimiento BPF era visto como costo/tiempo que frenaba lanzamientos de pequeñas marcas. En el reciente (2020-2025): el camino regulatorio y la maquila BPF se vuelven más claros para LATAM, habilitando escalamiento con menos incertidumbre. En el futuro (2025-2035): si la empresa domina desde el inicio la lógica BPF en maquila, reduce tiempos de retesteo, acelera expansión a clínicas y facilita exportación.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8023-873d-de6c39162d4b"><td id="x_ZX" class="">5</td><td id="kbvO" class="">Comportamiento del consumidor (miedo a brotes y repetición)</td><td id="|SzQ" class="">En el pasado (2000-2020): el consumidor cambiaba productos con baja confianza y poca evidencia; las compras eran más “prueba y error”. En el reciente (2020-2025): mejora la disposición a probar cuando hay señales de seguridad; aun así, el reorder depende críticamente de tolerabilidad probada. En el futuro (2025-2035): con validación sostenida (HRIPT ≥98%) y resultados clínicos (Phase 2), aumenta probabilidad de repetición (≥40%) y se estabiliza el LTV.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8079-9a79-c4793f507f5f"><td id="x_ZX" class="">6</td><td id="kbvO" class="">Dinámica de oferta (disponibilidad y valor de sargassum)</td><td id="|SzQ" class="">En el pasado (2000-2020): la biomasa se trataba principalmente como residuo a remover; bajo incentivo para uso industrial. En el reciente (2020-2025): se abren programas/relaciones locales para capturar biomasa y transformarla en insumo; sube el valor por bioactivos y la narrativa de economía circular. En el futuro (2025-2035): se consolidan contratos de abastecimiento B2B de fucoidan, creando estabilidad de costos y capacidad de extracción R and D escalable.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8001-a171-f083c3a14e22"><td id="x_ZX" class="">7</td><td id="kbvO" class="">Capacidades de formulación y composición del producto</td><td id="|SzQ" class="">En el pasado (2000-2020): el reto principal era lograr formulaciones que mantuvieran bioactividad sin sacrificar estabilidad/compatibilidad cutánea. En el reciente (2020-2025): se ejecuta una formulación objetivo: 1% fucoidan, 1.5% Croton lechleri, pH 5.5, con foco explícito en HRIPT (≥98%). En el futuro (2025-2035): la consistencia del “matching” entre lote, pH y bioactivo impulsa la reputación clínica y la expansión (importante para exportación y para líneas nuevas).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8002-b91c-e3273bf21304"><td id="x_ZX" class="">8</td><td id="kbvO" class="">Evolución del go-to-market (DTC inicial a clínicas y exportación)</td><td id="|SzQ" class="">En el pasado (2000-2020): el DTC era menos común en LATAM para categorías clínicas; predominaban canales tradicionales. En el reciente (2020-2025): el DTC a $300 MXN funciona como laboratorio de tolerabilidad/retención con MVBP 1,000 unidades y 50 unidades DTC, generando señales tempranas de reorder. En el futuro (2025-2035): Phase 2 clínicas (validación médica y prescripción), Phase 3 export + SAFE (fortalece distribución y reputación), Phase 4 foco US Hispanic y B2B (escalamiento y menor dependencia de un solo canal).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809f-80e4-e3883fe80768"><td id="x_ZX" class="">9</td><td id="kbvO" class="">Riesgos operativos y “shocks” (tiempos de HRIPT, capital, cadena)</td><td id="|SzQ" class="">En el pasado (2000-2020): shocks típicos eran demoras de producción y falta de evidencia consistente, lo que elevaba devoluciones y churn. En el reciente (2020-2025): shocks probables son retrasos en HRIPT y tiempos de cumplimiento BPF en maquila; además volatilidad de costos/logística de biomasa. En el futuro (2025-2035): shocks pueden venir de cambios regulatorios, variabilidad de biomasa por condiciones oceanográficas y competencia que intente replicar claims; el antídoto es tranching por hitos y tracción temprana (reorder ≥40%).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8019-976b-d46192bfc918"><td id="x_ZX" class="">10</td><td id="kbvO" class="">Disrupciones y ventana de oportunidad (convergencia de tecnología, regulación y mercado)</td><td id="|SzQ" class="">En el pasado (2000-2020): la oportunidad existía, pero no estaba completamente desbloqueada por evidencia estandarizada y costos de ejecución; la oferta era fragmentada. En el reciente (2020-2025): la ventana se abre por convergencia: tecnología (fucoidan + formulación), regulatoria (NOM-259 BPF), y mercado con pacientes que demandan tolerabilidad verificable. En el futuro (2025-2035): la empresa puede convertir la convergencia en ventaja temporal si ejecuta rápido: hitos (Phase 1 MVBP, Phase 2 clínicas) financian escalamiento y sostienen la barrera de confianza.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-806b-ac13-f375c4588a12" class="">You can update your Startup Idea using the &#x27;Update Idea&#x27; at the top of the page — this is your steering wheel. You can also use this chatbot to request specific changes to your results. Please use the button below to proceed to the next step.</p></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-808a-b7c0-fd63f9c3ae6a" class=""><strong>CURSOS: Behavior Over Time Matrix</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-807c-9477-cf2d2f90396c" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8042-8779-ddec730e084d"><th id="S`h|" class="simple-table-header-color simple-table-header">#</th><th id="IpYi" class="simple-table-header-color simple-table-header">Variable</th><th id="rv}}" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8011-baf5-d0a10d456055"><td id="S`h|" class="">1</td><td id="IpYi" class="">Variable 1</td><td id="rv}}" class="">Name of variable and why it matters to the system.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804b-a4ee-dffe2d24fefe"><td id="S`h|" class="">2</td><td id="IpYi" class="">Past (2000–2020)</td><td id="rv}}" class="">Description of past trend (e.g., rising steadily, declining, flat).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8022-9c81-c478214ab410"><td id="S`h|" class="">3</td><td id="IpYi" class="">Recent (2020–2025)</td><td id="rv}}" class="">Description of recent changes or shocks (e.g., spike, plateau, sudden dip).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803f-b95f-c47fef013819"><td id="S`h|" class="">4</td><td id="IpYi" class="">Future (2025–2035)</td><td id="rv}}" class="">Projection of how this variable is likely to evolve.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804e-87c5-dd66e6f74311"><td id="S`h|" class="">5</td><td id="IpYi" class="">Trend Shape</td><td id="rv}}" class="">The archetype of behavior (S-curve, bell curve, exponential, oscillation).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b0-9cd4-dd3667257c6d"><td id="S`h|" class="">6</td><td id="IpYi" class="">Variable 2</td><td id="rv}}" class="">Same structure as above (repeat for at least 5 total variables).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8034-8d36-cfa1d305088f"><td id="S`h|" class="">7</td><td id="IpYi" class="">Variable 3</td><td id="rv}}" class="">…</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8005-b4f6-cb9b33ccc31b"><td id="S`h|" class="">8</td><td id="IpYi" class="">Variable 4</td><td id="rv}}" class="">…</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ff-a374-ccbb3cd03d0b"><td id="S`h|" class="">9</td><td id="IpYi" class="">Variable 5</td><td id="rv}}" class="">…</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809b-85b2-d38e8d328431"><td id="S`h|" class="">10</td><td id="IpYi" class="">Shocks &amp; Disruptions</td><td id="rv}}" class="">Note any external shocks (e.g., COVID, fuel price shocks, regulation) that altered the trajectory.</td></tr></div></tbody></table></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

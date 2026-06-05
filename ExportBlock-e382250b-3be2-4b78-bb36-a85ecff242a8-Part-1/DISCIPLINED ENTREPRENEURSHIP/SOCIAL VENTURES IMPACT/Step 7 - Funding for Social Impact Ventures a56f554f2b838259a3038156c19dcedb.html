@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Step 7 - Funding for Social Impact Ventures</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a56f554f-2b83-8259-a303-8156c19dcedb" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/map_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>Step 7 - Funding for Social Impact Ventures</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8044-b0bd-c7927150e446" class=""><strong>Funding Strategy &amp; Equity Matrix</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8001-9aee-d16567caab8b" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807b-a0f7-fec98e716735"><th id="lzFm" class="simple-table-header-color simple-table-header">#</th><th id="~nv:" class="simple-table-header-color simple-table-header">Field</th><th id="pkVm" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8012-9ee8-c4a38e27e7d0"><td id="lzFm" class="">1</td><td id="~nv:" class="">Funding Pathways Overview</td><td id="pkVm" class="">• Subvenciones y filantropía (CONACYT, INADEM y programas para innovación/impacto; fondos tipo “blue economy”). • Ingresos propios y contratos de servicios (venta DTC + consigna/contratos con clínicas; suministro B2B). • Inversión de impacto o subsidios reembolsables (fondos ESG/impacto, equity impact-first o deuda convertible con criterios de impacto). • Capital alternativo/innovador (revenue-based financing, crowdfunding, adelantos por volumen con socios; SAFE/convertibles con hitos).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804b-8ed8-e8156f8c84f3"><td id="lzFm" class="">2</td><td id="~nv:" class="">Primary Funding Pathways</td><td id="pkVm" class="">1) <strong>SAFE / convertibles con hitos (12–18 meses)</strong>: acelera HRIPT, MVBP y preparación de escalamiento sin dilución inmediata; se alinea con la lógica por fases (Phase 1–3). 2) <strong>Grants no dilutivos (6–12 meses)</strong>: para reducir riesgo técnico (formulación, validación tolerabilidad, trazabilidad sargassum) y costos de pilotos clínicos. 3) <strong>Impact/ESG equity o “impact partner” (18–24 meses)</strong>: cuando ya haya evidencia (NPS ≥60, ≥40% reorder) para atraer capital alineado a impacto y expansión (Phase 4 US Hispanic + B2B).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e5-9215-c972988b4b62"><td id="lzFm" class="">3</td><td id="~nv:" class="">Organizational Type &amp; Legal Structure</td><td id="pkVm" class=""><strong>Ideal/híbrido (for-profit con eje de impacto o estructura híbrida)</strong>: permite facturar DTC/clinic/B2B (ingresos propios) y captar inversión de impacto; facilita eligibility para SAFE/ESG equity e instrumentos tipo revenue-based. Para grants, ajustar elegibilidad (según convocatorias) usando: • entidad legal elegible + capacidad de reporte • alianzas con instituciones para ejecución (p.ej., investigación/impact measurement) cuando aplique.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8020-bf07-c700361b8569"><td id="lzFm" class="">4</td><td id="~nv:" class="">Revenue vs. Philanthropy Mix</td><td id="pkVm" class=""><strong>Mezcla 60–85% ingresos + 15–40% capital no dilutivo/impacto al inicio (ajustable por fase)</strong>. • <strong>Quién paga qué</strong>: pacientes/consumidor paga DTC $300 MXN (sostén y margen 65–85%); clínicas cubren canal (consigna/validación); B2B paga suministro de fucoidan para soporte del ecosistema. • <strong>Cómo apoya impacto + sostenibilidad</strong>: la evidencia clínica (HRIPT ≥98%, NPS ≥60) convierte el impacto ambiental en “prueba de valor” que reduce dependencia de filantropía; los grants financian validaciones y medición de impacto para evitar “mission drift” hacia marketing sin evidencia.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8024-a265-c0931bf09305"><td id="lzFm" class="">5</td><td id="~nv:" class="">Fundraising Stage &amp; Timeline</td><td id="pkVm" class=""><strong>Necesidad estimada (en lógica por tramos)</strong>: 4 tranches SAFE (meta total objetivo: <strong>$4M MXN</strong>, milestone-tied). • <strong>Horizonte</strong>: 24–30 meses para cubrir Phase 1–3 y preparar Phase 4. • <strong>Uso de fondos</strong>: 1) Runway + escalamiento de formulación y loteo (Phase 1 MVBP, HRIPT y supply chain de Sargassum). 2) Pilotos clínicos/consigna (Phase 2 clínicas). 3) Preparación export + fortalecimiento de supply/QA + “impact reporting” (Phase 3 export + SAFE). 4) Preparación US Hispanic + B2B (Phase 4, incluyendo costos de entrada comercial, distribución y acuerdos).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806e-995e-d738ba254411"><td id="lzFm" class="">6</td><td id="~nv:" class="">Equity &amp; Power Considerations</td><td id="pkVm" class="">• <strong>Poder de decisión sobre capital</strong>: con SAFE/convertibles, el control se concentra en inversores hasta hitos; mitigar con gobernanza clara (board advisory/observer, criterios de impacto vinculantes). • <strong>Centrada en comunidades</strong>: priorizar a pacientes sensibles (accesibilidad + tolerancia verificada) y a actores LATAM del ecosistema (empleos extracción/procesamiento). Evitar que el valor “se capture” solo por branding: asegurar trazabilidad, salarios dignos, y comunicación transparente del origen. • <strong>Prácticas trust-based</strong>: • acuerdos con clínicas en términos justos (no solo “marketing”) • reporting de impacto con métricas verificables (tons valorized, evitación de carbono) • participación/consulta con socios ambientales (p.ej., The Seas We Love) para legitimidad.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ac-8909-efcae9c443dd"><td id="lzFm" class="">7</td><td id="~nv:" class="">Eligibility &amp; Constraints</td><td id="pkVm" class="">• <strong>Restricciones típicas por fuente</strong>: grants suelen exigir estatus legal elegible, ejecución territorial (México), componente de innovación medible, y altos estándares de reporte (KPIs técnicos + impacto). • <strong>Restricciones de inversión</strong>: fondos ESG pueden requerir métricas GHG y “additionality” del impacto; y pueden limitar usos (p.ej., capex vs. I+D). • <strong>Cómo habilita impacto sistémico</strong>: usar el componente “circularidad + salud” para cumplir criterios de additionality (valorizar invasora) y evitar externalidades (asegurar “non-hazardous” end-of-life). Ajustar narrativa y documentación para cada convocatoria.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80af-822f-eb9ab775c599"><td id="lzFm" class="">8</td><td id="~nv:" class="">Relationship-Building Strategy</td><td id="pkVm" class="">• <strong>Funder mapping</strong> por tesis: blue economy (Mar+Fund), salud/dermato-impact, ESG para materias primas circulares. • <strong>Warm intros</strong>: conectores con instituciones (Tec de Monterrey/partners de medición), clínicas piloto (derm/rosácea/dermatitis), y socios ambientales (impact reporting). • <strong>Cadencia de comunicación</strong>: • mensual con KPI de fabricación/HRIPT • trimestral con métricas impacto (tons, evitación carbono, jobs) y comerciales (MVBP, reorder, NPS). • <strong>Mutual learning</strong>: adaptar formulación/estrategia de canal según feedback clínico y del mercado (sin cambiar el core de seguridad).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f8-8778-ddf6ae118e00"><td id="lzFm" class="">9</td><td id="~nv:" class="">Pitch Assets &amp; Readiness</td><td id="pkVm" class="">• <strong>Pitch deck + one-pager</strong> (enfoque: dual problem + evidencia de tolerabilidad + economía circular). • <strong>Impact narrative con Theory of Change</strong> (chain ambiental + social + económico; métricas objetivo: HRIPT ≥98%, NPS ≥60, ≥40% reorder, tons sargassum, evitación carbono 60–85%). • <strong>Paquete de credenciales</strong>: HRIPT y especificaciones (pH 5.5, fucoidan 1%, Croton lechleri 1.5%), historial BPF maquila Biotech, y métricas de MVBP (1,000 unidades; 50 DTC). • <strong>Data de mercado</strong>: TAM $2.3B MXN en rosácea/dermatitis; estrategia de beachhead por validación clínica. • <strong>Plan por fases</strong> (Phase 1–4) con hitos atados a tranches SAFE ($4M MXN).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8092-a91b-cb18d14c633e"><td id="lzFm" class="">10</td><td id="~nv:" class="">Risk &amp; Dependency Assessment</td><td id="pkVm" class="">Riesgos principales: • <strong>Dependencia de un solo canal/fuente</strong> (p.ej., DTC sin tracción clínica o un solo inversor). Mitigación: usar consigna clínicas + roadmap B2B y calendar de diversificación. • <strong>Riesgo técnico/regulatorio</strong> (tolerabilidad vs. variabilidad de lotes). Mitigación: QA por lotes, trazabilidad, y HRIPT como “gating KPI”. • <strong>Mission drift</strong> (priorizar margen sobre evidencia). Mitigación: cada tranche ligada a métricas de seguridad + impacto. • <strong>Riesgo de cadena de suministro circular</strong> (volumen/estacionalidad/invasión). Mitigación: contratos marco con proveedores de sargassum + acuerdos de logística/almacenamiento; medir tons valorized. • <strong>Incentivos misalineados</strong> con funders (impacto como “branding”). Mitigación: reporting verificable y copropiedad de criterios de impacto (con socios como The Seas We Love).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805b-9f2b-cfdcb0e87de8"><td id="lzFm" class="">11</td><td id="~nv:" class="">Learning &amp; Adaptation in Fundraising</td><td id="pkVm" class="">• <strong>Sistema de “what works for whom”</strong>: registrar qué argumentos y assets convierten mejor por tipo de funder (blue economy vs. salud vs. ESG). • <strong>Feedback loop</strong>: entrevistas cortas a stakeholders (clínicas, pacientes, maquila, ambientalistas) posteriores a cada reunión con inversionistas/grants. • <strong>Actualización trimestral</strong>: • targets (NPS/reorder) • estrategia de canal (DTC vs. consigna) • milestones de SAFE (ajuste de timing con base en HRIPT y resultados clínicos). • <strong>Iteración de narrativa</strong>: mantener el core “tolerancia verificada + sargassum valorized”, pero refinar el énfasis según evidencia (p.ej., si clínicas aceleran adopción, escalar consigna antes que export).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8077-ba86-cf74d6131dc8" class="">Go to <strong>Update Idea</strong> in the toolbar above to update your idea, description, and additional critical information.</p></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80b0-a742-dc0a04c5a213" class=""><strong>Funding Strategy &amp; Equity Matrix</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8058-a626-c609260bcbcd" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8080-a434-dbe0b61559d6"><th id="L^[Q" class="simple-table-header-color simple-table-header">#</th><th id="}?Sq" class="simple-table-header-color simple-table-header">Field</th><th id="siDv" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d6-a5e2-e775bcc01956"><td id="L^[Q" class="">1</td><td id="}?Sq" class="">Funding Pathways Overview</td><td id="siDv" class="">Summarize the main funding pathways relevant to this venture, such as: • Grants and philanthropy • Earned revenue and service contracts • Impact investment or recoverable grants • Alternative or innovative capital (e.g., revenue-based financing, crowdfunding).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806a-bfbe-de1cf0b4546f"><td id="L^[Q" class="">2</td><td id="}?Sq" class="">Primary Funding Pathways</td><td id="siDv" class="">Identify the 1–3 priority funding pathways for the next 12–24 months and explain why they fit the venture’s stage, scale, and mission alignment.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ca-8915-d2ba0c2f7ebe"><td id="L^[Q" class="">3</td><td id="}?Sq" class="">Organizational Type &amp; Legal Structure</td><td id="siDv" class="">Describe the current or intended organizational structure (e.g., nonprofit, for-profit, hybrid) and explain how this structure shapes eligibility for different funding sources and types of capital.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c0-b27d-d64e80b408dd"><td id="L^[Q" class="">4</td><td id="}?Sq" class="">Revenue vs. Philanthropy Mix</td><td id="siDv" class="">Explain how the venture plans to balance earned revenue with philanthropic or investment capital. • Who pays for what? • How does this mix support both impact and financial sustainability?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8054-9ba8-df5b391e66fa"><td id="L^[Q" class="">5</td><td id="}?Sq" class="">Fundraising Stage &amp; Timeline</td><td id="siDv" class="">Outline near-term fundraising milestones: • Total funding needed • Intended uses (runway, product, staffing, pilots) • Expected time horizon (e.g., 6, 12, or 24 months).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809f-8f2d-dd28ce050784"><td id="L^[Q" class="">6</td><td id="}?Sq" class="">Equity &amp; Power Considerations</td><td id="siDv" class="">Identify equity issues and power dynamics in the fundraising approach, such as: • Who holds decision-making power over capital • Which communities are centered or sidelined • How the venture will pursue more inclusive, trust-based fundraising practices.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e6-989f-e719e67d0236"><td id="L^[Q" class="">7</td><td id="}?Sq" class="">Eligibility &amp; Constraints</td><td id="siDv" class="">Note key constraints or requirements tied to funding sources (e.g., geography, issue area, legal status, reporting demands) and how these may enable or limit systemic impact.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802a-bee4-dcf38bb2d9ca"><td id="L^[Q" class="">8</td><td id="}?Sq" class="">Relationship-Building Strategy</td><td id="siDv" class="">Describe how the venture will build and steward relationships with funders and partners over time, including: • Funder mapping • Warm introductions • Ongoing communication and mutual learning.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d9-9b97-f4b7ea24ddb7"><td id="L^[Q" class="">9</td><td id="}?Sq" class="">Pitch Assets &amp; Readiness</td><td id="siDv" class="">List core pitch tools and assets needed or already in place, such as: • Pitch deck and one-pager • Impact narrative grounded in systems understanding and Theory of Change • Data and stories demonstrating traction and credibility.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f0-877f-e2c7fa072e08"><td id="L^[Q" class="">10</td><td id="}?Sq" class="">Risk &amp; Dependency Assessment</td><td id="siDv" class="">Identify major risks in the funding strategy, including over-reliance on a single funder or source, potential mission drift, or misaligned incentives, and explain how these risks will be mitigated.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8054-9484-e2612a1fc5e8"><td id="L^[Q" class="">11</td><td id="}?Sq" class="">Learning &amp; Adaptation in Fundraising</td><td id="siDv" class="">Explain how the venture will learn from fundraising efforts and adapt its strategy over time, including: • Tracking which approaches work for which funders • Gathering feedback • Updating targets, pathways, and relationship strategies.</td></tr></div></tbody></table></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

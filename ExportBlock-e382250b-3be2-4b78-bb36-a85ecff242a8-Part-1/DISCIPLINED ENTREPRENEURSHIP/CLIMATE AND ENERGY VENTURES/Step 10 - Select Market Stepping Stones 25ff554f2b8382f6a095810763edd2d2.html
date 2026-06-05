@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Step 10 - Select Market Stepping Stones</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="25ff554f-2b83-82f6-a095-810763edd2d2" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/code_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>Step 10 - Select Market Stepping Stones</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-803c-95db-e37d6dbc56ea" class=""><strong>Market Stepping Stone Matrix</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8005-ac29-fd3bf35d3515" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804a-8e12-ffd4239e44e0"><th id="Uc;U" class="simple-table-header-color simple-table-header">Field</th><th id="rJ?g" class="simple-table-header-color simple-table-header">Beachhead Market</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e7-83a7-fd54d9d650eb"><td id="Uc;U" class="">Intended Market</td><td id="rJ?g" class="">- Clínicas dermatológicas en México enfocadas en rosácea y dermatitis&lt;br&gt;- Comprador económico: director clínico o responsable de compras que busca reducir riesgo reputacional y que el paciente “tolere”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8097-ae0a-db3d55500243"><td id="Uc;U" class="">Market Size</td><td id="rJ?g" class="">- Beachhead inicial: suficiente para sostener Fase 1 y aprendizaje (meta de operación: 3 clínicas, 1,000 MVBP, 50 DTC)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8034-8b3b-d98c1b6af814"><td id="Uc;U" class="">Solution compatibility</td><td id="rJ?g" class="">- Se vende como crema sensible con HRIPT ≥98% (pivote crítico para tolerabilidad)&lt;br&gt;- Maquila BPF en México permite iniciar con formulación ya en pH 5.5 y shelf life 24 meses</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8001-a300-fb2fa85654d1"><td id="Uc;U" class="">Time and path to market</td><td id="rJ?g" class="">- Ingresos desde Fase 1 en 8 semanas vía 3 clínicas piloto + DTC&lt;br&gt;- Barreras: credibilidad clínica y evidencia de tolerabilidad; mitigación con HRIPT y cero adversos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806e-bac3-e40802bd2e67"><td id="Uc;U" class="">Innovation</td><td id="rJ?g" class="">- Innovación “incremental con prueba”: stack bioactivo + validación HRIPT, no una tecnología radical&lt;br&gt;- Aun así, el “por qué tolera” es novedoso para el comprador clínico</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8031-9e23-cdbd1c15a6eb"><td id="Uc;U" class="">Willingness to pay</td><td id="rJ?g" class="">- WTP validada en rangos $250/$300/$350 MXN para DTC; clínico compra a precio de fabricante con margen protegido&lt;br&gt;- Premium razonable vs importados (60–85% más barato)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c6-a737-f52e7668dda7"><td id="Uc;U" class="">Policy</td><td id="rJ?g" class="">- Stick: NOM-259 (BPF) + NOM-141 (etiquetado) elevan calidad del proveedor, pero favorecen al que ya maquila bajo cumplimiento&lt;br&gt;- Carrot: programas/convocatorias y rutas de exportación (Anteii) para escalar después</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d6-bf97-f6c6695e5d86"><td id="Uc;U" class="">Climate</td><td id="rJ?g" class="">- Mensaje de circularidad relevante pero secundario frente a tolerabilidad&lt;br&gt;- Puede usarse para PR y diferenciación (origen sargassum, impacto medible)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8039-8a3e-f194ab2be3e6"><td id="Uc;U" class="">Personal filter</td><td id="rJ?g" class="">- Alineado con valores del equipo: ciencia aplicada, origen LATAM y reducción de daño ecológico vía valorización de sargassum</td></tr></div></tbody></table></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8043-91cd-ed8ee7cf5195" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806f-9c77-fc361036e485"><th id="YXPe" class="simple-table-header-color simple-table-header">Field</th><th id="=trV" class="simple-table-header-color simple-table-header">Middle Stepping Stones</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b1-94db-d37e164f80d4"><td id="YXPe" class="">Intended Market</td><td id="=trV" class="">- Fase 2: red ampliada de clínicas (10+)&lt;br&gt;- Fase 2 clientes: dermatólogos “early adopters” que ya vieron resultados y piden constancia</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807c-81db-fc81c41fff8d"><td id="YXPe" class="">Market Size</td><td id="=trV" class="">- Escala de aprendizaje y caja: meta 2,000 unidades totales en Fase 2 (DTC + clínicas)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8012-a927-d3086aede12d"><td id="YXPe" class="">Solution compatibility</td><td id="=trV" class="">- Misma fórmula y claims soportados por HRIPT (mantener defensabilidad y reducir costo de repetición)&lt;br&gt;- Evolución comercial: SOPs clínicos, mejora de CVR y reorder rate</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b6-8237-f7b6587027b9"><td id="YXPe" class="">Time and path to market</td><td id="=trV" class="">- 3–6 meses adicionales para ampliar cartera clínica desde pilotos&lt;br&gt;- Canal directo con clínicos + referidos; menos fricción que nuevos segmentos masivos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e3-aa46-f03d316435cc"><td id="YXPe" class="">Innovation</td><td id="=trV" class="">- Validación de “fit” clínico: pasar de “aprobado por tolerancia” a “recomendado por resultados consistentes”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802e-8d98-d00079b92097"><td id="YXPe" class="">Willingness to pay</td><td id="=trV" class="">- Se consolida el precio de DTC ($300 MXN) y el valor percibido en clínicas por recurrencia (meta ≥40% reorder)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e1-890b-fb0cad49c2f4"><td id="YXPe" class="">Policy</td><td id="=trV" class="">- Se mantiene ventaja por cumplimiento BPF y evidencia HRIPT; facilita re-orden y aprobación interna</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8006-b303-d0242a129503"><td id="YXPe" class="">Climate</td><td id="=trV" class="">- Se vuelve herramienta de retención y branding (aunque no el driver principal)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8012-919d-ff7186688ea0"><td id="YXPe" class="">Personal filter</td><td id="=trV" class="">- Perfecto para que el equipo aprenda operacionalmente: CS clínico, seguimiento de tolerancia y control de calidad</td></tr></div></tbody></table></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80fb-8cf1-ee80bcef29ef" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f9-90bb-d777aba854a3"><th id="BoAi" class="simple-table-header-color simple-table-header">Field</th><th id="IwYQ" class="simple-table-header-color simple-table-header">Big Prize</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8080-b621-d8afbb105dbd"><td id="BoAi" class="">Intended Market</td><td id="IwYQ" class="">- Fase 3–4: exportación y B2B (fucoidan como ingrediente) a formuladores&lt;br&gt;- En paralelo: US DTC inicial para el SKU crema (particular enfoque Hispanic)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fe-bd8e-c32199cfcb0b"><td id="BoAi" class="">Market Size</td><td id="IwYQ" class="">- B2B: mercado de ingredientes y formulación con mayor “ticket” para capturar margen y acelerar scale (objetivo B2B fucoidan Phase 3+ con rangos $800–$1,500 USD/kg)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f4-842d-ed50eeebd419"><td id="BoAi" class="">Solution compatibility</td><td id="IwYQ" class="">- El diferenciador de tolerabilidad (HRIPT) fortalece narrativa y evidencia; el B2B se beneficia de trazabilidad + defensabilidad del proceso (y patent en proceso IMPI)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bc-a53f-f7ac30c1936d"><td id="BoAi" class="">Time and path to market</td><td id="IwYQ" class="">- Fase 3: export + piloto US + extracción/R&amp;D (12–18 meses para apalancar y luego escalar)&lt;br&gt;- Fase 4: venta B2B a 10+ formuladores; requiere reputación, consistencia de suministro y cumplimiento export</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805b-9f00-e7042bc5a9f5"><td id="BoAi" class="">Innovation</td><td id="IwYQ" class="">- Cambio de propuesta: de producto final a ingrediente con valor probado y origen circular&lt;br&gt;- Posible ventaja competitiva por proceso FOAK y claims de trazabilidad</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8011-acab-d648a0977b51"><td id="BoAi" class="">Willingness to pay</td><td id="IwYQ" class="">- B2B paga por especificación, estabilidad, calidad verificable y supply confiable; DTC US paga por diferenciación y performance</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f6-ad7c-f04161bd6c33"><td id="BoAi" class="">Policy</td><td id="IwYQ" class="">- Relevante para export: cumplimiento regulatorio y documentación robusta (BPF, COAs, HRIPT/QA)&lt;br&gt;- Carrots: rutas de exportación, apoyos a innovación y blue economy</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802e-ba11-fc33a354d4bc"><td id="BoAi" class="">Climate</td><td id="IwYQ" class="">- Mayor potencial de impacto reputacional y de diferenciación premium a escala (sargassum como insumo valorizado)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803a-9f5c-e17be49c54d4"><td id="BoAi" class="">Personal filter</td><td id="IwYQ" class="">- Encaja con visión de largo plazo: convertir un problema ecológico en un sistema de valor (producto → ingrediente → escala)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-804b-b326-ce758a292ea1" class="">Modificado: se completó la matriz para Beachhead, Middle Stepping Stones y Big Prize.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8050-aab2-dfa221db763a" class="">Go to Update Idea in the toolbar above to update your idea, description, and additional critical information. You can also use this chatbot to request specific changes to your results. Please use the button below to proceed to the next step.</p></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8022-ae89-c7d8608bba1a" class=""><strong>CURSOS: Market Stepping Stone Matrix</strong></h3></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80c3-b4a8-efca0721012f" class=""><strong>Beachhead Market</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80d0-8563-c74d1bb16a74" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b0-b4dd-cb4c037086b7"><th id="yazO" class="simple-table-header-color simple-table-header">#</th><th id="?HRT" class="simple-table-header-color simple-table-header">Field</th><th id="soL&gt;" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ee-9fd4-c5910a9e4460"><td id="yazO" class="">1</td><td id="?HRT" class="">Intended Beachhead Market</td><td id="soL&gt;" class="">Describe your intended Beachhead Market as specifically as possible.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cb-b0cd-dde50586c31c"><td id="yazO" class="">2</td><td id="?HRT" class="">Market Size</td><td id="soL&gt;" class="">Is it big enough to sustain the company to the next phase of growth? But small enough that you are not trying to take on too much?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803e-8660-eeb2529fc5c2"><td id="yazO" class="">3</td><td id="?HRT" class="">Solution compatibility</td><td id="soL&gt;" class="">Can you reach this market with the simplest and quickest-to-build version of your solution?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fb-aec2-d1929cfd6ac7"><td id="yazO" class="">4</td><td id="?HRT" class="">Time and path to market</td><td id="soL&gt;" class="">How soon can you start making revenue? What barriers exist to get to that point? Can you reasonably access these customers as a new venture? Will they buy from you?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8078-96ca-e90a257f433a"><td id="yazO" class="">5</td><td id="?HRT" class="">Innovation</td><td id="soL&gt;" class="">Are customers willing to try brand new technology?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801b-8add-ed9aba35a401"><td id="yazO" class="">6</td><td id="?HRT" class="">Willingness to pay</td><td id="soL&gt;" class="">Will customers pay a premium for the initial solution?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8089-8cbe-d9f742717cb9"><td id="yazO" class="">7</td><td id="?HRT" class="">Policy</td><td id="soL&gt;" class="">Does the target market have relevant sticks and carrots? Are these likely to change in the short term?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8038-bf82-d59ec94cceab"><td id="yazO" class="">8</td><td id="?HRT" class="">Climate</td><td id="soL&gt;" class="">Do customers care enough about climate to pay a high premium?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fa-8983-f5bfa52024c6"><td id="yazO" class="">9</td><td id="?HRT" class="">Personal filter</td><td id="soL&gt;" class="">Is the market consistent with the values, passions, and goals of your team?</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8000-9c99-fcbe70c85510" class=""><strong>Middle Stepping Stones</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8028-ae6b-f172437c2d99" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8086-8002-cfaf544a7141"><th id="FrjF" class="simple-table-header-color simple-table-header">#</th><th id="Nqh]" class="simple-table-header-color simple-table-header">Field</th><th id="HZU^" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8082-8ad1-f4a8138a3b53"><td id="FrjF" class="">1</td><td id="Nqh]" class="">Intended Market Stepping Stone</td><td id="HZU^" class="">Describe your intended Market Stepping Stone as specifically as possible. You may need to repeat this section several times for several different stepping stones.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ba-bd8c-ee0f13dbd8f2"><td id="FrjF" class="">2</td><td id="Nqh]" class="">Market Size</td><td id="HZU^" class="">Is it larger than the Beachhead Market (or the previous stepping stone)? Is it big enough to sustain the company in the next phase of growth?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8054-b824-c1810f912d08"><td id="FrjF" class="">3</td><td id="Nqh]" class="">Solution compatibility</td><td id="HZU^" class="">Does it enable a productive evolution of your technology—a big enough jump that you&#x27;re learning new things but a small enough jump that it will not take too long to get there?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ca-acf4-eb0b8d71c6da"><td id="FrjF" class="">4</td><td id="Nqh]" class="">Time and path to market</td><td id="HZU^" class="">How soon can you expand to this market? Is this market a step closer to your long-term goal, rather than a distraction from that goal? Is the target market one you will be able to access directly or through partners who are realistic?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8078-bf56-f3d9ff842684"><td id="FrjF" class="">5</td><td id="Nqh]" class="">Innovation</td><td id="HZU^" class="">Are customers willing to try still-evolving technology?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d1-9573-c9c295b8b243"><td id="FrjF" class="">6</td><td id="Nqh]" class="">Willingness to pay</td><td id="HZU^" class="">Will customers pay a premium for an evolving solution?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f6-8760-e2e2cba3ed5c"><td id="FrjF" class="">7</td><td id="Nqh]" class="">Policy</td><td id="HZU^" class="">Does the target market have relevant sticks and carrots? Are these likely to change in the medium term?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c6-a82f-ec25c9b0e8cf"><td id="FrjF" class="">8</td><td id="Nqh]" class="">Climate</td><td id="HZU^" class="">Do customers care enough about climate to pay a moderate premium?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80dd-8a1e-ce2a20e1627c"><td id="FrjF" class="">9</td><td id="Nqh]" class="">Personal filter</td><td id="HZU^" class="">Is the market consistent with the values, passions, and goals of your team?</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8083-ae9e-e44bf4ae2e47" class=""><strong>Big Prize</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80c8-9de8-f03dddd49939" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806e-8b4c-c16e2a91659a"><th id="DaGn" class="simple-table-header-color simple-table-header">#</th><th id="L\bJ" class="simple-table-header-color simple-table-header">Field</th><th id="Um;p" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cf-9f9f-c8b214352b0d"><td id="DaGn" class="">1</td><td id="L\bJ" class="">Intended Big Prize</td><td id="Um;p" class="">Describe your intended Big Prize.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806f-93ee-cd7de70cbf4f"><td id="DaGn" class="">2</td><td id="L\bJ" class="">Market Size</td><td id="Um;p" class="">Is the target market large enough to create a satisfying payoff for investors, potentially arriving many years down the line?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ca-96cd-c03608ffec2e"><td id="DaGn" class="">3</td><td id="L\bJ" class="">Solution compatibility</td><td id="Um;p" class="">Does your solution give you a competitive value proposition in this market?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ef-93d7-f06337820713"><td id="DaGn" class="">4</td><td id="L\bJ" class="">Time and path to market</td><td id="Um;p" class="">Do you have a reasonable path to access this market in the long term? How long will it take to reach this market? Will investors be patient enough for you to get to this point?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809f-a9ae-dbf4b7007a73"><td id="DaGn" class="">5</td><td id="L\bJ" class="">Innovation</td><td id="Um;p" class="">Are customers willing to switch from their status quo?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802b-a732-f8dd649a7fbc"><td id="DaGn" class="">6</td><td id="L\bJ" class="">Willingness to pay</td><td id="Um;p" class="">Can you charge a competitive price at scale? Do customers have a compelling reason to buy?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8077-8fd0-d247a98210fd"><td id="DaGn" class="">7</td><td id="L\bJ" class="">Policy</td><td id="Um;p" class="">Does the target market have relevant sticks and carrots? Are these likely to change in the long term?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8064-8089-c78d8d5ca09a"><td id="DaGn" class="">8</td><td id="L\bJ" class="">Climate</td><td id="Um;p" class="">Is the target market large enough that success at scale would have a substantial positive impact on the planet?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8071-bb1d-cf725a3e3fdb"><td id="DaGn" class="">9</td><td id="L\bJ" class="">Personal filter</td><td id="Um;p" class="">Is the market consistent with the values, passions, and goals of your team?</td></tr></div></tbody></table></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

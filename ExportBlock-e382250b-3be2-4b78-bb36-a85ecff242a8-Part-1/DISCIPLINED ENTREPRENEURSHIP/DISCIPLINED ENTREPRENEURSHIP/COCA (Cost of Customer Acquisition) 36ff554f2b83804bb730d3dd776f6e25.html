@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>COCA (Cost of Customer Acquisition)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="36ff554f-2b83-804b-b730-d3dd776f6e25" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/plus_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>COCA (Cost of Customer Acquisition)</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80e1-818b-dd309ca9a46c" class="">A continuación se consolidan supuestos y presupuestos estimados para calcular el <strong>COCA</strong> (Cost of Customer Acquisition) y contrastarlo contra el <strong>LTV</strong> a lo largo del tiempo, para evaluar sostenibilidad de unidad económica (marketing/ventas vs valor de cliente).</p></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80fc-a05d-c46edec95345"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-805e-8b1f-cf11283bb4bd" class=""><strong>1) Assumptions for COCA Estimation (intervalos de tiempo)</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8011-abf5-e3ae127c274a" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c9-bec2-f43456a35099"><th id="_Cw:" class="simple-table-header-color simple-table-header">Intervalo</th><th id="xDE{" class="simple-table-header-color simple-table-header">Inicio</th><th id="Y}cb" class="simple-table-header-color simple-table-header">Fin</th><th id="qith" class="simple-table-header-color simple-table-header">Explicación (estimación y por qué)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8077-a300-d27b52fa4802"><td id="_Cw:" class=""><strong>Short Term – Initial Market Entry</strong></td><td id="xDE{" class="">Mes 0</td><td id="Y}cb" class="">Mes 12</td><td id="qith" class="">Construcción del MVBP, HRIPT en file, lanzamiento DTC, aprendizaje de creatividades y funnel sensible-piel, y pilotos clínicos (3 clinics) con conversión inicial. CAC alto por fricción/regulatorio + baja tracción inicial.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ad-9061-cf65e1438f17"><td id="_Cw:" class=""><strong>Medium Term – Gaining Market Traction</strong></td><td id="xDE{" class="">Mes 13</td><td id="Y}cb" class="">Mes 24</td><td id="qith" class="">Segundo run (2,000 unidades), optimización de conversión y retención (día 30/60), expansión/estabilización de clínicas piloto y mejor calidad de leads (menos “trial” desperdiciado). CAC baja.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f0-b3b7-db11dda2b3de"><td id="_Cw:" class=""><strong>Long Term – Steady State</strong></td><td id="xDE{" class="">Mes 25</td><td id="Y}cb" class="">Mes 48</td><td id="qith" class="">Operación madura: repetición del playbook, mezcla con más word-of-mouth/UGC, y costos de adquisición más estables. Se asume mayor eficiencia y menor dependencia de paid.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8063-9be8-d11273072f59"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80df-8d7b-f6a2eaa55d72" class=""><strong>2) Nine Tables</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="36ff554f-2b83-8062-a24d-cddf885b4c1e" class=""><strong>Nota de consistencia:</strong> Para Step 5/6 uso el forecast de <strong>nuevos clientes por año</strong> por ser el input requerido (COCA anual). Aquí alineo: <strong>Year 1 = 230 (piloto + DTC inicial)</strong>, <strong>Year 2 = 600</strong>, <strong>Year 3–5 = 1,000</strong>.</blockquote></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-809d-934a-cec56c174929"/></div><div style="display:contents" dir="auto"><h1 id="36ff554f-2b83-80ee-a5a7-cf6d4c50aa7d" class=""><strong>A) Marketing Expenses</strong></h1></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8054-b47f-e1bc39143a93" class=""><strong>Marketing Expenses - Short Term – Initial Market Entry</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8058-8905-f70a6f966f7c" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e8-86fb-ca3c699a5a49"><th id="}ycK" class="simple-table-header-color simple-table-header">Expense Type</th><th id="KFF|" class="simple-table-header-color simple-table-header">Cost ($MXN)</th><th id="&lt;AnZ" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ca-b7c0-c7ad18cf9058"><td id="}ycK" class="">Paid Social (Meta/TikTok/IG)</td><td id="KFF|" class="">480,000</td><td id="&lt;AnZ" class="">Arranque con CPM alto + pruebas creativas y audiencias sensibilidad/rosácea/atópica.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-807e-8b27-ccb5ee73bc2c"><td id="}ycK" class="">Influencer/derm micro-content</td><td id="KFF|" class="">160,000</td><td id="&lt;AnZ" class="">2–4 pilotos con enfoque “clinical tolerability + HRIPT ≥98%”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8093-bf53-fb331b126978"><td id="}ycK" class="">Content production + UGC incentives iniciales</td><td id="KFF|" class="">130,000</td><td id="&lt;AnZ" class="">Producción de videos/UGC (antes/después percibido, rutina sensible, dossier).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8017-ab6a-fd8989347d32"><td id="}ycK" class="">Website/eCommerce + CRO (tracking)</td><td id="KFF|" class="">60,000</td><td id="&lt;AnZ" class="">Tienda Nube, landing pages, GA4/Pixel, email flows iniciales.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ce-81ad-dc81ab3766f1"><td id="}ycK" class="">Sampling (muestras/mini-size para DMU)</td><td id="KFF|" class="">70,000</td><td id="&lt;AnZ" class="">Envíos a leads + kits clínicos (parte marketing no ventas).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b3-b80c-d7a0d2dd858c"><td id="}ycK" class="">PR/local media test</td><td id="KFF|" class="">30,000</td><td id="&lt;AnZ" class="">1–2 menciones locales tipo clean science/LATAM marine bioactives.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e0-8af4-ead59758e204"><td id="}ycK" class=""><strong>Total Costs ($MXN)</strong></td><td id="KFF|" class=""><strong>1,030,000</strong></td><td id="&lt;AnZ" class="">Suma marketing Year 1 (Short).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80f3-a047-d9d174de5199" class=""><strong>Marketing Expenses - Medium Term – Gaining Market Traction</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8058-80d5-f3517a395f21" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8063-abae-ec4208f6eba7"><th id="k;h@" class="simple-table-header-color simple-table-header">Expense Type</th><th id="QtEP" class="simple-table-header-color simple-table-header">Cost ($MXN)</th><th id="g}@I" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804a-b0fa-e1b3b56c22d9"><td id="k;h@" class="">Paid Social optimizado (menos desperdicio)</td><td id="QtEP" class="">360,000</td><td id="g}@I" class="">Creatividades ganadoras + segmentación más fina “irritation-prone”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8051-b80d-f8af716e021c"><td id="k;h@" class="">Always-on content + referral/UGC engine</td><td id="QtEP" class="">250,000</td><td id="g}@I" class="">Programa referidos + incentivos a UGC que convierten a trial/compra.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8037-a216-e2831591bc88"><td id="k;h@" class="">Clinic co-marketing (materiales + contenido)</td><td id="QtEP" class="">110,000</td><td id="g}@I" class="">Apoyo de contenido/folletos + entrenamiento básico de mensaje tolerabilidad.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ce-84df-c1709c8cb9a7"><td id="k;h@" class="">Email/SMS automation (pre-reorder day 45–60)</td><td id="QtEP" class="">70,000</td><td id="g}@I" class="">Nurture para recompras (impacta conversión de leads a buyers).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8021-8b95-d7436ba8f8a0"><td id="k;h@" class="">Brand partnerships pequeños</td><td id="QtEP" class="">40,000</td><td id="g}@I" class="">Wellness/spas/concept stores para awareness altamente relevante.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-803b-8ae7-d56e60475805"><td id="k;h@" class=""><strong>Total Costs ($MXN)</strong></td><td id="QtEP" class=""><strong>830,000</strong></td><td id="g}@I" class="">Suma marketing Year 2 (Medium).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8077-86f2-de1119f06de9" class=""><strong>Marketing Expenses - Long Term – Steady State</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8039-bc6a-d76e76e4ec9e" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80fb-a2cc-fe55040d8731"><th id="veMc" class="simple-table-header-color simple-table-header">Expense Type</th><th id="&gt;|j]" class="simple-table-header-color simple-table-header">Cost ($MXN)</th><th id="yN_t" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-803a-b670-ee2e16db7da5"><td id="veMc" class="">Paid Social + retargeting (eficiente)</td><td id="&gt;|j]" class="">300,000</td><td id="yN_t" class="">Retargeting a visitantes/buyers (mejor CVR, menor CAC).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8051-851d-c590fba09c37"><td id="veMc" class="">UGC/referral (más orgánico)</td><td id="&gt;|j]" class="">220,000</td><td id="yN_t" class="">Incentivos sostenidos por volumen y costos más previsibles.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804c-b0fd-f2c3fec859da"><td id="veMc" class="">CRO continuo + performance creative testing</td><td id="&gt;|j]" class="">90,000</td><td id="yN_t" class="">Optimización continua: landing, creatividades, oferta suscripción 60–90d.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8001-b787-eb6356bfed8a"><td id="veMc" class="">Selective partnerships/activaciones</td><td id="&gt;|j]" class="">70,000</td><td id="yN_t" class="">Activaciones por lotes para no “quemar” presupuesto.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a9-ad0c-ed7eee770438"><td id="veMc" class=""><strong>Total Costs ($MXN)</strong></td><td id="&gt;|j]" class=""><strong>680,000</strong></td><td id="yN_t" class="">Suma marketing promedio Year 3–4–5 (Long).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80af-b84e-f6442fde4436"/></div><div style="display:contents" dir="auto"><h1 id="36ff554f-2b83-805d-af06-caaaf2dbdbef" class=""><strong>B) Sales Expenses</strong></h1></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-808b-abf8-d67bbca60b8f" class=""><strong>Sales Expenses - Short Term – Initial Market Entry</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80fa-b112-f77911368591" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-801d-b989-e1a52a1845a6"><th id="v&gt;FD" class="simple-table-header-color simple-table-header">Expense Type</th><th id="&lt;_jY" class="simple-table-header-color simple-table-header">Cost ($MXN)</th><th id="SxTJ" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8080-9165-cf65a1a49832"><td id="v&gt;FD" class="">SDR/ventas (outreach DTC + clínicas)</td><td id="&lt;_jY" class="">210,000</td><td id="SxTJ" class="">Outreach, seguimiento DMU, coordinación de clinics pilots y conversión initial.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e7-9a87-f0e8845d5b5c"><td id="v&gt;FD" class="">Sampling &amp; clinic onboarding logistics</td><td id="&lt;_jY" class="">130,000</td><td id="SxTJ" class="">Kits, coordinación, seguimiento trial 30 días, soporte de primer ciclo.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8053-bf4a-f1ea93953bd8"><td id="v&gt;FD" class="">Sales travel (MTY/CDMX/GDL/SLP)</td><td id="&lt;_jY" class="">55,000</td><td id="SxTJ" class="">Viajes/viáticos para activar 3 clinics y pipeline temprano.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8054-bf2c-e9ca07273c18"><td id="v&gt;FD" class="">CRM/tools + ops (no marketing)</td><td id="&lt;_jY" class="">20,000</td><td id="SxTJ" class="">Gestión de leads, acuerdos, y soporte del proceso ventas.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-809d-aa87-f4c11e1bd990"><td id="v&gt;FD" class=""><strong>Total Costs ($MXN)</strong></td><td id="&lt;_jY" class=""><strong>415,000</strong></td><td id="SxTJ" class="">Suma ventas Year 1 (Short).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80af-885f-fa1ea84f7a00" class=""><strong>Sales Expenses - Medium Term – Gaining Market Traction</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-805d-82ab-e1e1ed48b2f1" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8074-82f9-ca650b6205e8"><th id="CJgr" class="simple-table-header-color simple-table-header">Expense Type</th><th id="_:w?" class="simple-table-header-color simple-table-header">Cost ($MXN)</th><th id="dFPP" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-806f-81a6-d1f40cc49e87"><td id="CJgr" class="">Sales/BD (más volumen, misma estructura)</td><td id="_:w?" class="">230,000</td><td id="dFPP" class="">Más cierres y expansión/renovación de clinics.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804e-b70f-d86bb8cec978"><td id="CJgr" class="">Clinic restocking support + procurement cycles</td><td id="_:w?" class="">140,000</td><td id="dFPP" class="">Gestión de reabasto, entrenamiento y desempeño trial.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8090-b9a5-e537b081983e"><td id="CJgr" class="">Trade/community small events</td><td id="_:w?" class="">35,000</td><td id="dFPP" class="">Activaciones específicas para pipeline (sin costos de trade show grande).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80df-8644-c7f36fc2a438"><td id="CJgr" class=""><strong>Total Costs ($MXN)</strong></td><td id="_:w?" class=""><strong>405,000</strong></td><td id="dFPP" class="">Suma ventas Year 2 (Medium).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80d2-bca0-e65bb5a81393" class=""><strong>Sales Expenses - Long Term – Steady State</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8003-b9be-ccae96c383d3" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8029-a4c5-fbc592f11392"><th id="fv]e" class="simple-table-header-color simple-table-header">Expense Type</th><th id="RmK`" class="simple-table-header-color simple-table-header">Cost ($MXN)</th><th id="H~pv" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8042-a184-e6def4269627"><td id="fv]e" class="">Sales lean (renovaciones + expansión selectiva)</td><td id="RmK`" class="">170,000</td><td id="H~pv" class="">Menor gasto por lead/close; foco en retener clinics y ampliar cobertura.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8096-9dc2-f10db72c5484"><td id="fv]e" class="">Customer success-lite (soporte para reducir “no reorders”)</td><td id="RmK`" class="">80,000</td><td id="H~pv" class="">Aunque retención no es “adquisición”, evita pérdidas de cohortes tempranas.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80df-867c-caf47c7473b6"><td id="fv]e" class=""><strong>Total Costs ($MXN)</strong></td><td id="RmK`" class=""><strong>250,000</strong></td><td id="H~pv" class="">Suma ventas promedio Year 3–5 (Long).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80f9-9b9f-d9d4aaab5490"/></div><div style="display:contents" dir="auto"><h1 id="36ff554f-2b83-809f-a31c-c6f759af6b66" class=""><strong>C) R&amp;D Expenses</strong></h1></div><div style="display:contents" dir="auto"><blockquote id="36ff554f-2b83-8096-9bd1-f9858fe4bdf9" class="">R&amp;D proxy = pruebas (HRIPT/estabilidad/tecnología de proceso mínima) y defensa técnica del producto.</blockquote></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80b0-936d-c362ae323744" class=""><strong>R&amp;D Expenses - Short Term – Initial Market Entry</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-809d-842e-d48549711473" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805a-88d6-e85fb7fd4781"><th id="bnWH" class="simple-table-header-color simple-table-header">Expense Type</th><th id="k|Mm" class="simple-table-header-color simple-table-header">Cost ($MXN)</th><th id="P\Q:" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a3-a0eb-c100e6461ffe"><td id="bnWH" class="">HRIPT finished formula (panel)</td><td id="k|Mm" class="">300,000</td><td id="P\Q:" class="">Para asegurar tolerabilidad y respaldo “HRIPT ≥98%”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e4-b8a0-f02320bd2834"><td id="bnWH" class="">Estabilidad (baseline + acelerado)</td><td id="k|Mm" class="">220,000</td><td id="P\Q:" class="">Para soportar consistencia entre lotes y shelf-life.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ee-9039-d8709180b3e7"><td id="bnWH" class="">Formulation iteration (prototipado compatible maquila)</td><td id="k|Mm" class="">120,000</td><td id="P\Q:" class="">Ajustes de emulsión/pH 5.5/compatibilidad actives.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-801d-8908-e6d11e28daef"><td id="bnWH" class="">Regulatory/technical documentation support</td><td id="k|Mm" class="">60,000</td><td id="P\Q:" class="">Soporte técnico para dossier/claims permitidos y NOM-141 label alignment.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8093-b4b7-d448122b7daf"><td id="bnWH" class=""><strong>Total Costs ($MXN)</strong></td><td id="k|Mm" class=""><strong>700,000</strong></td><td id="P\Q:" class="">Suma R&amp;D Year 1 (Short).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8081-859f-d136da886988" class=""><strong>R&amp;D Expenses - Medium Term – Gaining Market Traction</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80ba-9cb2-fdbe235682b2" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80db-8714-e9fbfdc34122"><th id="JR\j" class="simple-table-header-color simple-table-header">Expense Type</th><th id="fDhb" class="simple-table-header-color simple-table-header">Cost ($MXN)</th><th id="K[]m" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e7-a145-fe9eb5b35ace"><td id="JR\j" class="">Estabilidad batch consistency (2nd batch)</td><td id="fDhb" class="">200,000</td><td id="K[]m" class="">Confirmar que run 2 mantiene desempeño.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f6-b7d1-d4d8be5318c8"><td id="JR\j" class="">Consumer efficacy panel (TEWL/redness percibido)</td><td id="fDhb" class="">240,000</td><td id="K[]m" class="">Panel 3–4 semanas para sustentar valor de “sensible skin improvement”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c6-8ada-e7157a4117ca"><td id="JR\j" class="">Extraction/processing protocol iteration (piloto)</td><td id="fDhb" class="">140,000</td><td id="K[]m" class="">Trabajo inicial para reducir dependencia de compras futuras.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8086-b0c2-fe1ac9fdcc25"><td id="JR\j" class=""><strong>Total Costs ($MXN)</strong></td><td id="fDhb" class=""><strong>580,000</strong></td><td id="K[]m" class="">Suma R&amp;D Year 2 (Medium).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8004-ab36-ed763a23f01d" class=""><strong>R&amp;D Expenses - Long Term – Steady State</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8080-9fa4-eb8edfb065da" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ba-92fe-ca7ae54bc032"><th id="Y^ji" class="simple-table-header-color simple-table-header">Expense Type</th><th id="oyhi" class="simple-table-header-color simple-table-header">Cost ($MXN)</th><th id="Z;Gc" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-803a-9690-e35c9fb03310"><td id="Y^ji" class="">Ongoing stability spot checks</td><td id="oyhi" class="">180,000</td><td id="Z;Gc" class="">Mantener confianza en lotes repetibles.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80cf-a5b3-fa7ee256cd4c"><td id="Y^ji" class="">Extraction protocol scale improvement</td><td id="oyhi" class="">260,000</td><td id="Z;Gc" class="">Optimización más robusta para future supply defensible.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80fe-b0fe-dac2e7beeae1"><td id="Y^ji" class="">Regulatory technical upkeep (claims/technical)</td><td id="oyhi" class="">160,000</td><td id="Z;Gc" class="">Soporte y ajustes por cambios/entorno regulatorio.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e5-928f-f4ccc0169d25"><td id="Y^ji" class=""><strong>Total Costs ($MXN)</strong></td><td id="oyhi" class=""><strong>600,000</strong></td><td id="Z;Gc" class="">Suma R&amp;D promedio por año en steady state (Long).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8030-bed7-f1155d787a25"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8095-9367-f2bc7bcd1259" class=""><strong>3) Estimate COCA for Years 1–5 (usando Step 4 totals)</strong></h2></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8030-9f59-f6d5ca26a87f" class="">Supuestos de <strong>New Customers forecasted</strong>:</p></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8076-9cbf-dded847716f1" class="bulleted-list"><li style="list-style-type:disc"><strong>Year 1:</strong> 230 (coincide con tu target Year-1 ~230 pacientes/compra)</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80f3-b497-d9e3fac559e2" class="bulleted-list"><li style="list-style-type:disc"><strong>Year 2:</strong> 600</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8014-9a2e-efb740d2dc55" class="bulleted-list"><li style="list-style-type:disc"><strong>Year 3–5:</strong> 1,000 por año</li></ul></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8024-a8d7-fe5607230075" class="">Ahora calculo COCA usando: <strong>COCA = (All Sales + All Marketing) / New Customers</strong></p></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-804f-884d-e3a339fdd79a" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a2-97a8-f3107ed50b16"><th id="FOR|" class="simple-table-header-color simple-table-header">Año</th><th id="zhiG" class="simple-table-header-color simple-table-header">New Customers forecasted</th><th id="o||_" class="simple-table-header-color simple-table-header">All Sales expenses ($MXN)</th><th id="YAnb" class="simple-table-header-color simple-table-header">All Marketing expenses ($MXN)</th><th id="ubHG" class="simple-table-header-color simple-table-header">Total Marketing &amp; Sales ($MXN)</th><th id="FD?O" class="simple-table-header-color simple-table-header">COCA ($MXN)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8072-848e-ee7852d56170"><td id="FOR|" class="">Year 1</td><td id="zhiG" class="">230</td><td id="o||_" class="">415,000</td><td id="YAnb" class="">1,030,000</td><td id="ubHG" class="">1,445,000</td><td id="FD?O" class=""><strong>6,283</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805d-8a22-d55f0f5ebeaf"><td id="FOR|" class="">Year 2</td><td id="zhiG" class="">600</td><td id="o||_" class="">405,000</td><td id="YAnb" class="">830,000</td><td id="ubHG" class="">1,235,000</td><td id="FD?O" class=""><strong>2,058</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e0-b11a-ce3a0c760ad6"><td id="FOR|" class="">Year 3</td><td id="zhiG" class="">1,000</td><td id="o||_" class="">250,000</td><td id="YAnb" class="">680,000</td><td id="ubHG" class="">930,000</td><td id="FD?O" class=""><strong>930</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8099-bcc1-f6eb742dd4bb"><td id="FOR|" class="">Year 4</td><td id="zhiG" class="">1,000</td><td id="o||_" class="">250,000</td><td id="YAnb" class="">680,000</td><td id="ubHG" class="">930,000</td><td id="FD?O" class=""><strong>930</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80dd-9efd-de4b6a9721f5"><td id="FOR|" class="">Year 5</td><td id="zhiG" class="">1,000</td><td id="o||_" class="">250,000</td><td id="YAnb" class="">680,000</td><td id="ubHG" class="">930,000</td><td id="FD?O" class=""><strong>930</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80e9-8f4f-e45d00cb65c0"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-801e-ab0f-d960c918d2d8" class=""><strong>4) COCA por tiempo (rango) — de Step 2 (Short/Medium/Long)</strong></h2></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80e8-9db9-dacdb793469e" class="">(Usamos variación razonable por eficiencia/funnel: ±20% para Short, ±15% Medium, ±10% Long)</p></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80bf-be7c-d82076e827d7" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8071-a910-d330bee6e122"><th id="hPp\" class="simple-table-header-color simple-table-header">Tiempo</th><th id="TtEF" class="simple-table-header-color simple-table-header">COCA Range ($MXN)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-809a-9acd-e5efa5b0d9b4"><td id="hPp\" class=""><strong>Short Term – Initial Market Entry</strong></td><td id="TtEF" class=""><strong>$5,000 – $7,800</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-800e-a459-c41a99cd5aab"><td id="hPp\" class=""><strong>Medium Term – Gaining Market Traction</strong></td><td id="TtEF" class=""><strong>$1,700 – $2,400</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c4-beaf-ee88ad4ad461"><td id="hPp\" class=""><strong>Long Term – Steady State</strong></td><td id="TtEF" class=""><strong>$840 – $1,020</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80e3-a763-c4d1e0420223"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80a5-95be-c9ac3f4115d9" class=""><strong>5) Key Drivers of COCA and Ways to Decrease It</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8082-81ef-cfd96e1e0786" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80fb-ad0a-d02c0c78f615"><th id="k;`J" class="simple-table-header-color simple-table-header">Key Driver for COCA</th><th id="VUFv" class="simple-table-header-color simple-table-header">Effect (High/Med/Low) + explicación</th><th id="`~k]" class="simple-table-header-color simple-table-header">Action Possible to Decrease</th><th id="FLsW" class="simple-table-header-color simple-table-header">Risk (High/Med/Low) + explicación</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a5-91d2-d99b1b87b546"><td id="k;`J" class="">Conversión funnel (Awareness → Trial → Purchase → Day 60 reorder)</td><td id="VUFv" class=""><strong>High</strong>: En skincare sensible, si la tolerabilidad/resultado no “engancha” en 3–4 semanas, CVR y reorder bajan → más gasto por cliente nuevo.</td><td id="`~k]" class="">Optimizar landing con dossier HRIPT/ingredientes, “tolerability protocol” (cómo usar), y creatividades con evidencia (NPS + HRIPT).</td><td id="FLsW" class=""><strong>High</strong>: si falla prueba/expectativas, sube COCA y churn por irritación percibida.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8078-87e3-e52c9c6cf70b"><td id="k;`J" class="">Calidad de leads (clínicas vs DTC paid)</td><td id="VUFv" class=""><strong>High</strong>: clinics generan lead costlier (salida por sampling/procurement), pero DMU profesional aumenta conversión si training es correcto.</td><td id="`~k]" class="">Estandarizar onboarding clinic y trial 30 días; priorizar clínicas con pacientes rosácea/atópica y buena tasa de seguimiento.</td><td id="FLsW" class=""><strong>Med</strong>: si clínicas no cumplen seguimiento, se incrementa desperdicio (leads que no compran).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80aa-8fb7-f4ceda165e24"><td id="k;`J" class="">Dependencia de paid vs orgánico (UGC/referral)</td><td id="VUFv" class=""><strong>Medium</strong>: Inicialmente paid es necesario; al crecer, el WOM (NPS, UGC) debe capturar demanda y bajar costo marginal.</td><td id="`~k]" class="">Programa referidos y UGC; incentivos por “tolerability story” y antes/después percibido; retargeting a buyers y a visitantes.</td><td id="FLsW" class=""><strong>Low–Med</strong>: si el WOM tarda, el mix se mantiene con paid más tiempo (CAC no cae como esperado).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8096-ad37-c506edf427cd"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80d0-82d4-e77dbdd66ee4" class=""><strong>6) Comparison of LTV and COCA Over Time</strong></h2></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80a0-9824-e3ba665f822e" class="">Usamos tu LTV Step 17:</p></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8056-9116-f29e2b9d7cbf" class="bulleted-list"><li style="list-style-type:disc">DTC: 5,400 MXN (3 años, 1.5 compras/quarter)</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-800f-bb50-d03a2fd8a265" class="bulleted-list"><li style="list-style-type:disc">Clinic: 2,400 MXN (2 años, 1 compra/quarter) Para simplificar por cohorte, asigno LTV promedio por etapa:</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80d6-9adc-ebbdb37ca296" class="bulleted-list"><li style="list-style-type:disc">Short (mix más DTC inicial): <strong>$5,400</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8057-a4b0-dc7e31ded319" class="bulleted-list"><li style="list-style-type:disc">Medium (más mix DTC+clinics con repetición): <strong>$6,200</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-805d-90a9-d6b37968a1ae" class="bulleted-list"><li style="list-style-type:disc">Long (mejor cohort + más reorder/advocacy): <strong>$7,000</strong></li></ul></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-804c-ac34-e26b370ae60a" class="">COCA por etapa:</p></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80d5-b5f0-fdb025bfc75a" class="bulleted-list"><li style="list-style-type:disc">Short: Year 1 COCA <strong>6,283</strong> (y rango)</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80da-8bd1-c558c6bbcb60" class="bulleted-list"><li style="list-style-type:disc">Medium: Year 2 COCA <strong>2,058</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8092-90f1-c0d3c1a8e0d0" class="bulleted-list"><li style="list-style-type:disc">Long: Year 3–5 COCA <strong>930</strong></li></ul></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80ae-9c41-c87058d2d61a" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80bb-b1ab-db0a0c922208"><th id="MAT\" class="simple-table-header-color simple-table-header">Tiempo</th><th id="DZCB" class="simple-table-header-color simple-table-header">LTV por cliente ($MXN)</th><th id="YUwg" class="simple-table-header-color simple-table-header">COCA por cliente ($MXN)</th><th id="f:yr" class="simple-table-header-color simple-table-header">LTV/COCA</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-803f-9c84-e1c00b3d2817"><td id="MAT\" class="">Short Term – Initial Market Entry</td><td id="DZCB" class="">5,400</td><td id="YUwg" class="">6,283</td><td id="f:yr" class="">0.86</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ae-92a9-f13ffd6381ec"><td id="MAT\" class="">Medium Term – Gaining Market Traction</td><td id="DZCB" class="">6,200</td><td id="YUwg" class="">2,058</td><td id="f:yr" class="">3.01</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8093-afdd-d664a1716a9b"><td id="MAT\" class="">Long Term – Steady State</td><td id="DZCB" class="">7,000</td><td id="YUwg" class="">930</td><td id="f:yr" class="">7.53</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8098-94bc-f3f755aea961"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-800e-a5dd-ed116571a204" class=""><strong>7) Basic 3x Test y R&amp;D Factor</strong></h2></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-80e6-8870-d4eb4952c67b" class=""><strong>Basic 3x Test</strong></h3></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8091-a1dc-fd85e542c710" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8040-b544-ded00a5d0802"><th id="L^AG" class="simple-table-header-color simple-table-header">Tiempo</th><th id="horx" class="simple-table-header-color simple-table-header">LTV to COCA Ratio</th><th id="HuL;" class="simple-table-header-color simple-table-header">Meets 3x Threshold?</th><th id="&gt;RxO" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80df-a3d9-e292ba79944d"><td id="L^AG" class="">Short Term – Initial Market Entry</td><td id="horx" class="">0.86x</td><td id="HuL;" class=""><strong>No</strong></td><td id="&gt;RxO" class="">Etapa de aprendizaje; CAC alto por paid + onboarding de clinics y baja tracción inicial.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8093-b208-c61722ce6526"><td id="L^AG" class="">Medium Term – Gaining Market Traction</td><td id="horx" class="">3.01x</td><td id="HuL;" class=""><strong>Sí (apenas)</strong></td><td id="&gt;RxO" class="">Conversión y calidad de leads mejoran; empieza a dominar cohort mix más eficiente.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8032-b175-e3c442355721"><td id="L^AG" class="">Long Term – Steady State</td><td id="horx" class="">7.53x</td><td id="HuL;" class=""><strong>Sí (holgado)</strong></td><td id="&gt;RxO" class="">WOM/UGC + optimización funnel + mayor repetición hacen COCA bajo vs LTV.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-804c-98f1-e7218633b973" class=""><strong>R&amp;D Factor</strong></h3></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8051-97f6-c6a5a0a888dd" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8033-8b4a-f38a4142f296"><th id="IgYB" class="simple-table-header-color simple-table-header">Tiempo</th><th id="BXGz" class="simple-table-header-color simple-table-header">Total R&amp;D Expenses ($MXN)</th><th id="SD~d" class="simple-table-header-color simple-table-header">R&amp;D Expense Per Customer ($MXN)</th><th id="RPFe" class="simple-table-header-color simple-table-header">Explanation (cómo estimé R&amp;D)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805a-bde2-c1e83bb5ef02"><td id="IgYB" class="">Short Term (Year 1)</td><td id="BXGz" class="">700,000</td><td id="SD~d" class="">700,000 / 230 = <strong>3,043</strong></td><td id="RPFe" class="">HRIPT + baseline de estabilidad + iteración de formulación + soporte técnico regulatorio.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-800b-8cdb-c64496ec9b0c"><td id="IgYB" class="">Medium Term (Year 2)</td><td id="BXGz" class="">580,000</td><td id="SD~d" class="">580,000 / 600 = <strong>967</strong></td><td id="RPFe" class="">Validación consistencia de batch 2 + panel eficacia (redness/TEWL) + iteración de protocolo de extracción piloto.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804b-8180-fba2ffcce427"><td id="IgYB" class="">Long Term (Year 3 promedio)</td><td id="BXGz" class="">600,000</td><td id="SD~d" class="">600,000 / 1,000 = <strong>600</strong></td><td id="RPFe" class="">Spot checks de estabilidad + mejora proceso extracción a robustez + upkeep técnico/regulatorio.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8039-9aac-c0364e81d02b" class=""><strong>Interpretación R&amp;D factor (vs consumer):</strong> tu R&amp;D por cliente cae fuerte del Short al Long, consistente con consumer-biotech-lite (mucho esfuerzo para “probar tolerabilidad” al inicio, luego mantenimiento/optimización).</p></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8033-9495-d7cf1b93981c"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80f9-8d4d-cf26d5265b7d" class=""><strong>8) Adjustments May Be Necessary But You Are Ready (top 3 riesgos COCA)</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80a4-bb47-fbaff147d66b" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-809e-b3d0-ffdb4a8b4452"><th id="ee}e" class="simple-table-header-color simple-table-header">COCA Risk Factor</th><th id="EhCj" class="simple-table-header-color simple-table-header">Mitigation Plan</th><th id="oKc^" class="simple-table-header-color simple-table-header">Metrics to Watch for the COCA Risk Factor</th><th id="b:XQ" class="simple-table-header-color simple-table-header">Potential Intervention Strategy</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804b-9b1a-c7976af72dc7"><td id="ee}e" class="">1) No bajar CAC por estancamiento del funnel (CVR)</td><td id="EhCj" class="">Iterar landing y mensaje: tolerabilidad + HRIPT ≥98% + rutina de uso (3–4 semanas). Mejorar creatividades.</td><td id="oKc^" class="">CTR, CVR por etapa, % trial→purchase, carrito abandonado, ROAS/CPA.</td><td id="b:XQ" class="">Pausar creatividades perdedoras, cambiar oferta trial, reforzar prueba social y “tolerability protocol” post-compra.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80dc-a4e4-c3d131691198"><td id="ee}e" class="">2) Clínicas no convierten (mala ejecución del trial)</td><td id="EhCj" class="">Estandarizar protocolo de trial 30 días y training; escoger clínicas con mejor adherencia.</td><td id="oKc^" class="">% pacientes que compran post-trial, reorder day 60, NPS de pacientes.</td><td id="b:XQ" class="">Rehacer onboarding clinic, renegociar incentivos por performance, seleccionar menos clínicas pero mejores.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8004-b7f6-dc7c3a990791"><td id="ee}e" class="">3) Dependencia de paid (no despega WOM/UGC)</td><td id="EhCj" class="">Construir UGC/referral con incentives y “story structure” (tolerability + resultados).</td><td id="oKc^" class="">% nuevos clientes vía referidos/UGC, incremento orgánico, CAC vs spend paid.</td><td id="b:XQ" class="">Subir inversión a engine de UGC que ya convierte; reducir paid cuando el orgánico suba; retargeting inteligente.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80e8-b164-d87c624058bc"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-804c-a74b-d60061cc99b8" class=""><strong>11) Recordatorio (tip de $100) + dónde actualizar</strong></h2></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8012-96a6-d3cefac62fb0" class="">Puedes actualizar tu Startup Idea en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>. Ahí puedes guardar/actualizar detalles críticos, incluyendo este resumen que usamos aquí: <strong>intervalos COCA (Short 0–12m / Medium 13–24m / Long 25–48m)</strong>, <strong>funnel DTC+clínicas</strong>, <strong>New customers por año (230, 600, 1,000)</strong>, <strong>presupuesto marketing/ventas y R&amp;D por periodo</strong>, y el cálculo resultante de <strong>COCA vs LTV</strong> (Short puede estar &lt;3x; Medium y Long cumplen). Finalmente, puedes usar el chatbot arriba para pedir cambios a tus resultados y proceder al siguiente paso.</p></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80a3-aa5a-cb9697298522" class=""><strong>¿Quieres que ajuste algún supuesto clave (por ejemplo: new customers Year 2, o el mix DTC vs clínicas) para volver a alinear COCA con tu expectativa?</strong></p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

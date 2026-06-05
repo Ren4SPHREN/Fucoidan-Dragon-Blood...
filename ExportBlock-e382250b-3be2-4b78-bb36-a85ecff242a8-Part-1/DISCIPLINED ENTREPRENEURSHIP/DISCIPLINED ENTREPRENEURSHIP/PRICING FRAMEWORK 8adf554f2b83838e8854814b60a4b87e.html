@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>PRICING FRAMEWORK</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8adf554f-2b83-838e-8854-814b60a4b87e" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/currency_gray.svg"/></div><h1 class="page-title" dir="auto">PRICING FRAMEWORK</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8087-896c-d93caee196ee" class="">Perfecto—tu información ya incluye segmentación del cliente, DMU, propuesta de valor (tolerabilidad/HRIPT + resultados 3–4 semanas), canales (clínica y DTC), y un marco de costos/rangos (COGS $45–$110 MXN por 50g a 1,000 unidades; precios DTC $300 MXN; retail clínica $280–$350 MXN; ex-factory $130–$160 MXN). Con eso, te dejo un “pricing framework” completo y accionable con tablas.</p></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8057-bd4a-c6784f7b4ac7"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-800a-8046-ca72c6754cd4" class=""><strong>3) Customer Decision Making Unit (DMU)</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80c9-a69a-cde6c4ff8959" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b0-9bdc-cb97d984a0d6"><th id="lytO" class="simple-table-header-color simple-table-header">Pregunta</th><th id="]L\Z" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8029-b995-f18ca63ce6ee"><td id="lytO" class="">a. ¿Qué es importante en la DMU?</td><td id="]L\Z" class=""><strong>Valentina (usuaria final)</strong>: tolerabilidad alta y evidencia verificable (HRIPT ≥98%), experiencia para piel sensible/rosácea/atópica, pH 5.5 y base suave; lectura INCI + origen LATAM (Sargassum fluitans / LATAM sourcing) y manufactura BPF (NOM-259). <strong>Champion/influenciador</strong>: dermatólogo/creator clean con “dossier” (documentación, CoA, claims). <strong>Gatekeeper</strong>: requisitos sanitarios (COFEPRIS/NOM-141/QFB) que validan seguridad y reducen miedo a “productos raros”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8075-b141-d773a786eb7d"><td id="lytO" class="">b. ¿Qué límites de gasto existen?</td><td id="]L\Z" class=""><strong>DTC</strong>: presupuesto personal <strong>$250–$400 MXN</strong> por producto. Para evitar fricción, tu precio ancla debe caer cerca del rango medio-alto (<strong>$300 MXN</strong>). <strong>Clínicas</strong>: necesitan margen; por eso el canal clínico trabaja con <strong>retail $280–$350 MXN</strong> pero compra clínica <strong>$130–$160 MXN</strong> (para que el tratamiento siga siendo “sostenible” para ellos).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-809f-a02e-fb3cf39a3804"><td id="lytO" class="">c. Otros consideraciones y summary</td><td id="]L\Z" class="">El principal freno no es “costar mucho”, sino <strong>riesgo percibido</strong> (irritación/fallo con piel sensible) + <strong>credibilidad</strong>. Por eso tu DMU “compra” cuando percibe: (1) tolerancia demostrada (HRIPT + sin irritación), (2) señal de eficacia temprana (3–4 semanas), (3) cumplimiento regulatorio visible (NOM-141/QFB/BPF). El precio debe ser lo suficientemente alto para sostener premium/credibilidad, pero lo bastante cercano al bolsillo DTC para convertir rápido.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-807a-87c3-c518ba5a01aa"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80bb-9aeb-d797342830c7" class=""><strong>4) Nature of Customer</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8030-88db-f636c0c55ff5" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804e-9b55-cce8fe91b781"><th id="JDDS" class="simple-table-header-color simple-table-header">Pregunta</th><th id="xWh]" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b7-b10b-f77432139559"><td id="JDDS" class="">a. ¿Qué segmento es? (Techie/Early/ etc.)</td><td id="xWh]" class=""><strong>Mix:</strong> tu beachhead principal son <strong>pacientes de clínica</strong> con urgencia alta → se comportan más como <strong>Early Majority</strong> (necesitan evidencia y prueba social profesional) que como “techie”. Tu DTC atrae <strong>Early Adopters</strong> (leen INCI, exigen dossier, origen LATAM).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80dd-8771-d45fe7c50cf7"><td id="JDDS" class="">b. ¿Cómo lo encuentras?</td><td id="xWh]" class="">Por el perfil: (i) “lectura INCI + anti greenwashing”, (ii) frustración por irritación de importados → tolerancia + evidencia manda, (iii) canal clínico como validador profesional reduce incertidumbre. Eso desplaza el comportamiento hacia <strong>Early Majority en clínica</strong> y <strong>Early Adopters en DTC</strong>.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8040-97fd-c6e948cc8196"><td id="JDDS" class="">c. ¿% por segmento en tu target market?</td><td id="xWh]" class="">Estimación para <strong>beachhead</strong> (clínicas CDMX/MTY/GDL/SLP) y su audiencia conectada: <strong>Early Adopters 30%</strong> / <strong>Early Majority 55%</strong> / <strong>Late Majority 13%</strong> / <strong>Laggards 2%</strong>. (Tu DTC puede moverse más hacia Early Adopters, pero tu beachhead está definido como clínica.)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80f8-a480-c64b14e786de"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8057-97df-c16d1bdb682c" class=""><strong>5) Value Creation</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80b7-b1a5-c017df6c7e18" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b9-924b-c708ce171374"><th id="F:WX" class="simple-table-header-color simple-table-header">Pregunta</th><th id="dcve" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8016-a83a-f5be57816ddb"><td id="F:WX" class="">a. ¿Cuánto valor obtiene el usuario?</td><td id="dcve" class=""><strong>Valor funcional principal:</strong> menor rojez/irritación y mejor tolerancia en piel sensible (stack + pH 5.5). <strong>Valor “certeza”</strong>: HRIPT ≥98% y manufactura BPF (reduces riesgo). <strong>Valor económico relativo:</strong> frente a importados $800–$2,500 MXN, ofreces premium accesible ($300 MXN) con “menos costo de prueba”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d1-89e0-c51986b63edc"><td id="F:WX" class="">b. ¿Cuándo?</td><td id="dcve" class=""><strong>Corto (semana 1–3):</strong> señal visible (rojez/tolerancia percibida). <strong>Mediano (día 60–90):</strong> recompra (reorder), que es el verdadero KPI de valor. <strong>Largo (2–4 ciclos):</strong> menor costo emocional y de búsqueda (menos frustración).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d1-a88c-c25ff36619da"><td id="F:WX" class="">c. ¿Qué tan riesgoso es?</td><td id="dcve" class=""><strong>Riesgo real:</strong> irritación/tolerancia (piel sensible). <strong>Riesgo percibido:</strong> “nuevo brand + reclamos bioactivos”. Mitigación: <strong>HRIPT ≥98%</strong>, pH 5.5, BPF maquila, y validación por clínicas/derm. Si la evidencia y la comunicación son débiles, el riesgo percibido se dispara y te obligará a descontar.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8070-8e67-ec573e3b2ee3"><td id="F:WX" class="">d. Otros consideraciones y summary</td><td id="dcve" class="">La regla de oro aquí es: como tu valor depende de tolerabilidad, el precio debe convivir con un <strong>trial</strong> (mini/muestra clínica) para asegurar que el cliente “descubra” valor sin asumir demasiado riesgo. Eso permite mantener el <strong>precio de lista</strong> sin que el mercado fuerce descuentos permanentes.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8041-8c41-c5aadebe2d15"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8045-a5de-d338c5f890c6" class=""><strong>6) Category of Competition</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80af-b9ad-c1d3f39f66b6" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8028-b83b-e86d1449bb27"><th id="WyQJ" class="simple-table-header-color simple-table-header">Pregunta</th><th id="HBe~" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d6-83c7-e89133bd4f95"><td id="WyQJ" class="">a. Competencia (3) y precios</td><td id="HBe~" class="">1) <strong>Importados premium anti-irritación</strong> (ej. líneas tipo La Mer/Murad como referencia de tu input): <strong>$800–$2,500 MXN</strong>. 2) <strong>Marine/high-complexity (Marinova-based)</strong> sin presencia/accessibilidad local: <strong>$800+ MXN</strong> (en la práctica suele salirse del rango DTC). 3) <strong>K-beauty sensitive stacks</strong> (centella/panthenol/niacinamide tipo similares): típicamente <strong>$600–$1,200 MXN</strong> dependiendo SKU/promos. <em>(En clínica suelen subir por canal y recomendación.)</em></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80af-9b8c-ea3f12ff7cd5"><td id="WyQJ" class="">b. ¿Mejor comparable?</td><td id="HBe~" class="">Para precio/posición relativa, el comparable más útil es: <strong>Importados premium “anti-sensibles”</strong> en el radar del cliente, porque el usuario está comparando “pagar $800+ vs probar algo con evidencia”. Tu propuesta busca parecer “premium pero accesible”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80aa-9504-f12056269d5e"><td id="WyQJ" class="">c. ¿Qué indica sobre rango de precio?</td><td id="HBe~" class="">Si el “status quo premium” cae en $800–$2,500, existe espacio para anclar premium sin llegar a su precio. Pero tu riesgo exige un precio que no se perciba como “demasiado alto para una marca nueva”. Por eso el rango recomendado se ancla en <strong>$280–$350 MXN</strong> y con DTC en <strong>$300 MXN</strong> como sweet spot.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8031-8f8f-cc77191d892f"><td id="WyQJ" class="">d. Otros consideraciones/summary</td><td id="HBe~" class="">La competencia no es solo crema: es <strong>costo de riesgo</strong>. Importados fallan por irritación; K-beauty puede tener stacks pero falta narrativa/validación LATAM + HRIPT. Entonces tu precio puede sostenerse si el mercado “cree” en tolerancia (HRIPT + BPF + evidencia).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8061-a358-e6fdbcf7a025"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8009-94fd-c3b057085b3e" class=""><strong>7) Strength of Core</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-804b-a409-ed8d32d78d53" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f7-a694-ccfc131ea9b3"><th id="mNzP" class="simple-table-header-color simple-table-header">Pregunta</th><th id="KJ`=" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-808c-a713-fcd620b8d5bd"><td id="mNzP" class="">¿Qué tan fuerte es tu core hoy vs competencia?</td><td id="KJ`=" class=""><strong>Medio–alto</strong>: ya tienes una combinación diferenciada y defendible en posicionamiento (fucoidan + Croton lechleri + centella + base pH 5.5 + tolerabilidad objetivo HRIPT ≥98% + BPF maquila). Frente a muchas marcas “clean”, el core es más “medible”. Frente a importados, tu core aún depende de visibilidad/ejecución (documentos y casos clínicos).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8000-b37d-cb914e5aa9df"><td id="mNzP" class="">¿Se hará más fuerte con el tiempo? ¿Cuándo?</td><td id="KJ`=" class="">Sí: (i) después de <strong>la 1ra cohorte de evidencia</strong> (panel/HRIPT + resultados 3–4 semanas), y (ii) durante los <strong>3 clinic pilots (año 1)</strong> con NPS y reorder. La defensa crece cuando tu evidencia deja de ser “claim” y se vuelve “dossier público + resultados por cohorte”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e6-b612-e8f2662b6ff5"><td id="mNzP" class="">¿Puedes subir precios? ¿Por qué?</td><td id="KJ`=" class="">Sí, <strong>si</strong> se cumple: (1) no-irritación (HRIPT real en lote/producción), (2) mejoría perceptible temprana, (3) recompra consistente. En ese punto, puedes subir porque el cliente no compara solo ingredientes: compara <strong>riesgo</strong> (baja) y <strong>certeza</strong> (alta).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-802b-a719-e4ae6b30081e"><td id="mNzP" class="">Otros consideraciones/summary</td><td id="KJ`=" class="">Tu core es fuerte en “tolerabilidad verificable”, que es lo que más pesa en piel sensible. Eso es justo lo que reduce la necesidad de descuentos agresivos. Aun así, para el primer grupo (lighthouse), necesitarás flexibilidad (trial/sample) para convertir sin erosionar precio base.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8005-b3c0-d38d7c0abbca"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8016-8b97-f455bd3c3eb2" class=""><strong>8) Maturity of Your Product</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8045-9e3b-cfe444bbab82" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8024-bacc-c52308f9ea58"><th id="?;pf" class="simple-table-header-color simple-table-header">Pregunta</th><th id="WRb^" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80bc-8191-f4cbe8a53e80"><td id="?;pf" class="">¿Se ha validado ante el cliente?</td><td id="WRb^" class="">Estimación: <strong>parcial</strong>. Tienes validaciones de manufactura/HRIPT “en tu plan”, pero en el mercado aún dependes de evidencia y testimonios tempranos (clínica + DTC trial). Por lo tanto, tu producto aún se percibe como <strong>“nuevo con promesa”</strong> hasta que se consoliden resultados.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80cb-9d79-fc27cb04edcc"><td id="?;pf" class="">¿Lo ven como alto riesgo?</td><td id="WRb^" class="">Probablemente <strong>sí al inicio</strong>, especialmente por piel sensible + historial de irritación con importados. El riesgo percibido se reduce cuando el cliente ve: HRIPT documentado, tolerancia en primera cohorte y validación clínica.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-803f-9a90-f761e0c38547"><td id="?;pf" class="">¿Qué flexibilidad para bajar riesgo real y percibido?</td><td id="WRb^" class="">1) <strong>Mini-talla DTC</strong> (p.ej., $99 MXN) o kit de prueba para reducir costo de error (no tocar el precio de lista del SKU principal). 2) <strong>Trial en clínica 30 días</strong> con acuerdos de consistencia de narrativa y reportes. 3) <strong>Confidencialidad de pricing en clínica</strong> para que tu precio DTC no se “ancla a la baja”. 4) Mensajería: “qué esperar” (semana 1–3, no prometer milagro absoluto).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-806b-bf91-c679ed0b6d63"><td id="?;pf" class="">Otros consideraciones/summary</td><td id="WRb^" class="">La flexibilidad debe ser “estructural” (trial/mini) más que “descuento generalizado”. Eso te permite mantener el premium y evitar precedent de rebajas permanentes.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8066-914d-c4e01fce2125"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8032-b0e9-deff9771b21d" class=""><strong>9) Initial Decision and Rationale</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8092-96a4-d398a6787cd8" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a0-98bc-fce1f36287db"><th id="Ew}k" class="simple-table-header-color simple-table-header">Pregunta</th><th id="iyn}" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f2-a355-ce67015c84cc"><td id="Ew}k" class="">¿Unidad de producto para pricing?</td><td id="iyn}" class=""><strong>1 frasco/crema de 50 g</strong> (O/W airless pump) — SKU principal DTC.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8054-b14c-d56486a40935"><td id="Ew}k" class="">Rango de precio más apropiado y por qué</td><td id="iyn}" class=""><strong>$280–$350 MXN por 50 g</strong>. Motivos: (1) cae dentro del presupuesto DTC $250–$400, (2) se mantiene una ventaja fuerte vs importados $800–$2,500, (3) deja lógica de canal para clínicas (ex-factory $130–$160; retail $280–$350), (4) reduce fricción para pacientes que priorizan tolerabilidad y evidencia.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-803d-b470-c47beeb16272"><td id="Ew}k" class="">Precio listado Año 1 + precio efectivo y por qué</td><td id="iyn}" class=""><strong>Listado DTC:</strong> <strong>$300 MXN</strong>. <strong>Precio efectivo esperado:</strong> <strong>~$290 MXN</strong> (después de mini-tallas/bundles puntuales y/o cupones de lanzamiento). Razón: al inicio conviene incentivar trial, pero el promedio efectivo debe evitar “dejarte” por debajo de $280 de forma sostenida para que el premium no se erosione.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-801c-966c-ee3d4790168c"><td id="Ew}k" class="">Sanity check: costo marginal estimado vs precio</td><td id="iyn}" class=""><strong>Marginal cost esperado (maquila): $45–$110 MXN</strong> por unidad (1,000 unidades). Entonces <strong>$300 MXN</strong> excede el marginal cost significativamente (aprox. 2.7x–6.7x). En el largo plazo, la clave es sostener el margen bruto objetivo <strong>65–85% DTC</strong> y no depender de descuentos recurrentes.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8033-9f43-fd63d3568efa"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8030-9b56-e0dbf0c3a796" class=""><strong>10) Test to Validate</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8036-a2b2-c41a2525cf74" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ac-a1ec-f9f075c29b05"><th id="B\Zs" class="simple-table-header-color simple-table-header">Pregunta</th><th id="ZeyN" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8026-90ab-cb0fa75071b2"><td id="B\Zs" class="">Hipótesis asumiendo que son verdaderas (Pricing Framework)</td><td id="ZeyN" class=""><strong>H1:</strong> La tolerabilidad demostrada (HRIPT ≥98% + pH 5.5) reduce riesgo percibido lo suficiente para convertir a <strong>$300 MXN</strong> en DTC. <strong>H2:</strong> El valor se “entiende” en 1–3 semanas (rojez/tolerancia), y eso genera recompra en 60–90 días. <strong>H3:</strong> El mercado no exige descuentos permanentes; permite trial vía mini/muestra sin tocar el precio ancla. <strong>H4:</strong> El canal clínico puede sostener retail $280–$350 con ex-factory $130–$160 manteniendo su interés (y que no canibalice DTC).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f5-a300-fd5546a26919"><td id="B\Zs" class="">Experimentos a correr</td><td id="ZeyN" class="">1) <strong>A/B de pricing-trial en DTC:</strong> Mini-talla $99 vs muestra estándar (o bundle) para medir CVR, CAC y tasa de recompra. 2) <strong>A/B de copy de evidencia:</strong> “HRIPT ≥98% + dossier” vs “beneficios generales” para medir conversión (si HRIPT gana, sube certeza de riesgo percibido). 3) <strong>Clinic pilots:</strong> 3 clínicas lighthouse con protocolo 30 días; medir NPS, tolerancia y recomendación. 4) <strong>WTP/Conjoint</strong> (rápido) con 100+ usuarios urbanos: $250/$300/$350 para confirmar sweet spot.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-801b-8d32-d6405c6e64ba"><td id="B\Zs" class="">Información que mostrará validez/invalidación</td><td id="ZeyN" class=""><strong>Valida si:</strong> reorder ≥40% a día 90 (tu MVBP), NPS ≥60, HRIPT/TEWL/redness reporta mejora coherente y CVR no cae al mantener precio listado. <strong>Invalidar si:</strong> (i) tasa de abandono/quejas por irritación es alta, (ii) la conversión depende de descuentos fuertes/cuplones constantes, (iii) WTP desplaza fuerte a $250 y $300 tiene elasticidad negativa.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8046-b594-ce7b974ef992"><td id="B\Zs" class="">¿Cuánto tiempo?</td><td id="ZeyN" class=""><strong>2–4 semanas</strong> para señales tempranas (CVR por segmento, respuesta a evidencia), <strong>30 días</strong> para panel/TEWL + tolerancia inicial, <strong>60–90 días</strong> para medir recompra (principal KPI). Total: <strong>~3 meses</strong> para decisión de mantener $300 y escalar.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80a2-870a-cf772652e9de"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80e7-a8d3-fdcbd1bc8ba8" class=""><strong>11) Siguiente paso (Recordatorio)</strong></h2></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-809c-b249-cdc801dbdb25" class="">Puedes actualizar tu Startup Idea en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>, aquí puedes también actualizar los detalles para la idea para almacenar información crítica, como la <strong>fórmula, canales (DTC/B2B), beachhead, precio base propuesto y marco de pruebas de tolerancia y pricing</strong>. Finalmente, puedes usar el chatbot en la parte superior de esta página para solicitar cambios a tus resultados. Usa el botón abajo para proceder al siguiente paso.</p></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8002-8b06-de0f13983ac1"/></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-8049-88c5-c81f38ed00b1" class=""><strong>¿Qué modificaciones quieres que aplique?</strong></h3></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80cd-bf90-d9fbc4d5473b" class="">Dime, por ejemplo: “ajusta el precio DTC efectivo esperado a $275” o “cambia la competencia para incluir marcas mexicanas específicas” y lo recalculo respetando lo demás.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

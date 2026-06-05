@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>STEP 11: LEGAL</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="370f554f-2b83-8085-9521-c83de5b4349c" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/gavel_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>STEP 11: LEGAL</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80c6-b67f-f09d53b58699" class=""><strong>Orbit Message — Transición legal de “diseño” a “desarrollo” (producto en marcha)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80c0-8f89-f1e9561f476d" class="">Para pasar de una etapa de planeación a una etapa de ejecución con producción, ventas clínicas y DTC, tu empresa necesitará un set mínimo de decisiones legales: cuándo incorporarte (por riesgos y tracción), con quién trabajar legalmente, qué entidad conviene (especialmente si vas por SAFE), cómo repartir capital (incluyendo vesting/83(b)) y qué documentos clave asegurar y almacenar.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80d7-9045-c9466524774e" class="">A continuación encontrarás las tablas del <strong>Workbook de Legal</strong> usando tus mejores estimaciones para <strong>Fucoidan + Dragon’s Blood Bioactive Cream (Sargassum fluitans) para piel sensible</strong>.</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-803e-986b-e9a9d568011b"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80c3-be9a-d39c4358a411" class=""><strong>a) Need and Timing (Necesidades legales y timing)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8018-9594-e0812f3b316b" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8015-830d-ea4d6c472896"><th id="x]YF" class="simple-table-header-color simple-table-header">Need</th><th id="FyZ_" class="simple-table-header-color simple-table-header">Urgencia (Alta/Media/Baja)</th><th id="_GYT" class="simple-table-header-color simple-table-header">Impacto en el negocio (hoy)</th><th id="WgbE" class="simple-table-header-color simple-table-header">Impacto personal</th><th id=";_LE" class="simple-table-header-color simple-table-header">Timing recomendado (por tu plan)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8024-9915-d3f2e5bb6bb7"><td id="x]YF" class="">Limitar responsabilidad personal</td><td id="FyZ_" class="">Alta</td><td id="_GYT" class="">Reduce riesgo por producto dermatológico/cosmetológico (reclamos, eventos adversos, lote)</td><td id="WgbE" class="">Protege tu patrimonio personal</td><td id=";_LE" class=""><strong>Inmediato (antes de Lock de especificación final / antes de aprobar label NOM-141 y operar con lote 1)</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8072-90f2-e0cd401d15de"><td id="x]YF" class="">Firmar contratos con maquila/biotech (BPF, batch release, HRIPT)</td><td id="FyZ_" class="">Alta</td><td id="_GYT" class="">Es condición para producción 1,000 MVBP y consistencia de lote</td><td id="WgbE" class="">Menos responsabilidad por incumplimientos/defectos de proveedor</td><td id=";_LE" class=""><strong>Antes de que corran 100% los pasos de producción (semana -4 a -2 de tu semana 1 de spec lock)</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8091-9771-e8c9ad55983c"><td id="x]YF" class="">NDA (confidencialidad) con clínicos/pilotos y potenciales socios (export/US/Hispanic, B2B)</td><td id="FyZ_" class="">Media</td><td id="_GYT" class="">Protege know-how, protocolo HRIPT, claims y formulación</td><td id="WgbE" class="">Evita exposición de información sensible</td><td id=";_LE" class=""><strong>Antes de firmar trial agreements y empezar campañas/pilotos</strong> (antes del “landing live week 4”)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b4-a4b4-fa994a2cdc34"><td id="x]YF" class="">Fundraising (SAFE con Mar+Fund + familia)</td><td id="FyZ_" class="">Alta</td><td id="_GYT" class="">Define forma legal, gobernanza, y documentación para cerrar tramo SAFE</td><td id="WgbE" class="">Reduce riesgos legales al levantar capital</td><td id=";_LE" class=""><strong>En paralelo a producción lote 1 y justo antes de T2/T3</strong>; mínimo: tener entidad y cap table listos <strong>antes de firmar el SAFE</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ce-8eed-ca2314eff5e5"><td id="x]YF" class="">Collecting payment / Términos de venta (DTC)</td><td id="FyZ_" class="">Alta</td><td id="_GYT" class="">Necesitas T&amp;C + cumplimiento para cobrar en México y logística</td><td id="WgbE" class="">Evita riesgos por reembolsos/claims</td><td id=";_LE" class=""><strong>Antes de activar DTC (antes del “landing live week 4”)</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805b-958a-ef58b82b3879"><td id="x]YF" class="">Cumplimiento regulatorio/label (NOM-141) y avisos (COFEPRIS/DIGIPRiS)</td><td id="FyZ_" class="">Alta</td><td id="_GYT" class="">Afecta posibilidad de venta y el “go/no-go”</td><td id="WgbE" class="">Riesgo de sanción / retiro</td><td id=";_LE" class=""><strong>Antes del lanzamiento (week 4–8)</strong>; asegurar registro/avisos como parte de entrega legal</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8052-9c37-fa5fdd561194"><td id="x]YF" class="">Contrato clínico / consignment (pilotos)</td><td id="FyZ_" class="">Alta</td><td id="_GYT" class="">Sin acuerdos formales no hay evidencia válida y hay riesgo de responsabilidad</td><td id="WgbE" class="">Reduce exposición por reclamos en clínica</td><td id=";_LE" class=""><strong>Antes del inicio de trials 30 días</strong> (previo o en week 4, coordinado con Biotech)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d4-b7c6-e1bcde454d35"><td id="x]YF" class="">IP / marcas (SPHREN, branding, dossier HRIPT)</td><td id="FyZ_" class="">Media</td><td id="_GYT" class="">Protege marca registrada y diferenciación</td><td id="WgbE" class="">Evita que terceros bloqueen tu marca</td><td id=";_LE" class=""><strong>Antes de escalamiento fuerte (antes de export/Phase 3)</strong>, pero iniciar <strong>desde ya</strong> si el logo/claims ya están definidos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801d-86c0-c37a3418e4ef"><td id="x]YF" class="">Hiring (opsl/marketing/CS/QA)</td><td id="FyZ_" class="">Media</td><td id="_GYT" class="">Define relación laboral y evita riesgos</td><td id="WgbE" class="">Reduce riesgo laboral/contractual</td><td id=";_LE" class="">A partir de <strong>mes 0–3</strong> (cuando contratas PT CS/marketing en tu Year 2; y roles de founders/ops PT desde antes)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807e-b274-e72c2fdd0adc"><td id="x]YF" class="">Aligning on Co-founder equity (y equity vs vesting)</td><td id="FyZ_" class="">Alta</td><td id="_GYT" class="">Si no está documentado, se complica fundraising y opción pool</td><td id="WgbE" class="">Riesgo de disputas internas y dilución futura</td><td id=";_LE" class=""><strong>Antes de cerrar SAFE</strong>; ideal <strong>antes del lanzamiento simultáneo</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80d5-8fc0-fb174243056e" class=""><strong>Complicaciones si incorporas muy temprano (riesgo que evitar):</strong> costos/tiempo legal antes de que la formulación + maquila + claims estén definidos y antes de que el cap table sea “estable” para SAFE.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80a0-ba84-d241d5a892aa" class=""><strong>Complicaciones si incorporas tarde:</strong> no podrás firmar eficientemente contratos DTC/clinics/SAFE, y aumentará exposición personal al operar lotes y cobrar.</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80e8-a0da-e388fafee5c7"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8097-bd76-d0e794255ab3" class=""><strong>b) Representation (Representación legal: 3–5 opciones y evaluación)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8024-8161-da9285c7fbc1" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8044-973c-e47d4f5ee725"><th id="L|_o" class="simple-table-header-color simple-table-header">Nombre</th><th id="Edhh" class="simple-table-header-color simple-table-header">Título</th><th id="L@aJ" class="simple-table-header-color simple-table-header">Email</th><th id="OB_T" class="simple-table-header-color simple-table-header">Firma</th><th id="H[Ul" class="simple-table-header-color simple-table-header">Tarifa (estimada)</th><th id="eoYD" class="simple-table-header-color simple-table-header">Especialidades</th><th id="M:Zv" class="simple-table-header-color simple-table-header">Relevancia para tu caso (hoy→futuro)</th><th id="fala" class="simple-table-header-color simple-table-header">Escenarios de uso de múltiples abogados</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fc-af18-fce73cacd4df"><td id="L|_o" class="">(A definir) Abogado/ firma de <strong>startups &amp; financiamiento (SAFE/convertibles)</strong></td><td id="Edhh" class="">Socio/Abogado</td><td id="L@aJ" class="">—</td><td id="OB_T" class="">—</td><td id="H[Ul" class="">—</td><td id="eoYD" class="">SAFE, term sheets, cap table, corporate governance</td><td id="M:Zv" class=""><strong>Crítico</strong> para cerrar SAFE $4M MXN cap y documentación</td><td id="fala" class="">Cuando ya tengas entidad y vayas a T2/T3/T4 (fundraising + governance)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8044-b981-fbd4838450ad"><td id="L|_o" class="">(A definir) Abogado <strong>regulatorio/consumo-salud (COFEPRIS, etiquetado NOM-141)</strong></td><td id="Edhh" class="">Abogado</td><td id="L@aJ" class="">—</td><td id="OB_T" class="">—</td><td id="H[Ul" class="">—</td><td id="eoYD" class="">NOM-141, avisos COFEPRIS/DIGIPRiS, claims y cumplimiento</td><td id="M:Zv" class="">Reduce riesgo de “labeling/claims” y “timing de aprobación”</td><td id="fala" class="">En paralelo con abogado de SAFE si el tema regulatorio impacta claims del landing</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8064-a553-e0c2021cf9b5"><td id="L|_o" class="">(A definir) Abogado <strong>comercial/contratos</strong> (maquila, DTC, clínicas)</td><td id="Edhh" class="">Abogado</td><td id="L@aJ" class="">—</td><td id="OB_T" class="">—</td><td id="H[Ul" class="">—</td><td id="eoYD" class="">Contracts, indemnidades, consignment</td><td id="M:Zv" class="">Es el que traduce tu HRIPT/maquila + consignment en contratos ejecutables</td><td id="fala" class="">Si surge disputa de lote/calidad o si hay expansión B2B export</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b9-868d-c0a7e9fe064d"><td id="L|_o" class="">(A definir) Abogado <strong>propiedad intelectual (marcas/SPHREN, packaging claims)</strong></td><td id="Edhh" class="">Abogado</td><td id="L@aJ" class="">—</td><td id="OB_T" class="">—</td><td id="H[Ul" class="">—</td><td id="eoYD" class="">trademark filing, lifecycle, vigilancia</td><td id="M:Zv" class="">Protege la marca SPHREN y dossier/elementos de comunicación</td><td id="fala" class="">Especialmente antes de Phase 3 (Anteii export + US Hispanic)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8082-8907-f8d747dead45"><td id="L|_o" class="">(Opcional) Abogado <strong>laboral</strong></td><td id="Edhh" class="">Abogado</td><td id="L@aJ" class="">—</td><td id="OB_T" class="">—</td><td id="H[Ul" class="">—</td><td id="eoYD" class="">contratos laborales, NDs, no competencia (si aplica)</td><td id="M:Zv" class="">Útil cuando contratas CS/marketing/ops PT</td><td id="fala" class="">En tu transición a Year 2 (contrataciones formales)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8089-84b4-f6c92f06137f" class=""><strong>Recomendación práctica de selección (para llenar la lista):</strong> pide 2–3 entrevistas cortas y evalúa: (1) experiencia con <strong>cosméticos/claims México</strong>, (2) historial en <strong>SAFE/financiamiento early</strong>, (3) rapidez de respuesta y (4) claridad contractual (indemnities/limitation of liability).</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-804c-9bd2-dc8f75c3e7d3"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8020-b975-cc3efb22aa32" class=""><strong>c) Incorporación (entidad, ubicación, y si usar servicio online vs abogado)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80f8-9354-d88e82842ba7" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bb-a79c-ce6faf674278"><th id="lBaj" class="simple-table-header-color simple-table-header">Pregunta</th><th id="nysi" class="simple-table-header-color simple-table-header">Decisión recomendada (estimación)</th><th id="PMem" class="simple-table-header-color simple-table-header">Por qué encaja con tu roadmap</th><th id="~zHf" class="simple-table-header-color simple-table-header">Beneficios / trade-offs</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b6-9b6c-c8f46c317f52"><td id="lBaj" class="">Primary driver de incorporación</td><td id="nysi" class=""><strong>Capacidad de firmar SAFE y operar con contratos (maquila, clínicas, DTC) con limitación de responsabilidad</strong></td><td id="PMem" class="">Tu Phase 1 termina con producción y lanzamiento week 4–8, y luego SAFE con tramos</td><td id="~zHf" class="">Justifica entidad desde el inicio operativo</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8036-a7b1-d402c7547769"><td id="lBaj" class="">Tipo de entidad</td><td id="nysi" class=""><strong>Corporación tipo “C-Corp” o equivalente local que sea compatible con SAFE y cap table inversionista</strong></td><td id="PMem" class="">La mayoría de SAFE/VC frameworks simplifican gobernanza/cap table cuando hay inversión convertible</td><td id="~zHf" class="">Si tu SAFE es estrictamente MX, el abogado definirá la mejor figura local compatible</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8073-bc95-c07487390137"><td id="lBaj" class="">Ubicación</td><td id="nysi" class=""><strong>CDMX (operación principal) / México</strong> (donde operas y coordinas clínicos)</td><td id="PMem" class="">Tus pilotos están en CDMX/MTY/GDL/SLP y tu logística está en México</td><td id="~zHf" class="">Mantiene cercanía con compliance y proveedores</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8042-a39b-df3f118bdbd2"><td id="lBaj" class="">Online vs abogado</td><td id="nysi" class=""><strong>Abogado (principal) + apoyos online solo para documentación/plantillas</strong></td><td id="PMem" class="">Tu caso requiere: contratos con maquila BPF, consignment, contratos DTC/clinics y governance para SAFE</td><td id="~zHf" class="">Online puede ahorrar tiempo, pero tus necesidades de contratos y financiamiento requieren customización</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8012-a536-c42524901f59" class=""><strong>Nota para tu workbook:</strong> aunque el “texto genérico” del workbook habla de LLC/C-Corp (típico US), tu ejecución es México; por eso lo clave es: <strong>que la entidad y el cap table sean compatibles con tu SAFE</strong> y con un proceso de inversión claro.</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-807b-aac1-fd1083fac7e9"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8009-ab5c-f53972163f98" class=""><strong>d) Equity (reparto, acciones, opción pool y 83(b))</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-806d-beab-d559a800b976" class="">Como aún no indicaste porcentajes exactos entre Román/René/Gerardo, uso una <strong>propuesta razonable de trabajo</strong> basada en tu narrativa: roles de QA/QA-Biotech (Román), fundraising (René) y QC/HRIPT (Gerardo), y además tu mención de “founders + ops PT”. Ajustaremos si me das split deseado.</blockquote></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8048-973d-e21cca9ea00c" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8046-9f00-c1e93ae574d6"><th id="u^nq" class="simple-table-header-color simple-table-header">Campo</th><th id="DGbL" class="simple-table-header-color simple-table-header">Decisión / estimación</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8098-a96d-e3d21f73f414"><td id="u^nq" class="">Total shares a emitir (cap table inicial)</td><td id="DGbL" class=""><strong>1,000,000</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8036-9fe7-ecc43b13ee62"><td id="u^nq" class="">Founder equity plan (antes de option pool)</td><td id="DGbL" class=""><strong>Ejemplo base:</strong> Román 40% / René 30% / Gerardo 30%</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8001-89f9-c0d7cbd7ed4f"><td id="u^nq" class="">Employee option pool (para Year 1–2)</td><td id="DGbL" class=""><strong>12%</strong> (reservado)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809f-b73b-c786e5a708e8"><td id="u^nq" class="">Equity a “reacomodar” post-pool</td><td id="DGbL" class="">Si reservas 12% como pool, los founders suelen quedar ~<strong>88% total entre ellos</strong> (o se redefine según term sheet interno)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809b-82e5-dfe8eb7cf911"><td id="u^nq" class="">Vesting (recomendado)</td><td id="DGbL" class=""><strong>48 meses</strong>, con <strong>cliff 12 meses</strong> para founders (estándar de mercado en startups)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809b-ac24-e29f4b3972fa"><td id="u^nq" class="">Acceleration</td><td id="DGbL" class="">Evitar “single trigger” agresivo; preferible “double trigger” (según negociación futura)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-804f-acae-f43699d3d010" class=""><strong>Tabla de equipo (founders) y vesting (borrador)</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80b8-88ba-f3a4b460c8c2" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8014-823f-ffaf370bd8ed"><th id="Qxg}" class="simple-table-header-color simple-table-header">Name</th><th id="K}F[" class="simple-table-header-color simple-table-header">Title</th><th id="IaWs" class="simple-table-header-color simple-table-header">Board Director</th><th id="OLR?" class="simple-table-header-color simple-table-header">% Equity (estimado)</th><th id="rGJt" class="simple-table-header-color simple-table-header">Shares</th><th id="c`&lt;a" class="simple-table-header-color simple-table-header">Vesting (Meses)</th><th id="WpwW" class="simple-table-header-color simple-table-header">Cliff (Meses)</th><th id="]bZ_" class="simple-table-header-color simple-table-header">Justificación</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8001-af53-c1ff1d4fda03"><td id="Qxg}" class="">Román</td><td id="K}F[" class="">Biotech/QA lead (tu narrativa: “Román (Biotech QA)”)</td><td id="IaWs" class="">Sí</td><td id="OLR?" class="">40% (borrador)</td><td id="rGJt" class="">400,000</td><td id="c`&lt;a" class="">48</td><td id="WpwW" class="">12</td><td id="]bZ_" class="">Rol crítico para spec/BOM, batch release criteria y calidad de lote (HRIPT + BPF Biotech)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804d-bf9a-e097962f6b8d"><td id="Qxg}" class="">René</td><td id="K}F[" class="">Fundraising/Capital lead</td><td id="IaWs" class="">Sí</td><td id="OLR?" class="">30% (borrador)</td><td id="rGJt" class="">300,000</td><td id="c`&lt;a" class="">48</td><td id="WpwW" class="">12</td><td id="]bZ_" class="">Responsabilidad directa por SAFE y tramos; “ready to close” con documentos listos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8090-b3f7-c587f690c132"><td id="Qxg}" class="">Gerardo</td><td id="K}F[" class="">QC/HRIPT y ejecución de validación</td><td id="IaWs" class="">Sí</td><td id="OLR?" class="">30% (borrador)</td><td id="rGJt" class="">300,000</td><td id="c`&lt;a" class="">48</td><td id="WpwW" class="">12</td><td id="]bZ_" class="">Control de HRIPT (30 sujetos), estandarización clínica, y calidad de evidencia para claims</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80a1-85c7-e4048f94771d" class=""><strong>83(b) election</strong></h3></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80fe-ab39-d4ad01f87936" class="bulleted-list"><li style="list-style-type:disc"><strong>Qué es:</strong> elección para pagar impuestos sobre acciones restringidas como si fueran “inmediatamente adquiridas” (reduce impacto fiscal si el valor sube con el tiempo).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-802d-9260-e15293ae51cc" class="bulleted-list"><li style="list-style-type:disc"><strong>Cómo asegurarlo:</strong> cada founder que reciba acciones restringidas debe <strong>presentar 83(b) dentro del plazo legal</strong> desde la fecha de transferencia/otorgamiento (tu abogado lo calendariza y archiva evidencia).</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-808f-beb9-e84d05525acb" class=""><strong>Dónde ajustar con precisión:</strong> el tamaño real del option pool (por ejemplo 10–15%) y si founders ya recibirán “restricted stock” con vesting desde el día 1, depende del método de emisión/cap table que el abogado recomiende para tu entidad MX.</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-804f-ad61-f56b8bc1f7f4"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8090-bc91-fcfacb751b3c" class=""><strong>e) Documentation (documentos legales: qué son, de dónde salen y dónde guardarlos)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-805f-abbf-d4d6646bf391" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8028-835f-fb5cb315afd6"><th id="LpL?" class="simple-table-header-color simple-table-header">Name del documento</th><th id="AZUT" class="simple-table-header-color simple-table-header">Fuente (dónde obtenerlo)</th><th id="C?Bz" class="simple-table-header-color simple-table-header">Propósito (para tu caso)</th><th id="lQLa" class="simple-table-header-color simple-table-header">Team Copy URL / sistema de storage (recomendación)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f0-98cb-d0f32ece5600"><td id="LpL?" class="">Articles of Incorporation</td><td id="AZUT" class="">Abogado / gestor de incorporación (o servicio de formación si aplica)</td><td id="C?Bz" class="">Crear la entidad legal</td><td id="lQLa" class="">Google Drive/SharePoint carpeta “Legal/Corporate”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e0-a5e8-d0e5e4d9926b"><td id="LpL?" class="">Corporate Bylaws / Estatutos</td><td id="AZUT" class="">Abogado</td><td id="C?Bz" class="">Gobierno interno: juntas, decisiones, firmas</td><td id="lQLa" class="">“Legal/Corporate/Bylaws”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8040-9efc-d28eb6916d2c"><td id="LpL?" class="">Board resolutions (Founders stock issuance)</td><td id="AZUT" class="">Abogado</td><td id="C?Bz" class="">Autorización formal de emisión inicial y asignaciones</td><td id="lQLa" class="">“Legal/Corporate/Resolutions”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f2-9fb0-d21db3921ac3"><td id="LpL?" class="">Stock / Restricted Stock Agreement (Founder)</td><td id="AZUT" class="">Abogado</td><td id="C?Bz" class="">Vesting, derechos, obligaciones, incumplimientos</td><td id="lQLa" class="">“Legal/Equity/Founder agreements”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8011-be02-e08935579fb8"><td id="LpL?" class="">83(b) election (por founder)</td><td id="AZUT" class="">Abogado (archivo) + presentación según ley aplicable</td><td id="C?Bz" class="">Cumplimiento fiscal/elección para acciones restringidas</td><td id="lQLa" class="">“Legal/Equity/83b”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8031-95e4-d4171503929c"><td id="LpL?" class="">IP Assignment Agreement (si hay assets creados por individuos)</td><td id="AZUT" class="">Abogado</td><td id="C?Bz" class="">Asegurar que la IP/claims/branding/dossier se asignen a la entidad</td><td id="lQLa" class="">“Legal/IP/IP assignment”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8050-b347-dec2b1bfa0f4"><td id="LpL?" class="">NDA (Maquila, clínicos, socios)</td><td id="AZUT" class="">Plantilla + abogado</td><td id="C?Bz" class="">Confidencialidad de formulación, protocolo HRIPT, resultados</td><td id="lQLa" class="">“Legal/NDAs”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b7-afd9-f14772a06599"><td id="LpL?" class="">Biotech/Maquila agreement (NOM-259 BPF)</td><td id="AZUT" class="">Abogado (custom)</td><td id="C?Bz" class="">Batch release criteria, consistencia, obligaciones, indemnidades/limitation of liability</td><td id="lQLa" class="">“Legal/Contracts/Maquila”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8006-8b84-e6a1de4a87c5"><td id="LpL?" class="">HRIPT protocol y anexos de prueba (contrato/adjunto)</td><td id="AZUT" class="">Tu equipo + abogado</td><td id="C?Bz" class="">Base documental de validación tolerabilidad (HRIPT ≥98%)</td><td id="lQLa" class="">“Clinical/HRIPT/Docs”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a4-813c-c4ca6c01de0a"><td id="LpL?" class="">Labeling compliance (NOM-141) evidence pack</td><td id="AZUT" class="">Tu proveedor regulatorio + maquila</td><td id="C?Bz" class="">Respaldo del label aprobado/plantilla</td><td id="lQLa" class="">“Regulatory/NOM-141”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8084-8d10-fc1276dca44a"><td id="LpL?" class="">COFEPRIS Aviso / DIGIPRiS (evidencia)</td><td id="AZUT" class="">Abogado/regulatorio + gestor</td><td id="C?Bz" class="">Cumplimiento para comercialización</td><td id="lQLa" class="">“Regulatory/COFEPRIS”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cc-ab02-d859f4a2cc13"><td id="LpL?" class="">DTC Terms of Service</td><td id="AZUT" class="">Abogado o plantillas mexicanas + abogado</td><td id="C?Bz" class="">Reglas de compra, reembolsos, garantías, claims permitidos</td><td id="lQLa" class="">“Legal/DTC/TOS”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801f-a5e5-d96f27fc6d1d"><td id="LpL?" class="">Privacy Policy + manejo de datos</td><td id="AZUT" class="">Abogado / abogado + proveedor tech</td><td id="C?Bz" class="">Cumplimiento privacidad (CRM/GA4/Meta pixel)</td><td id="lQLa" class="">“Legal/Privacy”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802c-9987-f9129ff15efa"><td id="LpL?" class="">Pharmacovigilance / procedure docs (lightweight)</td><td id="AZUT" class="">Abogado + tu proceso</td><td id="C?Bz" class="">Manejo de eventos/quejas y trazabilidad</td><td id="lQLa" class="">“Quality/Pharmacovigilance”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8023-bdc8-f4dc0526d80d"><td id="LpL?" class="">Clinic trial agreement (consent + 30d trial)</td><td id="AZUT" class="">Abogado</td><td id="C?Bz" class="">Trial formal de 30 días, reporte estandarizado, responsabilidad</td><td id="lQLa" class="">“Clinical/Clinic pilots/Agreements”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80aa-8296-ddf45cdc892a"><td id="LpL?" class="">Sample kit / consignment agreement con cláusulas</td><td id="AZUT" class="">Abogado</td><td id="C?Bz" class="">Define entrega de muestras y responsabilidad por uso</td><td id="lQLa" class="">“Clinical/Consignment”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8078-a79b-d44ec1bf374e"><td id="LpL?" class="">Advisor Agreement (si aplica)</td><td id="AZUT" class="">Abogado</td><td id="C?Bz" class="">Incentivos/servicios de advisors</td><td id="lQLa" class="">“Legal/Advisors”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8064-a236-d727ba9a5d32"><td id="LpL?" class="">Contractor agreements (ops PT/QA asistente si aplica)</td><td id="AZUT" class="">Abogado</td><td id="C?Bz" class="">Servicios y propiedad de outputs</td><td id="lQLa" class="">“Legal/Contracts/Contractors”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803c-bd8e-e21b1fe39d8f"><td id="LpL?" class="">SAFE financing documents (Mar+Fund + familia)</td><td id="AZUT" class="">Abogado (custom)</td><td id="C?Bz" class="">SAFE: cap, tramos, pro rata si aplica, side letters</td><td id="lQLa" class="">“Finance/Fundraising/SAFE”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b0-bca9-c2a3ba134146"><td id="LpL?" class="">Fundraising side letter / disclosure (si aplica)</td><td id="AZUT" class="">Abogado</td><td id="C?Bz" class="">Condiciones especiales y anexos</td><td id="lQLa" class="">“Finance/Fundraising/SAFE”</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8005-b8af-f186c77a5ade"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8063-a236-d8b05473c816" class=""><strong>Aviso de cambios / ajuste de datos</strong></h2></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-806c-bc62-ec23dee6fb98" class="bulleted-list"><li style="list-style-type:disc"><strong>Se incorporó tu información</strong> del producto (fórmula, hript, NOM-141, NOM-259 BPF, timing de week 4–8), tu roadmap (Phase 2/3/4) y tu fundraising (SAFE $4M MXN cap con tramos).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80bc-9293-fa5415be8a30" class="bulleted-list"><li style="list-style-type:disc">Donde faltaban datos (por ejemplo <strong>split exacto de founders</strong>), dejé una <strong>propuesta borrador</strong> en Equity (Román 40% / René 30% / Gerardo 30%) para poder completar el workbook; esto debe alinearse con tu decisión real y el abogado.</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80e0-a4b8-d2e556f7bc77"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8038-9409-c34e4a20af58" class=""><strong>Siguiente paso</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8012-a25c-e5aa16d56a99" class="">Puedes actualizar tu Startup Idea en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>, aquí puedes también actualizar los detalles para la idea para almacenar información crítica, como: <strong>nombre, producto, mercado/clinic beachhead, HRIPT, roadmap por fases, estrategia DTC/clinics, y el plan de fundraising (SAFE $4M MXN cap y tramos)</strong>. Finalmente, puedes también usar el chatbot en la parte superior de esta página para solicitar cambios a tus resultados. Please use el botón below para proceder a la next step.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>LTV (Life-Time Value)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="36ff554f-2b83-800a-95ed-ccaaefa134ae" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/timeline_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>LTV (Life-Time Value)</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-80bd-830c-fbf40b620d02" class="">Resumen del contenido</h3></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8020-bcf9-ebd155dcd838" class="">En esta etapa se construye una estimación de <strong>Lifetime Value (LTV)</strong> del cliente adquirido convirtiendo tu modelo de compras DTC/recompra en un flujo de utilidades a lo largo del tiempo, aplicando <strong>margen bruto</strong>, <strong>recompra/retención</strong> y <strong>descuento por costo de capital</strong>.</p></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80e9-9df2-d8bd68c7a6d8"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-805c-b748-e7ad2ac6fd92" class=""><strong>1) Inputs to the Worksheet (Tabla)</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8046-86c1-c5003faaa059" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8095-93c2-e54f299beb26"><th id="gguW" class="simple-table-header-color simple-table-header">Description of the Input</th><th id="MZdy" class="simple-table-header-color simple-table-header">Best estimate and calculations</th><th id="onnk" class="simple-table-header-color simple-table-header">Explanations</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b7-b7c7-e579136ecf58"><td id="gguW" class=""><strong>One-time charges (precio inicial por cliente)</strong></td><td id="MZdy" class=""><strong>$300 MXN</strong></td><td id="onnk" class="">Tu precio DTC objetivo es $300 MXN por frasco de 50g. Asumimos que el “cliente adquirido” inicia con la compra en <strong>t=0</strong>.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8096-a517-fdd36d026fa1"><td id="gguW" class=""><strong>Profit margin on one-time charges</strong></td><td id="MZdy" class="">Margen = (300 − 90) / 300 = 210/300 = <strong>70%</strong></td><td id="onnk" class="">Estimamos un <strong>COGS marginal</strong> (maquila + empaque variable) de <strong>$90 MXN</strong> por unidad dentro de tu rango ($45–$110). El margen aquí excluye CAC y gastos fijos (como pide el workbook).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f1-bc3a-c5ee02517981"><td id="gguW" class=""><strong>Life of product (antes de repurchase)</strong></td><td id="MZdy" class=""><strong>0.25 años (≈ 3 meses)</strong></td><td id="onnk" class="">Tu ciclo de recompra declarado: <strong>60–90 días</strong>. Para simplificar como el worksheet usa unidades anuales, uso 0.25 años como vida promedio hasta la siguiente compra.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8015-aa2a-fd124887de03"><td id="gguW" class=""><strong>% de clientes que repurchase (repurchase rate)</strong></td><td id="MZdy" class=""><strong>50%</strong></td><td id="onnk" class="">Tienes meta: <strong>≥40% reorder rate within day 90</strong>. Tomo <strong>50%</strong> como estimación central (conservadora pero no mínima) para modelar la fracción que genera utilidades recurrentes por reemplazo.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805c-aa90-c3b36218d35a"><td id="gguW" class=""><strong>Recurring revenue streams (qué flujos recurrentes habrá)</strong></td><td id="MZdy" class=""><strong>Recompras DTC</strong> cada vida del producto (consumible/reemplazo)</td><td id="onnk" class="">En tu modelo DTC no es suscripción formal anual, pero sí hay recompra por ciclo 60–90 días, que funciona como “recurring stream” para LTV. (No incluyo clínicas/B2B aquí para mantener el “cliente adquirido” como DTC.)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a0-ab78-f3f1cd42bf5d"><td id="gguW" class=""><strong>Profit margin on recurring revenue streams</strong></td><td id="MZdy" class=""><strong>70%</strong></td><td id="onnk" class="">Uso el mismo margen unitario que el one-time charge: mismo precio $300 y mismo COGS marginal $90 en recompra.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8013-8cf5-ccca879846af"><td id="gguW" class=""><strong>Retention rate (After 1st year)</strong></td><td id="MZdy" class=""><strong>65%</strong></td><td id="onnk" class="">En el workbook, “retention rate” se usa como probabilidad de que el cliente continúe generando recompra/valor hacia adelante. Ajusto 65% como proxy para “recompran durante el año después del ciclo inicial” en un producto con recompra por ciclo.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8037-9ed8-c027aa877b78"><td id="gguW" class=""><strong>Retention rate (After 2nd year)</strong></td><td id="MZdy" class=""><strong>50%</strong></td><td id="onnk" class="">Disminuye por fatiga de rutina, saturación de mercado y posibilidad de alternar productos (aun con tolerabilidad alta).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80fb-b28e-de67484263a1"><td id="gguW" class=""><strong>Retention rate (After 3rd year)</strong></td><td id="MZdy" class=""><strong>35%</strong></td><td id="onnk" class="">Conservador acorde a que en skincare DTC típico no todos mantienen recompra durante muchos años; tu narrativa original también habla de 3 años como horizonte relevante.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f2-9de4-d6cc13f85327"><td id="gguW" class=""><strong>Retention rate (After 4th year)</strong></td><td id="MZdy" class=""><strong>20%</strong></td><td id="onnk" class="">Cola hacia atrás para capturar algo de valor pero con caída fuerte.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8097-b324-e7c52b60103e"><td id="gguW" class=""><strong>Retention rate (After 5th year)</strong></td><td id="MZdy" class=""><strong>10%</strong></td><td id="onnk" class="">Extremo lejano con baja continuidad.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c4-9245-f1a7b81f1d6f"><td id="gguW" class=""><strong>What other revenue sources will you have?</strong></td><td id="MZdy" class=""><strong>$0 (en esta hoja para LTV del cliente DTC)</strong></td><td id="onnk" class="">Aunque existe clínicas y B2B, el workbook Step 17 es por “cliente adquirido” y el prompt que diste se enfoca en estructura one-time + recurring. Aquí mantengo solo DTC para consistencia con tu precio/margen y evitar mezclar supuestos.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8071-89c4-cca4ed30f927"><td id="gguW" class=""><strong>Profit margin on other revenue sources</strong></td><td id="MZdy" class=""><strong>N/A</strong></td><td id="onnk" class="">No aplica porque other revenue = 0.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8022-aaf4-d08b8221cd52"><td id="gguW" class=""><strong>Yearly retention rate for other revenue sources</strong></td><td id="MZdy" class=""><strong>N/A</strong></td><td id="onnk" class="">No aplica porque other revenue = 0.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8024-9aa0-f950ead5e717"><td id="gguW" class=""><strong>Cost of capital rate (descuento i)</strong></td><td id="MZdy" class=""><strong>50% anual</strong></td><td id="onnk" class="">Basado en la guía del workbook para startups sin track record: 35–75% recomendado; uso 50% (valor “default” del material).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-807f-9bd7-f051eee8bb48"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80ae-8e2a-d2573cfca10d" class=""><strong>2) Calculations to Estimate the LTV table (Worksheet 17.2)</strong></h2></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-806f-8539-ec03fae5c08f" class=""><strong>Cómo interpreto la tabla del workbook (coherente con el ejemplo y su fórmula de PV):</strong></p></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8077-83ca-f02697654d2a" class="bulleted-list"><li style="list-style-type:disc">Se calcula <strong>utilidad (profit)</strong> por año para el cliente, con un <strong>flujo inicial (t=0)</strong> y flujos en años futuros (t=1..5).</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-801a-bfcd-d6259a24496f" class="bulleted-list"><li style="list-style-type:disc">Luego se descuenta a valor presente (PV):[ PV = FV \times \frac{1}{(1+i)^t} ] con (i = 50%) ⇒ factor de descuento = (1/1.5^t).</li></ul></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-8045-97b0-d96c215d39a4" class=""><strong>Variables usadas</strong></h3></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8012-a752-feb19cabe4bd" class="bulleted-list"><li style="list-style-type:disc"><strong>Precio (P)</strong> = 300</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-802b-a062-dc763bdfab70" class="bulleted-list"><li style="list-style-type:disc"><strong>COGS marginal (C)</strong> = 90</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80a5-a3ef-cd6acf2693d4" class="bulleted-list"><li style="list-style-type:disc"><strong>Profit por compra</strong> = P − C = 210</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-805a-a168-e60f49a9eb7a" class="bulleted-list"><li style="list-style-type:disc"><strong>Compras/año (frecuencia efectiva)</strong>: para reflejar tu “1.5 compras/quarter × 3 años” (y su proxy anual), uso <strong>6 compras/año</strong> como aproximación agregada dentro del modelo anual del worksheet.<div style="display:contents" dir="auto"><ul id="36ff554f-2b83-806d-b301-d1bb47dbc280" class="bulleted-list"><li style="list-style-type:circle">Entonces <strong>profit “sin churn” por año</strong> = 6 × 210 = <strong>1,260</strong></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8056-b378-d18fe5026637" class="bulleted-list"><li style="list-style-type:disc"><strong>Retention por año</strong> (multiplicador de continuidad):<div style="display:contents" dir="auto"><ul id="36ff554f-2b83-806b-ad7a-c326da0833cf" class="bulleted-list"><li style="list-style-type:circle">Año1: 0.65, Año2: 0.50, Año3: 0.35, Año4: 0.20, Año5: 0.10</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8098-b572-ddb3c4706a17" class="bulleted-list"><li style="list-style-type:disc"><strong>Cost of capital (i)</strong> = 50% ⇒ descuento por año:<div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80c9-9f0e-cf71c3c90bc4" class="bulleted-list"><li style="list-style-type:circle">t=1: 1/1.5 = 0.667</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8023-8994-c79e15adaea7" class="bulleted-list"><li style="list-style-type:circle">t=2: 1/2.25 = 0.444</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8081-ab1e-f637d15d5125" class="bulleted-list"><li style="list-style-type:circle">t=3: 1/3.375 = 0.296</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-803b-acc0-e2b34cc43b52" class="bulleted-list"><li style="list-style-type:circle">t=4: 1/5.0625 = 0.198</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80f6-a048-ee16ad6e7e9e" class="bulleted-list"><li style="list-style-type:circle">t=5: 1/7.59375 = 0.132</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-800c-abcc-e2bb2826b4dc"/></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-8002-9f5e-c04d19a85558" class=""><strong>Tabla LTV (A–M) para t=0..5</strong></h3></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-809c-8b28-ec21d3a5dc7b" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805c-a9db-c114f2f3f8b9"><th id="M]A\" class="simple-table-header-color simple-table-header">Row (A–M)</th><th id=":HxI" class="simple-table-header-color simple-table-header">t=0</th><th id="R_s[" class="simple-table-header-color simple-table-header">t=1</th><th id="nNEd" class="simple-table-header-color simple-table-header">t=2</th><th id="r~Vy" class="simple-table-header-color simple-table-header">t=3</th><th id="w}@B" class="simple-table-header-color simple-table-header">t=4</th><th id="bVmZ" class="simple-table-header-color simple-table-header">t=5</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804d-978e-ded7cef5c785"><td id="M]A\" class=""><strong>A. One-time profit (initial)</strong></td><td id=":HxI" class=""><strong>210</strong></td><td id="R_s[" class="">0</td><td id="nNEd" class="">0</td><td id="r~Vy" class="">0</td><td id="w}@B" class="">0</td><td id="bVmZ" class="">0</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8093-8abf-d6a499d9551f"><td id="M]A\" class=""><strong>B. Recurring profit (Year t, pre-discount)</strong></td><td id=":HxI" class="">0</td><td id="R_s[" class="">1,260×0.65 = <strong>819</strong></td><td id="nNEd" class="">1,260×0.50 = <strong>630</strong></td><td id="r~Vy" class="">1,260×0.35 = <strong>441</strong></td><td id="w}@B" class="">1,260×0.20 = <strong>252</strong></td><td id="bVmZ" class="">1,260×0.10 = <strong>126</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8082-b965-db51569959bd"><td id="M]A\" class=""><strong>C. Total profit (A+B, pre-discount)</strong></td><td id=":HxI" class=""><strong>210</strong></td><td id="R_s[" class=""><strong>819</strong></td><td id="nNEd" class=""><strong>630</strong></td><td id="r~Vy" class=""><strong>441</strong></td><td id="w}@B" class=""><strong>252</strong></td><td id="bVmZ" class=""><strong>126</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c8-844f-fb687129d186"><td id="M]A\" class=""><strong>D. Discount factor (1/(1+i)^t)</strong></td><td id=":HxI" class="">1.000</td><td id="R_s[" class="">0.667</td><td id="nNEd" class="">0.444</td><td id="r~Vy" class="">0.296</td><td id="w}@B" class="">0.198</td><td id="bVmZ" class="">0.132</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8019-823d-c533968a80c5"><td id="M]A\" class=""><strong>E. PV of profit (C×D)</strong></td><td id=":HxI" class=""><strong>210.0</strong></td><td id="R_s[" class=""><strong>546.0</strong></td><td id="nNEd" class=""><strong>280.0</strong></td><td id="r~Vy" class=""><strong>130.5</strong></td><td id="w}@B" class=""><strong>49.9</strong></td><td id="bVmZ" class=""><strong>16.6</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80eb-91df-c031d6e508f6"><td id="M]A\" class=""><strong>F. NPV incremental (PV)</strong></td><td id=":HxI" class="">210.0</td><td id="R_s[" class="">546.0</td><td id="nNEd" class="">280.0</td><td id="r~Vy" class="">130.5</td><td id="w}@B" class="">49.9</td><td id="bVmZ" class="">16.6</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d3-bcc4-ef822aafa6cb"><td id="M]A\" class=""><strong>G. Cumulative NPV</strong></td><td id=":HxI" class=""><strong>210.0</strong></td><td id="R_s[" class=""><strong>756.0</strong></td><td id="nNEd" class=""><strong>1,036.0</strong></td><td id="r~Vy" class=""><strong>1,166.5</strong></td><td id="w}@B" class=""><strong>1,216.4</strong></td><td id="bVmZ" class=""><strong>1,233.0</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d6-ba95-f051036eb3a3"><td id="M]A\" class=""><strong>H. LTV estimate (rounded)</strong></td><td id=":HxI" class=""></td><td id="R_s[" class=""></td><td id="nNEd" class=""></td><td id="r~Vy" class=""></td><td id="w}@B" class=""></td><td id="bVmZ" class=""><strong>~$1,230 MXN</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b0-a870-fd475383d298"><td id="M]A\" class=""><strong>I. Low-case (margen 65%) LTV (proxy)</strong></td><td id=":HxI" class=""></td><td id="R_s[" class=""></td><td id="nNEd" class=""></td><td id="r~Vy" class=""></td><td id="w}@B" class=""></td><td id="bVmZ" class=""><strong>~$1,080–$1,150 MXN</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804f-bdfa-ee678a5e562b"><td id="M]A\" class=""><strong>J. High-case (margen 75%) LTV (proxy)</strong></td><td id=":HxI" class=""></td><td id="R_s[" class=""></td><td id="nNEd" class=""></td><td id="r~Vy" class=""></td><td id="w}@B" class=""></td><td id="bVmZ" class=""><strong>~$1,300–$1,350 MXN</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c8-bbb1-c904d953db5f"><td id="M]A\" class=""><strong>K. Range comfy</strong></td><td id=":HxI" class=""></td><td id="R_s[" class=""></td><td id="nNEd" class=""></td><td id="r~Vy" class=""></td><td id="w}@B" class=""></td><td id="bVmZ" class=""><strong>$1.1k–$1.35k MXN</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804a-a06a-d39611c30aa8"><td id="M]A\" class=""><strong>L. Key driver check</strong></td><td id=":HxI" class=""></td><td id="R_s[" class=""></td><td id="nNEd" class=""></td><td id="r~Vy" class=""></td><td id="w}@B" class=""></td><td id="bVmZ" class="">Margen (COGS) y continuidad anual</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-808c-acad-cb5cead8367d"><td id="M]A\" class=""><strong>M. Notes (scope)</strong></td><td id=":HxI" class=""></td><td id="R_s[" class=""></td><td id="nNEd" class=""></td><td id="r~Vy" class=""></td><td id="w}@B" class=""></td><td id="bVmZ" class="">LTV del “cliente DTC adquirido” (sin clínicas/B2B en este cálculo)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-805c-b19a-ee7314f4d764"/></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-8077-8a02-db260734a335" class=""><strong>Explicación de inputs y cálculos (para llenar la parte inferior)</strong></h3></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-800e-b01b-feafe4d4df90" class="bulleted-list"><li style="list-style-type:disc"><strong>Profit inicial (t=0)</strong>:<div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80c3-bdfc-f8d4475f92c3" class="bulleted-list"><li style="list-style-type:circle">P = 300, C = 90 ⇒ Profit = 210</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80cf-af51-f2da693fba2c" class="bulleted-list"><li style="list-style-type:disc"><strong>Profit recurrente anual (t=1..5)</strong>:<div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80fe-b46d-c6747e87947b" class="bulleted-list"><li style="list-style-type:circle">Frecuencia efectiva anual asumida: 6 compras/año</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8096-82ba-e85f18f280c3" class="bulleted-list"><li style="list-style-type:circle">Profit “sin churn” = 6 × 210 = 1,260</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80fb-b871-c0840d829d90" class="bulleted-list"><li style="list-style-type:circle">Se multiplica por <strong>retention anual</strong> de cada año (0.65, 0.50, 0.35, 0.20, 0.10)</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80fb-b48b-d130154a2f06" class="bulleted-list"><li style="list-style-type:disc"><strong>Descuento (PV)</strong>:<div style="display:contents" dir="auto"><ul id="36ff554f-2b83-808a-850a-ffab3de5c53e" class="bulleted-list"><li style="list-style-type:circle">i = 50% ⇒ PV = FV × 1/1.5^t</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80aa-b61d-ea9e364e4d7f" class="bulleted-list"><li style="list-style-type:disc"><strong>LTV</strong>: suma de PV desde t=0 hasta t=5 (NPV acumulado).</li></ul></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8028-94a7-f793d20224f8"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80fe-97cd-e1b82483fb37" class=""><strong>3) Interpretation of Estimation (Tabla)</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8013-a6c3-f72c3022d28d" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8051-9167-d68c3c17f689"><th id="}AtE" class="simple-table-header-color simple-table-header">Questions a–e</th><th id=";CXH" class="simple-table-header-color simple-table-header">Answer (best estimate)</th><th id="=oiL" class="simple-table-header-color simple-table-header">Explanation</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-801d-917c-ed3d1419bb91"><td id="}AtE" class=""><strong>a) ¿A qué número redondearías el LTV? ¿Qué rango?</strong></td><td id=";CXH" class=""><strong>~$1,230 MXN</strong>; rango cómodo <strong>$1,100–$1,350 MXN</strong></td><td id="=oiL" class="">Redondeo al acumulado descontado (NPV) ~1,233. Rango por sensibilidad a margen y a la continuidad real.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8001-9ec8-ffe1d0b593c1"><td id="}AtE" class=""><strong>b) ¿Dónde están los mayores unknowns?</strong></td><td id=";CXH" class=""><strong>(1) Retención/continuidad real por año</strong> (que sea estable más allá de day 90) y <strong>(2) COGS marginal real</strong> (maquila + empaque + merma)</td><td id="=oiL" class="">LTV aquí es muy sensible a: si el cliente deja de recomprar antes de lo esperado, los flujos futuros caen fuerte; si el COGS resulta más alto, cae el margen en cada compra.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80e1-a7f4-f23e391428ef"><td id="}AtE" class=""><strong>c) ¿El número parece razonable?</strong></td><td id=";CXH" class="">Sí, <strong>para un LTV de utilidad descontada del cliente DTC</strong></td><td id="=oiL" class="">Tu cifra $5,400 MXN (ingresos) no es directamente comparable porque esta tabla usa <strong>utilidad (margen)</strong> y <strong>descuento por costo de capital</strong>.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80aa-93e8-e8216a1e39ae"><td id="}AtE" class=""><strong>d) ¿Key drivers para aumentar LTV?</strong></td><td id=";CXH" class=""><strong>Retención/recompra más larga</strong> y <strong>margen bruto mayor</strong></td><td id="=oiL" class="">LTV = Σ [profit_t / 1.5^t]. Mejorar margen (menos COGS por unidad) y aumentar continuidad (mayor retention) sube todos los términos futuros.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ca-9bcc-e07088cf3f89"><td id="}AtE" class=""><strong>e) ¿Mayor oportunidad para aumentar LTV all things considered?</strong></td><td id=";CXH" class=""><strong>Mejorar continuidad (reorder) sosteniéndolo 12–24 meses</strong> vía evidencia percibida (HRIPT + 3–4 semanas + guía de uso)</td><td id="=oiL" class="">Para DTC, el “lever” más controlable suele ser mantener resultados y reducir churn temprano mediante educación, monitoreo week 1–3 y prueba social clínica. El CAC ya lo estás mitigando por derm/contendido.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8026-9ef8-db25d326e95a"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8015-99c7-eb7af740d710" class=""><strong>4) Recordatorio y siguiente paso</strong></h2></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80ea-a301-eacc73af2318" class="">Puedes actualizar tu Startup Idea en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>. Ahí puedes también ajustar detalles para almacenar información crítica, incluyendo: <strong>precio</strong>, <strong>COGS/margen</strong>, <strong>vida del producto y recompra</strong>, <strong>retención anual</strong>, y <strong>costo de capital</strong>. Finalmente, también puedes usar el chatbot en la parte superior de esta página para solicitar cambios a tus resultados.</p></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80b7-8fbf-e28639f961ea" class="">Por favor usa el botón abajo para proceder al siguiente paso.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

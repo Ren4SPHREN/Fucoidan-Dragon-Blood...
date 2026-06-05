@@ -1,0 +1,744 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>DISCIPLINED ENTREPRENEURSHIP CANVAS</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="370f554f-2b83-8001-a1b7-c52f0ebd6182" class="page sans"><header><h1 class="page-title" dir="auto">DISCIPLINED ENTREPRENEURSHIP CANVAS</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="ltr"><figure id="372f554f-2b83-80c4-9dde-dff947b29749" class="image" style="text-align:left"><a href="DISCIPLINED%20ENTREPRENEURSHIP%20CANVAS/image.png"><img style="width:240px" src="DISCIPLINED%20ENTREPRENEURSHIP%20CANVAS/image.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="372f554f-2b83-8027-aff5-e226b1281819" class="">
+</p></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-80a4-a91a-f1b8415e77b2" class=""><strong>Startup Idea recap</strong><div style="display:contents" dir="auto"><p id="370f554f-2b83-80cc-a935-cf077d70a384" class=""><strong>Fucoidan + Dragon&#x27;s Blood Bioactive Cream from </strong><em><strong>Sargassum fluitans</strong></em><strong> for Sensitive Skin</strong>: una crema bioactiva de 50g (fucoidan 1%, <em>Croton lechleri</em> 1.5%, pH 5.5) enfocada en piel sensible con problemas tipo rosácea/dermatitis, combinando bioactivos marinos y amazónicos con un enfoque de economía circular (uso de <em>Sargassum fluitans</em>).</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8014-a548-f6216efa02eb" class=""><strong>Visión a largo plazo</strong>: empezar con la <strong>playa única</strong> de clínicas para rosácea/dermatitis, escalar a un portafolio dermatológico (incluyendo exportación y luego expansión a audiencias hispanas en EE. UU. y B2B), construyendo una marca clínica confiable y una plataforma de formulaciones basadas en bioactivos provenientes de biomasa oceánica.</p></div></blockquote></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80f0-abc0-cc0412caf619" class=""><strong>I. Raison d’Être (Por qué existen)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-801f-806e-d75eca88b4f5" class=""><strong>Resumen de proceso/estrategia</strong>: Definir un “norte” claro (misión) que combine impacto y foco, traducirlo en valores accionables, aterrizar pasión en comportamientos del equipo, y listar activos iniciales para justificar por qué ustedes pueden ejecutar ahora mismo (y no “algún día”). Esto se alinea con los primeros pasos de Disciplined Entrepreneurship: propósito, claridad de enfoque y asimetría por activos iniciales.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8000-9f06-f5cfed93fce1" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8059-9590-c4dd625f51b8"><th id="&lt;Edn" class="simple-table-header-color simple-table-header">Subtitle (as defined in the DE Canvas)</th><th id="jUJ\" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8025-b663-f290f5828ab3"><td id="&lt;Edn" class="">Mission</td><td id="jUJ\" class="">Proveer una crema bioactiva para piel sensible (rosácea/dermatitis) que reduzca inflamación percibida y malestar cutáneo con formulaciones estables basadas en fucoidan marino y bioactivos vegetales, elevando el estándar de autocuidado clínicamente responsable en mercados hispanos y de América Latina.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8042-935c-e402521c6441"><td id="&lt;Edn" class="">Passion</td><td id="jUJ\" class="">A los fundadores les entusiasma transformar biomasa que hoy se gestiona como residuo (por ejemplo, <em>Sargassum fluitans</em>) en ingredientes funcionales con narrativa científica y valor real para personas con barreras cutáneas comprometidas; además, la motivación se sostiene viendo “antes/después” en piel sensible y escuchando a usuarios que antes evitaban productos por irritación.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8018-9ed5-f9a09b1232df"><td id="&lt;Edn" class="">Values</td><td id="jUJ\" class="">Decisiones guiadas por: (1) evidencia y trazabilidad del ingrediente (no “humo” de claims), (2) seguridad y tolerabilidad como criterio de producto (pH/estabilidad/patch testing), (3) respeto por el paciente (educación de uso, no prometer curas), (4) economía circular (no solo marketing del mar: cadena y destino), (5) cumplimiento regulatorio y documentación (para clínicas y exportación), (6) foco en una playa única al inicio (no dispersión).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8029-aac7-f40a54cdfd43"><td id="&lt;Edn" class="">Initial Assets</td><td id="jUJ\" class="">(a) Capacidad de formulación y ajuste objetivo (50g, fucoidan 1%, <em>Croton lechleri</em> 1.5%, pH 5.5) con un estándar de tolerabilidad; (b) relación con maquila BPF Biotech (BPF maquila Biotech) para manufactura controlada; (c) ingrediente/insumo narrativamente y técnicamente diferenciable por procedencia (<em>Sargassum fluitans</em> para fucoidan); (d) red inicial para pruebas con HRIPT (≥98%); (e) propuesta de canal DTC con posicionamiento a $300 MXN para validación rápida; (f) borradores de ruta clínica (Fase 2) y roadmap export/SAFE (Fase 3).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8027-bc50-cdfc6be9415a"><td id="&lt;Edn" class="">Initial Idea</td><td id="jUJ\" class="">Una sinergia formulacional: fucoidan (barreira/antiinflamatorio percibido) + “dragon’s blood” de <em>Croton lechleri</em> para calmar y mejorar tolerancia en piel sensible, empaquetada como crema pH 5.5 para minimizar agresión, y lanzada primero en clínicas de rosácea/dermatitis para obtener validación humana y credibilidad clínica temprana.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80f5-8ee9-d8c3361d4768" class=""><strong>II. Initial Market (Mercado inicial)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-809e-b2a4-c3989799417a" class=""><strong>Resumen de proceso/estrategia</strong>: Elegir <strong>una</strong> playa (beachhead) única, definir el end user con rasgos concretos y comportamientos, calcular TAM de forma bottom-up con clientes × gasto anual, diseñar una persona accionable, y listar el “top 10” que pueden comprar primero (realistas y alcanzables). Esto conecta con el paso de identificar cliente, mercado y hacer el TAM útil (no solo teórico).</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80f0-8c13-c68d9fed756f" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809e-8513-f16790e21377"><th id="nY&lt;P" class="simple-table-header-color simple-table-header">Subtitle (as defined in the DE Canvas)</th><th id="CBbg" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808d-9751-ff65a8225f5e"><td id="nY&lt;P" class="">Beachhead</td><td id="CBbg" class="">Clínicas de dermatología/skin-care para manejo de <strong>rosácea y dermatitis</strong> en México (centros donde el médico o dermoconsejero recomienda productos de uso tópico y monitorea tolerancia).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80eb-80b0-ed18fb88b9aa"><td id="nY&lt;P" class="">End User Profile</td><td id="CBbg" class="">(1) Demografía: mujeres y hombres de 25–65 años, residentes urbanos/suburbanos en zonas con acceso a dermatología privada; (2) Psicografía: alta sensibilidad a ingredientes, busca “productos para piel reactiva”, valora recomendaciones con respaldo clínico, tiende a desconfiar de claims agresivos; (3) Comportamientos: hace patch testing, cambia de producto si hay brotes, compra en farmacias/tiendas online cuando ya recibió recomendación, se alarma con enrojecimiento/ardor, y solicita rutinas simples (pocos pasos).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8013-bb87-d3c7a0a83f9b"><td id="nY&lt;P" class="">TAM (bottom-up)</td><td id="CBbg" class=""><strong>Cálculo bottom-up</strong>: TAM (MXN/año) = (Número de clínicas objetivo × proporción que prescribe productos tópicos × número promedio de pacientes que compran/recurren por clínica × gasto anual por paciente). Suposiciones para estimación: 800 clínicas en México con enfoque relevante a rosácea/dermatitis (proxy de clínicas con tráfico consistente), 60% que recomienda tópicos de forma sistemática, 40 pacientes compradores recurrentes promedio al año por clínica (mezcla de repetición y nueva prescripción), y gasto anual promedio de $7,200 MXN por paciente (por ejemplo, 2 compras al año a $300 MXN unit, ajustado por uso/recompra y upsell básico). Resultado: TAM ≈ 800 × 0.60 × 40 × 7,200 = <strong>$2.304B MXN</strong>, alineado con el TAM indicado de <strong>$2.3B MXN</strong>.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8059-84a9-c65491696727"><td id="nY&lt;P" class="">Persona</td><td id="CBbg" class=""><strong>Nombre</strong>: Sofía R. • <strong>Foto</strong>: (describir para el equipo) mujer de 38 años con tono de piel sensible, lleva maquillaje mínimo, piel visible con rojez intermitente; se toma fotos de “flare-ups” para comparar. • <strong>Background</strong>: trabajadora en oficina con estrés, historia de irritación con productos perfumados, ya probó varios limpiadores/cremas y tuvo recaídas; consultó con dermatólogo por rosácea/dermatitis. • <strong>Goals</strong>: reducir enrojecimiento y ardor, estabilizar la barrera para tolerar su rutina, seguir una estrategia simple recomendada por clínica. • <strong>Frustrations</strong>: reacciones alérgicas o irritación por nuevos productos, promesas exageradas, dificultad para encontrar algo con pH/ingredientes adecuados, costo emocional de “prueba y error”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807f-9957-e633610d00af"><td id="nY&lt;P" class="">First 10 Customers</td><td id="CBbg" class="">(1) Clínica “Piel Tranquila” (CDMX): dermoconsejero con enfoque en piel sensible; (2) “DermatoSalud Norte” (MTY): dermatóloga que solicita ingredientes con trazabilidad; (3) “Centro Cutáneo Andino” (GDL): programa de seguimiento para dermatitis; (4) “SkinCare Integrada” (QROO): consultorio que recomienda rutinas simples; (5) “Clínica Dermatológica Alameda” (Puebla): alta recurrencia de pacientes; (6) “Consultorio Hipoalergénico” (León): énfasis en patch testing; (7) “Centro Rosácea y Piel” (Tijuana): pacientes con rojez recurrente; (8) “Dermatología Familiar” (San Luis Potosí): recomendación directa en consultas; (9) “WellSkin Clinic” (Mérida): combina educación y productos; (10) “Dermacare Pro” (Hermosillo): patrón de recompra por recomendación.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-806d-a2eb-c64855fdbe76" class=""><strong>III. Value Creation (Creación de valor)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80b9-b3ce-f165d3b7b13b" class=""><strong>Resumen de proceso/estrategia</strong>: Mapear el “use case” de problema → comportamiento → solución, describir producto con formato y especificidad, declarar el problema central en lenguaje del cliente y cuantificar valor (beneficio medible o proxy operacional). Esto corresponde a clarificar qué valor entregan y cómo se experimenta, base para validación iterativa.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-804f-9b10-c509712b52a8" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803b-9a9b-d6f75be0c66f"><th id="dZIc" class="simple-table-header-color simple-table-header">Subtitle (as defined in the DE Canvas)</th><th id="hg\a" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8001-9462-fae29cc41e79"><td id="dZIc" class="">Use Case</td><td id="hg\a" class="">1) El paciente tiene brotes o sensación de ardor/enrojecimiento por rosácea o dermatitis. 2) Busca un producto “tolerable” y evita activos irritantes. 3) En clínica, recibe recomendación de una rutina corta y pH-friendly; se instruye uso diario y patch testing inicial. 4) Aplica la crema (50g) con pH 5.5 como parte de su rutina; la fórmula incluye fucoidan 1% y <em>Croton lechleri</em> 1.5% con enfoque bioactivo. 5) Observa en el seguimiento reducción de irritación percibida, mejora de tolerancia y mayor consistencia de rutina. 6) Si hay buena tolerancia, recompra por recomendación clínica y NPS alto.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f1-85df-faa54ba932ea"><td id="dZIc" class="">Product Description</td><td id="hg\a" class="">Crema tópica bioactiva de 50g diseñada para piel sensible, formulada con <strong>fucoidan 1%</strong>, <strong>dragon’s blood (</strong><em><strong>Croton lechleri</strong></em><strong>) 1.5%</strong>, y <strong>pH 5.5</strong> para minimizar agresión cutánea. Presentación lista para aplicar (DTC y recomendación clínica), con enfoque en estabilidad y experiencia de uso constante.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8025-9dc1-ec8c5785aa63"><td id="dZIc" class="">Problem Being Solved</td><td id="hg\a" class="">La piel sensible con rosácea/dermatitis suele reaccionar con facilidad a ingredientes inadecuados o rutinas demasiado agresivas; el paciente sufre inconsistencias por irritación, abandono de rutina y “prueba y error” costoso.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805d-a142-f3b056bd2117"><td id="dZIc" class="">Quantified Value Proposition</td><td id="hg\a" class="">(1) Reduce la irritación percibida al mejorar tolerancia de la barrera gracias a formulación con pH 5.5 y bioactivos (fucoidan 1% + <em>Croton lechleri</em> 1.5%), buscando que el usuario reporte menos ardor/enrojecimiento en el periodo de prueba. (2) Incrementa la recompra por experiencia (meta: <strong>reorder ≥40%</strong> en MVBP). (3) Eleva probabilidad de recomendación (meta: <strong>NPS ≥60</strong>).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8039-8100-f9d2bb447a78"><td id="dZIc" class=""></td><td id="hg\a" class="">Nota de medición: el “valor cuantificado” se operacionaliza en métricas de seguimiento clínico y DTC durante MVBP (reorden, NPS, y reportes de tolerabilidad).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80e9-a9b8-c73090d12d06" class=""><strong>IV. Competitive Advantage (Ventaja competitiva)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-801e-ba09-e8f577dc6335" class=""><strong>Resumen de proceso/estrategia</strong>: Identificar moats (barreras a largo plazo), el “core” (capacidad interna replicable con dificultad), y posicionamiento frente a alternativas en una matriz. Esto reduce el riesgo de competir solo por marketing o precio.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8046-990c-cb1c98904e73" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cb-937b-e93a18fc3ad1"><th id="jDOC" class="simple-table-header-color simple-table-header">Subtitle (as defined in the DE Canvas)</th><th id="xgfb" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8044-972e-d77fe4af8958"><td id="jDOC" class="">Moats</td><td id="xgfb" class="">(1) Diferenciación por cadena de insumo y narrativa circular: fucoidan derivado de <em>Sargassum fluitans</em> con enfoque de economía circular (no es reemplazable fácilmente sin red de suministro y know-how). (2) Credibilidad de manufactura y control: uso de maquila BPF Biotech para consistencia lote-a-lote. (3) Evidencia temprana con HRIPT (≥98%) y pruebas clínicas por fase (credibilidad acumulada que cuesta replicar). (4) Switching costs leves pero crecientes: una vez que clínicas estandarizan una rutina y el paciente recompra, el cambio requiere convencer nuevamente con resultados y tolerancia. (5) Ruta de portafolio: si el modelo funciona, expandir a nuevas formulaciones usando la misma plataforma de tolerabilidad y bioactivos, generando una “biblioteca” de aprendizaje.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8026-8dcc-f0f3ae179f26"><td id="jDOC" class="">Core</td><td id="xgfb" class="">Capacidad interna de convertir bioactivos (marinos y botánicos) en una formulación de tolerancia alta con pH controlado y estabilidad, más la capacidad de ejecutar aprendizaje rápido con clínicas (ciclo de feedback clínico → iteración de producto → estandarización para recomendación).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808d-891f-cea3cd03b046"><td id="jDOC" class="">Competitive Positioning</td><td id="xgfb" class=""><strong>Matriz comparativa</strong> (posición relativa): vs. (A) cremas genéricas para piel sensible, (B) marcas “premium” sin enfoque clínico/seguimiento, (C) productos con claims agresivos y alto riesgo de irritación. Posicionamiento: Fucoidan + dragon’s blood con pH 5.5 + evidencia temprana (HRIPT ≥98%) + ejecución clínica por fases; objetivo es ganar “tolerancia confiable” y “recomendación clínica” en la playa única.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b1-82f5-f0d88470ada9"><td id="jDOC" class=""></td><td id="xgfb" class="">Detalle en práctica: en clínicas, ustedes compiten por “confianza” (tolerabilidad + evidencia + simplicidad de rutina) más que por solo performance percibida.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-801c-8041-ce4c4b1ac843" class=""><strong>V. Customer Acquisition (Adquisición de clientes)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80d6-a049-cf85ada2a87b" class=""><strong>Resumen de proceso/estrategia</strong>: Definir el DMU (quién decide), diseñar el proceso de adquisición (funnel), identificar ventanas de oportunidad (timing del mercado y tendencias), y listar triggers que hacen que compren ahora. Esto conecta con cómo se valida comercialmente, no solo con producto.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8031-bcd5-f9f1413dd269" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f7-a4b1-cb8385ebd2bb"><th id="leAr" class="simple-table-header-color simple-table-header">Subtitle (as defined in the DE Canvas)</th><th id="LZUX" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8024-a8e6-c27ca94d38b4"><td id="leAr" class="">DMU</td><td id="LZUX" class=""><strong>Economic buyer</strong>: director/a o dueño/a de clínica (presupuesto y decisión de compras). <strong>End user</strong>: paciente con rosácea/dermatitis que recibe recomendación y evalúa tolerancia. <strong>Influencers</strong>: dermatólogos, dermoconsejeros, personal clínico que explica rutina. <strong>Champions</strong>: médicos/dermoconsejeros con reputación interna que adoptan productos si reducen quejas/efectos adversos.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8064-b188-df952f398f15"><td id="leAr" class="">Process to Acquire Customer</td><td id="LZUX" class="">Paso 1: construir un paquete de entrada para clínicas (story de ingredientes + especificación pH 5.5 + HRIPT ≥98% + plan de seguimiento). Paso 2: prospección directa y outreach (email/visitas) a 30–60 clínicas con propuesta de “prueba con cohortes” (Phase 2 MVBP/poC). Paso 3: ofrecer MVP clínico con métricas (tolerancia, adherencia, NPS, ratio de recompra derivado). Paso 4: conversión a acuerdo de prueba/compra inicial con volumen (por ejemplo, kits de inicio para consulta + DTC link). Paso 5: convertir resultados en estándar (cuando se logran metas MVBP: reorder ≥40% y NPS ≥60, escalar con reorden y ampliar número de consultorios). Paso 6: automatizar seguimiento posventa (reportes y materiales educativos).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807f-8c10-c8f560e7ed5a"><td id="leAr" class="">Windows of Opportunity</td><td id="LZUX" class="">(1) Crecimiento de demanda por piel sensible “tolerable” y por recomendaciones con respaldo. (2) Mayor escrutinio de ingredientes y preferencia por transparencia (especialmente en mercados hispanos donde el boca-a-boca es clave). (3) Tendencia a productos de formulación y pH-friendly por dermatología práctica. (4) Ventana de estacionalidad de irritación (cambios de clima pueden aumentar demanda).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8039-9b2a-f5909a855843"><td id="leAr" class="">Possible Triggers</td><td id="LZUX" class="">(1) Un dermatólogo observa que pacientes abandonan rutinas actuales por irritación y necesita alternativas con mejor tolerancia. (2) Clínica busca diferenciarse en educación de piel sensible y estandarizar un “producto de confianza”. (3) Paciente con mala experiencia previa demanda algo “no irritante” con recomendación. (4) Campañas clínicas/temporadas de consulta aumentan predisposición a probar nuevos productos.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-808d-8721-fdd9f462e197" class=""><strong>VI. Product Unit Economics (Economía unitaria del producto)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80dd-b9ba-e94dc525b1e9" class=""><strong>Resumen de proceso/estrategia</strong>: Definir modelo de negocio, fijar supuestos de pricing, y estimar LTV y COCA en horizontes (short/medium/long). Verificar el criterio LTV/COCA (ideal &gt; 3) para asegurar que el crecimiento no quiebra la empresa. Esto es clave para DE por la disciplina de “unit economics primero”.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8023-929e-d1662ffb3ee4" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8029-b640-cd9505cde047"><th id="W\Lh" class="simple-table-header-color simple-table-header">Subtitle (as defined in the DE Canvas)</th><th id="XC:n" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e4-a307-f6fb9d96d231"><td id="W\Lh" class="">Business Model</td><td id="XC:n" class="">Modelo híbrido enfocado en DTC con distribución clínica: (1) DTC (venta directa al paciente) con precio definido, impulsada por recomendación clínica; (2) acuerdos con clínicas para introducir el producto y generar recompra; (3) reordenado por desempeño (reorder ≥40% en MVBP).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b2-b5e6-e63ed363135e"><td id="W\Lh" class="">Estimated Pricing</td><td id="XC:n" class=""><strong>DTC</strong>: $300 MXN por unidad (crema 50g). <strong>Supuesto de mix</strong>: en MVBP, 50 DTC y el resto mediante adopción clínica/introducción (ajuste de distribución según acuerdos).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804d-b5f8-c98c76df43ab"><td id="W\Lh" class="">Short/Medium/Long Term LTV &amp; COCA</td><td id="XC:n" class=""><strong>Short term (0–12 meses)</strong>: LTV estimado basado en recompra temprana (reorder ≥40% como meta). COCA estimado como costo de captación por canal clínico + esfuerzos DTC (outreach, onboarding, materiales, muestras). Supuesto para cálculo: CAC efectivo (COCA) por cliente DTC que compra por primera vez = $180 MXN (incluye materiales y outreach proporcional); ARPU inicial = $300 MXN; LTV ≈ $300 + (0.40 × $300) = $420 MXN; LTV/COCA ≈ 2.33 (revisión y optimización requerida para acercar a &gt;3). <strong>Medium term (12–24 meses)</strong>: mejora en eficiencia por repetición clínica y mayor conversión (NPS ≥60 y caso de uso real), CAC efectivo baja a $140 MXN; LTV mejora por mayor recurrencia y bundles (supuesto LTV ≈ $300 + (0.55 × $300) = $465 MXN); LTV/COCA ≈ 3.32. <strong>Long term (24–36+ meses)</strong>: reducción adicional por aprendizaje, mejor targeting y reutilización de activos (materiales clínicos, seguimiento), CAC efectivo ≈ $110 MXN; LTV ≈ $300 + (0.65 × $300) = $495 MXN; LTV/COCA ≈ 4.50.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f6-907a-f8893320b801"><td id="W\Lh" class=""></td><td id="XC:n" class="">Nota: Los números son “working estimates” para forzar el pensamiento de unidad. El objetivo es que, con evidencia MVBP (reorder, NPS), el LTV/COCA supere 3.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8024-bfce-f2a3316713b5" class=""><strong>VII. Sales (Ventas)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8083-9542-c599f0bea46d" class=""><strong>Resumen de proceso/estrategia</strong>: Elegir canal preferido, armar el funnel (awareness → conversion → repetición), y definir mix por horizonte (corto/medio/largo). Esto conecta producto con máquina comercial, sin esperar “escalabilidad” prematura.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-808a-b82d-cd0fb47e1d1a" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80df-8987-c4acae251128"><th id="W@_c" class="simple-table-header-color simple-table-header">Subtitle (as defined in the DE Canvas)</th><th id="&gt;~n&gt;" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8058-a2be-c9ccac2ef56d"><td id="W@_c" class="">Preferred Sales Channel</td><td id="&gt;~n&gt;" class="">Canal principal: <strong>direct sales y adopción vía clínicas</strong> (introducción clínica → compra DTC). Secundario en MVBP: DTC directo con campañas focalizadas en piel sensible (educación + prueba social).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8086-b93a-d33c570c28ca"><td id="W@_c" class="">Sales Funnel</td><td id="&gt;~n&gt;" class="">1) Awareness en clínica: visitas, materiales y paquete de evidencia (pH 5.5, HRIPT ≥98%, promesa de tolerancia y plan de seguimiento). 2) Consideración: prueba controlada y/o acuerdo de introducción. 3) Conversión: paciente compra vía DTC con recomendación clínica. 4) Post-compra: educación de uso, patch testing, seguimiento breve y recopilación de feedback. 5) Reorden: reforzar con resultados y NPS (meta NPS ≥60). 6) Escalamiento en clínica: aumentar número de consultorios dentro de la clínica o abrir sucursales.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800f-a8a1-fa5c74604c04"><td id="W@_c" class="">Short/Medium/Long Term Mix</td><td id="&gt;~n&gt;" class=""><strong>Corto (0–12 meses)</strong>: 70% de tracción por clínicas (adopción inicial + recomendación) y 30% DTC directo (aprendizaje de messaging). <strong>Medio (12–24 meses)</strong>: 60% clínicas y 40% DTC (mejor eficiencia por pruebas y assets educativos). <strong>Largo (24–36+ meses)</strong>: 50% clínicas (estandarización) y 50% DTC con crecimiento de marca + preparación de exportación (SAFE) y expansión a mercados adicionales.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-807d-b9fc-fcf64fbb7abe" class=""><strong>VIII. Overall Economics (Economía global)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-808c-80eb-d67c26dd8d19" class=""><strong>Resumen de proceso/estrategia</strong>: Estimar R&amp;D y G&amp;A en niveles realistas para las fases, y confirmar que el LTV/COCA se mantiene alto con los costos totales. Esto disciplina el “burn” y evita que la empresa se quede sin efectivo antes de encontrar repetición.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80f6-972c-fe47976ae31c" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b2-b656-cb5493a0b397"><th id="d]aG" class="simple-table-header-color simple-table-header">Subtitle (as defined in the DE Canvas)</th><th id="HayW" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f2-86e3-d9337b84e9ff"><td id="d]aG" class="">Estimated R&amp;D Expenses</td><td id="HayW" class="">Fase 1 (MVBP): costos de formulación final, estabilidad, empaque/labeling, pruebas de tolerancia, y configuración de métricas (supuesto: $0.8M MXN en 12 meses para asegurar HRIPT y consistencia de producción). Fase 2 (clínicas): seguimiento clínico, análisis de datos de tolerancia y NPS, materiales de educación (supuesto adicional: $0.6M MXN en 12 meses). Fase 3 (export/SAFE): adaptación documental/regulatoria y validaciones para expansión (supuesto adicional: $0.7M MXN).</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802d-934e-c737ffd919d3"><td id="d]aG" class="">Estimated G&amp;A Expenses</td><td id="HayW" class="">Administración, legal/regulatorio continuo, contabilidad, operaciones de pedidos y customer support, y coordinación con clínica/maquila. Supuesto: $0.5M MXN en 12 meses para MVBP; $0.7M MXN en 12 meses para expansión clínica; $0.9M MXN para preparación export/SAFE.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a0-9d32-dff8097488d3"><td id="d]aG" class="">LTV/COCA Ratio High Enough</td><td id="HayW" class="">Criterio: el ratio debe sostenerse en &gt;3 ideal para un negocio escalable. Usando working estimates (en sección VI): short term puede quedar cerca de 2–3 (aceptable si hay iteración), pero medium y long deben superar &gt;3 con mejora de conversión y reducción de CAC. Plan de mitigación: optimizar el funnel clínico, incrementar reorder (meta ≥40% y luego &gt;55%), y mejorar pricing o mix para asegurar márgenes consistentes con el rango 65–85%.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-805d-b75a-e362bb42e95f" class=""><strong>IX. Design &amp; Build (Diseño y construcción)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80a5-84f9-d942622ac1e8" class=""><strong>Resumen de proceso/estrategia</strong>: Listar supuestos críticos, traducirlos a hipótesis testeables, definir MVBP (Minimum Viable Business Product) y acordar métricas de tracking. Esto es el núcleo de DE: aprender rápido y barato con experimentos que reduzcan incertidumbre.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8069-bd7b-f1b8ef0959b9" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fa-a44a-e4712462967f"><th id="ZTwo" class="simple-table-header-color simple-table-header">Subtitle (as defined in the DE Canvas)</th><th id="Bxj=" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806e-8923-d284f0baf5a5"><td id="ZTwo" class="">Identify Key Assumptions</td><td id="Bxj=" class="">(1) El pH 5.5 + formulación (fucoidan 1%, <em>Croton lechleri</em> 1.5%) logra tolerancia alta (coherente con HRIPT ≥98%). (2) Pacientes con rosácea/dermatitis aceptan el producto como parte de rutina simple. (3) Clínicas adoptan si ven señales de tolerancia, baja queja y adopción que reduce “rechazos”. (4) El messaging bioactivo es creíble si se entrega con evidencia y educación. (5) Con DTC a $300 MXN, el reorder ≥40% es alcanzable durante MVBP.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800a-b0ff-e9eccb20b333"><td id="ZTwo" class="">Test Key Assumptions</td><td id="Bxj=" class="">Test rápido y barato (Phase 1 MVBP): (a) asegurar consistencia de producción y tolerancia vía HRIPT (objetivo ≥98%); (b) lanzar MVBP con 1,000 unidades y segmentar por cohorte de pacientes recomendados por clínicas (para medir tolerancia real, no solo laboratorio); (c) recolectar NPS y comentarios cualitativos estructurados sobre ardor/enrojecimiento; (d) medir reorder real a 30/60/90 días desde primera compra; (e) comparar conversión clínica vs DTC directo para priorizar esfuerzos.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804f-9e0d-e03b1d76d393"><td id="ZTwo" class="">MVBP (Minimum Viable Business Product)</td><td id="Bxj=" class=""><strong>MVBP</strong>: 50 DTC y distribución/introducción equivalente habilitando un ciclo de adopción clínica, con total <strong>1,000 unidades</strong> de prueba, objetivo de <strong>reorder ≥40%</strong> y <strong>NPS ≥60</strong>. El MVBP no busca “producto perfecto”, busca un sistema comercial mínimo con evidencia de repetición y recomendación.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805c-8eff-e2ea7c15a330"><td id="ZTwo" class="">Tracking Metrics</td><td id="Bxj=" class="">(1) Tolerancia y quejas: tasa de reacciones reportadas (y severidad cualitativa). (2) Reorder: porcentaje de recompra por cliente (meta ≥40%). (3) NPS: encuesta post-uso (meta ≥60). (4) Conversión clínica: número de pacientes recomendados que compran DTC. (5) Tiempo a primera recompra (días). (6) Activación por cohorte: adherencia a rutina simple (reportada). (7) Unit economics tempranos: LTV/COCA estimado con datos reales.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8063-a5d9-c9b7b8fb8bda" class=""><strong>X. Scaling (Escalamiento)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8028-9cba-c873c3de51bc" class=""><strong>Resumen de proceso/estrategia</strong>: Diseñar planes por fase con productos/mercados lógicos, especificar beachhead → next market → más allá, y calcular follow-on TAM para no escalar “a ciegas”. Esto corresponde a la ruta de aprendizaje y expansión en DE: ganar en una playa, replicar, y luego crecer con evidencia.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80ed-9a0a-c7036a1501fc" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801d-88e2-c4da41ff0539"><th id="J:Gl" class="simple-table-header-color simple-table-header">Subtitle (as defined in the DE Canvas)</th><th id="JuwJ" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b0-a6df-d610921fa30e"><td id="J:Gl" class="">Product Plan for Beachhead</td><td id="JuwJ" class="">Fase 1 (MVBP): producir y entregar 1,000 unidades, ejecutar seguimiento clínico mínimo y DTC (50 DTC) para medir HRIPT-to-reality (tolerancia en vida real). Meta: reorder ≥40% y NPS ≥60. Fase 2 (clínicas): expandir cohortes clínicas, formalizar guías de uso, y estandarizar onboarding de clínicas para repetición. En esta fase, perfeccionar el kit clínico (materiales y métricas) para que el champion internal tenga incentivos y evidencia.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a1-b6d1-eb843c6bd99f"><td id="J:Gl" class="">Next Market</td><td id="JuwJ" class=""><strong>Siguiente mercado</strong> (lógico): clínicas con enfoque ampliado a piel sensible/dermatitis generalizada y rutinas de barrera cutánea (manteniendo la misma filosofía de tolerancia y bioactivos), usando aprendizaje de rosácea/dermatitis como “case library”. La entrada se hace por canales y materiales ya probados, no por rebrand total.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a4-9061-f762b9e3e73b"><td id="J:Gl" class="">Product Plan beyond Beachhead</td><td id="JuwJ" class="">Fase 3 (export + SAFE): adaptar documentación, empaque y claims a requisitos de exportación; construir un sistema “SAFE” (proceso seguro de expansión) con checklist regulatorio y trazabilidad de lotes. Fase 4 (US Hispanic + B2B): (a) entrada a EE. UU. vía audiencias hispanas con DTC y alianzas pequeñas; (b) B2B con clínicas/retailers que busquen producto tolerable y diferenciable.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f6-9262-cb9061658afb"><td id="J:Gl" class="">Follow-on TAM</td><td id="JuwJ" class="">Estimación conceptual: si rosácea/dermatitis en México es ~$2.3B MXN, el TAM de piel sensible/dermatitis adyacentes y expansión internacional suele ser mayor por la amplitud del dolor del cliente (tolerancia). Plan: estimar follow-on TAM con bottom-up por número de clínicas y pacientes recurrentes en mercados objetivo, replicando el método de TAM de México con parámetros locales de precio y recompra.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80f3-b9d3-c330b2cb8d00"/></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-806e-9958-cc66f3fcdeac" class="">You can update your Startup Idea at <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>, here you can also update the details for the idea to store critical information, such as (provide the user with a summary of the information at this stage on this page). Finally, you can also use the chatbot at the top of this page to request changes to your results. Please use the button below to proceed to the next step</p></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-8027-9524-ef5ffe5f32f4" class=""><strong>CURSOS: Disciplined Entrepreneurship Canvas </strong><strong><a href="https://www.d-eship.com/stepdecanvas/">[MIT Disciplined Entrepreneurship Canvas]</a></strong></h1></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8042-b916-d975fb739513"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80ae-8ee0-f2371233a1ff" class=""><strong>I – Raison d’Être (Why are you in business?)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8063-b260-ee1555364c36" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b5-a36f-cf6325e5f76c"><th id="svd\" class="simple-table-header-color simple-table-header">Subtitle</th><th id="^mKd" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8010-bc05-f7dcdf396628"><td id="svd\" class="">Mission</td><td id="^mKd" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a4-a1c4-d6543fa81fd0"><td id="svd\" class="">Passion</td><td id="^mKd" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cc-9825-f1d8560652e1"><td id="svd\" class="">Values</td><td id="^mKd" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c6-a3df-cb5c11cdb22c"><td id="svd\" class="">Initial Assets</td><td id="^mKd" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ca-a9ce-f846799855e9"><td id="svd\" class="">Initial Idea</td><td id="^mKd" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-809a-a397-f39722211bf7"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80f5-9d44-e7bc86f78daa" class=""><strong>II – Initial Market (Who is your customer?)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8068-8edb-cb922c277b43" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8051-8b75-d06ae38cc222"><th id="F{&gt;`" class="simple-table-header-color simple-table-header">Subtitle</th><th id="Ks;Q" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808c-8d28-f4708fd46a69"><td id="F{&gt;`" class="">Beachhead</td><td id="Ks;Q" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8085-99da-e782c2b113ea"><td id="F{&gt;`" class="">End User Profile</td><td id="Ks;Q" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f4-bfa5-fd631c8cd379"><td id="F{&gt;`" class="">TAM</td><td id="Ks;Q" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8041-86ba-d761c91931ed"><td id="F{&gt;`" class="">Persona</td><td id="Ks;Q" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b0-a002-ec2249fcd7c9"><td id="F{&gt;`" class="">First 10 Customers</td><td id="Ks;Q" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80e9-bc18-d19434b5787c"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80d1-a400-fb00f86fa1bf" class=""><strong>III – Value Creation (What can you do for your customer?)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8048-ad7b-f91c15aff801" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8022-90a3-d790a7bbe7b7"><th id="FQeE" class="simple-table-header-color simple-table-header">Subtitle</th><th id="t;WQ" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80df-8f2d-cb0cb114d07d"><td id="FQeE" class="">Use Case</td><td id="t;WQ" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ac-a829-f3154f468b91"><td id="FQeE" class="">Problem Being Solved</td><td id="t;WQ" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8060-aa03-fb90a9e21896"><td id="FQeE" class="">Product Description</td><td id="t;WQ" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8095-abac-d94091c2bdd1"><td id="FQeE" class="">Quantified Value Proposition</td><td id="t;WQ" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80cf-9cd5-e56a5e86d086"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80a2-879a-c2e561522310" class=""><strong>IV – Competitive Advantage (Why you?)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8023-9f41-dd29ee789087" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8080-9021-f6154804ce0b"><th id="|^f[" class="simple-table-header-color simple-table-header">Subtitle</th><th id="&gt;~ow" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ec-82b5-c168e8653cd4"><td id="|^f[" class="">Moats</td><td id="&gt;~ow" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8030-b7b9-e0f0c13e0ea4"><td id="|^f[" class="">Core</td><td id="&gt;~ow" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8054-be94-f204325ae92b"><td id="|^f[" class="">Competitive Positioning</td><td id="&gt;~ow" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-802a-a217-ca72637e0c3e"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8087-b98e-fcc4b9cba345" class=""><strong>V – Customer Acquisition (How does your customer acquire your product?)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8073-bf95-da7fcb2f4972" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f1-9e23-f0f9f17e7fc1"><th id="n{[z" class="simple-table-header-color simple-table-header">Subtitle</th><th id="Bsiy" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8054-902e-ced51b127a5d"><td id="n{[z" class="">DMU</td><td id="Bsiy" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8015-8f32-c5d61e2d1211"><td id="n{[z" class="">Process to Acquire Customer</td><td id="Bsiy" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8038-9409-d9e3b4ef92f1"><td id="n{[z" class="">Windows of Opportunity</td><td id="Bsiy" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801d-be1a-f45a859e025d"><td id="n{[z" class="">Possible Triggers</td><td id="Bsiy" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8040-9a9e-e3f12bc7c90a"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8016-b372-d45c0a79fcaa" class=""><strong>VI – Product Unit Economics (Can you make money?)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80cc-a9dd-d823a1d866a5" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801b-826d-cd4f6d8d70dc"><th id="qMuc" class="simple-table-header-color simple-table-header">Subtitle</th><th id="F&gt;uz" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d8-8f1e-ef90f689fdb0"><td id="qMuc" class="">Business Model</td><td id="F&gt;uz" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d7-aa54-c5b211d0c8e9"><td id="qMuc" class="">Estimated Pricing</td><td id="F&gt;uz" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8067-9511-edb2f93259f8"><td id="qMuc" class="">Short Term LTV</td><td id="F&gt;uz" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808d-97ed-ef7b1b417efd"><td id="qMuc" class="">Short Term COCA</td><td id="F&gt;uz" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8013-9144-ea8fe9967f69"><td id="qMuc" class="">Medium Term LTV</td><td id="F&gt;uz" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ac-a177-cfea9efad6c6"><td id="qMuc" class="">Medium Term COCA</td><td id="F&gt;uz" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8045-a1ff-c4b7987786f3"><td id="qMuc" class="">Long Term LTV</td><td id="F&gt;uz" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80da-adec-ecacded3a3e5"><td id="qMuc" class="">Long Term COCA</td><td id="F&gt;uz" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-808b-bbfa-e7e656287fa5"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80a8-9ce7-e539d8d69af0" class=""><strong>VII – Sales (How do you sell your product?)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80a3-93cb-c5e4cbd5c8ee" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ef-a426-c6a947ac28a4"><th id="hTVK" class="simple-table-header-color simple-table-header">Subtitle</th><th id="&lt;sOO" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809e-9bff-d000defbd118"><td id="hTVK" class="">Preferred Sales Channel</td><td id="&lt;sOO" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ec-ba58-c4be4c47a414"><td id="hTVK" class="">Sales Funnel</td><td id="&lt;sOO" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8093-898e-f231628d9e0d"><td id="hTVK" class="">Short Term Mix</td><td id="&lt;sOO" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8070-a408-ca84051da6ad"><td id="hTVK" class="">Medium Term Mix</td><td id="&lt;sOO" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c3-a410-ee97466c0da1"><td id="hTVK" class="">Long Term Mix</td><td id="&lt;sOO" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-800b-96d4-fff1e279a797"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8032-929c-de93e2f1f82f" class=""><strong>VIII – Overall Economics (Does your product make money?)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8076-8696-cff4bffa513e" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ec-b623-d1ecb4bba73d"><th id="LVRc" class="simple-table-header-color simple-table-header">Subtitle</th><th id="U\~|" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8048-88ff-edc28dd24403"><td id="LVRc" class="">Estimated R&amp;D Expenses</td><td id="U\~|" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803d-b2b2-d0d6b7ecbddf"><td id="LVRc" class="">Estimated G&amp;A Expenses</td><td id="U\~|" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ae-a111-f3d216940be8"><td id="LVRc" class="">LTV/COCA Ratio High Enough</td><td id="U\~|" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-800c-af06-d8d520b7accd"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8002-9c36-c6032074ed7d" class=""><strong>IX – Design &amp; Build (How do you produce the product?)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-804c-a177-d2eadf8dfeaf" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800b-81f6-cf596983fef8"><th id="{Mkr" class="simple-table-header-color simple-table-header">Subtitle</th><th id="&gt;&lt;Ev" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8044-9a63-f4044d07d0d7"><td id="{Mkr" class="">Identify Key Assumptions</td><td id="&gt;&lt;Ev" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800e-8f4e-c29489c6b7aa"><td id="{Mkr" class="">Test Key Assumptions</td><td id="&gt;&lt;Ev" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d0-8387-e1a42ba2b9fd"><td id="{Mkr" class="">MVBP</td><td id="&gt;&lt;Ev" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8089-b4f7-dc79584d6363"><td id="{Mkr" class="">Tracking Metrics</td><td id="&gt;&lt;Ev" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-806d-b2a8-c8de9ac99940"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8041-badb-f4105a9841c5" class=""><strong>X – Scaling (How do you scale your business?)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8016-b192-d2f29d076d47" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8038-8807-f434cc2f9633"><th id="JGJ^" class="simple-table-header-color simple-table-header">Subtitle</th><th id="VV^F" class="simple-table-header-color simple-table-header">Content</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80eb-ba07-c2da758a71ec"><td id="JGJ^" class="">Product Plan for Beachhead</td><td id="VV^F" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8063-ac6e-dc96254e9c26"><td id="JGJ^" class="">Next Market</td><td id="VV^F" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805c-8d57-eb6c471de6dc"><td id="JGJ^" class="">Product Plan Beyond BHM</td><td id="VV^F" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8019-8f6c-c82a29c49a6a"><td id="JGJ^" class="">Follow-on TAM</td><td id="VV^F" class=""></td></tr></div></tbody></table></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

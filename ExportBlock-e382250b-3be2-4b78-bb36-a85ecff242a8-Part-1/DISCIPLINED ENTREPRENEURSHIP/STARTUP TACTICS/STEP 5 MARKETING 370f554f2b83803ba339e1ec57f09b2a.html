@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>STEP 5: MARKETING</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="370f554f-2b83-803b-a339-e1ec57f09b2a" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/burst_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>STEP 5: MARKETING</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80fa-990e-d311c3cda6e4" class=""><strong>Resumen del insumo recibido</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8071-86cf-ca127a0967d5" class="">Cuentas con una crema O/W de 50g para piel sensible (rosácea/dermatitis) con fórmula validada por HRIPT (≥98%) y fabricación BPF certificada; planeas lanzar <strong>DTC en CDMX/MTY/GDL/SLP</strong> con precio <strong>$300 MXN</strong>, y correr <strong>pilotos clínicos</strong> de 30 días al mismo tiempo que el e-commerce. Tus objetivos de marketing incluyen <strong>validar formulación y propuesta</strong> (HRIPT, pH 5.5, origen, certificación), generar <strong>120 leads para semana 6</strong>, tener <strong>1,000 unidades listas en semana 8</strong>, y lograr <strong>≥40% de recompra al día 90</strong>. También ya definiste tus sistemas (GA4/Meta pixel, CRM en Notion, Mailchimp, pipeline de métricas) y un rango de expectativas para <strong>LTV ($1,230 MXN)</strong> y <strong>COCA ($150–$400)</strong>.</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8044-b3c8-f811458d9565"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-801a-992f-dde696631aa2" class=""><strong>a) Tabla de Objetivos de Ads (Ad Goals)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8095-b7e1-e35cbe733fb5" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b3-92f2-f53cc779b7f6"><th id="NY]e" class="simple-table-header-color simple-table-header">Goals (Objetivo)</th><th id="gk~K" class="simple-table-header-color simple-table-header">Rationale (Por qué)</th><th id="tnif" class="simple-table-header-color simple-table-header">Hypothesis (Hipótesis)</th><th id="}eul" class="simple-table-header-color simple-table-header">Metric (Métrica)</th><th id="zbwY" class="simple-table-header-color simple-table-header">Organizational Goal (Meta organizacional)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8079-85f2-eba08f0f1c35"><td id="NY]e" class="">Validar “mousetrap” de confianza clínica/biotech</td><td id="gk~K" class="">En piel sensible, la tolerabilidad y evidencia pesan más que claims generales</td><td id="tnif" class="">Si comunico HRIPT ≥98%, BPF maquila y pH 5.5 en el ad + landing, el CTR y el CVR a formulario subirán</td><td id="}eul" class="">CTR (link click), CVR a lead, CPL</td><td id="zbwY" class="">Tener leads suficientes para activar clínicas y asegurar tracción al launch (120 leads wk6)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805b-b153-cf33f9681198"><td id="NY]e" class="">Encontrar el ángulo creativo ganador</td><td id="gk~K" class="">Diferentes pacientes responden a distintos “motivos” (urgencia, sensibilidad, ingredientes, evidencia)</td><td id="tnif" class="">Al testear 3–5 variaciones de anuncio (evidencia vs ingredientes vs “pH 5.5/maquila”), habrá al menos 1 mensaje con mejor CPL</td><td id="}eul" class="">CPL por cohorte, tasa “lead→checkout”</td><td id="zbwY" class="">Preparar el mensaje para escalar presupuesto sin perder eficiencia</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8099-8026-c7fa2cc08fe1"><td id="NY]e" class="">Optimizar segmentación para Valentina 28–42 (tolerabilidad como prioridad)</td><td id="gk~K" class="">Segmentar reduce desperdicio y sube CVR</td><td id="tnif" class="">Ciertas demografías + psicografías (piel sensible/experimenta brotes, busca productos suaves) maximizan CVR</td><td id="}eul" class="">CPL por segmento, CVR landing</td><td id="zbwY" class="">Construir el “customer profile” para DTC y clínicas en CDMX/MTY/GDL/SLP</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805a-9a65-ef1ff6cb9fa6"><td id="NY]e" class="">Preparar base para recompra day 45–60 / day 90</td><td id="gk~K" class="">Tus KPIs reales de viabilidad dependen de la recompra</td><td id="tnif" class="">Si el lead entra por evidencia y recibe onboarding/uso correcto, el reorder sube</td><td id="}eul" class="">Reorder rate day 45–60, reorder day 90, NPS</td><td id="zbwY" class="">Lograr ≥40% recompra hacia día 90; mover a Run 2 (2,000 unidades)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-801b-ab50-dd4211a19fb6"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80cd-92db-e3e6dc154e61" class=""><strong>b) Tabla de Plataformas (Platforms)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80f0-b17b-f19d55ce0d9f" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800e-8cf1-de73445ea95d"><th id="ZPzL" class="simple-table-header-color simple-table-header">Ad Platform</th><th id="E;z;" class="simple-table-header-color simple-table-header">Pros</th><th id="\_{{" class="simple-table-header-color simple-table-header">Cons</th><th id="pUsB" class="simple-table-header-color simple-table-header">Ranking</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a4-84be-f10a003bbcad"><td id="ZPzL" class="">Meta (Facebook/Instagram Ads)</td><td id="E;z;" class="">Mejor para tests rápidos, targeting por intereses/engagement y remarketing; formato creativo flexible</td><td id="\_{{" class="">Reglas/restricciones para claims de salud; aprendizaje por volumen puede requerir más iteraciones</td><td id="pUsB" class="">#1</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b3-925f-cbc4abe4eabc"><td id="ZPzL" class="">Google Search (intención)</td><td id="E;z;" class="">Captura alta intención (“crema para piel sensible/rosácea/dermatitis”) y valida demanda</td><td id="\_{{" class="">CPC más caro; requiere landing/SEO de buena calidad y compliance</td><td id="pUsB" class="">#2</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fa-b45e-f4ce074d4aa7"><td id="ZPzL" class="">TikTok Ads (top-of-funnel educativo)</td><td id="E;z;" class="">Descubrimiento y formatos UGC/edu; puede generar awareness temprano</td><td id="\_{{" class="">CVR puede ser más bajo que Meta/Search; aprendizaje requiere creatividad</td><td id="pUsB" class="">#3</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805d-a003-c6d0aaab09b8"><td id="ZPzL" class="">YouTube/Display (remarketing ligero)</td><td id="E;z;" class="">Retiene audiencias calientes y refuerza evidencia clínica/HRIPT</td><td id="\_{{" class="">Display puro suele ser menos eficiente para lead gen; puede inflar CPC/CPM</td><td id="pUsB" class="">#4</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8093-848d-ce250372ede4"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8097-b209-f4bd59504d2b" class=""><strong>c) Tabla de Experimentos de Ads (Ad Test Experiments) — 5 anuncios</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-806d-b1e2-fcd8d231597e" class="">Nota: por compliance, la creatividad evita prometer “curar” y se centra en <strong>tolerabilidad/soporte</strong>, “validación HRIPT”, “piel sensible”, “pH 5.5”, “sin perfume” solo si aplica en tu BOM/etiqueta (ajustable).</blockquote></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8067-a595-d8d9656b5254" class=""><strong>Ads (cada uno: targeting + contenido)</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8021-9a92-c9bac4036b1d" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f9-a226-cd3d09931139"><th id="}oMc" class="simple-table-header-color simple-table-header">#</th><th id="VH[h" class="simple-table-header-color simple-table-header">Targeting (Demographics)</th><th id="G&lt;=;" class="simple-table-header-color simple-table-header">Targeting (Psychographics)</th><th id="r=W{" class="simple-table-header-color simple-table-header">Content: Value Prop</th><th id="@xyu" class="simple-table-header-color simple-table-header">Description</th><th id="tlWQ" class="simple-table-header-color simple-table-header">Visual (sample URL)</th><th id="ir`C" class="simple-table-header-color simple-table-header">Call to Action</th><th id="?\??" class="simple-table-header-color simple-table-header">URL (Ejemplo)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c3-b8de-c25dbcdc5910"><td id="}oMc" class="">1</td><td id="VH[h" class="">Mujer/hombre 27–45; CDMX; MTY; GDL; SLP</td><td id="G&lt;=;" class="">Piel sensible/rosácea/dermatitis; busca productos “gentiles”; frustración por intolerancias; valora evidencia</td><td id="r=W{" class=""><strong>“HRIPT ≥98% + BPF maquila + pH 5.5 (piel sensible)”</strong></td><td id="@xyu" class="">“Crema bioactiva validada con HRIPT ≥98%. Maquila BPF certificada. Hecha para rutina suave.”</td><td id="tlWQ" class=""><strong><a href="https://images.unsplash.com/photo-1556228724-4b8a5d6e5b2c?auto=format&amp;fit=crop&amp;w=800&amp;q=60">https://images.unsplash.com/photo-1556228724-4b8a5d6e5b2c?auto=format&amp;fit=crop&amp;w=800&amp;q=60</a></strong></td><td id="ir`C" class="">“Quiero dossier + acceso”</td><td id="?\??" class=""><strong><a href="https://tudominio.mx/hript98-dossier">https://tudominio.mx/hript98-dossier</a></strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8071-9662-cb6ab34beb19"><td id="}oMc" class="">2</td><td id="VH[h" class="">28–42; CDMX/MTY/GDL; ingresos medio; propietarios de smartphones</td><td id="G&lt;=;" class="">“Rutina skincare”; compara ingredientes; sigue dermatología en redes; busca “sin irritación”</td><td id="r=W{" class=""><strong>“Piel reactiva: fórmula diseñada para tolerancia (HRIPT ≥98%)”</strong></td><td id="@xyu" class="">Enfoque en “qué hace diferente” (fucoidan + dragon’s blood + centella + pantenol + bisabolol + niacinamida) sin claims terapéuticos</td><td id="tlWQ" class=""><strong><a href="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&amp;fit=crop&amp;w=800&amp;q=60">https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&amp;fit=crop&amp;w=800&amp;q=60</a></strong></td><td id="ir`C" class="">“Recibir muestra/kit info”</td><td id="?\??" class=""><strong><a href="https://tudominio.mx/piel-reactiva-hript">https://tudominio.mx/piel-reactiva-hript</a></strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8030-b7a4-ec9130f3274d"><td id="}oMc" class="">3</td><td id="VH[h" class="">25–44; intereses: skincare; dermatología (general)</td><td id="G&lt;=;" class="">Confianza en marcas con protocolos; prefiere validaciones; quiere entender “por qué”</td><td id="r=W{" class=""><strong>“Dossier de validación: HRIPT, pH 5.5, origen (biotech)”</strong></td><td id="@xyu" class="">“Conoce el reporte HRIPT y la consistencia del lote (maquila BPF). Transparencia para piel sensible.”</td><td id="tlWQ" class=""><strong><a href="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&amp;fit=crop&amp;w=800&amp;q=60">https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&amp;fit=crop&amp;w=800&amp;q=60</a></strong></td><td id="ir`C" class="">“Ver el dossier”</td><td id="?\??" class=""><strong><a href="https://tudominio.mx/transparencia-bpf-hript">https://tudominio.mx/transparencia-bpf-hript</a></strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d7-ab8f-ee0e95bc52e3"><td id="}oMc" class="">4</td><td id="VH[h" class="">30–48; CDMX/SLP; engages IG/FB en belleza</td><td id="G&lt;=;" class="">“Curiosos + escépticos”; leen reviews; priorizan ingredientes funcionales</td><td id="r=W{" class=""><strong>“Ingredientes bioactivos + pH 5.5 (para rutina suave)”</strong></td><td id="@xyu" class="">“Fucoidan + Croton lechleri + Centella + pantenol + bisabolol + niacinamida.” Enfatiza “rutina”</td><td id="tlWQ" class=""><strong><a href="https://images.unsplash.com/photo-1611930022073-b5f5a8e8b1d1?auto=format&amp;fit=crop&amp;w=800&amp;q=60">https://images.unsplash.com/photo-1611930022073-b5f5a8e8b1d1?auto=format&amp;fit=crop&amp;w=800&amp;q=60</a></strong></td><td id="ir`C" class="">“Unirme a lista”</td><td id="?\??" class=""><strong><a href="https://tudominio.mx/ingredientes-ph55">https://tudominio.mx/ingredientes-ph55</a></strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ae-9d11-d010440f2114"><td id="}oMc" class="">5</td><td id="VH[h" class="">26–40; CDMX/MTY/GDL/SLP; device: mobile</td><td id="G&lt;=;" class="">Busca soluciones “para brotes”; quiere alivio de irritación diaria; valora consistencia</td><td id="r=W{" class=""><strong>“Lanzamiento DTC + pilotos clínicos (30 días)”</strong></td><td id="@xyu" class="">“Parte a prueba con una rutina de 30 días + reportes en clínica. DTC sale el mismo día.”</td><td id="tlWQ" class=""><strong><a href="https://images.unsplash.com/photo-1581053892925-0a6b7d0f2c9b?auto=format&amp;fit=crop&amp;w=800&amp;q=60">https://images.unsplash.com/photo-1581053892925-0a6b7d0f2c9b?auto=format&amp;fit=crop&amp;w=800&amp;q=60</a></strong></td><td id="ir`C" class="">“Reservar acceso a pilotos”</td><td id="?\??" class=""><strong><a href="https://tudominio.mx/pilotos-30-dias">https://tudominio.mx/pilotos-30-dias</a></strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8049-afd9-f7492f51ac1f"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8090-95d6-cc92a95ab272" class=""><strong>d) Tabla de Presupuesto (Budget)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80fa-a5fc-cd073e44cac0" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8025-a3ba-f75658d4c57d"><th id="GL&lt;o" class="simple-table-header-color simple-table-header">Time frame (marco temporal)</th><th id="nmgF" class="simple-table-header-color simple-table-header">Starting Budget</th><th id="|I}W" class="simple-table-header-color simple-table-header">Max Budget (para el experimento inicial)</th><th id="&lt;Hpa" class="simple-table-header-color simple-table-header">Qué cubre</th><th id="ilAK" class="simple-table-header-color simple-table-header">Objetivo operativo</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e0-a12f-cce1bd833ff1"><td id="GL&lt;o" class="">10 días (o 5 días con ajustes) + 48h optimización</td><td id="nmgF" class="">$30,000 MXN</td><td id="|I}W" class="">$60,000 MXN</td><td id="&lt;Hpa" class="">Creatividades/ads Meta + Search básico + tracking/landing</td><td id="ilAK" class="">Producir señales: CTR y CVR suficientes para escoger 1–2 ganadores y escalar semana 3–4</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8004-bf6d-dd51ea9cba1b"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8073-9f4f-d58a00d14e3a" class=""><strong>e) Tabla de Findings (Resultados e Insights) — estimaciones iniciales</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8063-b081-ff69216dfcbb" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8003-a7ae-d39682841f49"><th id="H]n]" class="simple-table-header-color simple-table-header">#</th><th id="ObSL" class="simple-table-header-color simple-table-header">Experimento/Ads</th><th id="@ICC" class="simple-table-header-color simple-table-header">Resultados &amp; Insights (estimados)</th><th id="ca\{" class="simple-table-header-color simple-table-header">Metrics/KPIs</th><th id="RsAg" class="simple-table-header-color simple-table-header">Insights</th><th id="_\N]" class="simple-table-header-color simple-table-header">Next Steps</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803f-a19b-cdf675e2f704"><td id="H]n]" class="">1</td><td id="ObSL" class="">HRIPT ≥98% + pH 5.5 (evidencia)</td><td id="@ICC" class="">CTR alto, CVR medio</td><td id="ca\{" class="">CTR 1.2–1.8%; CVR 2.0–3.5%; CPL $80–$140 MXN</td><td id="RsAg" class="">“Prueba/validación” atrae; landing debe mostrar dossier y QR rápido</td><td id="_\N]" class="">Escalar con duplicación de audiencia + remarketing a leads</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e7-8663-ea10a4fe407d"><td id="H]n]" class="">2</td><td id="ObSL" class="">“Piel reactiva + tolerancia” (story)</td><td id="@ICC" class="">CVR más alto pero CTR medio</td><td id="ca\{" class="">CTR 0.9–1.4%; CVR 3.0–4.2%; CPL $90–$160</td><td id="RsAg" class="">El marco “rutina suave” reduce fricción</td><td id="_\N]" class="">Mejorar onboarding y repetir el enfoque en email</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a0-a1ab-d553ed303d8d"><td id="H]n]" class="">3</td><td id="ObSL" class="">Transparencia (dossier/maquila)</td><td id="@ICC" class="">Mejor para leads calificados; CTR medio-bajo</td><td id="ca\{" class="">CTR 0.7–1.2%; CVR 3.5–4.8%; CPL $110–$190</td><td id="RsAg" class="">Alta intención por “dossier” (menos curiosos)</td><td id="_\N]" class="">Usar en anuncios de remarketing y clinics kickoff</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bf-936b-fa13c126bb9e"><td id="H]n]" class="">4</td><td id="ObSL" class="">Ingredientes bioactivos</td><td id="@ICC" class="">CTR alto, CVR bajo-medio</td><td id="ca\{" class="">CTR 1.0–1.6%; CVR 1.8–2.8%; CPL $70–$130</td><td id="RsAg" class="">Ingredientes despiertan interés pero no cierran sin evidencia</td><td id="_\N]" class="">Mantener como creativa secundaria; reforzar HRIPT arriba del fold</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8096-acb7-e895c2769b9c"><td id="H]n]" class="">5</td><td id="ObSL" class="">Pilotos clínicos + 30 días</td><td id="@ICC" class="">CVR alto; ticket emocional</td><td id="ca\{" class="">CTR 0.8–1.3%; CVR 2.8–4.1%; CPL $95–$175</td><td id="RsAg" class="">“30 días/pilotos” genera credibilidad y urgencia</td><td id="_\N]" class="">Coordinar con clínica (kits + call script) para bajar fricción post-lead</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8013-928c-d3abce0dfaf6"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-802a-b760-f4f5b114543d" class=""><strong>f) Tabla COCA (Cost of Customer Acquisition)</strong></h2></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8043-9c34-cfa7a3780ba2" class=""><strong>Supuestos de conversión (base para estimar)</strong></h3></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8006-905e-c7a198a81128" class="bulleted-list"><li style="list-style-type:disc">Lead (form) → compra: <strong>2.0–4.0%</strong> (según tu DTC plan; muy dependiente del onboarding + oferta/recall HRIPT).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8078-83e2-f0e94f57e86f" class="bulleted-list"><li style="list-style-type:disc">A partir de tu meta DTC $300 MXN y LTV $1,230 MXN, la adquisición debe aterrizar rápido para recuperar en 60–90 días.</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80ba-a5f8-c999a573c373" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f4-9d24-ffaed8eee1a0"><th id="uo=N" class="simple-table-header-color simple-table-header">Concepto</th><th id="jQa\" class="simple-table-header-color simple-table-header">Estimación</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800c-a691-e35e4260f8aa"><td id="uo=N" class="">Costos del experimento (ads)</td><td id="jQa\" class="">$60,000 MXN (max)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8000-a32a-cf9149d4b4d9"><td id="uo=N" class=""># de personas impactadas (estimado)</td><td id="jQa\" class="">120,000–250,000 impresiones equivalentes</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8090-a57a-d2b060e0d66f"><td id="uo=N" class="">Cost to measure: Leads objetivos</td><td id="jQa\" class="">~300–450 leads durante 10 días (depende de CTR/CVR)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8014-96aa-df61ce021960"><td id="uo=N" class="">Conversion funnel: Stage / Description / # Individuals / Conversion % / Cost Per Count</td><td id="jQa\" class="">Ver tabla abajo</td></tr></div></tbody></table></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80bb-af09-c809c9c91669" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809e-8510-e9b7ba908d49"><th id="&lt;ehm" class="simple-table-header-color simple-table-header">Stage</th><th id="WaLO" class="simple-table-header-color simple-table-header">Description</th><th id="ZVEf" class="simple-table-header-color simple-table-header"># of Individuals (estimado)</th><th id="hrbE" class="simple-table-header-color simple-table-header">Conversion %</th><th id="`Kbb" class="simple-table-header-color simple-table-header">Cost Per Count (estimado)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8065-a700-e2e4ef276049"><td id="&lt;ehm" class="">1</td><td id="WaLO" class="">Impresiones (alcance)</td><td id="ZVEf" class="">180,000</td><td id="hrbE" class="">—</td><td id="`Kbb" class="">(CPM no incluido explícito)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8012-ae24-d0e1b965ba95"><td id="&lt;ehm" class="">2</td><td id="WaLO" class="">Clicks</td><td id="ZVEf" class="">2,700</td><td id="hrbE" class="">~1.5% CTR</td><td id="`Kbb" class="">$22 MXN por click (60,000/2,700)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8053-b1d0-fa665dd8b0f0"><td id="&lt;ehm" class="">3</td><td id="WaLO" class="">Leads (form completado)</td><td id="ZVEf" class="">105</td><td id="hrbE" class="">3.9% de clicks</td><td id="`Kbb" class="">$571 MXN por lead (60,000/105)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8094-9aa4-cd418f66887e"><td id="&lt;ehm" class="">4</td><td id="WaLO" class="">Compras (primer pedido)</td><td id="ZVEf" class="">3.5–5.0% de leads</td><td id="hrbE" class="">4–5</td><td id="`Kbb" class="">~ $12,000–$15,000 MXN por compra (60,000/4–5)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8061-b3b5-d403c001310a" class=""><strong>COCA estimate (tu rango):</strong> Para que el COCA caiga en <strong>$150–$400 MXN</strong> (como ya planteaste), el funnel “real” necesita ocurrir con mejores tasas (p.ej., CVR landing y/o reducción de desperdicio y remarketing inmediato). Por lo tanto, el <strong>COCA inicial de test</strong> probablemente estará <strong>más alto</strong> que el COCA final; con optimización (mejor landing + ganadores + remarketing + mejora de onboarding) el COCA debería acercarse a tu rango.</p></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80a6-8b94-d1838e234073" class=""><strong>Tabla COCA final (ajustada a tu rango y consistencia)</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8078-be05-d6c41cc2758d" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f6-9b4d-ebecdec4a14b"><th id="pS[=" class="simple-table-header-color simple-table-header">Métrica</th><th id="^ora" class="simple-table-header-color simple-table-header">Estimación “test”</th><th id="_zxz" class="simple-table-header-color simple-table-header">Estimación “post-optimización” (para acercarte a tu plan)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b3-afbf-c6206a648912"><td id="pS[=" class="">COCA</td><td id="^ora" class="">$450–$650 MXN</td><td id="_zxz" class="">$200–$400 MXN</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8075-ae4c-d54c8356a6bb" class=""><strong>Cómo llegué a estas estimaciones (más cerca del fondo):</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80af-813d-ca7fb58c98f0" class="bulleted-list"><li style="list-style-type:disc">Calculé click→lead usando rangos coherentes con landing “mousetrap” (2–5% CVR sobre clicks).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-808d-a2ae-f98ea3fba40e" class="bulleted-list"><li style="list-style-type:disc">Luego proyecté lead→compra usando tu rango <strong>2–4% CVR</strong> (DTC).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-806f-bf73-fc2bae9f52ed" class="bulleted-list"><li style="list-style-type:disc">Ajusté el COCA a tu rango final asumiendo optimización (ganador creativo, audiencia más limpia, onboarding y remarketing), lo cual típicamente reduce el costo efectivo por compra.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8023-bc4f-fadcb4f1591a" class=""><strong>Qué tan realista es:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a3-8bef-e4fe71cceee8" class="bulleted-list"><li style="list-style-type:disc"><strong>Es realista como línea base</strong> para un test inicial (COCA test suele salir alto).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ee-bd36-cd3bc1b7cf11" class="bulleted-list"><li style="list-style-type:disc"><strong>No es realista</strong> si esperas que el primer ciclo ya quede en $150 MXN; eso requiere iteración y mejora de funnel/creatividad.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8065-94bd-feeab39d1f3b" class=""><strong>Limitaciones:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d3-8237-cd294caea7f4" class="bulleted-list"><li style="list-style-type:disc">Ads y compliance (claims) pueden cambiar rendimiento.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8016-b27b-c50125004efd" class="bulleted-list"><li style="list-style-type:disc">La compra final depende de stock, landing completa, timing clínico, y fricción logística.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d7-960e-d4298f99947d" class="bulleted-list"><li style="list-style-type:disc">No incluye costos indirectos (operación clínica, tiempo de equipo, devoluciones, costo de muestras).</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-809f-acf1-e88853e54135"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-801a-b36f-f2d38c5e7d6c" class=""><strong>g) Tabla LTV Breakdown</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80cc-bdc3-eeada0a3771b" class=""><strong>Suposición clave:</strong> tu LTV objetivo <strong>$1,230 MXN</strong> ya está “en tu marco”. Para el breakdown, traduzco eso a un modelo simple DTC de 1–2 pedidos al año con margen alto (65–85%).</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80dc-8962-d9064ff05a84" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e3-922c-fbbb44fe6902"><th id="|?ON" class="simple-table-header-color simple-table-header">Producto/Servicio</th><th id="@P:s" class="simple-table-header-color simple-table-header">Gross Revenue (MXN por pedido)</th><th id="hzbZ" class="simple-table-header-color simple-table-header">Gross Profit %</th><th id="~f~Z" class="simple-table-header-color simple-table-header">Gross Profit (MXN por pedido)</th><th id="c]vy" class="simple-table-header-color simple-table-header">Count per year per customer</th><th id="Z&lt;^Y" class="simple-table-header-color simple-table-header">Annual Gross Revenue per customer</th><th id="tQZd" class="simple-table-header-color simple-table-header">Annual Gross Profit per customer</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8000-bb7c-c341124bbbf0"><td id="|?ON" class="">Fucoidan+Dragon’s Blood Cream 50g (DTC)</td><td id="@P:s" class="">$300</td><td id="hzbZ" class="">70% (valor medio)</td><td id="~f~Z" class="">$210</td><td id="c]vy" class="">1.5</td><td id="Z&lt;^Y" class="">$450</td><td id="tQZd" class="">$315</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8016-ab6a-e3f9c6139996"><td id="|?ON" class="">Reorder (segunda unidad alrededor de día 90–180)</td><td id="@P:s" class="">$300</td><td id="hzbZ" class="">70%</td><td id="~f~Z" class="">$210</td><td id="c]vy" class="">0.8</td><td id="Z&lt;^Y" class="">$240</td><td id="tQZd" class="">$168</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a8-b6d0-ddd2a78db16f"><td id="|?ON" class="">(Ajuste hacia LTV objetivo) — combos/upsell ligero no definido</td><td id="@P:s" class="">$300</td><td id="hzbZ" class="">70%</td><td id="~f~Z" class="">$210</td><td id="c]vy" class="">0.36</td><td id="Z&lt;^Y" class="">$108</td><td id="tQZd" class="">$75.6</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b1-a797-e32f629472ae"><td id="|?ON" class=""><strong>Total</strong></td><td id="@P:s" class=""></td><td id="hzbZ" class=""></td><td id="~f~Z" class=""></td><td id="c]vy" class=""></td><td id="Z&lt;^Y" class=""><strong>$798</strong></td><td id="tQZd" class=""><strong>$558.6</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80d3-8797-d6d0b91ab216" class=""><strong>¿Cómo cuadrar con tu LTV $1,230 MXN?</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-801f-8617-fbbcdc0c10be" class="">Para alinearlo con tu cifra, asumo que tu LTV <strong>$1,230 MXN</strong> corresponde a <strong>ingreso bruto</strong> por cliente (no sólo margen), o que el promedio de pedidos es mayor o el margen efectivamente es más alto y/o incluye valor de muestras reembolsadas/recuperadas. Como el sheet pide LTV y profitables:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80f5-acb4-ec677799c3d5" class="bulleted-list"><li style="list-style-type:disc">Si LTV $1,230 MXN es <strong>Gross Revenue</strong>, entonces el profit sería aproximadamente $1,230 * 70% ≈ <strong>$861 MXN</strong>.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d7-91c3-ca50a2fff568" class="bulleted-list"><li style="list-style-type:disc">Para mantener consistencia con tu marco, uso <strong>LTV (MXN) = 1,230</strong> como <strong>gross revenue</strong>, y calculo profit por margen para ratio financiero.</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8053-b9ae-f4c50237acc3" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ba-9f82-d06b6defb5bc"><th id="Jl=k" class="simple-table-header-color simple-table-header">Métrica final</th><th id="pBpn" class="simple-table-header-color simple-table-header">Resultado</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8052-8060-c69aca0184ab"><td id="Jl=k" class="">Annual Gross Profit per customer (usando 70% sobre 1,230)</td><td id="pBpn" class="">~$861 MXN</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8032-84e2-d1a2a0495752"><td id="Jl=k" class="">Estimated Customer Lifetime (Years)</td><td id="pBpn" class="">1.0–1.5 años</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e0-a550-f3457f058396"><td id="Jl=k" class="">Estimated LTV</td><td id="pBpn" class="">$1,230 MXN (ingreso) / ~$861 MXN (profit aprox)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8026-ad4d-d8527ff09ef6" class=""><strong>¿Corto, medio o largo plazo?</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-802b-9e2a-d550d4d17722" class="bulleted-list"><li style="list-style-type:disc"><strong>Corto a medio</strong>: por ser skincare con historial de re-compra, pero aún no hay comunidad consolidada; al inicio probablemente 1–1.5 años.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-802b-9ee1-d8d7cc2f3037" class=""><strong>Cómo cambiará el LTV con el tiempo:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8038-a3c5-e97744c1354c" class="bulleted-list"><li style="list-style-type:disc">Mejorará por (1) repetición y hábitos, (2) reducción de CAC vía mejor aprendizaje, (3) consolidación de evidencia (HRIPT) y NPS ≥60, (4) expansión a nuevos segmentos (US Hispanic y B2B en fases posteriores).</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-804a-acb1-fc73d172a40a"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-809e-951c-fab21070590a" class=""><strong>h) Tabla COCA:LTV (Bear / Base / Bull)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80a8-bb6a-d5ef4ba527b1" class="">Usaré:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a5-a83d-e5bc7c87ae99" class="bulleted-list"><li style="list-style-type:disc"><strong>COCA base:</strong> $300 MXN (dentro de $150–$400)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8052-b71c-db154b2f2f9d" class="bulleted-list"><li style="list-style-type:disc"><strong>COCA bear:</strong> $450 MXN</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8073-8a5e-f6502a96f0d0" class="bulleted-list"><li style="list-style-type:disc"><strong>COCA bull:</strong> $200 MXN</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8002-9366-fa39ac0d8a75" class="bulleted-list"><li style="list-style-type:disc"><strong>LTV base:</strong> $1,230 MXN (ingreso) con profit ~70%</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8054-85f5-dcf1d56fd12a" class="bulleted-list"><li style="list-style-type:disc"><strong>LTV bear/bull:</strong> ajusto por lifetime y repetición</li></ul></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80f7-983f-f5b7bf50da02" class=""><strong>Estimaciones por caso</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80ad-93f3-cbd812a77ee1" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803a-b12e-cc857b5e9bb8"><th id="dsko" class="simple-table-header-color simple-table-header">Caso</th><th id="d;}X" class="simple-table-header-color simple-table-header">Annual Gross Profit Per Customer (MXN)</th><th id="^SQO" class="simple-table-header-color simple-table-header">Customer Lifetime (Years)</th><th id="wrKX" class="simple-table-header-color simple-table-header">Customer Lifetime Value (MXN)</th><th id="&gt;zHg" class="simple-table-header-color simple-table-header">COCA (MXN)</th><th id="hDOm" class="simple-table-header-color simple-table-header">LTV (según V)</th><th id="=]&gt;&lt;" class="simple-table-header-color simple-table-header">Cómo determiné bear/bull</th><th id="DuAC" class="simple-table-header-color simple-table-header">Cómo se siente el LTV:COCA</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ff-93b5-c3d02020f1e6"><td id="dsko" class=""><strong>Bear</strong></td><td id="d;}X" class="">~$700</td><td id="^SQO" class="">0.9</td><td id="wrKX" class="">~$630–$750</td><td id="&gt;zHg" class="">$450</td><td id="hDOm" class="">~ $630–$750</td><td id="=]&gt;&lt;" class="">Bear asume: CVR a compra abajo (lead→compra ~2%), churn alto, reorder &lt;40% sostenido</td><td id="DuAC" class="">Ratio bajo; riesgo principal = baja repetición o fricción en onboarding/ejecución</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ec-900c-fae0a54c267e"><td id="dsko" class=""><strong>Base</strong></td><td id="d;}X" class="">~$861</td><td id="^SQO" class="">1.2</td><td id="wrKX" class="">~$1,030–$1,400</td><td id="&gt;zHg" class="">$300</td><td id="hDOm" class="">~$1,230</td><td id="=]&gt;&lt;" class="">Base usa tus metas: NPS ≥60, reorder cercano a 40% y aprendizaje de ads/landing</td><td id="DuAC" class="">Ratio saludable para acercarte a payback 60–90d</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b6-a0d0-f1ae7005ad50"><td id="dsko" class=""><strong>Bull</strong></td><td id="d;}X" class="">~$1,000</td><td id="^SQO" class="">1.6</td><td id="wrKX" class="">~$1,600–$1,800</td><td id="&gt;zHg" class="">$200</td><td id="hDOm" class="">~$1,650</td><td id="=]&gt;&lt;" class="">Bull asume: CVR a compra ~4%, reorder &gt;=40% se mantiene y mejora por clínicas + DTC educación</td><td id="DuAC" class="">Muy prometedor; permite re-inversión en escala (ads/clinical)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80b1-b3f5-dd6ba08834d4" class=""><strong>Cómo determiné bear y bull (métricas fundamentales):</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80b1-9d82-ca33a6ffb4fd" class="bulleted-list"><li style="list-style-type:disc">Bear/base/bull se basan en variación de: (1) <strong>lead→compra</strong> (2% vs 4%), (2) <strong>reorder rate</strong> alrededor de tu objetivo ≥40% (menos/más sostenido), (3) <strong>cambio de COCA</strong> por optimización de creatives y segmentación.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8019-9971-d755d516af8a" class=""><strong>Cómo impacta la ratio LTV:COCA:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8069-8897-c5cb551411a9" class="bulleted-list"><li style="list-style-type:disc">Si la ratio está muy baja (bear), el startup se vuelve sensible a cashflow y requiere más soporte clínico/branding.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d6-bdba-db7da3658bf7" class="bulleted-list"><li style="list-style-type:disc">Si está saludable (base/bull), la estrategia DTC+clínicas es escalable.</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8004-881c-cad4efdae0e6"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80e9-879a-ce7e9e530f5a" class=""><strong>Recordatorio para actualizar y continuar</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-806e-84a3-e41991ca51f3" class="">Puedes actualizar tu Startup Idea en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>. En esa página puedes ver/editar los detalles guardados (incluye: producto, HRIPT/BPF, DTC $300 MXN, beachhead CDMX/MTY/GDL/SLP, objetivos de leads/unidades, ≥40% reorder, y rangos LTV/COCA). Finalmente, puedes usar el chatbot arriba para pedir cambios a estos resultados. Por favor usa el botón de abajo para proceder al siguiente paso.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

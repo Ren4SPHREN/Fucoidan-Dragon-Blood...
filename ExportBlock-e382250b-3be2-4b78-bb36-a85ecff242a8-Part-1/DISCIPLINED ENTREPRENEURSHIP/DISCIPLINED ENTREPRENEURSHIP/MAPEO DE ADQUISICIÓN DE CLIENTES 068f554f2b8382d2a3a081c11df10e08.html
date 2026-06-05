@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>MAPEO DE ADQUISICIÓN DE CLIENTES</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="068f554f-2b83-82d2-a3a0-81c11df10e08" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/map_gray.svg"/></div><h1 class="page-title" dir="auto">MAPEO DE ADQUISICIÓN DE CLIENTES</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="36ff554f-2b83-800b-bd9b-da76902dcb04" class="">Bien. Este paso se enfoca en convertir tu caso de uso en un <strong>mapa operativo del proceso real</strong> (desde que el cliente siente la necesidad hasta que paga, usa, ve valor y recomienda), incluyendo <strong>tiempos, actores del DMU, restricciones de presupuesto/regulación percibidas, riesgos y mitigaciones</strong>. Con esto, podrás detectar cuellos de botella que impactan directamente el <strong>sales cycle</strong> y el <strong>COCA</strong>.</p></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80d8-bb30-dfcbf72f14f3" class="">A partir de tu información, aquí tienes un <strong>primer borrador</strong> del <em>Process to Acquire a Paying Customer</em> (enfocado en <strong>clínicas (beachhead)</strong> y DTC como canal complementario), para piel sensible con <strong>HRIPT ≥98%</strong>.</p></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80be-8f93-d1dd07a96be0"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-807e-bef3-f817ff73779a" class=""><strong>Process to Acquire a Paying Customer (Draft v1)</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80c4-b40d-c1664eb663b9" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80fd-ac87-fb749e0e0fbd"><th id="n&lt;Z{" class="simple-table-header-color simple-table-header">Determine Need &amp; Catalyst to Action</th><th id="an??" class="simple-table-header-color simple-table-header">Find Out about Options</th><th id="Ph]&lt;" class="simple-table-header-color simple-table-header">Analyze Options</th><th id="`W~\" class="simple-table-header-color simple-table-header">Acquire Your Product</th><th id="LqJE" class="simple-table-header-color simple-table-header">Pay</th><th id="sAgB" class="simple-table-header-color simple-table-header">Install</th><th id="L`aV" class="simple-table-header-color simple-table-header">Use &amp; Get Value</th><th id="oH{w" class="simple-table-header-color simple-table-header">Determine Value</th><th id="&gt;x]z" class="simple-table-header-color simple-table-header">Buy More</th><th id=";UmF" class="simple-table-header-color simple-table-header">Tell Other</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80fd-8d6f-ef318755af0c"><td id="n&lt;Z{" class=""><strong>Qué hace el cliente en esta etapa (from FLC):</strong>&lt;br&gt;- <strong>Clínica:</strong> llega con rosácea/dermatitis y urgencia por irritación; busca “algo que no me queme”.&lt;br&gt;- <strong>DTC:</strong> ve anuncio/reel (sargassum crisis → skincare) + “fallé con importados”; activa búsqueda de tolerabilidad/evidencia.</td><td id="an??" class=""><strong>Qué hace el cliente en esta etapa:</strong>&lt;br&gt;- Lee INCI/stack y busca señales de credibilidad: <strong>HRIPT ≥98%</strong>, <strong>pH 5.5</strong>, manufactura <strong>BPF (NOM-259)</strong>, y consistencia del discurso.&lt;br&gt;- Si va a clínica: pregunta protocolo de prueba y si “es compatible” con su sensibilidad.</td><td id="Ph]&lt;" class=""><strong>Qué hace el cliente en esta etapa:</strong>&lt;br&gt;- Prioriza <strong>tolerabilidad (35%)</strong> y evidencia/resultados (25%).&lt;br&gt;- Compara: importados (más caros y sin HRIPT claro), marcas “clean” sin evidencia, y tu propuesta LATAM + tolerabilidad.&lt;br&gt;- Veto si: documentación poco clara o promesas tipo “cura”.</td><td id="`W~\" class=""><strong>Qué hace el cliente en esta etapa:</strong>&lt;br&gt;- <strong>DTC:</strong> compra 50g en Tienda Nube (con instrucciones incluidas).&lt;br&gt;- <strong>Clínica:</strong> recibe muestra/kit para prueba 30 días y entra a flujo de consignación/reabasto según acuerdo.</td><td id="LqJE" class=""><strong>Qué hace el cliente en esta etapa:</strong>&lt;br&gt;- <strong>DTC:</strong> paga vía Mercado Pago, completa datos de envío (Estafeta).&lt;br&gt;- <strong>Clínica:</strong> paga/gestiona según flujo del consultorio (consigna o compra interna).</td><td id="sAgB" class=""><strong>Qué hace el cliente en esta etapa:</strong>&lt;br&gt;- Integra crema a rutina sensible (idealmente sin cambiar múltiples productos al mismo tiempo).&lt;br&gt;- En piel muy reactiva, hace <strong>patch test</strong> y respeta frecuencia desde el inicio.</td><td id="L`aV" class=""><strong>Qué hace el cliente en esta etapa:</strong>&lt;br&gt;- Usa de manera consistente y evalúa semana 1–3: ardor, rojez, sensación de irritación.&lt;br&gt;- Espera que el valor se vuelva evidente en <strong>3–4 semanas</strong>.</td><td id="oH{w" class=""><strong>Qué hace el cliente en esta etapa:</strong>&lt;br&gt;- Decide valor con dos ejes: <strong>(1) no irritación</strong> y <strong>(2) mejora perceptible</strong>.&lt;br&gt;- Da retro con <strong>NPS</strong> (día 30/60 cuando aplique) y reporta experiencia.</td><td id="&gt;x]z" class=""><strong>Qué hace el cliente en esta etapa:</strong>&lt;br&gt;- Si cumple: recompra en ciclo <strong>60–90 días</strong> (posible mecanismo de recordatorio/suscripción).&lt;br&gt;- Si fue para clínica: restock a 30–45 días iniciales y luego mensual/ciclo según adherencia.</td><td id=";UmF" class=""><strong>Qué hace el cliente en esta etapa:</strong>&lt;br&gt;- Comparte UGC (“toleré + mejoró”) y etiqueta marca.&lt;br&gt;- Refiere 1–2 amigas/pacientes; en clínica, la recomendación ocurre por confianza profesional.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8043-9f45-d45d1aefcb1b"><td id="n&lt;Z{" class=""><strong>Quién está involucrado desde el DMU?:</strong>&lt;br&gt;- End user/initiator: <strong>Valentina</strong> (tolerabilidad).&lt;br&gt;- Catalizador: influencer/derm creator (contenido de ciencia, HRIPT).&lt;br&gt;- Gatekeepers “perceptivos”: evidencia/credibilidad (HRIPT, BPF, pH, dossier).</td><td id="an??" class=""><strong>Quién está involucrado:</strong>&lt;br&gt;- Valentina investiga INCI/HRIPT y cómo encaja con su rosácea/atopia.&lt;br&gt;- En clínica: Valentina + derm/propietario determinan qué se ofrece.</td><td id="Ph]&lt;" class=""><strong>Quién está involucrado:</strong>&lt;br&gt;- Valentina (decision) y el derm/owner (co-decisión en clínica).&lt;br&gt;- Gatekeepers reales indirectos: claridad de etiquetado y documentación disponible.</td><td id="`W~\" class=""><strong>Quién está involucrado:</strong>&lt;br&gt;- DTC: Valentina + operación de fulfillment.&lt;br&gt;- Clínica: Valentina + clínica + marca (kits/protocolos).</td><td id="LqJE" class=""><strong>Quién está involucrado:</strong>&lt;br&gt;- Valentina + sistema de pago (Mercado Pago) + logística (Estafeta).</td><td id="sAgB" class=""><strong>Quién está involucrado:</strong>&lt;br&gt;- Valentina (adhesión/uso) y, en clínica, personal/derm para asegurar protocolo.</td><td id="L`aV" class=""><strong>Quién está involucrado:</strong>&lt;br&gt;- Valentina (evaluación de tolerabilidad y percepción de mejora).</td><td id="oH{w" class=""><strong>Quién está involucrado:</strong>&lt;br&gt;- Valentina (NPS/decisión) y derm/owner en clínica.</td><td id="&gt;x]z" class=""><strong>Quién está involucrado:</strong>&lt;br&gt;- Valentina (recompra) o clínica (reabasto).</td><td id=";UmF" class=""><strong>Quién está involucrado:</strong>&lt;br&gt;- Valentina (UGC/referral) + marca (curación y lineamientos).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ab-949f-f201064598ea"><td id="n&lt;Z{" class=""><strong>Budget limits &amp; other considerations:</strong>&lt;br&gt;- Presupuesto: <strong>$250–$400 MXN</strong>; objetivo <strong>$300 MXN</strong> (DTC).&lt;br&gt;- En clínica: <strong>$280–$350 MXN retail</strong>; valor ligado a tolerabilidad validada (HRIPT ≥98%), BPF y LATAM sourcing.&lt;br&gt;- Consideración clave: minimizar “riesgo de compra fallida” por irritación.</td><td id="an??" class=""><strong>Budget limits &amp; other considerations:</strong>&lt;br&gt;- La “restricción” principal es <strong>riesgo</strong>, no solo precio: la evidencia debe sentirse real y entendible.&lt;br&gt;- Samples/muestra reducen riesgo (tu proceso las contempla).</td><td id="Ph]&lt;" class=""><strong>Budget limits &amp; other considerations:</strong>&lt;br&gt;- Veto por incertidumbre de tolerabilidad o “evidencia poco tangible”.&lt;br&gt;- Si el mensaje/claims no son claros, se frena la compra aunque el precio sea razonable.</td><td id="`W~\" class=""><strong>Budget limits &amp; other considerations:</strong>&lt;br&gt;- DTC: inventario y tiempos de entrega impactan decisión (no “debes esperar 2 semanas”).&lt;br&gt;- Clínica: facilidad para iniciar prueba en 1 cita.</td><td id="LqJE" class=""><strong>Budget limits &amp; other considerations:</strong>&lt;br&gt;- Fricción de checkout: métodos de pago, dirección, costo/tiempo de envío.</td><td id="sAgB" class=""><strong>Budget limits &amp; other considerations:</strong>&lt;br&gt;- “Costo” en tiempo del cliente: seguir rutina y no cambiar demasiadas variables.&lt;br&gt;- Necesidad de guía para evitar irritación por uso incorrecto.</td><td id="L`aV" class=""><strong>Budget limits &amp; other considerations:</strong>&lt;br&gt;- Expectativa de resultado realista: <strong>mejoría en 3–4 semanas</strong>.</td><td id="oH{w" class=""><strong>Budget limits &amp; other considerations:</strong>&lt;br&gt;- Valor se consolida con tolerabilidad real + percepción de mejora; si no llega, cae recompra y sube CAC efectivo.</td><td id="&gt;x]z" class=""><strong>Budget limits &amp; other considerations:</strong>&lt;br&gt;- Recompra depende de que la experiencia sostenga tolerabilidad; incentivos por suscripción deben ser cuidadosos para no generar backlash.</td><td id=";UmF" class=""><strong>Budget limits &amp; other considerations:</strong>&lt;br&gt;- UGC debe ser orgánico; claims demasiado agresivos pueden generar rechazo (y riesgo reputacional/regulatorio percibido).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-809a-8843-d65668b0532c"><td id="n&lt;Z{" class=""><strong>How much time will this stage take? (give a range):</strong>&lt;br&gt;- Determine need/catalyst: <strong>0–5 días</strong> (awareness → intención).</td><td id="an??" class="">- Find out options: <strong>2–7 días</strong> (lectura/consulta de evidencia).</td><td id="Ph]&lt;" class="">- Analyze options: <strong>1–7 días</strong> (comparación; en clínica puede ser más rápido por urgencia).</td><td id="`W~\" class="">- Acquire product: <strong>0.5–2 días</strong> (DTC) / <strong>0–7 días</strong> (clínica según programación).</td><td id="LqJE" class="">- Pay: <strong>0–1 día</strong>.</td><td id="sAgB" class="">- Install (inicio rutina): <strong>0–1 día</strong>.</td><td id="L`aV" class="">- Use &amp; get value: <strong>3–4 semanas</strong> (semana 1–3 evaluación).</td><td id="oH{w" class="">- Determine value: <strong>1–2 semanas</strong> post-ventana de 3–4 semanas (momento de decisión de recompra).</td><td id="&gt;x]z" class="">- Buy more: <strong>60–90 días</strong> (DTC) / <strong>30–45 días</strong> primero en clínica y luego mensual.</td><td id=";UmF" class="">- Tell others: <strong>1–3 semanas</strong> después de ver tolerabilidad/mejora.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f8-b761-d897de04aa11"><td id="n&lt;Z{" class=""><strong>Action plan to accomplish stage (efficient/effective):</strong>&lt;br&gt;1) Creatividades centradas en piel sensible + “tolerabilidad primero”.&lt;br&gt;2) Mensajes simples con evidencia: <strong>HRIPT ≥98% + pH 5.5 + BPF NOM-259</strong> (en lenguaje humano).</td><td id="an??" class="">1) Landing/tienda con INCI “traducido” y FAQ (qué esperar por semana).&lt;br&gt;2) Material listo para clínica: dossier/resumen de HRIPT y protocolo de uso.</td><td id="Ph]&lt;" class="">1) Comparativos honestos sin denigrar: “aquí está la evidencia vs importados sin HRIPT visible”.&lt;br&gt;2) Reducción de riesgo: muestra/kit para clínica y/o mini-size para DTC (si aplica).</td><td id="`W~\" class="">1) Inventario y fulfillment listo para el primer sprint.&lt;br&gt;2) KITS de clínica: instrucciones claras y seguimiento.</td><td id="LqJE" class="">1) Checkout optimizado en Tienda Nube + disponibilidad de Mercado Pago.&lt;br&gt;2) Confirmación inmediata y tracking.</td><td id="sAgB" class="">1) Instructivo post-compra con rutina y “qué observar semana 1–3”.&lt;br&gt;2) Patch test opcional recomendado para piel reactiva.</td><td id="L`aV" class="">1) Secuencia de seguimiento: semana 1 (tolerancia) + semana 3 (evaluación).</td><td id="oH{w" class="">1) Encuestas NPS en día 30/60 y microencuestas de razones (toleró / irritó / no vio mejora).&lt;br&gt;2) Si hay problemas: protocolo de respuesta y ajuste de uso.</td><td id="&gt;x]z" class="">1) Recordatorio recompra alrededor de día 60.&lt;br&gt;2) Incentivo por lealtad/suscripción basado en conveniencia (no en claims).</td><td id=";UmF" class="">1) Programa UGC/referral con lineamientos y curación.&lt;br&gt;2) Incentivar historias de tolerabilidad (evitar claims médicos/curativos).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8027-8318-e63284e8d001"><td id="n&lt;Z{" class=""><strong>Risks:</strong>&lt;br&gt;1) El mensaje no “aterriza” a piel sensible (suena demasiado marino/bioactivo).&lt;br&gt;2) Baja conversión por duda de tolerabilidad en rosácea/atopia.&lt;br&gt;3) Retraso del valor percibido → churn y baja recompra.</td><td id="an??" class="">1) Evidencia no se entiende o no se percibe como “real”.</td><td id="Ph]&lt;" class="">1) Veto por documentación insuficiente o promesas poco creíbles.&lt;br&gt;2) Comparación desfavorable si el cliente no ve diferencia entre stacks.</td><td id="`W~\" class="">1) Stockout/malos tiempos de entrega.&lt;br&gt;2) Instrucciones confusas.</td><td id="LqJE" class="">1) Abandono de carrito por fricción de pago/envío.</td><td id="sAgB" class="">1) Uso incorrecto (cambio de rutina) → irritación.</td><td id="L`aV" class="">1) Resultado no llega en 3–4 semanas para ese individuo.&lt;br&gt;2) Experiencia individual adversa aunque HRIPT sea alto.</td><td id="oH{w" class="">1) NPS bajo por expectativas desalineadas.&lt;br&gt;2) No capturar correctamente razones de churn.</td><td id="&gt;x]z" class="">1) Recompra &lt;40% día 90 (riesgo MVBP no logrado).</td><td id=";UmF" class="">1) UGC insuficiente o no auténtico (backlash).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-809f-8dc9-d61564b0ee69"><td id="n&lt;Z{" class=""><strong>Risk mitigation strategy:</strong>&lt;br&gt;1) Enfoque creativo en tolerabilidad + educación (qué esperar, cuándo evaluar).&lt;br&gt;2) Evidencia “en humano”: HRIPT, pH 5.5, BPF en formato FAQ/dossier.</td><td id="an??" class="">1) Coherencia del mensaje y disponibilidad de documentos bajo solicitud.&lt;br&gt;2) Social proof desde pilotos clínicos.</td><td id="Ph]&lt;" class="">1) Reducción de riesgo con muestra/kit + protocolo de uso.&lt;br&gt;2) Ajustar comunicación de expectativas (semana 1–3 evaluación).</td><td id="`W~\" class="">1) SLA/operación para evitar stockout y asegurar etiquetado/instructivos.</td><td id="LqJE" class="">1) Atención inmediata post-pago + políticas claras de envío/devolución.</td><td id="sAgB" class="">1) Guía de rutina y patch test recomendado.&lt;br&gt;2) Seguimiento preventivo semana 1.</td><td id="L`aV" class="">1) Seguimiento con mensajes cortos: tolerancia primero, luego resultados.&lt;br&gt;2) Ruta de soporte para incidencias.</td><td id="oH{w" class="">1) Acción correctiva basada en NPS + razones (tolerancia vs adherencia vs expectativas).</td><td id="&gt;x]z" class="">1) Recordatorios + valor por lealtad (conveniencia).</td><td id=";UmF" class="">1) Curación UGC y lineamientos para mantener calidad/credibilidad.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b9-ab30-c25e968b96a4"><td id="n&lt;Z{" class=""><strong>Misc:</strong>&lt;br&gt;- En piel sensible, el cuello de botella típico es <strong>convertir riesgo percibido en confianza</strong> (HRIPT + BPF + pH 5.5 comunicados claro).&lt;br&gt;- El “sales cycle” se acelera en clínica por urgencia y autoridad del derm; en DTC depende más de claridad y reducción de fricción.</td><td id="an??" class=""></td><td id="Ph]&lt;" class=""></td><td id="`W~\" class=""></td><td id="LqJE" class=""></td><td id="sAgB" class=""></td><td id="L`aV" class=""></td><td id="oH{w" class=""></td><td id="&gt;x]z" class=""></td><td id=";UmF" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80f9-9ebb-d56c8c8b6c8a"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8054-ab34-d731cc8ddcc0" class=""><strong>Qué modifiqué / dónde metí lo pedido por el “Orbit Message”</strong></h2></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8003-bac2-c1f3d1bf6231" class="bulleted-list"><li style="list-style-type:disc"><strong>He priorizado el proceso por el canal que define tu beachhead (clínicas)</strong>: por eso los rangos de tiempo contemplan que el “Acquire product” en clínica puede variar por agenda de consulta y que “Determine value / Buy more” en clínica se decide con tolerancia percibida dentro de la ventana.</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80b0-ab35-cc729fdad31d" class="bulleted-list"><li style="list-style-type:disc"><strong>Ajusté “Install / Use &amp; get value / Determine value”</strong> para reflejar que en skincare el “valor” no se materializa en días sino en <strong>3–4 semanas</strong>, y que la recompra es <strong>60–90 días</strong> (tal como ya estableciste en tu MVBP/Show dogs).</li></ul></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8036-b79a-faa01add001e"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-809a-9aad-fedc91afffd3" class=""><strong>Resumen (3 frases o menos)</strong></h2></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80c6-aa6d-f91e0f0fcb12" class="">El proceso se activa por necesidad de <strong>tolerabilidad</strong> (Valentina) y se reduce incertidumbre con evidencia visible (<strong>HRIPT ≥98%</strong>, <strong>pH 5.5</strong>, <strong>BPF NOM-259</strong>). En DTC el checkout puede ser rápido, pero el valor real se decide en <strong>3–4 semanas</strong> y la recompra ocurre en <strong>60–90 días</strong>; en clínica se acelera por recomendación profesional y prueba guiada. La recomendación ocurre cuando el cliente confirma que <strong>no irritó</strong> y percibe mejora, generando UGC y referidos.</p></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80c7-99e6-f4795b1c58f2"/></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-80ec-8ba4-e7a9442ac7e0" class=""><strong>Puedes actualizar tu Startup Idea</strong></h3></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80d7-91a2-d4e5c3980fcd" class="">Puedes actualizar tu Startup Idea en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>, aquí puedes también actualizar los detalles para almacenar información crítica <strong>de este paso</strong>, por ejemplo:</p></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8058-946f-e7c4d3a2583f" class="bulleted-list"><li style="list-style-type:disc">Tu mapa del proceso de adquisición: <strong>Awareness → evidencia/tolerabilidad → compra (DTC o kit en clínica) → uso y valor (3–4 semanas) → recompra (60–90 días) → UGC/referrals</strong>.</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8025-a083-d6dd4cd8c6eb" class="bulleted-list"><li style="list-style-type:disc">Los principales riesgos: conversión por duda de tolerabilidad, valor que no llega en la ventana, fricción operativa (stock/checkout) y pérdida de recompra si NPS cae.</li></ul></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8010-bab1-e011e62353af" class="">Finalmente, puedes usar el chatbot en la parte superior para solicitar cambios a tus resultados. <strong>Por favor usa el botón abajo para proceder a la siguiente etapa</strong>.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>DISEÑO DEL MODELO DE NEGOCIOS</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="55cf554f-2b83-8224-8b71-01aebdf886f8" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/crayon_gray.svg"/></div><h1 class="page-title" dir="auto">DISEÑO DEL MODELO DE NEGOCIOS</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="36ff554f-2b83-807d-92aa-eb24c2b86848" class="">Con base en tu contexto, el foco del diseño de modelo de negocio es <strong>cómo capturar valor</strong> a partir de una crema para piel sensible con <strong>evidencia de tolerabilidad (HRIPT ≥98%)</strong>, <strong>manufactura BPF (NOM-259)</strong> y un posicionamiento de <strong>LATAM/INCI transparente</strong>, logrando recurrencia vía DTC y validación vía clínicas.</p></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8054-860a-d2fa6fcb9307"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-805b-85c9-e63ffc279e08" class=""><strong>2) Tablas Generation</strong></h2></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-8018-9c47-e52434870154" class=""><strong>Customer</strong></h3></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8006-908e-caf3825f60f3" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8036-87d0-cee4b7c3ab10"><th id="^KBK" class="simple-table-header-color simple-table-header">Pregunta</th><th id="yL|@" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ac-a5f5-f0300a0a81ef"><td id="^KBK" class="">a. Looking at the DMU, what is important?</td><td id="yL|@" class=""><strong>Tolerabilidad/seguridad (35%)</strong>: “que no irrite” (rosácea/dermatitis). <strong>Evidencia clínica verificable (25%)</strong>: HRIPT ≥98% + documentación. <strong>Transparencia INCI + origen LATAM (20%)</strong>. <strong>Confianza de manufactura (BPF/NOM-259)</strong>. Soporte de demostración (dossier/creador/derm) y prueba (muestras).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80da-8049-f11dde5a676b"><td id="^KBK" class="">b. Preference for upfront or recurring expense for the DMU?</td><td id="yL|@" class=""><strong>Upfront para el primer ciclo</strong> (compra DTC $300 MXN / 50g). Luego <strong>recurrente natural por ciclo de uso 60–90 días</strong>; en clínicas: <strong>prueba 30 días → consigna/restock</strong> (recurrente operativo).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-803c-89fa-c83ffb141010"><td id="^KBK" class="">c. Other considerations</td><td id="yL|@" class="">Aversión al riesgo: si “no cumple tolerancia” hay churn rápido. En clínicas, además importa: <strong>baja fricción</strong> (kit/muestra, consigna) y <strong>probabilidad de éxito en pacientes</strong>. En DTC, importa la <strong>reducción de incertidumbre</strong> con HRIPT, pH, BPF y guía de uso.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80cf-8db3-ed58227a2572"/></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-8089-96c4-feb137f15935" class=""><strong>Value Creation</strong></h3></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8095-8c28-f8f45a621752" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d7-a4bf-f6b925abc86a"><th id="pJiJ" class="simple-table-header-color simple-table-header">Pregunta</th><th id="wVr{" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ef-813d-cff2dcd927e5"><td id="pJiJ" class="">a. How much value do they get?</td><td id="wVr{" class="">Valor principal: <strong>tolerabilidad</strong> (no empeorar) + <strong>mejora percibida</strong> en <strong>3–4 semanas</strong> (rojez/irritación y confort). Valor económico: <strong>60–85% ahorro</strong> vs importados premium, pero con evidencia.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8082-9b90-c003bafaef96"><td id="pJiJ" class="">b. When do they get value?</td><td id="wVr{" class=""><strong>Desde semana 1–2</strong> (tolerancia/no empeorar) y <strong>semana 3–4</strong> (señal de resultado). <strong>Recompra</strong>: típicamente hacia <strong>día 60–90</strong>. En clínicas: decisión/expansión cerca de <strong>~30 días</strong> por respuesta del paciente.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a3-b2ee-c0e4a34b27d6"><td id="pJiJ" class="">c. How risky is it?</td><td id="wVr{" class="">Riesgo: <strong>falla de tolerancia</strong> o <strong>resultado percibido insuficiente</strong> en la ventana esperada. Mitigantes: HRIPT ≥98%, formulación pH 5.5, stack compatible, y “learning loop” (NPS/TEWL/redness y reorden).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f0-9e36-c08dc0227229"><td id="pJiJ" class="">d. Other considerations</td><td id="wVr{" class="">El valor depende de “delivery” (empaque, consistencia entre lotes, claridad de uso). También depende de que el marketing no exceda la evidencia (evitar ruptura de confianza).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8013-a4c8-f37de27ff73d"/></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-80fb-84a3-eeb9302bd9e6" class=""><strong>Competition</strong></h3></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-801d-9183-fa6a51ea8232" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8033-8771-fd06d04b708d"><th id="t&gt;QT" class="simple-table-header-color simple-table-header">Pregunta</th><th id="Ln]g" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b8-9768-cd599e640d6e"><td id="t&gt;QT" class="">a. Who is the competition and what business model do they use?</td><td id="Ln]g" class="">Competencia por canal: <strong>(i) importados premium DTC</strong> (one-time + recompra, evidencia variable/inaccesible), <strong>(ii) dermocosmética/clínicas</strong> (consigna o recompra por restock según respuesta), <strong>(iii) K-beauty</strong> (stack e innovación pero sin foco sensible/credencial LATAM).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8035-8e6c-fb636fb1d250"><td id="t&gt;QT" class="">b. How locked are they in this model?</td><td id="Ln]g" class=""><strong>Lock-in medio-bajo en piel sensible</strong>: si irrita/no funciona, el cambio es rápido. <strong>Lock-in aumenta</strong> con confianza por tolerancia consistente + evidencia verificable (HRIPT reduce incertidumbre).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-807e-8412-e35f1520484a"><td id="t&gt;QT" class="">c. Could I disrupt the industry? What are the risks of it?</td><td id="Ln]g" class="">Disrupción viable: <strong>tolerabilidad verificable + precio accesible + origen LATAM + BPF</strong>. Riesgos: regulatorio/claims, consistencia batch-to-batch, y que la oferta de evidencia no sea suficientemente “consumible” por el comprador.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8006-a5ae-df02f3bf0fdd"><td id="t&gt;QT" class="">d. Other considerations</td><td id="Ln]g" class="">La ventaja real no es solo “ingredientes”, sino <strong>convertir evidencia en decisión de compra</strong> para DMU preocupada por riesgo.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80ab-a3e1-fc0d83da942e"/></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-8020-afa9-de4c78665c38" class=""><strong>Internal</strong></h3></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-809e-8d83-eef4f1e96c43" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-804d-bf3a-cf13a9108d38"><th id="?lzm" class="simple-table-header-color simple-table-header">Pregunta</th><th id="=Z?]" class="simple-table-header-color simple-table-header">Respuesta</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8062-9ab8-e0825d163054"><td id="?lzm" class="">a. Effect of Sales Cycle</td><td id="=Z?]" class=""><strong>DTC</strong>: contenido → sitio → compra (rápido) y recompra 60–90 días. <strong>Clínicas</strong>: muestra → prueba 30 días → consigna/restock y reposición mensual/quincenal.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8086-a940-c2cc15126406"><td id="?lzm" class="">b. Customer acquisition cost</td><td id="=Z?]" class="">DTC: <strong>$150–$400 MXN</strong>. Clínicas: <strong>$500–$1,500 MXN por clínica</strong> (y puede generar 5–20 pacientes). B2B fase 3+: <strong>$4,000–$8,000 MXN</strong> (outreach + muestras/eventos).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d7-b966-f43bfda33cc7"><td id="?lzm" class="">c. What is the Lifetime Value of this customer?</td><td id="=Z?]" class="">DTC: <strong>1.5 compras/trimestre × $300 × 3 años = $5,400 MXN</strong>. Clínica: <strong>1 compra/trimestre × $300 × 2 años = $2,400 MXN</strong>. (B2B ingrediente: LTV alto pero ciclo largo).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ce-bc12-f1dc41802c48"><td id="?lzm" class="">d. How are we going to distribute the product to this user</td><td id="=Z?]" class="">DTC: <strong>Tienda Nube + Mercado Pago + Estafeta</strong>. Clínicas: <strong>muestra/kit → prueba 30d → consigna o restock</strong>. B2B: contratos de suministro con documentación técnica/regulatoria.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8040-972d-cf2e08191723"><td id="?lzm" class="">e. What is the cashflow</td><td id="=Z?]" class="">Cashflow inicial presionado por <strong>maquila 1,000 unidades</strong> + compliance/label. Se mejora si: (1) hay <strong>recompra real</strong> antes de agotar inventario (60–90d), (2) pilotos clínicos convierten en restocks, y (3) se monitorea sell-through por cohorte.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c0-9f4e-c85d4ddecbe4"><td id="?lzm" class="">f. Operations and other considerations</td><td id="=Z?]" class="">Operaciones críticas: QA de pH 5.5 y preservación, estabilidad, control de lotes, documentación NOM-141, disponibilidad de HRIPT/dossier y sistema de seguimiento (NPS día 30/60, quejas/adversos, y métricas de recurrencia).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8080-ba3f-e4f683111531"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8082-818d-d7830130ad03" class=""><strong>7) Unidades cobrables (Potential Units)</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8054-aa8c-dea50a15259f" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d0-8efc-c99ec0f3182a"><th id="Y@cY" class="simple-table-header-color simple-table-header">Unidad cobrable (Unit)</th><th id="@sMS" class="simple-table-header-color simple-table-header">Pros</th><th id=";n]g" class="simple-table-header-color simple-table-header">Cons</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8088-bed2-db622250fbe1"><td id="Y@cY" class="">1) <strong>Producto individual (1 crema 50g)</strong></td><td id="@sMS" class="">MVBP claro; baja fricción DTC; ideal para validar tolerancia + WTP rápido.</td><td id=";n]g" class="">Menor previsibilidad; LTV depende de CAC y recompra (60–90d).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-803a-8abb-e15c6594789b"><td id="Y@cY" class="">2) <strong>Suscripción opt-in / reposición (cada 60–90 días)</strong></td><td id="@sMS" class="">Aumenta LTV y predictibilidad; captura valor del ciclo real de uso.</td><td id=";n]g" class="">Riesgo de churn si la experiencia inicial no convence; requiere operación de billing/CS.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b1-a19e-e978c2616db1"><td id="Y@cY" class="">3) <strong>Kit/trial (mini-size o starter)</strong></td><td id="@sMS" class="">Reduce barrera de riesgo percibido para piel sensible; mejora CVR en DTC y en clínicas.</td><td id=";n]g" class="">Menor margen unitario; más complejidad logística/empaque y costos.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-801d-a2cc-dcfbed433419"><td id="Y@cY" class="">4) <strong>Pack múltiple (2-pack/3-pack)</strong></td><td id="@sMS" class="">Aumenta AOV y eficiencia logística.</td><td id=";n]g" class="">Riesgo de inventario si la recompra no sostiene el modelo; puede chocar con “trial-first”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8081-9ee5-c741061f47a5"><td id="Y@cY" class="">5) <strong>Canal clínico: venta ex-factory por unidad (restock)</strong></td><td id="@sMS" class="">Credibilidad alta; valida en pacientes en ~30 días; acelera contenido clínico.</td><td id=";n]g" class="">Ciclo de venta más lento; menos control de experiencia del end user.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8084-a541-e20535edd1da"><td id="Y@cY" class="">6) <strong>Canal clínico: consignación / acuerdo de riesgo compartido</strong></td><td id="@sMS" class="">Minimiza fricción de entrada para clínicas; alinea incentivos con resultados.</td><td id=";n]g" class="">Riesgo de merma/finanzas si no hay adopción; requiere métricas claras y auditoría.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-800f-bf26-ca3bde223594"><td id="Y@cY" class="">7) <strong>B2B ingrediente (fucoidan/kg) – fase 3+</strong></td><td id="@sMS" class="">Margen potencial alto; monetiza know-how de extracción/consistencia.</td><td id=";n]g" class="">Ciclo comercial largo; depende de supply chain y QA a nivel ingrediente; menos “end-user learning”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8000-8d4a-d8dd817ea12f"><td id="Y@cY" class="">8) <strong>White-label suministro (para marcas/clínicas)</strong></td><td id="@sMS" class="">Diversifica ingresos sin depender 100% de DTC.</td><td id=";n]g" class="">Menor control de narrativa/evidencia; lock-in de partners y posibles canibalizaciones.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80a3-80b7-fe1e90238f15"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8015-98d0-da43e39ada8a" class=""><strong>8) Resumen de Business Model Candidates</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8018-83a7-cacc11257ce3" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-807b-8662-f96fb3924cbb"><th id="|Mme" class="simple-table-header-color simple-table-header">Option</th><th id="H~{d" class="simple-table-header-color simple-table-header">Unit</th><th id="ZxR=" class="simple-table-header-color simple-table-header">Customer fit</th><th id="?udA" class="simple-table-header-color simple-table-header">Value Creation fit</th><th id="Con}" class="simple-table-header-color simple-table-header">Competition fit</th><th id="rNKE" class="simple-table-header-color simple-table-header">Internal fit</th><th id="QHgv" class="simple-table-header-color simple-table-header">Pros</th><th id="svlo" class="simple-table-header-color simple-table-header">Cons</th><th id="}Qa&gt;" class="simple-table-header-color simple-table-header">Grade</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80bc-b51e-c5942a4c17cc"><td id="|Mme" class="">O1</td><td id="H~{d" class="">DTC <strong>one-time</strong> (1 crema 50g)</td><td id="ZxR=" class="">Muy alto (DMU quiere prueba)</td><td id="?udA" class="">Alto (valor en 3–4 semanas)</td><td id="Con}" class="">Excelente (superas importados por tolerancia/evidencia)</td><td id="rNKE" class="">Alto (operación simple)</td><td id="QHgv" class="">MVBP rápido, valida WTP y tolerancia</td><td id="svlo" class="">LTV inicial limitado; más dependencia de CAC</td><td id="}Qa&gt;" class=""><strong>A</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8025-8f46-f66cda071df9"><td id="|Mme" class="">O2</td><td id="H~{d" class="">DTC <strong>suscripción opt-in</strong> (repos. 60–90d)</td><td id="ZxR=" class="">Alto (si funciona, quieren continuidad)</td><td id="?udA" class="">Muy alto (captura recurrencia)</td><td id="Con}" class="">Diferenciador vs “compra única”</td><td id="rNKE" class="">Medio/alto (CS/billing)</td><td id="QHgv" class="">Aumenta LTV y predictibilidad</td><td id="svlo" class="">Riesgo churn si trial no convierte</td><td id="}Qa&gt;" class=""><strong>A-</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8034-89ad-fd39aad64244"><td id="|Mme" class="">O3</td><td id="H~{d" class="">DTC <strong>trial mini-kit → conversión</strong></td><td id="ZxR=" class="">Muy alto</td><td id="?udA" class="">Alto</td><td id="Con}" class="">Excelente (reduce incertidumbre)</td><td id="rNKE" class="">Medio (margen/operación)</td><td id="QHgv" class="">Mejora CVR</td><td id="svlo" class="">Margen menor; logística</td><td id="}Qa&gt;" class=""><strong>B+</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80bb-9692-e2df270668a7"><td id="|Mme" class="">O4</td><td id="H~{d" class="">Clínicas: venta ex-factory + reposición</td><td id="ZxR=" class="">Muy alto (gatekept)</td><td id="?udA" class="">Alto (paciente valida en 30d)</td><td id="Con}" class="">Muy fuerte (credibilidad clínica)</td><td id="rNKE" class="">Medio (ciclo 30–45d)</td><td id="QHgv" class="">Credibilidad y aprendizaje real</td><td id="svlo" class="">Menos control end-user; timing</td><td id="}Qa&gt;" class=""><strong>B+</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8094-b6f1-ece8f7219c53"><td id="|Mme" class="">O5</td><td id="H~{d" class="">Clínicas: consignación / risk-share</td><td id="ZxR=" class="">Alto</td><td id="?udA" class="">Alto</td><td id="Con}" class="">Fuerte para entrar sin fricción</td><td id="rNKE" class="">Medio/bajo (merma financiera)</td><td id="QHgv" class="">Acelera adopción inicial en clínicas</td><td id="svlo" class="">Riesgo de merma si no hay respuesta</td><td id="}Qa&gt;" class=""><strong>B</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8075-b639-d801cc671e17"><td id="|Mme" class="">O6</td><td id="H~{d" class="">B2B ingrediente (fucoidan/kg) – fase 3+</td><td id="ZxR=" class="">Medio (formuladores)</td><td id="?udA" class="">Medio/alto</td><td id="Con}" class="">Competitivo en ingredient markets</td><td id="rNKE" class="">Bajo/medio</td><td id="QHgv" class="">Margen alto potencial</td><td id="svlo" class="">No resuelve beachhead end-user learning; ciclo largo</td><td id="}Qa&gt;" class=""><strong>C</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8005-9c24-fea905a9d493"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-806d-9544-ec0e9be38d82" class=""><strong>9) Suggested business model to choose and why</strong></h2></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80ce-8c65-efbfe8315298" class=""><strong>Recomendación (híbrida con prioridad en DTC):</strong> <strong>O1 → O2</strong>, y usar <strong>O4</strong> como acelerador temprano de credibilidad.</p></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8027-84f7-c9a250755c52" class="bulleted-list"><li style="list-style-type:disc"><strong>O1 (one-time DTC $300)</strong> minimiza fricción para DMU con aversión al riesgo (piel sensible) y sirve como base del <strong>MVBP</strong>.</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80b0-96cc-f274279cfcb4" class="bulleted-list"><li style="list-style-type:disc"><strong>O2 (suscripción opt-in 60–90 días)</strong> captura la recurrencia natural del uso, mejorando <strong>LTV</strong> sin forzar compromiso desde el día 1.</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80f9-bf89-c8ee2c505ac6" class="bulleted-list"><li style="list-style-type:disc"><strong>O4 (pilotos clínicos)</strong> valida el “tolerabilidad + resultado 3–4 semanas” en entorno real, alimenta contenido y reduce incertidumbre para compradores y clínicas posteriores.</li></ul></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80c4-917c-cfa581f330eb"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8012-bf4a-d7f6175c2876" class=""><strong>10) Testing</strong></h2></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-803f-800e-e3246985d212" class=""><strong>a) ¿Qué hipótesis asumes?</strong></h3></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80d1-917b-c935782237bf" class="">Para los modelos elegidos (O1/O2/O4):</p></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-801e-937f-e5ab4d77291e" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f7-a1ef-d109f36aa803"><th id="Ku=t" class="simple-table-header-color simple-table-header">Hipótesis</th><th id="QyU^" class="simple-table-header-color simple-table-header">Estado esperado / qué debe pasar</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8041-922f-c74283429126"><td id="Ku=t" class=""><strong>H1</strong>: La fórmula será bien tolerada en piel sensible (y HRIPT se refleja en experiencia)</td><td id="QyU^" class="">Bajas quejas/adversos y resultados consistentes; alta satisfacción en panel/pacientes.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8069-808e-f6972f59e757"><td id="Ku=t" class=""><strong>H2</strong>: El usuario percibe valor en 3–4 semanas</td><td id="QyU^" class="">NPS ≥60 y señal de mejoría (rojez/confort) hacia semana 3–4.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-806d-8f5f-c9b4b6571a2e"><td id="Ku=t" class=""><strong>H3</strong>: Evidencia verificable (HRIPT ≥98%, BPF/NOM, dossier) mejora conversión</td><td id="QyU^" class="">A/B: mayor CVR y mejor retención vs mensajes sin evidencia o con evidencia menos consumible.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8039-bb67-f320da42cabf"><td id="Ku=t" class=""><strong>H4</strong>: El precio $300 MXN sostiene conversión y recompra</td><td id="QyU^" class="">CVR y recompra 30–90 días dentro de rangos esperados; WTP cercano al objetivo.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80cd-8dd2-c2d4756dcc0c"><td id="Ku=t" class=""><strong>H5</strong>: Suscripción opt-in aumenta LTV sin romper la conversión inicial</td><td id="QyU^" class="">Opt-in razonable y churn temprano bajo; no debe desplomar CVR del “one-time”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f5-9dbb-c990e7135c22"><td id="Ku=t" class=""><strong>H6</strong>: Clínicas logran adopción con pacientes y restock</td><td id="QyU^" class="">Consignación/venta se traduce en reposición tras prueba ~30 días.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-803e-9d90-dfdf3af0da48" class=""><strong>b) ¿Qué experimentos correrás?</strong></h3></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-809d-a68e-dfc4220f6102" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a4-b09d-e81826b62d08"><th id="oeOp" class="simple-table-header-color simple-table-header">Experimento</th><th id="uDSc" class="simple-table-header-color simple-table-header">Para validar</th><th id="_&gt;B~" class="simple-table-header-color simple-table-header">Qué medirás</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80f9-a6d1-f10c705b42e5"><td id="oeOp" class=""><strong>Panel 30 días (TEWL + redness + tolerancia)</strong></td><td id="uDSc" class="">H1/H2</td><td id="_&gt;B~" class="">% no irritación, cambio en rojo/TEWL (semana 2 y 3–4).</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c9-b4cd-d977e6d24c5e"><td id="oeOp" class=""><strong>A/B DTC: evidencia completa vs versión simplificada</strong></td><td id="uDSc" class="">H3</td><td id="_&gt;B~" class="">CVR, tasa de compra, conversión a recompra (30–60d) y churn.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-803c-a954-e86a23592715"><td id="oeOp" class=""><strong>Pricing gate / conjoint ($250/$300/$350)</strong></td><td id="uDSc" class="">H4</td><td id="_&gt;B~" class="">WTP real, elasticidad y conversión por cohorte.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-800b-b8a7-c2137a587fcf"><td id="oeOp" class=""><strong>Suscripción opt-in (después del trial o a partir de día 30–45)</strong></td><td id="uDSc" class="">H5</td><td id="_&gt;B~" class="">% opt-in, churn primer ciclo, recompra total vs control.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ec-9dd0-d010ec4f6dbc"><td id="oeOp" class=""><strong>3 pilotos clínicos (sample→trial 30d→consigna/restock)</strong></td><td id="uDSc" class="">H6</td><td id="_&gt;B~" class=""># pacientes por clínica, NPS/feedback, % que se queda en reposición.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-806f-aba9-df07368fdbdb"><td id="oeOp" class=""><strong>Loop de reputación: UGC + NPS day 30/60</strong></td><td id="uDSc" class="">H2 y retención</td><td id="_&gt;B~" class="">NPS≥60, ≥5 UGC no pagado (sin prometer en exceso).</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-8083-9edf-c71dcd70541d" class=""><strong>c) ¿Qué información mostrará si son válidas o inválidas?</strong></h3></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8029-b984-e8cc37121d46" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8098-a58b-c5cdef891f1e"><th id="DDEh" class="simple-table-header-color simple-table-header">Hipótesis</th><th id="[hJJ" class="simple-table-header-color simple-table-header">Válida si…</th><th id="km|B" class="simple-table-header-color simple-table-header">Inválida si…</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8013-adbd-d69b0c5d4d28"><td id="DDEh" class="">H1</td><td id="[hJJ" class="">Tasa de irritación baja y poca tracción negativa</td><td id="km|B" class="">Aumento de quejas/adversos o abandono por irritación</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805c-ad21-e8241ed2d57a"><td id="DDEh" class="">H2</td><td id="[hJJ" class="">Mejora percibida + NPS ≥60</td><td id="km|B" class="">“Sin cambio” alto y baja retención/recompra</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b2-80f7-cc279646933b"><td id="DDEh" class="">H3</td><td id="[hJJ" class="">Evidencia sube CVR y reduce CAC efectivo</td><td id="km|B" class="">Evidencia no mueve conversión o empeora (fricción/confusión)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ae-bd20-e4699df2618e"><td id="DDEh" class="">H4</td><td id="[hJJ" class="">$300 mantiene conversión y recompra</td><td id="km|B" class="">WTP cae fuerte hacia $250 (o “no se recompra”)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a3-8871-ed1da97f8943"><td id="DDEh" class="">H5</td><td id="[hJJ" class="">Suscripción opt-in mejora LTV sin frenar CVR</td><td id="km|B" class="">Suscripción baja CVR o aumenta churn rápido</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8067-8cc3-c69fae6f23cd"><td id="DDEh" class="">H6</td><td id="[hJJ" class="">Clínicas restockean tras 30–45 días</td><td id="km|B" class="">Consigna no se convierte en demanda paciente</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-8088-a568-ec182eb27232" class=""><strong>d) ¿Cómo long will you give the experiments?</strong></h3></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8098-a0c4-fc63b4e38a64" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a6-a6dc-ee7b4db29676"><th id="RCN@" class="simple-table-header-color simple-table-header">Experimento</th><th id="ln^:" class="simple-table-header-color simple-table-header">Duración</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805b-9e22-d1c3a454f0d3"><td id="RCN@" class="">Panel 30 días</td><td id="ln^:" class="">30 días</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8062-888c-ec6669b227b2"><td id="RCN@" class="">A/B evidencia DTC</td><td id="ln^:" class="">4–6 semanas (para primeras cohortes)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8087-b607-e1748dedf207"><td id="RCN@" class="">Pricing gate</td><td id="ln^:" class="">3–5 semanas</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b6-b419-d19fa53fe1ce"><td id="RCN@" class="">Suscripción opt-in</td><td id="ln^:" class="">2 ciclos objetivo / 120–180 días (para recurrencia real)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-801b-8a59-d071685f196f"><td id="RCN@" class="">Pilotos clínicos</td><td id="ln^:" class="">30–45 días decisión + seguimiento 60–90 días para restock/recompra</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80fd-ab75-dc68c62f8fe2"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8040-89e6-d651f4fc7d8d" class=""><strong>Recordatorio / actualizaciones en Orbit</strong></h2></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-805e-936d-dca7a884db8d" class="">Puedes actualizar tu <strong>Startup Idea</strong> en: <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>. Ahí puedes guardar (en esta misma sección) el resumen de información crítica: <strong>DMU</strong>, <strong>modelo recomendado (O1→O2 con O4 como acelerador)</strong>, <strong>unidades cobrables</strong>, y el <strong>plan de testing</strong>. También puedes usar el chatbot en la parte superior para solicitar cambios a estos resultados. Please use the button below to proceed to the next step.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

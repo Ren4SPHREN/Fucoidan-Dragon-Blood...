@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>STEP 15: HIRING</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="370f554f-2b83-8077-8a61-e37fe1ba283d" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/sharing_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>STEP 15: HIRING</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80ba-b691-e75ffa3ea5e6"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8075-a74b-c3cad55137de" class=""><strong>Role Identification</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-800b-a1cb-eebbc8432f3b" class=""><strong>Resumen del proceso</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80e1-994b-fed756583f9a" class="bulleted-list"><li style="list-style-type:disc"><strong>Traducir hitos a “brechas”</strong>: convertir objetivos (HRIPT, piloto clínico, NOM-141, producción run 1 de 1,000 unidades, launch semana 4–8, y meta de recompra ≥40% día 90) en funciones críticas y cargas de trabajo.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8047-9cda-cb0191a91f3c" class="bulleted-list"><li style="list-style-type:disc"><strong>Priorizar por riesgo y dependencia</strong>: primero roles que reduzcan riesgo de <strong>calidad/regulatorio</strong>, luego roles que aceleren <strong>adquisición y conversión</strong> hacia el beachhead (clínicas + DTC).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a9-b1b1-ed6e47b1590f" class="bulleted-list"><li style="list-style-type:disc"><strong>Elegir “primeras 3” por intersección</strong>: para tu caso, hay un núcleo fuerte alrededor de: (1) <strong>calidad/QC + coordinación con Biotech</strong>, (2) <strong>operación comercial de pilotos/expedientes clínicos</strong> y (3) <strong>growth/ads + optimización de funnel</strong> (mousetraps, landing, Meta).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8096-bb61-e76b1b949749" class="bulleted-list"><li style="list-style-type:disc"><strong>Definir “owner” de KPI</strong>: cada rol debe tener métricas claras (por ejemplo: HRIPT compliance y batch release; pipeline de leads y CVR; activación y NPS para recompra).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ed-b17c-d46822efa067" class="bulleted-list"><li style="list-style-type:disc"><strong>Mantener lean</strong>: con producción externa y eCommerce montado (Tienda Nube + GA4), el enfoque es contratar perfiles que reduzcan fricción en tus procesos existentes, en lugar de duplicar trabajo operativo.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8035-9522-d1b1f8e9d6d2" class=""><strong>Best estimates (brechas y roles a contratar primero)</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8086-8fe3-f3af57a3ad7c" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a5-a45c-c2f023618393"><th id="}AdM" class="simple-table-header-color simple-table-header">Objetivo organizacional / hito</th><th id=":_Ug" class="simple-table-header-color simple-table-header">Brecha actual (skill/capacidad)</th><th id="F\&gt;o" class="simple-table-header-color simple-table-header">Riesgo si no se cubre (1-10)</th><th id="RX^`" class="simple-table-header-color simple-table-header">Urgencia de contratación (1-10)</th><th id="BPU;" class="simple-table-header-color simple-table-header">Rol recomendado (título)</th><th id="x}WO" class="simple-table-header-color simple-table-header">Nivel de seniority sugerido</th><th id="x&lt;el" class="simple-table-header-color simple-table-header">Funciones clave del rol</th><th id="=l]G" class="simple-table-header-color simple-table-header">KPI de éxito esperado en 60-90 días</th><th id="pStF" class="simple-table-header-color simple-table-header">Señales para ajustar (si sube/baja la urgencia)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8068-881f-fe033e12f603"><td id="}AdM" class="">HRIPT en paralelo (30 sujetos) + batch release criteria (pH/appearance + TEWL proxy)</td><td id=":_Ug" class="">Coordinación de QA/QC diaria + trazabilidad de lotes + preparación de evidencia para QFB/NOM</td><td id="F\&gt;o" class="">10</td><td id="RX^`" class="">10</td><td id="BPU;" class="">Especialista de Calidad (QA/QC) / Coordinador de Calidad (Biotech Liaison)</td><td id="x}WO" class="">Medio (senioridad práctica, no necesariamente “director”)</td><td id="x&lt;el" class="">Ejecutar checklists de consistencia por lote, documentar desviaciones, dar seguimiento a liberación por criterios acordados, mantener evidencia para HRIPT y NOM-141</td><td id="=l]G" class="">HRIPT sin desvíos críticos y liberación de lotes en tiempo; % de batches sin retrabajo; cierre documental a tiempo</td><td id="pStF" class="">Si Biotech retrasa estabilidad/QA, subir urgencia; si todo corre fluido, mover a “owner parcial” y enfocarte más en growth</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808b-8b3b-e411c527d7cf"><td id="}AdM" class="">Pilotos clínicos 30 días + reporte estandarizado + medical observaciones semana 1/2/4</td><td id=":_Ug" class="">Operación de ensayos (reclutamiento, scheduling, colecta de reportes) + consistencia de formatos con clínicas</td><td id="F\&gt;o" class="">9</td><td id="RX^`" class="">9</td><td id="BPU;" class="">Coordinador Clínico / Clinical Ops Associate</td><td id="x}WO" class="">Medio</td><td id="x&lt;el" class="">Gestionar trial kits, logística de muestras, coordinación clínica, recolección y consolidación de reportes, asegurar completitud para análisis</td><td id="=l]G" class="">% de clínicas con reportes completos por semana; tiempos de respuesta; cumplimiento del protocolo</td><td id="pStF" class="">Si las clínicas se atrasan, reforzar clínico-ops; si el reclutamiento es perfecto, reducir horas y reforzar CS</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8046-a0d0-f25c5e6bf41e"><td id="}AdM" class="">Lanzamiento DTC semana 4–8 + Meta Paid A/B ($250/$300/$350) + optimización mousetraps</td><td id=":_Ug" class="">Growth para iterar rápido (ads, creatividades, landing messaging, medición de CTR→form→CVR)</td><td id="F\&gt;o" class="">9</td><td id="RX^`" class="">10</td><td id="BPU;" class="">Head of Growth (Performance Marketing &amp; Conversion) o Growth Lead (lean)</td><td id="x}WO" class="">Medio-alto</td><td id="x&lt;el" class="">Crear y operar experimentos de adquisición (Meta), testear mensajes/visuals, optimizar landing y funnel, analizar métricas GA4, proponer cambios semanales basados en datos</td><td id="=l]G" class="">CTR y CVR sostenidos; costo por lead aceptable; cumplimiento de pipeline para alcanzar 120 leads semana 6</td><td id="pStF" class="">Si CTR es alto pero CVR bajo, enfocarse más en landing/messaging; si CVR es alto, escalar budget y ajustar segmentación</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8055-b118-e58ae0e5c74f"><td id="}AdM" class="">Operación DTC (CRM Notion, seguimiento leads, NPS día 30/60, automatizaciones)</td><td id=":_Ug" class="">Demasiadas piezas manuales y riesgo de caída en respuesta a leads o post-compra</td><td id="F\&gt;o" class="">7</td><td id="RX^`" class="">8</td><td id="BPU;" class="">Customer Success / Operations (PT inicialmente)</td><td id="x}WO" class="">Junior-medio</td><td id="x&lt;el" class="">Mantener CRM, ejecutar cadencias, monitorear embudos, gestionar tickets simples, coordinar mensajes post-purchase (uso + NPS)</td><td id="=l]G" class="">Tiempo de respuesta a leads; tasa de activación; NPS ≥60; recompra día 45-60</td><td id="pStF" class="">Si el volumen sube rápido (más leads), aumentar horas; si hay baja conversión, mover foco a growth</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809c-bf09-f2ad4564ed4b"><td id="}AdM" class="">Soporte legal/regulatorio continuo (privacy, farmacovigilancia, T&amp;C DTC)</td><td id=":_Ug" class="">No es “hiring urgente”, pero se requiere control y revisiones</td><td id="F\&gt;o" class="">6</td><td id="RX^`" class="">5</td><td id="BPU;" class="">(Outsource) Paralegal/Legal counsel part-time</td><td id="x}WO" class="">Variable</td><td id="x&lt;el" class="">Revisiones puntuales de T&amp;C, privacidad, soporte de documentación de farmacovigilancia y compliance</td><td id="=l]G" class="">Reducción de riesgos documentales y cero hallazgos críticos en auditoría interna</td><td id="pStF" class="">Si surgen requerimientos nuevos, rotar presupuesto a legal part-time y no contratar full-time</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-803c-b5dd-ef44df610614" class=""><strong>Modificaciones realizadas</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-806e-b99a-c3d5f0b489ac" class="bulleted-list"><li style="list-style-type:disc">No se aplicaron modificaciones porque no has solicitado ajustes específicos todavía.</li></ul></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8078-8b9e-d5ad289e66e6" class=""><strong>Job Description</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-807b-ace4-d674c8fb38da" class=""><strong>Resumen del proceso</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80f5-aa47-ef2eb391c9fc" class="bulleted-list"><li style="list-style-type:disc"><strong>Estructura en 6 bloques</strong>: (1) misión del rol, (2) responsabilidades, (3) requisitos mínimos, (4) “cómo trabajamos” (calidad-first y lean), (5) KPI/éxito en 60-90 días, (6) call to action.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-809e-b8a6-e724b0c995d4" class="bulleted-list"><li style="list-style-type:disc"><strong>Alinear con tu realidad</strong>: como la producción es en <strong>maquila BPF</strong>, el rol se enfoca en <strong>coordinación, evidencia y liberación</strong>, no en fabricar internamente.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80fe-9197-d8e6eb5e6845" class="bulleted-list"><li style="list-style-type:disc"><strong>Definir “no negociables”</strong>: cumplimiento (HRIPT, NOM-141, batch consistency), comunicación de desviaciones en 24h, y disciplina documental.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80fa-9dcd-e68e9ba92d03" class="bulleted-list"><li style="list-style-type:disc"><strong>Incluir cultura</strong>: sensibilidad al detalle, ritmo de experimentación (growth por iteraciones), y orientación a resultados (KPI).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8030-801f-d71611c0b6e4" class="bulleted-list"><li style="list-style-type:disc"><strong>Evitar sobre-ambición</strong>: pedir que dominen lo esencial (p. ej., medición y reporting, o coordinación clínica), pero mantenerlo realizable con tu equipo pequeño.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-808e-835c-edaec91f1d2b" class=""><strong>Best estimates (descripciones por los roles priorizados)</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8031-b8cb-c97808040fc7" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80da-b8c0-f6f72c632f95"><th id=":H`;" class="simple-table-header-color simple-table-header">Rol</th><th id="lBgo" class="simple-table-header-color simple-table-header">Resumen de la posición</th><th id="Hmp&lt;" class="simple-table-header-color simple-table-header">Responsabilidades (lo que hará cada semana)</th><th id="KW\?" class="simple-table-header-color simple-table-header">Calificaciones requeridas (mínimas)</th><th id="{yb{" class="simple-table-header-color simple-table-header">Preferibles (para este caso)</th><th id="Ozm&gt;" class="simple-table-header-color simple-table-header">Cultura y forma de trabajar</th><th id="wu}u" class="simple-table-header-color simple-table-header">Ubicación / modalidad</th><th id="cgmr" class="simple-table-header-color simple-table-header">Reporta a</th><th id="rTMH" class="simple-table-header-color simple-table-header">Call to action</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e9-8118-d044ffcf2b19"><td id=":H`;" class="">Especialista de Calidad (QA/QC) / Coordinador de Calidad (Biotech Liaison)</td><td id="lBgo" class="">Asegura que cada lote, evidencia y documentación cumplan con los criterios acordados para <strong>HRIPT ≥98%</strong> y liberación por criterios (pH, apariencia y proxies tipo TEWL), apoyando <strong>NOM-141</strong> y consistencia entre corridas</td><td id="Hmp&lt;" class="">- Coordinar semanalmente con Biotech el avance de <strong>spec lock → producción → estabilidad → QA/label</strong>. - Mantener trazabilidad por lote: pH 5.5, apariencia, y checklist de liberación. - Documentar desviaciones y ejecutar protocolo de escalación (notificar en 24h). - Preparar paquetes de evidencia para QFB/NOM-141 y soporte de HRIPT (30 sujetos, protocolo y timing). - Revisar completitud documental de etiquetado y consistency checks antes de release</td><td id="KW\?" class="">- Experiencia práctica en QA/QC o control de calidad en industria (cosmética, farmacéutica o nutracéutica). - Capacidad para documentar y seguir procedimientos (SOPs) con disciplina. - Comunicación clara con terceros (maquila, laboratorios, clínicas). - Conocimiento básico de buenas prácticas y control de cambios</td><td id="{yb{" class="">- Familiaridad con <strong>cosméticos/regulatorio en México</strong> y manejo de documentación para NOM-141/NOM-259. - Experiencia con estabilidad y liberación de lotes. - Capacidad de lectura técnica de especificaciones y rangos de aceptación</td><td id="Ozm&gt;" class="">Calidad-first, “menos drama, más evidencia”, respuestas rápidas y proactivas, y mentalidad de cumplimiento sin burocracia innecesaria</td><td id="wu}u" class="">CDMX/Remoto híbrido (según necesidad de reuniones y evidencias; opción de presencial por picos)</td><td id="cgmr" class="">Román (formulación/QA) y alineación con Gerardo (QC/HRIPT)</td><td id="rTMH" class="">Enviar CV + una nota breve (max 1 página) explicando un ejemplo real de cómo manejaste desviaciones de calidad y cómo lo documentaste</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800e-abb3-f02c96c12014"><td id=":H`;" class="">Coordinador Clínico / Clinical Ops Associate</td><td id="lBgo" class="">Gestiona la operación diaria de pilotos clínicos para asegurar adherencia al protocolo de <strong>30 días</strong>, recolección estandarizada de reportes (medical obs semana 1/2/4), y soporte a evidencia para crecimiento hacia recompra</td><td id="Hmp&lt;" class="">- Coordinar scheduling con clínicas y confirmar kit de muestra y fechas del trial. - Asegurar que la recolección de reportes sea completa y en los tiempos del protocolo. - Monitorear cumplimiento de seguimiento día 7/14/21/30 para HRIPT cuando aplique. - Consolidar reportes clínicos en formatos estandarizados para análisis. - Dar soporte en escalaciones (p. ej., si hay eventos adversos o desviaciones, reportar y documentar)</td><td id="KW\?" class="">- Experiencia en coordinación de estudios/ensayos o operación clínica (o rol altamente parecido con procesos estandarizados). - Organización extrema y atención al detalle. - Capacidad para trabajar con múltiples stakeholders (clínicas, internos, proveedores). - Redacción clara para resúmenes operativos</td><td id="{yb{" class="">- Familiaridad con protocolos, consentimiento informado y manejo de documentación clínica (aunque sea a nivel operativo). - Experiencia en atención a pacientes o entornos médicos</td><td id="Ozm&gt;" class="">Precisión, empatía y discreción; prioriza adherencia al protocolo y entregables completos; comunicación rápida</td><td id="wu}u" class="">CDMX (prioridad por cercanía a pilotos) con coordinación remota para seguimiento</td><td id="cgmr" class="">Gerardo (QC/HRIPT) con alineación con René/ventas para pilot→DTC</td><td id="rTMH" class="">Enviar CV + ejemplo de un sistema que implementaste para asegurar cumplimiento de cronogramas y entregables</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8059-9855-e3a3c8d004f2"><td id=":H`;" class="">Head of Growth (Performance Marketing &amp; Conversion) / Growth Lead</td><td id="lBgo" class="">Lidera adquisición y conversión en DTC (Meta) mediante experimentación rápida: mousetraps, landing A/B, seguimiento CTR→form→CVR→NPS; optimiza el funnel hasta sostener métricas para escalar a 2,000 unidades run 2</td><td id="Hmp&lt;" class="">- Operar campañas en Meta (A/B de creatividades y descripciones) con enfoque en <strong>$250/$300/$350</strong> para testear WTP. - Construir y optimizar landing (mensajes y orden de selling points) con enfoque “mousetrap”: mínima fricción y evidencia rápida. - Analizar GA4 y embudos: CTR, CVR, conversiones a leads, activación y NPS proxy cuando aplique. - Coordinar con CRM (Notion) y automatizaciones (Mailchimp) para cadencias post-lead y post-compra. - Definir hipótesis semanales y ejecutarlas como experimentos medibles, con reporte semanal al equipo</td><td id="KW\?" class="">- Experiencia comprobable en growth de eCommerce o salud/bienestar (ads y conversión). - Dominio operativo de Meta ads, tracking (pixel/GA4) y A/B testing. - Capacidad analítica y para convertir insights en iteraciones de copy/creatividades. - Disciplina para reportar y aprender rápido</td><td id="{yb{" class="">- Experiencia con funnels DTC y test de mensajes de valor (beneficio→prueba→oferta). - Familiaridad con audiencias sensibles/skin concerns y comunicación responsable</td><td id="Ozm&gt;" class="">Experimentación rápida, hipótesis claras, aprendizaje sin ego; foco en KPI y en iteraciones semanales</td><td id="wu}u" class="">Remoto con disponibilidad para reuniones en CDMX cuando se requiera</td><td id="cgmr" class="">René (estrategia/mercado) y alineación con Gerardo (insights de HRIPT y claims)</td><td id="rTMH" class="">Enviar CV + 1 caso de estudio donde optimizaste CTR→CVR con experimentos y cómo decidiste “qué seguir” vs “qué pausar”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8042-945a-fdde13faf687"><td id=":H`;" class="">Customer Success / Operations (PT inicialmente)</td><td id="lBgo" class="">Asegura que leads y clientes tengan una experiencia consistente: seguimiento de leads en CRM, guías de uso post-purchase, medición de NPS (día 30/60) y soporte operativo para que la recompra llegue a ≥40% día 90</td><td id="Hmp&lt;" class="">- Gestionar CRM en Notion: leads, estatus, tareas, y recordatorios. - Ejecutar cadencias de email y SMS (Mailchimp/Twilio) con la lógica del funnel. - Administrar feedback NPS day 30/60 y consolidar temas para mejora. - Gestionar incidencias operativas simples con logística (consignación, entregas). - Apoyar en el “loop” de aprendizaje: reportar causas raíz de abandono o quejas</td><td id="KW\?" class="">- Experiencia en CS/ops para eCommerce o startups. - Buen criterio para comunicar (tono y claridad). - Meticulosidad y seguimiento (no perder leads). - Familiaridad con herramientas tipo CRM/No-code</td><td id="{yb{" class="">- Experiencia en manejo de post-compra y encuestas NPS. - Conocimiento básico de eCommerce (pagos, envíos, devoluciones)</td><td id="Ozm&gt;" class="">“Cuidamos la experiencia”, velocidad en respuesta, documentación mínima pero útil</td><td id="wu}u" class="">Híbrido o remoto según disponibilidad</td><td id="cgmr" class="">Operaciones PT reporta a la persona encargada de ejecución (ops/fundadores)</td><td id="rTMH" class="">Enviar CV + una nota breve sobre cómo priorizarías leads y qué metricas revisarías diariamente para mejorar conversión</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c0-90c6-e2de172d1a4b"><td id=":H`;" class="">(Opción no-hiring) Legal counsel part-time</td><td id="lBgo" class="">Reduce riesgo regulatorio y asegura que privacy, T&amp;C y farmacovigilancia queden bien</td><td id="Hmp&lt;" class="">- Revisiones de T&amp;C DTC, políticas de privacidad y soporte de farmacovigilancia. - Revisión puntual de claims y documentos con compliance. - Asesoría en documentación para clínicas y consentimientos cuando aplique</td><td id="KW\?" class="">- Abogado con enfoque regulatorio en México</td><td id="{yb{" class="">- Experiencia en farmacéutico/cosmético</td><td id="Ozm&gt;" class="">Discreción y cumplimiento estricto con comunicación ejecutiva</td><td id="wu}u" class="">Según disponibilidad</td><td id="cgmr" class="">Gerencia legal/NA</td><td id="rTMH" class="">Enviar propuesta por alcance y entregables</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8045-b8e7-f5f7650bc124" class=""><strong>Referral Outreach</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80c0-b76b-d5461b6aa338" class=""><strong>Resumen de estrategias</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80f2-8fd4-e5aa24a17ebb" class="bulleted-list"><li style="list-style-type:disc"><strong>Usar “proximidad operativa”</strong>: pedir referidos a personas cercanas que ya entienden tu contexto (salud, skincare clínico, marketing performance, ecommerce, biotecnología/QA).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-804e-842d-d0eaec4082cd" class="bulleted-list"><li style="list-style-type:disc"><strong>Añadir tracción verificable</strong>: como tu HRIPT está en marcha y tienes beachhead + pilotos, incluir un hecho concreto (“HRIPT ≥98% en validación” o “pilotos de clínica listos para firmar” o “BPF maquila y pH 5.5”).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8027-819a-d59b9fb73770" class="bulleted-list"><li style="list-style-type:disc"><strong>Hacer el reenvío fácil</strong>: incluir una línea que solicite explícitamente compartir el job description con alguien del rango correcto.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8011-8d4f-fed58e66d4eb" class="bulleted-list"><li style="list-style-type:disc"><strong>Segmentar mensajes</strong> (sin cambiar la idea): una versión para roles clínicos/QA (énfasis en evidencia y protocolo) y otra para growth (énfasis en experimentación y funnel).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80e5-a2cf-d3a881eb62aa" class="bulleted-list"><li style="list-style-type:disc"><strong>Seguimiento con cadencia</strong>: 3 toques en 10 días (reenvío con nota corta, bump por ejemplo de rol, y cierre si no hay respuesta).</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8088-a0ca-f44c96d1d678" class=""><strong>Best estimates (mensajes de referral y “a quién” contactar)</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8099-bb91-c05d1bf0ea37" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d0-8387-d177bfb46c2b"><th id="aaVw" class="simple-table-header-color simple-table-header">Rol objetivo</th><th id=":nzF" class="simple-table-header-color simple-table-header">Mensaje de outreach V1 (referidos)</th><th id="kw;Z" class="simple-table-header-color simple-table-header">Mensaje de outreach V2 (referidos con tracción)</th><th id="qyJX" class="simple-table-header-color simple-table-header">Tipo de personas a identificar en tu red</th><th id="|h?q" class="simple-table-header-color simple-table-header">Dónde encontrarlas</th><th id="GCpT" class="simple-table-header-color simple-table-header">Qué pedir exactamente</th><th id="aAN{" class="simple-table-header-color simple-table-header">Meta de respuestas esperada</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8088-b0bc-cd0c5ab05c1e"><td id="aaVw" class="">Coordinador Clínico / Clinical Ops</td><td id=":nzF" class="">Hola [Nombre], vi tu experiencia en entornos clínicos/operativos y quería pedirte ayuda con una búsqueda temprana. Estamos lanzando una crema bioactiva para piel sensible con <strong>pilotos clínicos de 30 días</strong> (rosácea/dermatitis) y necesitamos una persona que gestione cumplimiento de protocolo y reportes estandarizados. ¿Conoces a alguien muy organizado y con buen trato clínico que pudiera encajar? Adjunto job description.</td><td id="kw;Z" class="">Hola [Nombre], estoy buscando [Coordinador Clínico/Clinical Ops] porque estamos por iniciar <strong>pilotos simultáneos con DTC</strong> y necesitamos asegurar que los reportes semanales y el seguimiento del trial sean impecables para sostener nuestros aprendizajes (y decisiones de escala). ¿Podrías compartir el job description con alguien de tu red que haga clinical ops o ensayos de manera muy disciplinada?</td><td id="qyJX" class="">Directores/COOs de clínicas, coordinadores de ensayos, ex-CRA/clinical ops, personas de investigación aplicada, gente de farmacovigilancia o equipos médicos</td><td id="|h?q" class="">LinkedIn (Clinical Operations, Research Coordinator), asociaciones de salud/ensayo, ex-compañeros</td><td id="GCpT" class="">Referir 1-3 personas con perfil de coordinación clínica y enfoque documental</td><td id="aAN{" class="">1 respuesta positiva por cada 10-15 contactos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8098-a7b2-cd5c3fbdf3ff"><td id="aaVw" class="">Especialista QA/QC / Biotech Liaison</td><td id=":nzF" class="">Hola [Nombre], vi tu experiencia en calidad o documentación técnica y quería ver si puedes ayudarme a encontrar a alguien para un rol de QA/QC. Estamos coordinando con una maquila <strong>BPF (NOM-259)</strong> y necesitamos trazabilidad por lote, disciplina de documentación y escalación rápida de desviaciones para liberar batches y sostener <strong>HRIPT ≥98%</strong>. ¿Conoces a alguien que ya haya trabajado en control de calidad con SOPs? Adjunté job description.</td><td id="kw;Z" class="">Hola [Nombre], estamos en un punto donde la calidad y la evidencia mandan: ejecutaremos HRIPT (30 sujetos) y liberación de lotes con criterios como <strong>pH 5.5</strong> y consistencia por lote, y necesitamos un perfil que domine la parte operativa de QA/QC con terceros (maquila). ¿Podrías compartir el job description con alguien de tu red que haya hecho trabajo similar?</td><td id="qyJX" class="">QA/QC managers, regulatory ops, técnicos de calidad, personas de farmacéutica/cosmética con SOPs</td><td id="|h?q" class="">LinkedIn (Quality Assurance, QC Documentation), eventos de industria, ex-compañeros de manufactura</td><td id="GCpT" class="">Referir perfiles con experiencia en SOPs, desviaciones, liberación y evidencia documental</td><td id="aAN{" class="">1 respuesta positiva por cada 12-20 contactos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8099-bd89-d30f51a8c4c0"><td id="aaVw" class="">Head of Growth (Performance Marketing &amp; Conversion)</td><td id=":nzF" class="">Hola [Nombre], quería pedirte ayuda con una búsqueda: estamos lanzando DTC y necesitamos un líder de growth que haga experimentación en Meta (A/B de creatividades y mensajes) y optimice landing de baja fricción para mover CTR→form→CVR y sostener métricas. ¿Conoces a alguien con experiencia fuerte en performance y CRO? Adjunté job description.</td><td id="kw;Z" class="">Hola [Nombre], te contacto porque estamos corriendo experimentos desde el inicio: usamos mousetraps/landing A/B y estamos validando WTP con prueba de precios ($250/$300/$350) para escalar a clíncas y repetición. Buscamos un Growth Lead para operar esos experimentos con rigor de datos. ¿Podrías compartir el job description con alguien de tu red que haya liderado performance early-stage?</td><td id="qyJX" class="">Ex-growth de eCommerce/healthtech, performance marketers con A/B testing, especialistas CRO/landing optimization</td><td id="|h?q" class="">LinkedIn (Growth, Performance Marketing, CRO), comunidades de marketing, ex-colegas</td><td id="GCpT" class="">Referir perfiles con dominio de Meta ads, GA4/pixel, y pensamiento de experimentos</td><td id="aAN{" class="">1 respuesta positiva por cada 8-12 contactos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808d-b0fa-f7511bb999a6"><td id="aaVw" class="">Customer Success / Operations (PT)</td><td id=":nzF" class="">Hola [Nombre], estamos buscando apoyo de Customer Success/Operations para asegurar que los leads y clientes reciban seguimiento consistente (CRM, email/SMS, guías post-compra, recolección de NPS). ¿Conoces a alguien metódico que sepa operar el “día a día” sin perder métricas? Adjunté job description.</td><td id="kw;Z" class="">Hola [Nombre], estamos en etapa de lanzamiento simultáneo (pilotos + DTC) y necesitamos que el seguimiento post-compra y la medición de NPS día 30/60 se ejecute perfecto para lograr recompra ≥40% hacia día 90. ¿Podrías compartir el job description con alguien que haya liderado CS/ops en eCommerce o startups?</td><td id="qyJX" class="">CS/ops en eCommerce, asistentes operativos con CRM, coordinadores post-venta</td><td id="|h?q" class="">LinkedIn (CS Ops, eCommerce Ops), referidos de ex-startups</td><td id="GCpT" class="">Referir perfiles que ejecuten cadencias y mantengan calidad de experiencia</td><td id="aAN{" class="">1 respuesta positiva por cada 10-18 contactos</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80c7-aacb-d31572376aa2" class=""><strong>Advertising</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80fd-8af0-d8af70d97c26" class=""><strong>Resumen del criterio para elegir job boards</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8015-9198-f4c0c435d676" class="bulleted-list"><li style="list-style-type:disc"><strong>Relevancia al perfil</strong>: elegir boards donde sea más probable encontrar QA/QC, clinical ops y performance marketing con historial verificable.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8073-bc94-daeb083707e4" class="bulleted-list"><li style="list-style-type:disc"><strong>Costo vs tasa de aplicación</strong>: como buscas cubrir roles temprano y necesitas volumen suficiente, prioriza boards con buen equilibrio de CPM/costo por publicación.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8061-b4fa-c2989547aa30" class="bulleted-list"><li style="list-style-type:disc"><strong>Reach geográfica</strong>: aunque DTC sea México, los roles (y entrevistas) pueden ser remotos/híbridos; por eso segmentar por alcance nacional y, para clínica, cercanía a CDMX/MTY/GDL/SLP.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a2-aa95-e9182cecca17" class="bulleted-list"><li style="list-style-type:disc"><strong>Calidad del canal</strong>: algunos boards traen más “ruido”; se compensan con cribado rápido y filtros por experiencia (p. ej. Meta ads + GA4, o QA/QC con SOPs).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ae-b5e3-c024315c52d4" class="bulleted-list"><li style="list-style-type:disc"><strong>Velocidad de publicación</strong>: considerar boards que permitan lanzar rápidamente y ajustar creatividades/mensajes de post temprano.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-806b-97c3-ecc6b05814a7" class=""><strong>Best estimates (coste, relevancia y reach)</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-801c-a6e2-d31116ce1320" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805f-963d-e7ba531eccdb"><th id="b[z]" class="simple-table-header-color simple-table-header">Rol objetivo</th><th id="cjHe" class="simple-table-header-color simple-table-header">Job board / canal</th><th id="Dhyl" class="simple-table-header-color simple-table-header">Relevancia esperada (Alta/Media/Baja)</th><th id="wpVd" class="simple-table-header-color simple-table-header">Alcance estimado (local/nacional)</th><th id="EfTE" class="simple-table-header-color simple-table-header">Costo estimado por 30 días (MXN o equivalente)</th><th id="_cP\" class="simple-table-header-color simple-table-header">Ventajas para tu caso</th><th id="NdKU" class="simple-table-header-color simple-table-header">Desventajas / riesgo</th><th id="m[JW" class="simple-table-header-color simple-table-header">Reach esperado (número de postulaciones por 30 días, orden de magnitud)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e9-b110-c0e24e1438b8"><td id="b[z]" class="">Especialista QA/QC / Coordinador de Calidad</td><td id="cjHe" class="">Indeed México</td><td id="Dhyl" class="">Alta</td><td id="wpVd" class="">Nacional</td><td id="EfTE" class="">3,000–12,000</td><td id="_cP\" class="">Mucho volumen y variedad de perfiles industriales; fácil publicar rápido</td><td id="NdKU" class="">Puede traer CVs menos “evidencia-driven”</td><td id="m[JW" class="">15–45</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800b-92a7-deb18675c3e8"><td id="b[z]" class="">Coordinador Clínico / Clinical Ops</td><td id="cjHe" class="">CompuTrabajo / talent local</td><td id="Dhyl" class="">Media-Alta</td><td id="wpVd" class="">Nacional con buen filtrado por ubicación</td><td id="EfTE" class="">2,000–10,000</td><td id="_cP\" class="">Suele tener perfiles operativos y clínicos en México</td><td id="NdKU" class="">Calidad variable por segmento</td><td id="m[JW" class="">10–30</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ef-8458-f4588d8a8a4a"><td id="b[z]" class="">Head of Growth (Performance)</td><td id="cjHe" class="">LinkedIn Jobs</td><td id="Dhyl" class="">Alta</td><td id="wpVd" class="">Nacional</td><td id="EfTE" class="">6,000–25,000</td><td id="_cP\" class="">Mejor match por skills y historial (Meta/CRO/GA4)</td><td id="NdKU" class="">Mayor costo y competencia con otros roles</td><td id="m[JW" class="">20–60</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ba-b051-eae481d680bf"><td id="b[z]" class="">Customer Success / Ops (PT)</td><td id="cjHe" class="">LinkedIn Jobs</td><td id="Dhyl" class="">Media-Alta</td><td id="wpVd" class="">Nacional</td><td id="EfTE" class="">3,000–18,000</td><td id="_cP\" class="">Permite buscar por experiencias y priorizar comunicación/ops</td><td id="NdKU" class="">Pueden postular juniors sin fit</td><td id="m[JW" class="">12–40</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d9-994e-d069dea5019f"><td id="b[z]" class="">Alternativa (startups/tech) para growth y ops</td><td id="cjHe" class="">Wellfound (si aplica por idioma/uso)</td><td id="Dhyl" class="">Media</td><td id="wpVd" class="">Global pero con sesgo a tech startups</td><td id="EfTE" class="">0–8,000</td><td id="_cP\" class="">Menor ruido en perfiles startup</td><td id="NdKU" class="">Menor volumen local en algunos casos</td><td id="m[JW" class="">5–20</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8016-8d9c-d59c3a08b125" class=""><strong>Proactive Sourcing</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80b0-9f0a-ecfef9040048" class=""><strong>Resumen del enfoque</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8048-a1b5-ca7e6f9073d3" class="bulleted-list"><li style="list-style-type:disc"><strong>Personalización mínima viable (1 mensaje por persona)</strong>: mencionar algo verificable del perfil (industria, tipo de empresa, logro) y conectar con tu evidencia (HRIPT, BPF maquila, pH 5.5, pilotos y DTC simultáneo).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-808f-90a6-c532d3383dfb" class="bulleted-list"><li style="list-style-type:disc"><strong>Segmentar por rol</strong>: mensajes distintos para QA/clinical ops vs growth/CS ops.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80f4-9d5b-d5a29f5cde20" class="bulleted-list"><li style="list-style-type:disc"><strong>Usar “hook” de misión + “prueba”</strong>: no solo “startup skincare”, sino “maquila BPF, HRIPT ≥98%, beachhead rosácea/dermatitis, métricas y pilotos”.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d8-bfb0-d3b3a2291cf2" class="bulleted-list"><li style="list-style-type:disc"><strong>Ofrecer claridad del trabajo</strong>: explicar el scope en 2-3 líneas y qué entregable debe lograr en 60-90 días.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-808b-903f-d018e51903d0" class="bulleted-list"><li style="list-style-type:disc"><strong>Cadencia de seguimiento</strong>: si no responden, mandar un segundo mensaje con una pregunta concreta y el link del job description; si no hay, cerrar con respeto y pedir recomendación.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80cd-81bd-cbe8dd910855" class=""><strong>Best estimates (mensajes personalizados para roles clave)</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80c0-8eec-eddedee39c5c" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806f-bfeb-c6b7ad818fb3"><th id="efO&gt;" class="simple-table-header-color simple-table-header">Rol</th><th id="CZmb" class="simple-table-header-color simple-table-header">Mensaje V1 (proactivo)</th><th id="G{Yd" class="simple-table-header-color simple-table-header">Mensaje V2 (proactivo, alternativa)</th><th id="@l@G" class="simple-table-header-color simple-table-header">Perfil objetivo (rasgos)</th><th id="^OgU" class="simple-table-header-color simple-table-header">CTA exacto</th><th id="pwVY" class="simple-table-header-color simple-table-header">Cadencia sugerida</th><th id="SWjE" class="simple-table-header-color simple-table-header">Objetivo de contactos para 1-2 entrevistas</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d4-9da9-ff60ba201c62"><td id="efO&gt;" class="">Especialista QA/QC / Biotech Liaison</td><td id="CZmb" class="">Hola [Paul/Nombre], vi que tienes experiencia en QA/QC y documentación. Estamos armando el lanzamiento de una crema de piel sensible con maquila <strong>BPF (NOM-259)</strong> y necesitamos asegurar liberación de batches con criterios como <strong>pH 5.5</strong> y evidencia de calidad para <strong>HRIPT ≥98%</strong>. ¿Te interesaría una charla de 15 minutos?</td><td id="G{Yd" class="">Hola [Nombre], estamos en fase donde la consistencia del lote y la trazabilidad mandan: el proceso incluye spec lock, producción, estabilidad y QA/label (8 semanas). Si te suena un rol de QA/QC con coordinación fuerte con maquila y escalación en 24h, ¿te puedo compartir el job description?</td><td id="@l@G" class="">QA/QC que haya trabajado con SOPs, desviaciones, liberación de lotes y evidencia documental</td><td id="^OgU" class="">“¿Te interesaría platicar 15 min?” o “¿Puedo compartírtelo?”</td><td id="pwVY" class="">Día 1 primer mensaje; Día 4 bump; Día 10 cierre con pedido de recomendación</td><td id="SWjE" class="">25–40 contactos para 3-6 conversaciones</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802d-aab5-e8f32fbd4ee4"><td id="efO&gt;" class="">Coordinador Clínico / Clinical Ops</td><td id="CZmb" class="">Hola [Nombre], encontré tu experiencia coordinando operaciones clínicas/ensayos y quería preguntarte por un rol. Estamos por correr <strong>pilotos clínicos de 30 días</strong> para piel sensible (rosácea/dermatitis) y necesitamos control de protocolo y reportes estandarizados. ¿Estarías abierto a explorar si encajas?</td><td id="G{Yd" class="">Hola [Nombre], buscamos a alguien que sepa ejecutar cronogramas y asegurar completitud de entregables en clínica. Nuestros pilotos se coordinan con seguimiento semanal (semana 1/2/4) y consolidamos reportes para decisiones de crecimiento y repetición. Si te interesa, te comparto el job description.</td><td id="@l@G" class="">Clinical ops con disciplina de cronogramas, reportes y coordinación con stakeholders médicos</td><td id="^OgU" class="">“¿Te interesa recibir job description?”</td><td id="pwVY" class="">Día 1 primer mensaje; Día 3 respuesta alternativa (pregunta puntual); Día 9 follow-up</td><td id="SWjE" class="">20–35 contactos para 2-5 conversaciones</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bc-a054-cbb8e75d6722"><td id="efO&gt;" class="">Head of Growth (Performance)</td><td id="CZmb" class="">Hola [Nombre], vi que trabajaste en performance/CRO con ads medibles. Estamos lanzando DTC y corriendo experimentos en Meta desde el inicio con mousetrap landing (CTR→form→CVR) y tests de precio ($250/$300/$350). ¿Te interesa un rol de Growth Lead para optimizar ese funnel y escalar hacia clínicas?</td><td id="G{Yd" class="">Hola [Nombre], estamos probando mensajes con evidencia de <strong>HRIPT ≥98%</strong> y maquila BPF, y necesitamos que alguien convierta datos en decisiones semanales de creatividades y landing. ¿Te puedo compartir el job description y platicamos 15 min?</td><td id="@l@G" class="">Performance marketing con Meta + GA4, A/B testing y análisis de embudo</td><td id="^OgU" class="">“¿Platicamos 15 min?”</td><td id="pwVY" class="">Día 1 primer mensaje; Día 5 bump con 1 métrica objetivo; Día 12 cierre con referencia</td><td id="SWjE" class="">30–50 contactos para 4-8 conversaciones</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805b-a86e-ea7b8c4053fd"><td id="efO&gt;" class="">Customer Success / Ops (PT)</td><td id="CZmb" class="">Hola [Nombre], vi que tienes experiencia en CS/ops y control de seguimiento. Estamos lanzando simultáneamente clínicas y DTC, y necesitamos que el seguimiento de leads y NPS día 30/60 se ejecute sin fallas para sostener recompra. ¿Te interesaría explorar un rol PT de Customer Success/Operations?</td><td id="G{Yd" class="">Hola [Nombre], estamos construyendo un proceso lean y medible: CRM en Notion, cadencias por Mailchimp/Twilio y foco en NPS. Si te gusta ejecutar procesos y medir impacto, te comparto el job description.</td><td id="@l@G" class="">CS/ops orientado a procesos, manejo de CRM y cadencias</td><td id="^OgU" class="">“¿Te comparto el job description?”</td><td id="pwVY" class="">Día 1 primer mensaje; Día 6 bump con enfoque en KPI; Día 14 cierre</td><td id="SWjE" class="">25–45 contactos para 3-7 conversaciones</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8037-a5bc-c4f4b41952fe" class=""><strong>Interviewing</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80e3-badd-d8f5d370027b" class=""><strong>Resumen del proceso</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-801e-9ee3-c436a819fa57" class="bulleted-list"><li style="list-style-type:disc"><strong>Equipo de entrevista compacto y calibrado</strong>:<div style="display:contents" dir="auto"><ul id="370f554f-2b83-805c-94ea-dfedb5296dfe" class="bulleted-list"><li style="list-style-type:circle">QA/Clinical ops: entrevista técnica + ejecución de procesos (calidad/protocolo).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ab-baeb-fd582de62d47" class="bulleted-list"><li style="list-style-type:circle">Growth: entrevista de casos (ads/landing) + fit con experimentación y métricas.</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80fa-8d11-e8c8eb098668" class="bulleted-list"><li style="list-style-type:disc"><strong>Evaluación por criterios observables</strong>: evidencia de trabajo con métricas, trazabilidad, documentación, y comunicación; para clínico/QA: manejo de protocolos y desviaciones.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d4-a4e9-f5c07b2f46ee" class="bulleted-list"><li style="list-style-type:disc"><strong>Estructura estándar en 3 pasos</strong>:<div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-80f4-a2fb-d517987ea0c7" class="numbered-list" start="1"><li>20 min “story + motivación + contexto”</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-809c-8b8f-eccbe3d563e5" class="numbered-list" start="2"><li>45–60 min “caso práctico” (ejercicio o conversación guiada)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8016-b731-e62aea900edf" class="numbered-list" start="3"><li>15 min “fit + expectativas 30/60/90 días” y cierre</li></ol></div></li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80e1-ae5e-ee8f3c146a5f" class="bulleted-list"><li style="list-style-type:disc"><strong>Prueba de trabajo</strong>: mini caso para growth (análisis de funnel y propuesta de experimento), mini caso para QA/clinical ops (cómo documentar desviación y cómo consolidar reportes).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8012-9be5-c3b27395a56f" class="bulleted-list"><li style="list-style-type:disc"><strong>Decisión con rúbrica</strong>: puntuar 1-5 por criterio y acordar umbral de “ofrecer” antes de cerrar.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8039-8815-ead13aab04b9" class=""><strong>Best estimates (equipo, criterios y estructura)</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-807d-969b-d2cea124b234" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b6-a80a-e6a04c78013f"><th id="AncW" class="simple-table-header-color simple-table-header">Rol</th><th id="`;XP" class="simple-table-header-color simple-table-header">Entrevistador recomendado (quién)</th><th id="x|SS" class="simple-table-header-color simple-table-header">Miembro adicional (si aplica)</th><th id="^MHY" class="simple-table-header-color simple-table-header">Criterios de evaluación (rubrica 1-5)</th><th id="eIJw" class="simple-table-header-color simple-table-header">Caso práctico (duración)</th><th id="hGpt" class="simple-table-header-color simple-table-header">Estructura de entrevista</th><th id="PPlv" class="simple-table-header-color simple-table-header">Señales de “sí”</th><th id="fkrl" class="simple-table-header-color simple-table-header">Señales de “riesgo”</th><th id="GQ_W" class="simple-table-header-color simple-table-header">Decisión (SLA interno)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8085-97b7-c81a04b201f0"><td id="AncW" class="">Especialista QA/QC / Biotech Liaison</td><td id="`;XP" class="">Román (QA/QC)</td><td id="x|SS" class="">Gerardo (QC/HRIPT)</td><td id="^MHY" class="">1) Disciplina documental, 2) Manejo de desviaciones y escalación, 3) Experiencia con SOPs y liberación por criterios, 4) Comunicación con terceros, 5) Capacidad de priorizar evidencia vs urgencias</td><td id="eIJw" class="">Ejercicio: “Describe cómo manejarías una desviación de pH/apariencia en un lote, qué documentas y cómo se comunica en &lt;24h&gt;” (30-40 min)</td><td id="hGpt" class="">20 min story + 40 min caso + 15 min 30/60/90 y fit</td><td id="PPlv" class="">Entiende evidencia, habla en procesos concretos y muestra cómo prevenir retrabajos</td><td id="fkrl" class="">Respuestas vagas, sin ejemplos, o enfoque reactivo sin documentación</td><td id="GQ_W" class="">Tomar decisión en 48-72h tras entrevista</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fa-8b99-d422d4cb24f6"><td id="AncW" class="">Coordinador Clínico / Clinical Ops</td><td id="`;XP" class="">Gerardo (QC/HRIPT)</td><td id="x|SS" class="">Fundador/Operaciones (para lean)</td><td id="^MHY" class="">1) Cumplimiento de cronogramas, 2) Control de completitud de reportes, 3) Coordinación con múltiples stakeholders, 4) Comunicación y empatía, 5) Manejo de incidencias</td><td id="eIJw" class="">Ejercicio: “Diseña el flujo de seguimiento semanal y cómo asegurarías completitud del reporte de semana 1/2/4” (35-50 min)</td><td id="hGpt" class="">20 min story + 45 min caso + 15 min fit</td><td id="PPlv" class="">Propone procesos simples y robustos, con checklists y escalación</td><td id="fkrl" class="">Confunde tareas operativas con análisis clínico; falta de estructura</td><td id="GQ_W" class="">Decisión en 48-72h</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8066-81f9-e72f9251f286"><td id="AncW" class="">Head of Growth (Performance)</td><td id="`;XP" class="">René (estrategia/market)</td><td id="x|SS" class="">Growth/Marketing lead potencial o data/ops</td><td id="^MHY" class="">1) Rigor con métricas (CTR/CVR/CPA), 2) A/B testing y CRO, 3) Pensamiento de experimentos, 4) Calidad de tracking/atribución, 5) Cómo comunica decisiones</td><td id="eIJw" class="">Caso: “Con datos hipotéticos CTR alto pero CVR bajo, propone 2 hipótesis, 2 mousetraps/variantes y cómo medirías el lift en 7-14 días” (45-60 min)</td><td id="hGpt" class="">20 min story + 60 min caso + 10-15 min 30/60/90</td><td id="PPlv" class="">Propone experimentos concretos y medibles y entiende cómo iterar copy/visual</td><td id="fkrl" class="">Solo “buenas ideas” sin KPI ni medición</td><td id="GQ_W" class="">Decisión en 48-72h</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800b-82c2-fde8e48548f0"><td id="AncW" class="">Customer Success / Ops (PT)</td><td id="`;XP" class="">Operaciones PT / fundador</td><td id="x|SS" class="">CS/RevOps (si existe)</td><td id="^MHY" class="">1) Ejecución y seguimiento, 2) CRM hygiene, 3) Comunicación y tono, 4) NPS/retención, 5) Manejo de incidencias</td><td id="eIJw" class="">Caso: “Define cómo gestionarías leads que no convierten a día 7 y cómo harías seguimiento para mejorar CVR” (30-40 min)</td><td id="hGpt" class="">15-20 min story + 30-40 min caso + 15 min fit</td><td id="PPlv" class="">Tiene ejemplos de procesos, habla de métricas operativas y cadencias</td><td id="fkrl" class="">Se enfoca en “responder tickets” sin sistema</td><td id="GQ_W" class="">Decisión en 72h</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8037-b985-cbebacb0ce07" class=""><strong>Compensation</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8072-b6af-c4b953b422bc" class=""><strong>Resumen del proceso</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8055-a9b2-d1154d2a721d" class="bulleted-list"><li style="list-style-type:disc"><strong>Usar market data por rol y nivel</strong>: tomar rangos de mercado para MX (y/o equivalentes) para QA/QC, clinical ops, performance marketing y CS ops.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80be-8b5e-f5348cbfc834" class="bulleted-list"><li style="list-style-type:disc"><strong>Diseñar oferta con base + componente de riesgo</strong>: con runway y etapa temprana (lanzamiento y validación), balancear efectivo y equity para mantener caja.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-802d-a875-f512cd927e78" class="bulleted-list"><li style="list-style-type:disc"><strong>Alinear cash/equity al impacto</strong>: roles que reducen riesgo de compliance (QA/clinical ops) pueden requerir más certeza de base; roles de growth pueden aceptar más equity si hay upside por métricas alcanzadas.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8083-b81e-c43c3f78474b" class="bulleted-list"><li style="list-style-type:disc"><strong>Definir bandas por seniority</strong>: ofrecer rango para atraer (no un número único) y permitir ajuste según entrevistas.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-809a-81d2-f9819d4c9f45" class="bulleted-list"><li style="list-style-type:disc"><strong>Incluir “milestones” informales</strong>: no es earnout complejo; usar acuerdos de desempeño (p. ej., cumplir entrega HRIPT, completar reportes pilotos, alcanzar métricas de funnel) que justifiquen revisiones o incremento.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8064-a680-efef3f8fe056" class=""><strong>Best estimates (rangos de salario y equity por rol)</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8041-b433-c9a8dece12a2" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802f-9821-ec9777aa0daa"><th id="^esM" class="simple-table-header-color simple-table-header">Rol</th><th id="DFae" class="simple-table-header-color simple-table-header">Banda salarial estimada (MXN/mes)</th><th id="KzLW" class="simple-table-header-color simple-table-header">Equity sugerido (% o rango)</th><th id="[a{@" class="simple-table-header-color simple-table-header">Modelo recomendado</th><th id="`JYH" class="simple-table-header-color simple-table-header">Justificación basada en tu contexto (beachhead + HRIPT + DTC)</th><th id="Pr;b" class="simple-table-header-color simple-table-header">Otros componentes (si aplica)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ee-ba91-d9d958a586bf"><td id="^esM" class="">Especialista QA/QC / Coordinador Calidad</td><td id="DFae" class="">$30,000 – $60,000 MXN/mes</td><td id="KzLW" class="">0.25% – 0.75%</td><td id="[a{@" class="">Balanced (más cash por riesgo de cumplimiento)</td><td id="`JYH" class="">QA/QC impacta directamente batch release y evidencia; un error cuesta tiempo y reputación; necesitas disciplina y rapidez</td><td id="Pr;b" class="">Bono por hit de HRIPT compliance (opcional, no obligatorio)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8030-a3e6-c61fd8740fed"><td id="^esM" class="">Coordinador Clínico / Clinical Ops Associate</td><td id="DFae" class="">$28,000 – $55,000 MXN/mes</td><td id="KzLW" class="">0.20% – 0.60%</td><td id="[a{@" class="">Cash-heavy (por operación constante)</td><td id="`JYH" class="">El rol protege cronograma de 30 días, completitud de reportes y escalación; es clave para convertir pilotos en tracción</td><td id="Pr;b" class="">Bono por % de reportes completos a tiempo</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c5-ba2c-e8937b57ba72"><td id="^esM" class="">Head of Growth (Performance Marketing &amp; Conversion)</td><td id="DFae" class="">$40,000 – $90,000 MXN/mes</td><td id="KzLW" class="">0.30% – 1.20%</td><td id="[a{@" class="">Equity a mayor upside (si logra KPI de funnel)</td><td id="`JYH" class="">Growth decide CAC y velocidad hacia recompra; hay mucha iteración y posibilidad de impacto desproporcionado</td><td id="Pr;b" class="">Bonus por hit de métricas (p. ej., CVR objetivo o costo por lead dentro de rango)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806d-8957-c54d7d9634ad"><td id="^esM" class="">Customer Success / Operations (PT)</td><td id="DFae" class="">$12,000 – $28,000 MXN/mes (según horas)</td><td id="KzLW" class="">0.05% – 0.25%</td><td id="[a{@" class="">Lean (PT + proceso)</td><td id="`JYH" class="">Reduce fricción operativa y apoya NPS día 30/60 y seguimiento; impacto alto pero no “dueño” de compliance</td><td id="Pr;b" class="">Flexible schedule; revisión a 6 meses si hay crecimiento de volumen</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c4-ab47-c263bc049dfc"><td id="^esM" class="">(Outsource) Legal counsel part-time</td><td id="DFae" class="">$2,000 – $8,000 MXN/consulta (o retainer)</td><td id="KzLW" class="">N/A</td><td id="[a{@" class="">Retainer</td><td id="`JYH" class="">Evita costos fijos altos y mantiene compliance</td><td id="Pr;b" class="">Paquetes por entregable (privacy, T&amp;C, farmacovigilancia)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80c8-b2a2-d1fd281b101c" class=""><strong>Recordatorio de actualización (para ti)</strong></h2></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-809e-a7e6-e752edd6d268" class="bulleted-list"><li style="list-style-type:disc"><strong>Puedes actualizar tu Startup Idea</strong> en: <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong></li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-808a-ab6e-ddba3ccd5dd5" class="bulleted-list"><li style="list-style-type:disc">Ahí también puedes <strong>ver/sincronizar el resumen</strong> de la información que estamos usando.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8012-98ac-f338136850f2" class="bulleted-list"><li style="list-style-type:disc">Finalmente, puedes usar el chatbot en la parte superior de esa página para solicitar <strong>cambios</strong> en estos resultados.</li></ul></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

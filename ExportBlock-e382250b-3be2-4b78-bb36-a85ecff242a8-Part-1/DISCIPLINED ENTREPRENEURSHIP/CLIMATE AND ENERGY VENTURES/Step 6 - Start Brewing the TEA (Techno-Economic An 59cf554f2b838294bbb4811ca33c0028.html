@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Step 6 - Start Brewing the TEA (Techno-Economic Analysis)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="59cf554f-2b83-8294-bbb4-811ca33c0028" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/cash_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>Step 6 - Start Brewing the TEA (Techno-Economic Analysis)</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80b5-9bb9-d2a9631293f0" class=""><strong>Technology-Problem Fit</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8040-b309-dd44301e0bb1" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8015-afbd-c87929da7dda"><th id="?{Gn" class="simple-table-header-color simple-table-header">Field ↓ / Solutions →</th><th id="&lt;}rW" class="simple-table-header-color simple-table-header">Solución: Creama bioactiva con fucoidán (1%) + Croton lechleri (1.5%) en base O/W a pH 5.5</th><th id="HyqN" class="simple-table-header-color simple-table-header">Solución: Crema similar pero con fucoidán de otra fuente (macroalga alternativa) y mismo stack funcional</th><th id="Yj~v" class="simple-table-header-color simple-table-header">Solución: Serum/gel hidroalcohólico de fucoidán + emolientes ligeros para reducir irritación por oclusión</th><th id="H~lI" class="simple-table-header-color simple-table-header">Solución: Crema “medical-grade” con mayor carga de activos calmantes y enfoque en barrera (ceramidas/ácidos grasos)</th><th id="lZCG" class="simple-table-header-color simple-table-header">Solución: Producto “tolerability-first” con microencapsulación de activos para controlar liberación y minimizar picos de irritación</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8097-91ea-e24f90b8058a"><td id="?{Gn" class="">Technology Solution</td><td id="&lt;}rW" class="">Formulación cosmética con actives marinos y HRIPT para tolerabilidad</td><td id="HyqN" class="">Sustitución de materia prima de fucoidán manteniendo el enfoque de tolerabilidad</td><td id="Yj~v" class="">Sistema galénico liviano con fucoidán optimizado para piel sensible</td><td id="H~lI" class="">Formulación enfocada en reparación de barrera con activos de uso clínico</td><td id="lZCG" class="">Tecnología de microencapsulación para liberar actives gradualmente</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80bd-ba2a-c6aeae871ff4"><td id="?{Gn" class="">Description</td><td id="&lt;}rW" class="">Desarrollar y fabricar una crema 50g airless con HRIPT ≥98% y pH 5.5 para rosácea/dermatitis</td><td id="HyqN" class="">Sustituir la materia prima de fucoidán por otra alga manteniendo el perfil sensorial y el pH 5.5</td><td id="Yj~v" class="">Rediseñar el formato (gel/serum) para disminuir sensación grasa y fricción en piel reactiva</td><td id="H~lI" class="">Usar un sistema galénico y activos orientados a barrera con tolerancia validada clínicamente</td><td id="lZCG" class="">Encapsular fucoidán y/o extractos irritantes potenciales para reducir contacto directo con la epidermis por picos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802a-b815-d271f731102b"><td id="?{Gn" class="">Technological Readiness</td><td id="&lt;}rW" class="">Formulación y maquila BPF con pruebas HRIPT y shelf life es escalable a través de proveedores existentes</td><td id="HyqN" class="">La sustitución de materia prima suele ser viable pero exige revalidación de tolerancia y desempeño</td><td id="Yj~v" class="">El formato gel/serum es común, pero puede requerir revalidación de HRIPT por cambio de absorción</td><td id="H~lI" class="">Los enfoques “barrier-first” están ampliamente usados pero requieren formulación y soporte clínico más costoso</td><td id="lZCG" class="">Microencapsulación es una tecnología común en otros sectores, pero su integración requiere desarrollo y pruebas adicionales</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a9-83d9-cdfeac3556ce"><td id="?{Gn" class="">Cost</td><td id="&lt;}rW" class="">Costos moderados con inversión principal en maquila, estabilidad y testing HRIPT</td><td id="HyqN" class="">Costos moderados con riesgo de variabilidad de lote y costos de revalidación</td><td id="Yj~v" class="">Costos moderados, pero con potencial aumento por desarrollo de galénico y estabilidad</td><td id="H~lI" class="">Costos moderados a altos por ingredientes especializados y necesidad de mayor evidencia</td><td id="lZCG" class="">Costos moderados a altos por tecnología de encapsulación, pruebas de liberación y estabilidad</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8023-b8f2-e4df9c8c36c2"><td id="?{Gn" class="">Performance</td><td id="&lt;}rW" class="">Atiende sensibilidad con combinación de actives y pH 5.5, con diferenciación por HRIPT ≥98%</td><td id="HyqN" class="">Desempeño potencial similar si la nueva materia prima replica pureza, HRIPT y perfil bioactivo</td><td id="Yj~v" class="">Puede mejorar tolerabilidad percibida, pero depende de que la liberación y absorción sean seguras</td><td id="H~lI" class="">Probable alta percepción de “calma” y barrera, pero puede competir con marcas de farmacia más caras</td><td id="lZCG" class="">Puede mejorar tolerabilidad y reducir irritación puntual, pero su eficacia depende del sistema de liberación</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8043-8ae0-d351d341ebd9"><td id="?{Gn" class="">Finance</td><td id="&lt;}rW" class="">Compatible con DTC y clínicas al respaldar tolerabilidad con HRIPT y abastecimiento por maquila BPF</td><td id="HyqN" class="">Compatible con financiamiento estándar, pero con mayor gasto de revalidación y riesgo de retraso</td><td id="Yj~v" class="">Compatible con canales DTC, aunque el ciclo de pruebas puede extenderse por cambios de galénica</td><td id="H~lI" class="">Compatible con inversión por evidencia, pero puede requerir márgenes y ventas mayores para sostener COGS</td><td id="lZCG" class="">Compatible con inversión y grants por innovación, pero exige CAPEX/opex de desarrollo y pruebas</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807a-a390-c3e6edf78218"><td id="?{Gn" class="">Other Factors</td><td id="&lt;}rW" class="">Requiere proveedores BPF y control de HRIPT, además de cumplimiento NOM y consistencia de insumos marinos</td><td id="HyqN" class="">Requiere control estricto de especificaciones del nuevo fucoidán y compatibilidad en la fórmula</td><td id="Yj~v" class="">Requiere experiencia en reología y estabilidad a pH 5.5, además de validación sensorial</td><td id="H~lI" class="">Requiere activos y claims más “clínicos”, con posible escrutinio regulatorio y necesidad de evidencia</td><td id="lZCG" class="">Requiere acceso a proveedor de microencapsulación y validación de que la liberación no reduce el efecto bioactivo</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80d2-a441-e784f2285a00" class=""><strong>TEA Foundations</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8054-be80-ebf2d30ed2ce" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8083-8f14-c294bdc2937d"><th id="mTw|" class="simple-table-header-color simple-table-header">Field ↓ / Solutions →</th><th id="Mci{" class="simple-table-header-color simple-table-header">Raw Material Extraction</th><th id="CLat" class="simple-table-header-color simple-table-header">Active Standardization &amp; QC</th><th id="tStv" class="simple-table-header-color simple-table-header">BPF Maquila (Compounding &amp; Mixing)</th><th id="}nsO" class="simple-table-header-color simple-table-header">Filling, Airless Packaging &amp; Labeling</th><th id="JYcm" class="simple-table-header-color simple-table-header">Stability Testing &amp; HRIPT Release</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8064-892e-d72a1c283a9b"><td id="mTw|" class="">Description</td><td id="Mci{" class="">Extraer y acondicionar fucoidán de Sargassum fluitans y preparar insumos para formulación</td><td id="CLat" class="">Estandarizar pureza y especificaciones de actives y liberar solo lotes aptos para fabricación</td><td id="tStv" class="">Preparar la crema O/W a pH 5.5 mediante mezcla, calentamiento controlado y homogeneización</td><td id="}nsO" class="">Llenar en envase airless, sellar, etiquetar y asegurar trazabilidad de lote</td><td id="JYcm" class="">Ejecutar ensayos de estabilidad y HRIPT para liberar el producto comercial bajo criterios de tolerabilidad</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800e-93fd-cee00701ecdf"><td id="mTw|" class="">Steps to create</td><td id="Mci{" class="">1. Definir proveedor y contrato de extracción de fucoidán&lt;br&gt;2. Recuperar extracto y prefiltrar para remover impurezas&lt;br&gt;3. Deshidratar o concentrar a un insumo utilizable para mezcla&lt;br&gt;4. Documentar lotes con trazabilidad de origen Sargassum&lt;br&gt;5. Transferir insumo a control de calidad</td><td id="CLat" class="">1. Medir identidad, pureza y perfil de actives por métodos analíticos&lt;br&gt;2. Verificar cumplimiento de especificaciones por lote (incluye pH/actividad relevante)&lt;br&gt;3. Realizar pruebas de compatibilidad básica y revisión de COA&lt;br&gt;4. Aprobar o rechazar lotes con registro para auditoría&lt;br&gt;5. Preparar liberación hacia BPF maquila</td><td id="tStv" class="">1. Calentar fase acuosa y fase oleosa según la receta&lt;br&gt;2. Dispersar y emulsionar actives bajo control de tiempo y temperatura&lt;br&gt;3. Ajustar pH a 5.5 y homogeneizar hasta textura final&lt;br&gt;4. Validar viscosidad, aspecto y ausencia de contaminación cruzada&lt;br&gt;5. Transferir lote intermedio a etapa de llenado con control de lote</td><td id="}nsO" class="">1. Preparar líneas de llenado airless y esterilización/limpieza validada&lt;br&gt;2. Llenar 50g por unidad y sellar envase&lt;br&gt;3. Etiquetar con lote, fecha, claims autorizados y uso recomendado&lt;br&gt;4. Inspección visual y muestreo de empaque&lt;br&gt;5. Paletizar y almacenar producto terminado con segregación por lote</td><td id="JYcm" class="">1. Planificar puntos de muestreo en tiempo y condiciones aceleradas&lt;br&gt;2. Ejecutar pruebas fisicoquímicas y microbiológicas según plan&lt;br&gt;3. Ejecutar HRIPT con panel de piel sensible y registrar eventos adversos&lt;br&gt;4. Confrontar resultados con criterios de liberación (HRIPT ≥98%)&lt;br&gt;5. Emitir aprobación final técnica y documentación para COFEPRIS/QFB</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b8-91f8-d721b1d523b5"><td id="mTw|" class="">Material Inputs</td><td id="Mci{" class="">Sargassum fluitans, reactivos/insumos de extracción permitidos, filtros, materiales de secado o concentración</td><td id="CLat" class="">Fucoidán estandarizado, Croton lechleri, Centella u otros extractos, disolventes de análisis, consumibles analíticos</td><td id="tStv" class="">Ingredientes de fórmula (fucoidán, Croton lechleri, Centella, emolientes, tensioactivos, conservantes), agua purificada, envase vacío intermedio</td><td id="}nsO" class="">Envases airless, boquillas, cierres, etiquetas, cajas, material de empaque y trazabilidad</td><td id="JYcm" class="">Muestras del lote, reactivos para ensayos, insumos de microbiología, infraestructura para HRIPT y consentimientos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c2-9ed9-d15d6fa3d48e"><td id="mTw|" class="">Energy inputs</td><td id="Mci{" class="">Energía térmica para extracción y concentración, consumo de equipos de filtración y secado</td><td id="CLat" class="">Energía para instrumentación analítica, baños/temperado menores para preparación de pruebas</td><td id="tStv" class="">Energía de calentamiento y enfriamiento controlado para emulsionar, energía de agitadores y homogeneizadores</td><td id="}nsO" class="">Electricidad para línea de llenado, esterilización/limpieza y acondicionamiento de almacén</td><td id="JYcm" class="">Energía para cámaras de estabilidad y equipos de ensayo, y uso de infraestructura clínica/laboratorio para HRIPT</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8009-a4ad-df706e93794c"><td id="mTw|" class="">Labor Inputs</td><td id="Mci{" class="">Equipo técnico de extracción con experiencia en bioprocesos y control documental</td><td id="CLat" class="">Químicos/QC con experiencia en COA, analítica y liberación de lote</td><td id="tStv" class="">Operadores de maquila con supervisión de ingeniero de proceso y QA/BPF</td><td id="}nsO" class="">Operadores de empaque y QA de inspección de envases, más personal de etiquetado y logística</td><td id="JYcm" class="">Personal QA y científicos de estabilidad, coordinador de ensayos clínicos y personal de recolección de datos de HRIPT</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805c-a4b5-e92c4261e4dc"><td id="mTw|" class="">Conversion process (or other action)</td><td id="Mci{" class="">Transformar biomasa marina en un extracto aprovechable de fucoidán mediante extracción y concentración</td><td id="CLat" class="">Convertir insumos crudos en insumos liberados por especificación mediante estandarización y pruebas analíticas</td><td id="tStv" class="">Transformar ingredientes en una emulsión O/W homogénea a pH 5.5 bajo condiciones BPF</td><td id="}nsO" class="">Transformar formulación terminada en producto empacado con trazabilidad y configuración final de venta</td><td id="JYcm" class="">Transformar lotes de producto en evidencia de estabilidad y tolerabilidad mediante ensayos y evaluación contra criterios</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8048-ac37-f38832f76078"><td id="mTw|" class="">Waste or Byproducts</td><td id="Mci{" class="">Bagazo o residuos sólidos de biomasa, efluentes de proceso y materiales filtrantes gastados</td><td id="CLat" class="">Reactivos gastados de análisis, alícuotas no conformes y residuos biológicos/analíticos</td><td id="tStv" class="">Pérdidas de batch por ajustes, rechazos por contaminación o falla de especificación, residuos de limpieza</td><td id="}nsO" class="">Material de empaque defectuoso, producto rechazado por llenado/ensamble no conforme</td><td id="JYcm" class="">Muestras excedentes, consumibles de prueba y residuos de laboratorio, datos no utilizables</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80da-a418-f9e178ec97e7"><td id="mTw|" class="">Useful Outputs</td><td id="Mci{" class="">Extracto de fucoidán pre-estandarizado listo para QC</td><td id="CLat" class="">Lotes aprobados de actives con COA y trazabilidad completos</td><td id="tStv" class="">Lote de crema O/W intermedio preparado para llenado</td><td id="}nsO" class="">Producto terminado en envase airless etiquetado y listo para distribución</td><td id="JYcm" class="">Producto liberado con evidencia HRIPT y estabilidad, con documentación lista para ventas y regulatorio</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8016-a55a-c7f325639512"><td id="mTw|" class="">Time</td><td id="Mci{" class="">Días a semanas dependiendo del proceso de extracción y secado para asegurar consistencia</td><td id="CLat" class="">Días a 1-2 semanas según cantidad de ensayos y revalidaciones</td><td id="tStv" class="">Aproximadamente 1-3 días por batch incluyendo ajustes, liberación interna y documentación</td><td id="}nsO" class="">1-3 días para empaquetado y QA de liberación de empaque</td><td id="JYcm" class="">Aproximadamente semanas para HRIPT y corridas de estabilidad inicial, con liberación por ventanas de tiempo</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80dc-b3ca-e14028cbaef0" class="">Modificadas: tabla “Technology-Problem Fit” y matriz “TEA Foundations” (completadas con una ruta de proceso coherente con maquila BPF, HRIPT y liberación). Go to Update Idea in the toolbar above to update your idea, description, and additional critical information. You can also use this chatbot to request specific changes to your results. Please use the button below to proceed to the next step.</p></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80e5-abcf-cf97be9f3f14" class=""><strong>CURSOS: TEA Builder (First Pass)</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80af-966a-c0f19916872b" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80aa-9c13-c1fa8e1ed4dd"><th id="CI&gt;k" class="simple-table-header-color simple-table-header">#</th><th id="aCBj" class="simple-table-header-color simple-table-header">Field</th><th id="`jU:" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b2-8bc8-ec6bbe3366c3"><td id="CI&gt;k" class="">1</td><td id="aCBj" class="">Proposed Solution Concept</td><td id="`jU:" class="">Briefly describe what your solution is and how it works.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cc-9013-e63bb056abd3"><td id="CI&gt;k" class="">2</td><td id="aCBj" class="">Key Inputs</td><td id="`jU:" class="">What raw materials, energy, data, or other inputs are required?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8006-9b34-e8945584d0c4"><td id="CI&gt;k" class="">3</td><td id="aCBj" class="">Transformation Process</td><td id="`jU:" class="">What are the main processes or mechanisms that convert inputs into outputs?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b7-b5d0-d576c308ba29"><td id="CI&gt;k" class="">4</td><td id="aCBj" class="">Key Outputs</td><td id="`jU:" class="">What are the primary outputs of your system (e.g., product, service, emissions, data)?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804a-98ba-da303840c3a1"><td id="CI&gt;k" class="">5</td><td id="aCBj" class="">System Boundary</td><td id="`jU:" class="">Where does your solution start and stop within the broader system?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8016-a6a3-e7e109af8a3b"><td id="CI&gt;k" class="">6</td><td id="aCBj" class="">Critical Performance Metrics</td><td id="`jU:" class="">What technical or system-level metrics matter most for feasibility or competitiveness? (e.g., efficiency, durability, energy density)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a4-8288-f9d443517f91"><td id="CI&gt;k" class="">7</td><td id="aCBj" class="">First-Pass Cost Drivers</td><td id="`jU:" class="">What elements are likely to dominate the cost structure (CapEx and OpEx)?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c0-acc0-c8ba87e7f406"><td id="CI&gt;k" class="">8</td><td id="aCBj" class="">Market Performance Thresholds</td><td id="`jU:" class="">What performance or cost levels would make your solution viable or disruptive?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8008-9def-c562842e20d2"><td id="CI&gt;k" class="">9</td><td id="aCBj" class="">Value Chain Fit</td><td id="`jU:" class="">Where does your solution plug into the existing value chain? Who captures value before and after you?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8049-b5ce-c6adbe6a2c74"><td id="CI&gt;k" class="">10</td><td id="aCBj" class="">Key Assumptions</td><td id="`jU:" class="">What are your biggest assumptions right now? What needs to be validated through further R&amp;D or market research?</td></tr></div></tbody></table></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

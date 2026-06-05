@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>DEVELOP PRODUCT PLAN</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="36ff554f-2b83-80cb-99b8-ecc49f746cb6" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/jar_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>DEVELOP PRODUCT PLAN</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="36ff554f-2b83-800e-8faa-d3b1018404f9" class="">Here are some product plans to help define your beachhead market. Look out for more information about your idea at the bottom of this page</p></div><div style="display:contents" dir="auto"><blockquote id="36ff554f-2b83-8025-acef-e99b376dcc96" class=""><strong>Idea record usado:</strong> <strong>Fucoidan + Dragon&#x27;s Blood Bioactive Cream from </strong><em><strong>Sargassum fluitans</strong></em><strong> for Sensitive Skin</strong> (maquila BPF/NOM-259, DTC en México $300 MXN; foco en tolerabilidad HRIPT ≥98% y mejora en 3–4 semanas; beachhead prioriza <strong>pacientes de clínica</strong> para rosácea/dermatitis en CDMX/MTY/GDL/SLP, con expansión posterior a DTC y otros mercados; follow-on incluye <strong>US Hispanic DTC</strong>, <strong>EU clean beauty/marine bioactives</strong> y <strong>B2B fucoidan supply a LATAM formulators</strong>).</blockquote></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80b5-83f4-e2fcaa624998"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8070-905b-cf00561631ad" class=""><strong>1) Product Plan — Beachhead Market (Clínicas para rosácea/dermatitis: urgencia alta, prueba profesional)</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8081-ab5f-ff586bbf1b56" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8020-b6d7-fb6b73e7ee76"><th id="QTmE" class="simple-table-header-color simple-table-header">Feature/Function</th><th id="YZUf" class="simple-table-header-color simple-table-header">Benefit</th><th id="RRRR" class="simple-table-header-color simple-table-header">How does it leverage your Core?</th><th id="EmZ[" class="simple-table-header-color simple-table-header">Priority</th><th id="XF:u" class="simple-table-header-color simple-table-header">Estimated Resources Needed to Develop</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8034-9e76-c3f2555ad84d"><td id="QTmE" class="">Evidencia de <strong>tolerabilidad repetible</strong> (HRIPT ≥98%) + protocolo operativo por lote (criterios QA)</td><td id="YZUf" class="">Reduce el principal “veto” en piel sensible y acelera adopción clínica (menos riesgo percibido)</td><td id="RRRR" class="">Tu core es HRIPT + stack pH 5.5 + control de calidad desde maquila BPF/NOM-259</td><td id="EmZ[" class="">Alta</td><td id="XF:u" class="">QA/QFB + laboratorio (8–12 semanas)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8022-8963-d0ea5abab169"><td id="QTmE" class=""><strong>Kit clínico</strong> (trial 30 días): consentimiento, registro de síntomas, guía de uso AM/PM, formato de reporte</td><td id="YZUf" class="">Estandariza el trial dentro de clínicas y mejora la tasa de conversión a consigna/compra</td><td id="RRRR" class="">Convierte el resultado “3–4 semanas” y la evidencia de tu core en un proceso reproducible</td><td id="EmZ[" class="">Alta</td><td id="XF:u" class="">Diseño clínico + templates + revisión (4–8 semanas)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8080-82ee-eaa16b3a303c"><td id="QTmE" class="">Programa de <strong>specs por lote / trazabilidad</strong> (CoA + marcadores del fucoidan/extracto)</td><td id="YZUf" class="">Demuestra transparencia real (menos escepticismo de INCI/“greenwashing”) y mejora confianza de DMU</td><td id="RRRR" class="">Defiende tu narrativa LATAM + consistencia; habilita “supply-chain transparency”</td><td id="EmZ[" class="">Alta</td><td id="XF:u" class="">Analítica/specs + empaque documental (8–12 semanas)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-809c-a37e-da390127d02a"><td id="QTmE" class="">Plan de <strong>estabilidad + compatibilidad</strong> (enfocado a empaque airless, conservante y desempeño con el tiempo)</td><td id="YZUf" class="">Disminuye devoluciones/quejas por variación de desempeño; sostiene reclamos clínicos</td><td id="RRRR" class="">Protege que el core funcione “cuando llega al paciente”, no solo en formulación</td><td id="EmZ[" class="">Media-Alta</td><td id="XF:u" class="">Ensayos acelerados + monitoreo inicial (2–3 meses para señales)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-802d-b452-e2aff909da7e"><td id="QTmE" class="">“Sensitive routine guardrails” (qué evitar, cómo introducir, frecuencia inicial) dentro del producto/folleto</td><td id="YZUf" class="">Baja eventos adversos por mal uso y mejora experiencia percibida</td><td id="RRRR" class="">Optimiza comportamiento esperado de una base pH 5.5 para piel sensible</td><td id="EmZ[" class="">Alta</td><td id="XF:u" class="">Contenido médico-friendly + revisión (2–4 semanas)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c8-be36-da784c36ea07"><td id="QTmE" class="">Ajustes para canal clínica: presentación para consigna (tamaño de muestra, bundling, plan de reposición)</td><td id="YZUf" class="">Reduce fricción logística y aumenta probabilidad de restock mensual</td><td id="RRRR" class="">Mantiene el core igual; optimiza “operación de canal”</td><td id="EmZ[" class="">Media</td><td id="XF:u" class="">Diseño empaques + ops logística (3–5 semanas)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8049-ad98-e36dc3aea18f"><td id="QTmE" class="">Sustento de claims “tolerability/resultados en semanas” (dossier/brief para marketing clínico)</td><td id="YZUf" class="">Mejora la capacidad de las clínicas para recomendar sin sobreprometer</td><td id="RRRR" class="">Tu core ya tiene HRIPT ≥98% y ventana 3–4 semanas; lo empaquetas para comunicación segura</td><td id="EmZ[" class="">Media-Alta</td><td id="XF:u" class="">Legal/QA + dossier (3–6 semanas)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8074-b243-cd3be01480ec"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80d6-8eb1-dd55fca7efd8" class=""><strong>2) Product Plan — Follow-on Markets (Una ruta “land &amp; expand” sin perder el core)</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-807e-aa63-ce64999a4335" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80fe-96d1-fb1afe76db3f"><th id=":mqF" class="simple-table-header-color simple-table-header">Feature/Function</th><th id="\Mlo" class="simple-table-header-color simple-table-header">Benefit</th><th id="^MsV" class="simple-table-header-color simple-table-header">How does it leverage your Core?</th><th id="gVFN" class="simple-table-header-color simple-table-header">Priority</th><th id="zM@T" class="simple-table-header-color simple-table-header">Estimated Resources Needed to Develop</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ea-8ac2-e17475bc32d8"><td id=":mqF" class=""><strong>Mantener core</strong> (pH 5.5 + stack) y crear “variantes de canal” (DTC vs clínica) sin romper consistencia</td><td id="\Mlo" class="">Escalas con menor riesgo técnico; proteges diferenciación en piel sensible</td><td id="^MsV" class="">Tu ventaja competitiva es HRIPT + tolerabilidad + stack bioactivo; no el empaque solamente</td><td id="gVFN" class="">Alta</td><td id="zM@T" class="">QA + cambios menores (4–8 semanas)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8028-acfc-e77fc6fbe170"><td id=":mqF" class="">“Clinic-to-DTC evidence pack” (explicación de HRIPT, cómo medir tolerabilidad, FAQs)</td><td id="\Mlo" class="">Aumenta conversión en DTC para INCI-readers y reduce objeciones</td><td id="^MsV" class="">Reutiliza tu evidencia de core y la traduces a idioma de consumo</td><td id="gVFN" class="">Alta</td><td id="zM@T" class="">Contenido + diseño (3–5 semanas)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-803c-8547-cb8418039db4"><td id=":mqF" class=""><strong>Dossier B2B</strong> para formuladores: specs, límites, compatibilidad, CoA/marker plan (para fucoidan/derivados)</td><td id="\Mlo" class="">Incrementa win-rate en RFQs; reduce tiempo de calificación del comprador</td><td id="^MsV" class="">Estandarizas el “marker testing” y trazabilidad; eso es tu core operativo</td><td id="gVFN" class="">Alta (B2B)</td><td id="zM@T" class="">Ingeniería QA/QC + documentación técnica (8–12 semanas)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8078-b547-f836132f0ecb"><td id=":mqF" class="">“Traceability pack” para EU/retail: documentación de cadena de suministro y sustento de origen</td><td id="\Mlo" class="">Cumple expectativas de clean beauty con evidencia; habilita retail/partners</td><td id="^MsV" class="">Construye sobre narrativa LATAM + consistencia de batch</td><td id="gVFN" class="">Media-Alta</td><td id="zM@T" class="">Evidencia documental + revisión claims (8–12+ semanas)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80c4-a9b0-dd5d3420d3cd"><td id=":mqF" class="">Localización regulatoria/etiquetado por país (p. ej., NOM-141 vs formatos equivalentes; claims permitidos)</td><td id="\Mlo" class="">Evita re-trabajos y retrasos de lanzamiento internacional</td><td id="^MsV" class="">Tu core ya está bajo control QA; ahora lo vuelves export-ready</td><td id="gVFN" class="">Media-Alta</td><td id="zM@T" class="">Consultoría regulatoria + iteración etiqueta (6–10 semanas por mercado)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-806a-be43-c48d45830efc"><td id=":mqF" class="">Desarrollo de “evidence-led SKUs” (p. ej., mini-size/upsell) preservando fórmula</td><td id="\Mlo" class="">Sube AOV y mejora trial-to-reorder sin alterar tolerabilidad</td><td id="^MsV" class="">Reutiliza el mismo core; solo optimizas la estrategia de adopción</td><td id="gVFN" class="">Media</td><td id="zM@T" class="">Empaque + estabilidad puente (6–12 semanas)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80fb-85aa-feef4b944da7"><td id=":mqF" class="">Roadmap de aprendizaje (learning loop) por cohorte/condición (rosacea/dermatitis/atopic)</td><td id="\Mlo" class="">Mejora segmentación y performance futura del producto</td><td id="^MsV" class="">Tu core incluye “proprietary data” por cohorte; usas para optimizar</td><td id="gVFN" class="">Alta (post-PMF)</td><td id="zM@T" class="">Analytics + análisis de cohortes (continuo; desde mes 2)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8037-9415-c47310a83de6"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80d1-9c29-d8ac05534fb4" class=""><strong>3) Other Activities Beyond Functionality for the Beachhead Market</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8079-bf70-fa7824d3c35d" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ed-929e-dca28d695d79"><th id="vla~" class="simple-table-header-color simple-table-header">What other activities do you anticipate doing related to the product to help it scale after Version 1.0 for the beachhead market?</th><th id="FkSc" class="simple-table-header-color simple-table-header">(Answer tailored to your case)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8046-a67b-f34a442a9c5c"><td id="vla~" class=""><strong>Go-to-market clínica-first</strong>: identificar 3 clínicas piloto (CDMX/MTY/GDL/SLP) con perfil piel sensible y disposición a trials</td><td id="FkSc" class="">Reclutamiento con guías clínicas + muestras alineadas al trial 30 días</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-801c-8a30-ca406aa5822e"><td id="vla~" class=""><strong>Compliance y operación regulatoria continua</strong> (etiqueta/NOM-141, Aviso COFEPRIS, QFB Responsable Sanitario)</td><td id="FkSc" class="">Mantener calendar de renovaciones + revisión de claims según uso real</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8015-a257-c637f2627776"><td id="vla~" class=""><strong>Sistema de farmacovigilancia/gestión de adverse reactions</strong> (flujo de registro, tiempo de respuesta, comunicación)</td><td id="FkSc" class="">Proteger confianza y mitigar crisis por “irritación percibida”</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d9-bbb7-e4dfd75dc0ac"><td id="vla~" class=""><strong>Programa de evidencia a prueba de escepticismo</strong> (HRIPT summary, cómo interpretar, qué no prometer)</td><td id="FkSc" class="">Reduce veto del DMU y acelera decisión de clínica</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-809e-af85-cc5c1715e131"><td id="vla~" class=""><strong>Canal de consignación</strong>: términos claros (inventario, reposición, KPI por clínica)</td><td id="FkSc" class="">Convertir “trial” en restock mensual y predecible</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-806d-aa0b-ff8bb6f88e7e"><td id="vla~" class=""><strong>Crecimiento por NPS loop</strong> (NPS día 30 y 60 → contenido/ajustes/seguimiento)</td><td id="FkSc" class="">Aprendes qué objeciones aparecen en piel sensible y corriges mensajes</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-800d-b099-c3e7af2d6ad4"><td id="vla~" class=""><strong>Estrategia de trial-to-reorder</strong> (reordeno day 60–90, educación de rutina, recordatorios)</td><td id="FkSc" class="">Sube reorder sin bajar precio; protege margen</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-801e-89ad-fa7d259a7efe"><td id="vla~" class=""><strong>Capacitación comercial de clínicos</strong> (cómo recomendar, cómo iniciar en pacientes, qué esperar semana a semana)</td><td id="FkSc" class="">Menos fricción clínica = mayor adopción</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-808d-9363-dab17b59f653"><td id="vla~" class=""><strong>Logística y empaquetado</strong> para minimizar daño en tránsito (airless, Estafeta, SOP de envío)</td><td id="FkSc" class="">Reduce devoluciones por falla logística; protege experiencia en piel sensible</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80b4-a70b-feaa3e238a06"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8058-9098-c68141159169" class=""><strong>4) Moving Beyond the Beachhead Market — Analysis &amp; Prioritization of Follow-on Market Candidates</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8088-85de-c6ebdd0c6923" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80b5-8d9f-cad8e89f4aed"><th id="pa;y" class="simple-table-header-color simple-table-header">Name of the Follow-on Market</th><th id="Tu\U" class="simple-table-header-color simple-table-header">Which market does it follow from?</th><th id=":Sd&gt;" class="simple-table-header-color simple-table-header">Pros for the follow-on market</th><th id=":qPL" class="simple-table-header-color simple-table-header">Cons for the follow-on market</th><th id="NjYL" class="simple-table-header-color simple-table-header">Does it leverage your Core? (Y/N)</th><th id="oBAG" class="simple-table-header-color simple-table-header">Priority</th><th id="\B@:" class="simple-table-header-color simple-table-header">Key Factors Needed to Succeed</th><th id="^gvt" class="simple-table-header-color simple-table-header">Resources Requires</th><th id="}w&lt;?" class="simple-table-header-color simple-table-header">Risk</th><th id=":Ea~" class="simple-table-header-color simple-table-header">Reward</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8054-81b8-c212a5e1609f"><td id="pa;y" class=""><strong>US Hispanic premium skincare (DTC primero)</strong></td><td id="Tu\U" class="">Beachhead (clínicas México + evidencia HRIPT + narrativa LATAM)</td><td id=":Sd&gt;" class="">Valentina-like persona existe; alta disposición a pagar por tolerabilidad; historia LATAM es diferenciador</td><td id=":qPL" class="">Regulación/claims en US; CAC más alto y competencia DTC</td><td id="NjYL" class="">Y</td><td id="oBAG" class="">Alta</td><td id="\B@:" class="">Localización regulatoria/etiquetado; kit de evidencia en inglés; capacidad logística/CS en US</td><td id="^gvt" class="">Legal regulatorio + marketing localization + logística (3–6 meses)</td><td id="}w&lt;?" class="">Medio</td><td id=":Ea~" class="">Alta (margen DTC + marca escalable)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-808e-b548-d74af4360b61"><td id="pa;y" class=""><strong>EU clean beauty / marine bioactives (DTC + specialty retail)</strong></td><td id="Tu\U" class="">Beachhead (core bioactives + trazabilidad)</td><td id=":Sd&gt;" class="">Clean beauty con afinidad por bioactivos marinos; premio por substanciación</td><td id=":qPL" class="">Mayor escrutinio de claims; sustento más exigente y tiempos más largos</td><td id="NjYL" class="">Y</td><td id="oBAG" class="">Media-Alta</td><td id="\B@:" class="">“Traceability pack” y evidencia de claims; compliance EU; traducciones y dossier robusto</td><td id="^gvt" class="">Evidencia documental + consultoría claims (4–10 meses)</td><td id="}w&lt;?" class="">Medio-Alto</td><td id=":Ea~" class="">Alta (pricing premium + reputación)</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8061-a979-d5fe7c351cd0"><td id="pa;y" class=""><strong>B2B fucoidan ingredient supply a LATAM formulators</strong></td><td id="Tu\U" class="">Beachhead (marker testing + specs por lote + disciplina QA)</td><td id=":Sd&gt;" class="">Ticket grande y contratos recurrentes; diversifica del DTC</td><td id=":qPL" class="">Calificación técnica/QC + ciclos de validación largos; MOQ y consistencia</td><td id="NjYL" class="">Y</td><td id="oBAG" class="">Alta</td><td id="\B@:" class="">Dossier B2B; capacidad de asegurar specs; soporte técnico; acuerdos MOQ</td><td id="^gvt" class="">QA/QC + analítica + BD técnico (2–4 meses para pipeline)</td><td id="}w&lt;?" class="">Medio</td><td id=":Ea~" class="">Muy Alta (ingreso recurrente + escalabilidad)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-80d3-9498-e77b72a7a9f8"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80fa-becb-d816873f97f0" class=""><strong>Cambios/ajustes realizados por tu solicitud (y dónde)</strong></h2></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8055-bc95-f90d949bc881" class="bulleted-list"><li style="list-style-type:disc"><strong>Ajusté la lógica de “beachhead”</strong> para reflejar tu reposicionamiento dentro del mismo input: ahora el foco es <strong>“clinic patients con urgencia alta”</strong> (tolerabilidad, HRIPT ≥98%, 3–4 semanas, pilotos de clínicas), en lugar de tratarlo principalmente como DTC/urban women.</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-80ea-bb00-f83a68124f8e" class="bulleted-list"><li style="list-style-type:disc"><strong>Ajusté el producto/actividades</strong> para que la parte de “prueba” y “escala” dependa más de <strong>kits clínicos, consigna y procesos de evidencia</strong>.</li></ul></div><div style="display:contents" dir="auto"><ul id="36ff554f-2b83-8041-8160-d13a5185d02b" class="bulleted-list"><li style="list-style-type:disc"><strong>Conservé</strong> tus elementos de core: pH 5.5, stack bioactivo, maquila BPF/NOM-259, y la ventaja competitiva basada en tolerabilidad + trazabilidad.</li></ul></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-809e-a91a-e3198bb4a165"/></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80b9-ba88-ef7d3cc1c5b5" class="">Puedes Copy, Edit, y Save el results para este Step abajo - o actualizar tu Startup Idea en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong> donde puedes guardar información crítica como los Product plans para tu Beachhead Market. Finalmente, puedes usar el chatbot en la parte superior de esta página para solicitar cambios a estos resultados.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

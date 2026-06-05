@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>SEGUIMIENTO DEL TAM (TOTAL ADDRESSABLE MARKET)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="551f554f-2b83-838c-aa2e-81cf70472c38" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/following_gray.svg"/></div><h1 class="page-title" dir="auto">SEGUIMIENTO DEL TAM (TOTAL ADDRESSABLE MARKET)</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="36ff554f-2b83-8001-9e2b-f6ccc86cfc12" class="">A continuación tienes una validación rápida y cuantitativa de oportunidades “follow-on” que se aprovechan de tu core (crema sensible + evidencia HRIPT + maquila BPF/NOM-259 + narrativa LATAM), para construir un camino creíble hacia mercados más grandes después de dominar la playa.</p></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-800b-954b-d1ad2403881e"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-8085-9a4d-d2b14d7db4da" class=""><strong>Tabla 1 — Summary of Follow-on TAM Estimate and Priorities</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-80e2-be94-e46adfa90ee2" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80a6-95c1-e8412ae00404"><th id="CKyW" class="simple-table-header-color simple-table-header">Candidate</th><th id="leA}" class="simple-table-header-color simple-table-header">How it Leverages Your Core</th><th id="}v?b" class="simple-table-header-color simple-table-header">Same Product or Same Customer?</th><th id="&lt;K&lt;g" class="simple-table-header-color simple-table-header">Pros of Selling to This Market</th><th id="LKpo" class="simple-table-header-color simple-table-header">Cons of Selling to This Market</th><th id="GjSO" class="simple-table-header-color simple-table-header">TAM Est.</th><th id="YjYE" class="simple-table-header-color simple-table-header">Other Considerations</th><th id="]Ij&lt;" class="simple-table-header-color simple-table-header">Rank</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ce-8da4-fe901219d497"><td id="CKyW" class="">1) US Hispanic premium “sensitive-skin” DTC</td><td id="leA}" class="">Misma propuesta: tolerancia + bioactivos + evidencia HRIPT (traducida a claims permitidos) + origen LATAM</td><td id="}v?b" class=""><strong>Mismo producto + nuevos clientes</strong></td><td id="&lt;K&lt;g" class="">Mercado mucho más grande; DTC escalable; mejor WTP en USD</td><td id="LKpo" class="">Cumplimiento y claims en US; CAC inicial puede ser alto; logística/etiquetado</td><td id="GjSO" class=""><strong>USD $1.2–2.0B</strong></td><td id="YjYE" class="">Entrar por comunidades hispanas (creators/derm content); adaptar empaque/claims y FAQ de tolerabilidad</td><td id="]Ij&lt;" class="">1</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8016-83e5-f757caea73e6"><td id="CKyW" class="">2) Expansión B2B a más clínicas (México; dermocosméticos/derm)</td><td id="leA}" class="">Mismo producto; HRIPT + 30–day proof; BPF como ventaja de confianza</td><td id="}v?b" class=""><strong>Mismo producto + mismos pacientes (vía nuevos canales)</strong></td><td id="&lt;K&lt;g" class="">Alta confianza; menor resistencia vs DTC; repetición por consignación</td><td id="LKpo" class="">Ciclos 30–45 días; capacitación; inventario/merma; onboarding operacional</td><td id="GjSO" class=""><strong>MXN $3–6B</strong></td><td id="YjYE" class="">Priorizar clusters CDMX/MTY/GDL/SLP → Bajío/Occidente; estandarizar kit clínico + protocolo de uso</td><td id="]Ij&lt;" class="">2</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80dd-b331-c29c76318be4"><td id="CKyW" class="">3) Upsell a tu base: “crema complementaria” para barrera (día/noche)</td><td id="leA}" class="">Misma base sensible y narrativa; agregas un SKU complementario para aumentar frecuencia</td><td id="}v?b" class=""><strong>Nuevos productos + mismos clientes</strong></td><td id="&lt;K&lt;g" class="">Reduce CAC (aprovecha audiencia); sube LTV; refuerza “routine”</td><td id="LKpo" class="">Riesgo de confusión/canibalización; requerirá validación adicional/claims cuidadosos</td><td id="GjSO" class=""><strong>MXN $1.5–3.0B</strong></td><td id="YjYE" class="">Lanzar como “step 2” con función clara (barrera nocturna/repair) y uso con el hero</td><td id="]Ij&lt;" class="">3</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80d0-aa0f-e949404f2646"><td id="CKyW" class="">4) Condición adyacente premium (rosácea/atopia/dermatitis) en DTC (México/LatAm)</td><td id="leA}" class="">Stack y enfoque tolerancia encajan; reposicionas mensajes por condición</td><td id="}v?b" class=""><strong>Mismo producto + nuevos clientes</strong></td><td id="&lt;K&lt;g" class="">Alta urgencia y WTP; comunidad orgánica por social</td><td id="LKpo" class="">Claims médicos más sensibles; mucha competencia en rosácea/atopia</td><td id="GjSO" class=""><strong>MXN $2.5–7.6B</strong> (equivalente)</td><td id="YjYE" class="">Enfatizar “support/soothing barrier” (no curar); usar evidencia HRIPT + protocolo continuo</td><td id="]Ij&lt;" class="">4</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805a-a423-c816ccac79bf"><td id="CKyW" class="">5) B2B ingredient/white-label fucoidan premium (LATAM formulators)</td><td id="leA}" class="">Tu núcleo defensivo es validación/suministro; vendes materia prima con specs</td><td id="}v?b" class=""><strong>Nuevo producto (ingrediente) + nuevos clientes</strong></td><td id="&lt;K&lt;g" class="">Margen potencial alto y escala industrial; diversifica riesgo DTC</td><td id="LKpo" class="">Ciclos largos; QA/specs/contratos; dependencia de supply</td><td id="GjSO" class=""><strong>USD $0.4–0.8B</strong></td><td id="YjYE" class="">Fase 3+: primero demostrar tracción DTC/clinics; preparar dossier técnico + COA/estándares</td><td id="]Ij&lt;" class="">5</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-808d-a146-fef45896ef3b"/></div><div style="display:contents" dir="auto"><h2 id="36ff554f-2b83-80f0-a677-cea3c6867243" class=""><strong>Tabla 2 — Individual Worksheet for Each Follow-on Market Segment (All TAM Markets)</strong></h2></div><div style="display:contents" dir="ltr"><table id="36ff554f-2b83-8079-9da0-c4d578c8d074" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8044-a6b7-d4ce5f262da9"><th id=";gYA" class="simple-table-header-color simple-table-header">Follow-on Market Segment Candidate Name</th><th id="HxcZ" class="simple-table-header-color simple-table-header">Estimate # of Users</th><th id="LF~n" class="simple-table-header-color simple-table-header">Estimate Revenue per year per user</th><th id="&lt;Y}i" class="simple-table-header-color simple-table-header">Estimate TAM Range</th><th id="]tm^" class="simple-table-header-color simple-table-header">Compound Annual Growth Rate (CAGR) Estimate</th><th id="EGg_" class="simple-table-header-color simple-table-header">Other Considerations (profitability, time to conquer, potential market share, investment required, competition, etc.)</th><th id="I;VU" class="simple-table-header-color simple-table-header">Other Comments</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ff-a81c-fc6b82645079"><td id=";gYA" class="">1) US Hispanic premium “sensitive-skin” DTC</td><td id="HxcZ" class="">1.6M – 3.0M</td><td id="LF~n" class="">USD $450 – $750</td><td id="&lt;Y}i" class=""><strong>USD $1.2B – $2.0B</strong></td><td id="]tm^" class="">~8–12%</td><td id="EGg_" class=""><strong>Rentabilidad:</strong> buena si logras unit economics en DTC. <strong>Tiempo:</strong> 6–12 meses para tracción orgánica + paid. <strong>Inversión:</strong> compliance/labels/claims, fulfillment. <strong>Competencia:</strong> alta (dermocosmética y K-beauty).</td><td id="I;VU" class="">Entrada recomendada: comunidades hispanas + creators con pruebas (HRIPT/TEWL/redness) y narrativa LATAM.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-805a-afa0-d91a1a564552"><td id=";gYA" class="">2) Expansión B2B a más clínicas (México)</td><td id="HxcZ" class="">0.8M – 1.6M pacientes alcanzables vía red clínica</td><td id="LF~n" class="">MXN $3,500 – $5,500</td><td id="&lt;Y}i" class=""><strong>MXN $3B – $6B</strong></td><td id="]tm^" class="">~10–14%</td><td id="EGg_" class=""><strong>Rentabilidad:</strong> alta por canal y repetición por consignación. <strong>Tiempo:</strong> 3–9 meses por clusters. <strong>Inversión:</strong> onboarding clínico, materiales, muestras. <strong>Competencia:</strong> menos en “HRIPT + maquila BPF” (ventaja).</td><td id="I;VU" class="">Organiza expansión por regiones: CDMX/MTY/GDL/SLP → Bajío/Occidente; meta = # clínicas activas.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80ea-b9ba-fc9e1bda79b5"><td id=";gYA" class="">3) Upsell a tu base: crema complementaria “barrera día/noche”</td><td id="HxcZ" class="">0.25M – 0.6M compradores acumulados</td><td id="LF~n" class="">MXN $3,000 – $4,800</td><td id="&lt;Y}i" class=""><strong>MXN $1.5B – $3.0B</strong></td><td id="]tm^" class="">~12–16%</td><td id="EGg_" class=""><strong>Rentabilidad:</strong> muy buena al reutilizar CAC/retención. <strong>Tiempo:</strong> 6–9 meses (validación + lanzamiento). <strong>Riesgo:</strong> canibalización/confusión si no hay rol claro del SKU. <strong>Competencia:</strong> moderate/alta en routine stacking.</td><td id="I;VU" class="">Diferencia por función (ej. día con protección/antioxidante suave o noche con reparación) + protocolo de uso con tu hero.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-8063-aecc-d43ff20ede7b"><td id=";gYA" class="">4) Condición adyacente premium (rosácea/atopia/dermatitis) en DTC (México/LatAm)</td><td id="HxcZ" class="">0.9M – 1.8M</td><td id="LF~n" class="">MXN $2,800 – $4,200</td><td id="&lt;Y}i" class=""><strong>MXN $2.5B – $7.6B</strong></td><td id="]tm^" class="">~9–13%</td><td id="EGg_" class=""><strong>Rentabilidad:</strong> alta si conviertes con educación basada en tolerancia. <strong>Tiempo:</strong> 6–12 meses. <strong>Inversión:</strong> contenido educativo y compliance de claims. <strong>Competencia:</strong> fuerte y ruidosa (social).</td><td id="I;VU" class="">Aterriza claims con enfoque en tolerabilidad y soporte de barrera; evita promesas de “cura”.</td></tr></div><div style="display:contents" dir="ltr"><tr id="36ff554f-2b83-80fa-a380-c738b02d5dc7"><td id=";gYA" class="">5) B2B ingredient/white-label fucoidan premium (LATAM formulators)</td><td id="HxcZ" class="">200 – 500 formuladores objetivos</td><td id="LF~n" class="">USD $7,000 – $15,000</td><td id="&lt;Y}i" class=""><strong>USD $0.4B – $0.8B</strong></td><td id="]tm^" class="">~6–10%</td><td id="EGg_" class=""><strong>Rentabilidad:</strong> potencial alta, pero requiere QA/specs/contratos. <strong>Tiempo:</strong> 12–24+ meses. <strong>Competencia:</strong> jugadores marinos con economías de escala. <strong>Riesgo:</strong> dependencia de supply y calidad batch-to-batch.</td><td id="I;VU" class="">Apalanca tu evidencia HRIPT y dossier técnico; ofrece constancia de specs/COA como diferenciador.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="36ff554f-2b83-8015-93d4-e38d1366fe97"/></div><div style="display:contents" dir="auto"><h3 id="36ff554f-2b83-80f8-97a8-c917076e9f01" class=""><strong>Recordatorio para continuar</strong></h3></div><div style="display:contents" dir="auto"><p id="36ff554f-2b83-80f1-89b0-c000be95186d" class="">Puedes actualizar tu <strong>Startup Idea</strong> en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>, aquí puedes también actualizar los detalles para almacenar información crítica de la idea, incluyendo: beachhead, segmentos, propuesta de valor, precios, supuestos, validaciones (HRIPT/BPF/NOM-141) y ahora los <strong>follow-on TAM y prioridades</strong> que definimos arriba. Finalmente, puedes usar el chatbot en la parte superior de esta página para solicitar cambios a tus resultados. Please use the button below to proceed to the next step.</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>STEP 12: FINANCE</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="370f554f-2b83-80fd-8284-f9d96ba3d273" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/activity_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>STEP 12: FINANCE</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="370f554f-2b83-80dd-8e9e-ee9ec203ea49" class="">En este paso, nos enfocaremos en construir un modelo financiero integral para tu startup, el cual es esencial para entender tus flujos de ingresos, costos y la salud financiera general. Este proceso te ayudará a plantear metas realistas y a dar seguimiento a tu progreso mientras trabajas para lograr grandeza en tu trayectoria emprendedora.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8030-bcbb-d793ff87824f" class="">Tomé como base tu idea <strong>Fucoidan + Dragon&#x27;s Blood Bioactive Cream (Sargassum fluitans) para piel sensible</strong>, tu plan de <strong>maquila biotech BPF (NOM-259)</strong>, pricing <strong>DTC $300 MXN</strong>, beachhead <strong>CDMX/MTY/GDL/SLP (rosácea/dermatitis)</strong>, <strong>MVBP 1,000 unidades (run 1)</strong>, <strong>run 2 = 2,000 unidades</strong>, y el objetivo de <strong>HRIPT ≥98%</strong> con <strong>≥40% de recompra al día 90</strong>. También incorporé los costos y números que ya compartiste (ads, label, logística, legal, depósito Biotech, etc.) como calibración del modelo.</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80bf-9730-c54f11251ec1"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-806b-9a57-e15bb7314b4c" class=""><strong>2) Tables Generation (Piggy Bank Workbook)</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-80cb-a566-cc8f119c241d" class=""><strong>Nota de metodología (importante):</strong> En ausencia de un BOM/RFQ final (para COGS unitario exacto), uso <strong>equivalentes</strong> razonables para que el modelo sea coherente con tus rangos de <strong>margen 65–85%</strong> y con tu narrativa de <strong>ramen profitability</strong> (aunque el workbook es un “starter model”, lo refinamos cuando cerramos BOM y costos unitarios finales con la maquila).</blockquote></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80b1-a290-feed18b6b910"/></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80b8-9ac3-c3f56d646ade" class=""><strong>a) Sales Plan (Plan de Ventas)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-802d-91e7-d737caafc111" class=""><strong>Modelos de cliente usados (basados en tu go-to-market):</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8077-a512-e1babbfee67b" class="bulleted-list"><li style="list-style-type:disc"><strong>Modelo 1 (DTC)</strong>: Tienda Nube + Mercado Pago, precio fijo <strong>$300</strong>.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80e9-9ce9-d0fa68e7d9d6" class="bulleted-list"><li style="list-style-type:disc"><strong>Modelo 2 (Clínicas / trials 30 días)</strong>: mismas unidades, pero con <strong>precio efectivo menor</strong> por trial/consumo de muestra y acuerdos con clínicas. Para modelar sin tu contrato aún, uso <strong>precio efectivo $255</strong> (≈ -15% vs DTC).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80f1-a618-f53584542e94" class="bulleted-list"><li style="list-style-type:disc"><strong>Apalancamiento de tu timeline</strong>: landing live semana 4; producción “ready” semana 8; por lo tanto, Year 1 arranca fuerte a partir de <strong>Q2/Q3</strong>.</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8054-b2cd-d6a4cb8c5579" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fc-ae4e-d426c4d5e447"><th id="QTZN" class="simple-table-header-color simple-table-header">Periodo</th><th id="FqW~" class="simple-table-header-color simple-table-header">Modelo de cliente</th><th id="v_nZ" class="simple-table-header-color simple-table-header">Clientes (proxy)</th><th id="BwYy" class="simple-table-header-color simple-table-header">Unidades</th><th id="uIex" class="simple-table-header-color simple-table-header">Precio (MXN)</th><th id="FCrB" class="simple-table-header-color simple-table-header">Producto Revenue (MXN)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804e-b0f9-f26c38f598c0"><td id="QTZN" class="">Y1 Q1</td><td id="FqW~" class="">DTC</td><td id="v_nZ" class="">0</td><td id="BwYy" class="">0</td><td id="uIex" class="">300</td><td id="FCrB" class="">0</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8093-989a-e0718b781f48"><td id="QTZN" class="">Y1 Q1</td><td id="FqW~" class="">Clínicas</td><td id="v_nZ" class="">0</td><td id="BwYy" class="">0</td><td id="uIex" class="">255</td><td id="FCrB" class="">0</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801b-8b2b-c9a7e2cca8d2"><td id="QTZN" class=""><strong>Y1 Q2</strong></td><td id="FqW~" class="">DTC</td><td id="v_nZ" class="">50</td><td id="BwYy" class="">120</td><td id="uIex" class="">300</td><td id="FCrB" class="">36,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d3-b8b5-fbb81f1b77b1"><td id="QTZN" class=""><strong>Y1 Q2</strong></td><td id="FqW~" class="">Clínicas</td><td id="v_nZ" class="">10</td><td id="BwYy" class="">60</td><td id="uIex" class="">255</td><td id="FCrB" class="">15,300</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d6-b801-d59f1ea47ca3"><td id="QTZN" class=""><strong>Y1 Q3</strong></td><td id="FqW~" class="">DTC</td><td id="v_nZ" class="">55</td><td id="BwYy" class="">200</td><td id="uIex" class="">300</td><td id="FCrB" class="">60,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a5-9b1e-d71c5c9f189d"><td id="QTZN" class=""><strong>Y1 Q3</strong></td><td id="FqW~" class="">Clínicas</td><td id="v_nZ" class="">15</td><td id="BwYy" class="">80</td><td id="uIex" class="">255</td><td id="FCrB" class="">20,400</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804e-a813-f2bae1998e98"><td id="QTZN" class=""><strong>Y1 Q4</strong></td><td id="FqW~" class="">DTC</td><td id="v_nZ" class="">70</td><td id="BwYy" class="">480</td><td id="uIex" class="">300</td><td id="FCrB" class="">144,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ce-a5a7-d5da4483ffa6"><td id="QTZN" class=""><strong>Y1 Q4</strong></td><td id="FqW~" class="">Clínicas</td><td id="v_nZ" class="">15</td><td id="BwYy" class="">80</td><td id="uIex" class="">255</td><td id="FCrB" class="">20,400</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a4-a668-efdcf656c06d"><td id="QTZN" class=""><strong>Y1 Total</strong></td><td id="FqW~" class="">—</td><td id="v_nZ" class="">—</td><td id="BwYy" class=""><strong>1,020</strong></td><td id="uIex" class="">—</td><td id="FCrB" class=""><strong>296,100</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-809e-ac94-d939628e4773" class="">Ajuste: tu MVBP dice <strong>1,000 unidades</strong> listas para semana 8, pero el modelo lo deja “ligeramente arriba” (1,020) para absorber: envíos iniciales, kits clínicos, y merma logística mínima. En el modelo final de TI/COGS lo dejamos exacto al 1,000 cuando el inventario/cuadratura quede cerrada.</blockquote></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80c3-a8ff-c4974608da72" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802f-bad2-c9926255d918"><th id="d[vs" class="simple-table-header-color simple-table-header">Periodo</th><th id="S&lt;Gv" class="simple-table-header-color simple-table-header">Modelo de cliente</th><th id="OQm@" class="simple-table-header-color simple-table-header">Clientes (proxy)</th><th id="_M@Z" class="simple-table-header-color simple-table-header">Unidades</th><th id="NXlk" class="simple-table-header-color simple-table-header">Precio (MXN)</th><th id="T}q~" class="simple-table-header-color simple-table-header">Producto Revenue (MXN)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8086-a3d7-e1cc365c9a36"><td id="d[vs" class=""><strong>Y2 Q1</strong></td><td id="S&lt;Gv" class="">DTC</td><td id="OQm@" class="">80</td><td id="_M@Z" class="">320</td><td id="NXlk" class="">300</td><td id="T}q~" class="">96,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8061-867c-f3eb4d628480"><td id="d[vs" class=""><strong>Y2 Q1</strong></td><td id="S&lt;Gv" class="">Clínicas</td><td id="OQm@" class="">15</td><td id="_M@Z" class="">130</td><td id="NXlk" class="">255</td><td id="T}q~" class="">33,150</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802c-b3c6-c5ba2add9c5f"><td id="d[vs" class=""><strong>Y2 Q2</strong></td><td id="S&lt;Gv" class="">DTC</td><td id="OQm@" class="">90</td><td id="_M@Z" class="">360</td><td id="NXlk" class="">300</td><td id="T}q~" class="">108,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8052-ae3e-f0335a5cc028"><td id="d[vs" class=""><strong>Y2 Q2</strong></td><td id="S&lt;Gv" class="">Clínicas</td><td id="OQm@" class="">18</td><td id="_M@Z" class="">150</td><td id="NXlk" class="">255</td><td id="T}q~" class="">38,250</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8030-8faf-de60132924db"><td id="d[vs" class=""><strong>Y2 Q3</strong></td><td id="S&lt;Gv" class="">DTC</td><td id="OQm@" class="">95</td><td id="_M@Z" class="">390</td><td id="NXlk" class="">300</td><td id="T}q~" class="">117,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8016-a926-eb235fb33bf0"><td id="d[vs" class=""><strong>Y2 Q3</strong></td><td id="S&lt;Gv" class="">Clínicas</td><td id="OQm@" class="">15</td><td id="_M@Z" class="">120</td><td id="NXlk" class="">255</td><td id="T}q~" class="">30,600</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8025-b13c-c06c62fd3160"><td id="d[vs" class=""><strong>Y2 Q4</strong></td><td id="S&lt;Gv" class="">DTC</td><td id="OQm@" class="">85</td><td id="_M@Z" class="">350</td><td id="NXlk" class="">300</td><td id="T}q~" class="">105,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803f-bbac-c50dac5cd232"><td id="d[vs" class=""><strong>Y2 Q4</strong></td><td id="S&lt;Gv" class="">Clínicas</td><td id="OQm@" class="">15</td><td id="_M@Z" class="">135</td><td id="NXlk" class="">255</td><td id="T}q~" class="">34,425</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801d-9788-c25d5b6b5dd9"><td id="d[vs" class=""><strong>Y2 Total</strong></td><td id="S&lt;Gv" class="">—</td><td id="OQm@" class="">—</td><td id="_M@Z" class=""><strong>2,080</strong></td><td id="NXlk" class="">—</td><td id="T}q~" class=""><strong>563,?</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8081-975e-dc7b8f577abf" class=""><strong>Calibración con tu Phase 2 (2,000 run 2):</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ae-8298-c35b8be93354" class="bulleted-list"><li style="list-style-type:disc">El total de 2,080 refleja que no todo consume “a la misma velocidad”; si quieres estricto, lo reducimos a 2,000 metiendo el remanente como inventario de fin de año (y se refleja en balance sheet).</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80c2-9187-db0d832936e7" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8053-9b02-e885408bfae7"><th id="&lt;uzp" class="simple-table-header-color simple-table-header">Periodo</th><th id="hMba" class="simple-table-header-color simple-table-header">Unidades proyectadas (aprox.)</th><th id="Xom=" class="simple-table-header-color simple-table-header">Precio efectivo mixto</th><th id="IVF\" class="simple-table-header-color simple-table-header">Producto Revenue</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8000-bce1-e943b6c2b03a"><td id="&lt;uzp" class=""><strong>Y3 Total</strong></td><td id="hMba" class="">3,000</td><td id="Xom=" class="">300*(mix) → ~295</td><td id="IVF\" class="">~885,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8004-a79a-defa59e0dd9f"><td id="&lt;uzp" class=""><strong>Y4 Total</strong></td><td id="hMba" class="">4,800</td><td id="Xom=" class="">~295</td><td id="IVF\" class="">~1,416,000</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-805f-8423-ef4005810494"/></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8038-92d9-de88d84c6a93" class=""><strong>b) Support Revenue (Revenue por Soporte / Recurrencia)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8079-80a5-c72a5e4d629a" class="">Tu KPI:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ab-94f9-c363cf825a37" class="bulleted-list"><li style="list-style-type:disc"><strong>Reorder ≥40% al día 90</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80f2-9005-ed182b5f4e8d" class="bulleted-list"><li style="list-style-type:disc">NPS ≥60</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80a6-a8b5-f7d4c292328f" class="">Para convertir “día 90” en una métrica anual dentro del workbook:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a5-9b35-ed0878094d94" class="bulleted-list"><li style="list-style-type:disc">Interpreto una <strong>retención anual</strong> progresiva por cohortes:<div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d3-8ab0-f05c16e6968f" class="bulleted-list"><li style="list-style-type:circle"><strong>Y1: 35% anual</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-801f-9bd1-fb6c63bd9aeb" class="bulleted-list"><li style="list-style-type:circle"><strong>Y2: 42% anual</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8088-a705-e3c5db2050cc" class="bulleted-list"><li style="list-style-type:circle"><strong>Y3: 45% anual</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80c2-9a07-c957ec4ef1d0" class="bulleted-list"><li style="list-style-type:circle"><strong>Y4: 48% anual</strong></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-807f-bda2-ec8081ebc622" class=""><strong>Installed base</strong> = unidades vendidas acumuladas.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80fe-b894-dfcb0fe28b35" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809f-b720-c20a0a1833d4"><th id="X`Ff" class="simple-table-header-color simple-table-header">Año</th><th id="?xm[" class="simple-table-header-color simple-table-header">Installed Base (unid acumuladas)</th><th id="[Bqp" class="simple-table-header-color simple-table-header">Supported Base (retención)</th><th id="z=Qu" class="simple-table-header-color simple-table-header">Precio soporte (MXN)</th><th id="suzM" class="simple-table-header-color simple-table-header">Support Revenue (MXN)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c0-874a-dd70cdbd458f"><td id="X`Ff" class=""><strong>Y1</strong></td><td id="?xm[" class="">~1,000</td><td id="[Bqp" class="">350</td><td id="z=Qu" class="">300</td><td id="suzM" class="">105,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805f-93f4-cb91b99d2961"><td id="X`Ff" class=""><strong>Y2</strong></td><td id="?xm[" class="">~3,000</td><td id="[Bqp" class="">1,260</td><td id="z=Qu" class="">300</td><td id="suzM" class="">378,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c0-87f3-e80e583df838"><td id="X`Ff" class=""><strong>Y3</strong></td><td id="?xm[" class="">~5,000</td><td id="[Bqp" class="">2,250</td><td id="z=Qu" class="">300</td><td id="suzM" class="">675,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8026-aa7f-ebee7516356b"><td id="X`Ff" class=""><strong>Y4</strong></td><td id="?xm[" class="">~7,800</td><td id="[Bqp" class="">3,744</td><td id="z=Qu" class="">300</td><td id="suzM" class="">1,123,200</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8099-9f69-f91760287c79" class=""><strong>Lectura estratégica:</strong> la recurrencia es tu “motor 2” porque HRIPT + tolerabilidad convierten a Valentina 28–42 en compradores que vuelven.</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-803a-b87d-c543cc957fee"/></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8065-9163-edf6c08172fd" class=""><strong>c) Revenue (Consolidado)</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80f9-a483-ef6d1affedd4" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8089-99b0-c0c2ead6ea28"><th id="fDie" class="simple-table-header-color simple-table-header">Año</th><th id="F}iG" class="simple-table-header-color simple-table-header">Sales Revenue (Producto)</th><th id="vpdl" class="simple-table-header-color simple-table-header">Support Revenue</th><th id="`ZKZ" class="simple-table-header-color simple-table-header">Total Revenue</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c8-a256-ef2a33303d54"><td id="fDie" class=""><strong>Y1</strong></td><td id="F}iG" class="">296,100</td><td id="vpdl" class="">105,000</td><td id="`ZKZ" class=""><strong>401,100</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802b-95b4-ccaabd1d6ef0"><td id="fDie" class=""><strong>Y2</strong></td><td id="F}iG" class="">~563,000</td><td id="vpdl" class="">378,000</td><td id="`ZKZ" class=""><strong>~941,000</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8014-a90b-ec51618e1aa5"><td id="fDie" class=""><strong>Y3</strong></td><td id="F}iG" class="">~885,000</td><td id="vpdl" class="">675,000</td><td id="`ZKZ" class=""><strong>~1,560,000</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804e-801f-c6a6a4b2ab77"><td id="fDie" class=""><strong>Y4</strong></td><td id="F}iG" class="">~1,416,000</td><td id="vpdl" class="">1,123,200</td><td id="`ZKZ" class=""><strong>~2,539,200</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8094-bc3f-d1c5303917cd" class=""><strong>Tendencia esperada (growth):</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-800f-bb34-dda02a6ee3b4" class="bulleted-list"><li style="list-style-type:disc">Y1 crece “lento” por ramp de fabricación/HRIPT/COFEPRIS/NOM-141.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8035-b7ab-c91952966852" class="bulleted-list"><li style="list-style-type:disc">Desde Y2 el hockey stick se acelera por:<div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ad-8db9-d4141a9f0ec6" class="bulleted-list"><li style="list-style-type:circle">installed base,</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-804f-9445-c2648baa8eae" class="bulleted-list"><li style="list-style-type:circle">repeat,</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8004-8caa-e877a3b4b1b4" class="bulleted-list"><li style="list-style-type:circle">y mayor conversión DTC por evidencia (HRIPT ≥98).</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8089-b0c1-ce7193253982"/></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-805c-a06d-d58a42441d54" class=""><strong>d) Cost of Goods Sold (COGS)</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80e5-9444-db5842bfdd8d" class="">Como no tenemos RFQ/BOM unitario cerrado, modelé COGS como:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8021-81da-d32490a7fd2f" class="bulleted-list"><li style="list-style-type:disc"><strong>Variable COGS por unidad (equivalente)</strong> para lograr un <strong>margen de producto target ~75%</strong> (dentro de tu rango 65–85%).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8063-b5c8-deede2e5b6fa" class="bulleted-list"><li style="list-style-type:disc">Estructura por maquila:<div style="display:contents" dir="auto"><ul id="370f554f-2b83-8045-b515-ce2a3c2002b4" class="bulleted-list"><li style="list-style-type:circle"><strong>Mfg Staffing (operación de maquila/tech team)</strong> → lo capturo como parte de “COGS fijo/semifijo”</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-800c-9613-e48f39d39fc9" class="bulleted-list"><li style="list-style-type:circle"><strong>Variable Costs</strong> (insumos, envase, empaque, merma, etc.)</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80dd-be90-d131b5093a55" class="">Supuesto operativo del workbook:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-800c-a7aa-feaa165875e6" class="bulleted-list"><li style="list-style-type:disc"><strong>Variable COGS % del Sales Revenue</strong>: 25%</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80f0-ac9e-c56b1b51ec2a" class="bulleted-list"><li style="list-style-type:disc"><strong>Variable COGS/unit equivalente</strong> ≈ 25% del precio efectivo promedio (~295)</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80b8-bce4-d66fe2efea78" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8076-a060-d1a0a9dbf44f"><th id="@vqq" class="simple-table-header-color simple-table-header">Año</th><th id="Cnbi" class="simple-table-header-color simple-table-header">Revenue Producto</th><th id="{nch" class="simple-table-header-color simple-table-header">Variable COGS (25%)</th><th id="\}XU" class="simple-table-header-color simple-table-header">Producto COGS (aprox.)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801c-b6ac-ef4c78330253"><td id="@vqq" class="">Y1</td><td id="Cnbi" class="">296,100</td><td id="{nch" class="">74,025</td><td id="\}XU" class="">74,025</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8086-a155-e8e820aab35f"><td id="@vqq" class="">Y2</td><td id="Cnbi" class="">~563,000</td><td id="{nch" class="">~140,750</td><td id="\}XU" class="">~140,750</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8047-aef9-e3b5c939b95a"><td id="@vqq" class="">Y3</td><td id="Cnbi" class="">~885,000</td><td id="{nch" class="">~221,250</td><td id="\}XU" class="">~221,250</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806f-8a9f-d03d0ed9d45f"><td id="@vqq" class="">Y4</td><td id="Cnbi" class="">~1,416,000</td><td id="{nch" class="">~354,000</td><td id="\}XU" class="">~354,000</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80d5-8f62-c614b6aa1220" class=""><strong>Implicación:</strong> tu rentabilidad depende menos de COGS unitario y más de:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-802e-a547-eaf5c7c60ead" class="bulleted-list"><li style="list-style-type:disc">mix (DTC vs clínicas),</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-803d-b449-dbe1681e0418" class="bulleted-list"><li style="list-style-type:disc">logística/merma,</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8047-833a-d0c91e3eb5f6" class="bulleted-list"><li style="list-style-type:disc">y CAC vs LTV.</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8017-82b8-ed0d45231757"/></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8014-8d70-cac9c4acc53e" class=""><strong>e) Support COGS</strong></h3></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-808b-9618-d4e39afa631e" class="">Apoyo/operación para recurrencia:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80b6-9e52-ea9b60f44b27" class="bulleted-list"><li style="list-style-type:disc">CS lean (NPS, onboarding, usage guide)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8042-9d44-e250b4badf2a" class="bulleted-list"><li style="list-style-type:disc">QA/complaint handling (post-batch)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8008-9cc2-c7fbe9b95066" class="bulleted-list"><li style="list-style-type:disc">seguimiento de pilotos clínicos y reporte estandarizado</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8086-b740-e4f49ddfb65f" class="">Supuesto:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ae-9338-ea928f842491" class="bulleted-list"><li style="list-style-type:disc">Support COGS ~ <strong>2.0–2.5%</strong> del Support Revenue (escalable).</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80f0-bbd0-db0d6b9daf37" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8037-b31e-e390f75728f0"><th id="_jMJ" class="simple-table-header-color simple-table-header">Año</th><th id="f?[d" class="simple-table-header-color simple-table-header">Support Revenue</th><th id="svoB" class="simple-table-header-color simple-table-header">Support COGS %</th><th id="ap};" class="simple-table-header-color simple-table-header">Support COGS</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807d-8058-e19bba4817d7"><td id="_jMJ" class="">Y1</td><td id="f?[d" class="">105,000</td><td id="svoB" class="">2.5%</td><td id="ap};" class="">2,625</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8024-98c9-e81395ca46ac"><td id="_jMJ" class="">Y2</td><td id="f?[d" class="">378,000</td><td id="svoB" class="">2.2%</td><td id="ap};" class="">8,316</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d4-849e-f42a7b7713b5"><td id="_jMJ" class="">Y3</td><td id="f?[d" class="">675,000</td><td id="svoB" class="">2.0%</td><td id="ap};" class="">13,500</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804a-86c9-cd92669e1e42"><td id="_jMJ" class="">Y4</td><td id="f?[d" class="">1,123,200</td><td id="svoB" class="">1.8%</td><td id="ap};" class="">20,218</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80ef-974d-c5ef9a793214"/></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-80eb-ad0d-ed874f960443" class=""><strong>f) Total COGS</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8015-b3ed-dc2dd12e63ae" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80aa-acf0-d21d36f97ece"><th id="kg|R" class="simple-table-header-color simple-table-header">Año</th><th id="f@gs" class="simple-table-header-color simple-table-header">Product COGS</th><th id="zTLF" class="simple-table-header-color simple-table-header">Support COGS</th><th id="@RZW" class="simple-table-header-color simple-table-header">Total COGS</th><th id="enhJ" class="simple-table-header-color simple-table-header">Gross Margin (aprox.)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8029-9128-dcf6f95ae2fd"><td id="kg|R" class="">Y1</td><td id="f@gs" class="">74,025</td><td id="zTLF" class="">2,625</td><td id="@RZW" class="">76,650</td><td id="enhJ" class="">~81%</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ad-a00d-f73a49f9c593"><td id="kg|R" class="">Y2</td><td id="f@gs" class="">140,750</td><td id="zTLF" class="">8,316</td><td id="@RZW" class="">149,066</td><td id="enhJ" class="">~84%</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8070-bba6-c767f14ddf44"><td id="kg|R" class="">Y3</td><td id="f@gs" class="">221,250</td><td id="zTLF" class="">13,500</td><td id="@RZW" class="">234,750</td><td id="enhJ" class="">~85%</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e7-9cfe-f394c6617ab7"><td id="kg|R" class="">Y4</td><td id="f@gs" class="">354,000</td><td id="zTLF" class="">20,218</td><td id="@RZW" class="">374,218</td><td id="enhJ" class="">~85%</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-800a-8c34-dfe17d51d5bc" class=""><strong>Áreas de mejora (para que el modelo “defienda” ante inversionistas):</strong></p></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8005-bbbe-f443e8693552" class="numbered-list" start="1"><li>sustituir “COGS % revenue” por <strong>COGS unitario BOM+batch</strong> real,</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8093-a4cf-f432bfbadd79" class="numbered-list" start="2"><li>modelar descuento/consumo de trial con el contrato de clínicas,</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8002-b59b-e6981097602f" class="numbered-list" start="3"><li>incluir costo logístico/fulfillment real por pedido (Estafeta + devoluciones).</li></ol></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-804f-8dc0-e48ad1c6cb53"/></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80b8-9250-e5863ac44b68"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-806d-9491-c08d57d60ff3" class=""><strong>3) Proforma Financial Model Tables Generation (Charlie Tillett Template)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80be-a3b4-d960494a256b" class=""><strong>Esto es una beta feature para proporcionarte un Proforma Financial Model basado en Charlie Tillet (MIT SM ‘91).Aquí está un link a original spreadsheet para referencia:</strong><strong><a href="https://orbit-kb.mit.edu/hc/en-us/articles/205911216-Where-can-I-find-a-financial-template-for-a-startup">https://orbit-kb.mit.edu/hc/en-us/articles/205911216-Where-can-I-find-a-financial-template-for-a-startup</a></strong></p></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-8011-897e-d234a695b6c6" class="">Importante: El template del workbook asigna “headcount por departamentos” con escalamiento típico. Yo adapté esos roles al contexto de tu startup (biotech maquila + DTC/clinics + validación HRIPT). Donde el template es genérico, lo ajusto a tus fases (T1 spec/HRIPT, T2 producción, T3 lanzamiento simultáneo DTC+pilotos, T4 reorder ≥40%).</blockquote></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80be-a6f9-d87c46b0805f"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-8049-a037-d43c6470e01e" class=""><strong>A) P&amp;L By Year (4 años)</strong></h1></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8019-b387-ef1cbd3b7963" class=""><strong>Supuestos principales para P&amp;L (coherentes con tu narrativa):</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-802b-ba02-ff24c6d6891d" class="bulleted-list"><li style="list-style-type:disc">Revenue = Sales (producto) + Support (recurrencia).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80b6-a053-e86132a6b1b1" class="bulleted-list"><li style="list-style-type:disc">COGS = Product COGS + Support COGS (como arriba).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-806f-92e4-d2dc635f4756" class="bulleted-list"><li style="list-style-type:disc">OPEX (R&amp;D/S&amp;M/G&amp;A) crece por compliance, marketing y soporte.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80ce-85e9-e747b8568aac" class=""><strong>(Beta) OPEX calibrado a tu listado de gastos:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8012-ab1b-f45967981d16" class="bulleted-list"><li style="list-style-type:disc">depósito Biotech $50k (distribuido en Y1),</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80b3-a950-f130c06bbdb4" class="bulleted-list"><li style="list-style-type:disc">label $5k (Y1),</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80bc-9ac1-c182c7c77f4a" class="bulleted-list"><li style="list-style-type:disc">ads $30k (Y1),</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8062-a0ac-ccfece7d1c83" class="bulleted-list"><li style="list-style-type:disc">logística $10k (Y1),</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80e7-9424-d4e97799280e" class="bulleted-list"><li style="list-style-type:disc">legal $10k (Y1), y en Year 2+ un escalamiento de marketing/CS lean.</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80f3-bb3a-f03aa2b70be0" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8045-a268-fa86cd30e7e6"><th id="|DP|" class="simple-table-header-color simple-table-header">Año</th><th id="?IiX" class="simple-table-header-color simple-table-header">Total Revenue</th><th id="sB\W" class="simple-table-header-color simple-table-header">Total COGS</th><th id="ZMLr" class="simple-table-header-color simple-table-header">Gross Profit</th><th id="n|rg" class="simple-table-header-color simple-table-header">R&amp;D</th><th id="p=]Z" class="simple-table-header-color simple-table-header">S&amp;M</th><th id="T[a^" class="simple-table-header-color simple-table-header">G&amp;A</th><th id="~exG" class="simple-table-header-color simple-table-header">Operating Exp.</th><th id="uhWv" class="simple-table-header-color simple-table-header">Operating Profit</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8008-b9cb-e4bc8c4a7383"><td id="|DP|" class=""><strong>Y1</strong></td><td id="?IiX" class="">401,100</td><td id="sB\W" class="">76,650</td><td id="ZMLr" class="">324,450</td><td id="n|rg" class="">110,000</td><td id="p=]Z" class="">120,000</td><td id="T[a^" class="">140,000</td><td id="~exG" class="">370,000</td><td id="uhWv" class=""><strong>(45,550)</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d4-8044-d6a78c3614bb"><td id="|DP|" class=""><strong>Y2</strong></td><td id="?IiX" class="">~941,000</td><td id="sB\W" class="">~149,066</td><td id="ZMLr" class="">~791,934</td><td id="n|rg" class="">75,000</td><td id="p=]Z" class="">220,000</td><td id="T[a^" class="">250,000</td><td id="~exG" class="">545,000</td><td id="uhWv" class=""><strong>~246,934</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8029-9279-dd713c9a8ae6"><td id="|DP|" class=""><strong>Y3</strong></td><td id="?IiX" class="">~1,560,000</td><td id="sB\W" class="">~234,750</td><td id="ZMLr" class="">~1,325,250</td><td id="n|rg" class="">90,000</td><td id="p=]Z" class="">340,000</td><td id="T[a^" class="">320,000</td><td id="~exG" class="">750,000</td><td id="uhWv" class=""><strong>~575,250</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b8-98a4-ce033dfe5f06"><td id="|DP|" class=""><strong>Y4</strong></td><td id="?IiX" class="">~2,539,200</td><td id="sB\W" class="">~374,218</td><td id="ZMLr" class="">~2,164,982</td><td id="n|rg" class="">110,000</td><td id="p=]Z" class="">520,000</td><td id="T[a^" class="">420,000</td><td id="~exG" class="">1,050,000</td><td id="uhWv" class=""><strong>~1,114,982</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80df-9f11-f98c9e77cad1" class=""><strong>Explicación de números:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8055-b749-e8429792721b" class="bulleted-list"><li style="list-style-type:disc">Y1 es “valley of death” por HRIPT paralelo, NOM-141, setup maquila, y ramp comercial.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80b0-bd00-f51156a9eb08" class="bulleted-list"><li style="list-style-type:disc">Y2 cruza a rentabilidad operativa por la combinación:<div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ff-96f0-ea13b366c166" class="bulleted-list"><li style="list-style-type:circle">run 2 (2,000),</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8058-b35f-deb3686b4cd8" class="bulleted-list"><li style="list-style-type:circle">repeat (≥40% día 90 como motor),</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80d4-9999-da064cb7c311" class="bulleted-list"><li style="list-style-type:circle">y mayor eficiencia del funnel (evidencia + NPS).</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80b0-a118-d2ca2a62e341"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-8037-ae46-d8891fa03f15" class=""><strong>H) Staffing Plan (Template)</strong></h1></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80c2-a33f-dde6098f004d" class="">Aquí te lo entrego en formato tipo template: Q1–Q4 Year 1 y luego totales/anuales Year 2–3–4.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8044-8dda-f8f052a43cd5" class=""><strong>Asignación alineada a tu equipo:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80fe-891e-cfdad42c6734" class="bulleted-list"><li style="list-style-type:disc">R&amp;D/Operación (QA/QC + HRIPT ops): Román + Gerardo (y QC interno)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80fe-bdf5-e0ec1f8a4503" class="bulleted-list"><li style="list-style-type:disc">Sales/CS (DTC/clinics): operaciones + soporte</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a8-87f2-c8c65b9e9845" class="bulleted-list"><li style="list-style-type:disc">Marketing (ads, contenido, email): René se apoya en Growth, y luego Year 2 FT marketing (m6)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-806d-a1a9-cf4e2a904bca" class="bulleted-list"><li style="list-style-type:disc">G&amp;A/Finance/Legal: contabilidad + founders</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8007-9d12-e96a69d749eb" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808f-8ede-d9125097b3fb"><th id="}RhA" class="simple-table-header-color simple-table-header">Área/Role</th><th id="K]lq" class="simple-table-header-color simple-table-header">Y1 Q1</th><th id=";:Fl" class="simple-table-header-color simple-table-header">Y1 Q2</th><th id="&lt;}VZ" class="simple-table-header-color simple-table-header">Y1 Q3</th><th id="z^H:" class="simple-table-header-color simple-table-header">Y1 Q4</th><th id="N_or" class="simple-table-header-color simple-table-header">Y2 Total</th><th id="yxyO" class="simple-table-header-color simple-table-header">Y3 Total</th><th id="O{W~" class="simple-table-header-color simple-table-header">Y4 Total</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8001-9d23-d6abaaefb3ac"><td id="}RhA" class=""><strong>R&amp;D (QA/QC + HRIPT)</strong></td><td id="K]lq" class="">3</td><td id=";:Fl" class="">4</td><td id="&lt;}VZ" class="">4</td><td id="z^H:" class="">3</td><td id="N_or" class="">6</td><td id="yxyO" class="">8</td><td id="O{W~" class="">10</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c4-8226-dbf824793d8f"><td id="}RhA" class=""><strong>Sales (DTC + clínicas pilots + CS)</strong></td><td id="K]lq" class="">1</td><td id=";:Fl" class="">2</td><td id="&lt;}VZ" class="">3</td><td id="z^H:" class="">4</td><td id="N_or" class="">6</td><td id="yxyO" class="">10</td><td id="O{W~" class="">14</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a6-9ff1-dd8155cd8004"><td id="}RhA" class=""><strong>Marketing (ads, contenido, email, micro-influencers)</strong></td><td id="K]lq" class="">1</td><td id=";:Fl" class="">1</td><td id="&lt;}VZ" class="">2</td><td id="z^H:" class="">2</td><td id="N_or" class="">5</td><td id="yxyO" class="">8</td><td id="O{W~" class="">12</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808a-85a3-efeb2fc712a9"><td id="}RhA" class=""><strong>G&amp;A / Operaciones</strong></td><td id="K]lq" class="">2</td><td id=";:Fl" class="">2</td><td id="&lt;}VZ" class="">2</td><td id="z^H:" class="">2</td><td id="N_or" class="">4</td><td id="yxyO" class="">5</td><td id="O{W~" class="">6</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80f2-b7b3-f855481bea52" class=""><strong>Explicación:</strong></p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-807f-b611-f87cb7c1e1e7" class="">En Y1 el peso cae en QA/validación y lanzamiento simultáneo (semana 4–8). En Y2 incrementa performance marketing y CS para sostener recurrencia.</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80c1-adfe-f74b87fec1a0"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-80e7-978f-c63d1fa80050" class=""><strong>I) Staffing Expenses</strong></h1></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8096-900c-e4fe6b915733" class="">Supuesto (beta) de costo anual por empleado equivalente:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8039-bf50-e1dcc233a193" class="bulleted-list"><li style="list-style-type:disc">founders y roles híbridos operan como “equivalentes” del template.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a0-b909-f2cc01d080cc" class="bulleted-list"><li style="list-style-type:disc">Costos salariales + beneficios se estiman como mezcla y se incrementa con headcount.</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8065-8c3c-ddbc83b1447c" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8046-9606-d66cedb6ce85"><th id="uJtL" class="simple-table-header-color simple-table-header">Periodo</th><th id="qB}=" class="simple-table-header-color simple-table-header">Staffing Expenses (MXN)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807d-8478-db75595df66a"><td id="uJtL" class="">Y1 Q1</td><td id="qB}=" class="">110,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fe-805f-ef302a43bc38"><td id="uJtL" class="">Y1 Q2</td><td id="qB}=" class="">130,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a5-ace4-f589833d2a96"><td id="uJtL" class="">Y1 Q3</td><td id="qB}=" class="">145,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ec-a7e7-c452dcda6369"><td id="uJtL" class="">Y1 Q4</td><td id="qB}=" class="">160,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e3-9c35-ed927b40e54d"><td id="uJtL" class=""><strong>Y2 Total</strong></td><td id="qB}=" class="">300,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fc-a378-f98c6b2fb49e"><td id="uJtL" class=""><strong>Y3 Total</strong></td><td id="qB}=" class="">520,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807b-b9e9-f22ab3e915b2"><td id="uJtL" class=""><strong>Y4 Total</strong></td><td id="qB}=" class="">720,000</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8027-bf1c-d314b1ee6780" class=""><strong>Explicación:</strong></p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80ee-b04d-da0430092fe7" class="">Y1 concentra roles clave con menor headcount formal pero más carga de trabajo (HRIPT y compliance). Year 2 añade FT marketing (m6) y soporte CS PT (m9).</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80f6-bb38-c746a3ce22a6"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-803a-aff6-c82344596fa6" class=""><strong>J) Rent Calculations</strong></h1></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-800c-b9c6-d736e3423271" class="">Tu warehouse es consignment (Estafeta), así que el “rent” se mantiene bajo como oficina/operación.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-803e-ab1d-fbe7cdc03c29" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805f-a47d-f903ee49ef58"><th id="?;}a" class="simple-table-header-color simple-table-header">Periodo</th><th id="wjX{" class="simple-table-header-color simple-table-header">Rent (MXN)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8013-84f5-e1e449a608ba"><td id="?;}a" class="">Y1 Q1</td><td id="wjX{" class="">20,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ed-b13f-e45e2be79f78"><td id="?;}a" class="">Y1 Q2</td><td id="wjX{" class="">20,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800f-a1ed-ecf526150de1"><td id="?;}a" class="">Y1 Q3</td><td id="wjX{" class="">20,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cb-81ef-fa906d6d8cba"><td id="?;}a" class="">Y1 Q4</td><td id="wjX{" class="">20,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8048-83f6-f7d774354d43"><td id="?;}a" class="">Y2 Total</td><td id="wjX{" class="">80,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b3-a971-fd104c7bd87e"><td id="?;}a" class="">Y3 Total</td><td id="wjX{" class="">90,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8092-867c-f7c679da174e"><td id="?;}a" class="">Y4 Total</td><td id="wjX{" class="">100,000</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80f9-a350-f2347cf8d184"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-80b8-b00f-ecab75b831ba" class=""><strong>K) Departmental Operating Expenses</strong></h1></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8082-8aef-e3fb4a7020c9" class="">Calibrado con tus líneas:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8081-8bac-e02ebb2e2622" class="bulleted-list"><li style="list-style-type:disc">ads $30k (Y1),</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8078-9c35-cadf2e2231b6" class="bulleted-list"><li style="list-style-type:disc">label $5k (Y1),</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80b3-bf51-ee4a2b2075cf" class="bulleted-list"><li style="list-style-type:disc">logística $10k (Y1),</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-801b-80cc-c9a2572b5269" class="bulleted-list"><li style="list-style-type:disc">legal $10k (Y1),</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-808e-adef-d6db14962907" class="bulleted-list"><li style="list-style-type:disc">expansión marketing y soporte en Y2+.</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8069-b7a1-d25c77c9dbef" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802a-be88-f6278ba76070"><th id="l:LH" class="simple-table-header-color simple-table-header">Departamento</th><th id="?TPk" class="simple-table-header-color simple-table-header">Y1 Total (MXN)</th><th id="vu`q" class="simple-table-header-color simple-table-header">Y2 Total</th><th id="CTtS" class="simple-table-header-color simple-table-header">Y3 Total</th><th id="wxy\" class="simple-table-header-color simple-table-header">Y4 Total</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8007-a996-f0200499723a"><td id="l:LH" class="">R&amp;D / QA / HRIPT Ops</td><td id="?TPk" class="">110,000</td><td id="vu`q" class="">75,000</td><td id="CTtS" class="">90,000</td><td id="wxy\" class="">110,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8027-9514-dcec9d582b51"><td id="l:LH" class="">S&amp;M / Marketing</td><td id="?TPk" class="">120,000</td><td id="vu`q" class="">220,000</td><td id="CTtS" class="">340,000</td><td id="wxy\" class="">520,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d3-8855-f7f1fd7de40b"><td id="l:LH" class="">G&amp;A / Legal / Admin</td><td id="?TPk" class="">140,000</td><td id="vu`q" class="">250,000</td><td id="CTtS" class="">320,000</td><td id="wxy\" class="">420,000</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80c8-b7ed-fb3116cdb7ac"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-8014-8f5c-c7aa421556f3" class=""><strong>L) Capital Expenses (CAPEX)</strong></h1></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80ab-b876-e500132e9edd" class="">Para biotech maquila, CAPEX directo es menor (equipamiento básico/oficina):</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-806a-9909-dec1694f8d04" class="bulleted-list"><li style="list-style-type:disc">workstation + prototipos/QA no es “fábrica”.</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-800f-86d6-da13a084343a" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80da-8b82-f2c3b1335688"><th id="CLeD" class="simple-table-header-color simple-table-header">Periodo</th><th id="{|_x" class="simple-table-header-color simple-table-header">CAPEX (MXN)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8055-878b-d0683d757807"><td id="CLeD" class="">Y1 Q1</td><td id="{|_x" class="">15,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8020-ba47-eb4d0d7ae581"><td id="CLeD" class="">Y1 Q2</td><td id="{|_x" class="">5,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805c-865d-cdb4b0f4f332"><td id="CLeD" class="">Y1 Q3</td><td id="{|_x" class="">10,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f8-ac69-d05238e2c955"><td id="CLeD" class="">Y1 Q4</td><td id="{|_x" class="">20,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8017-a34c-caebf1c1bd99"><td id="CLeD" class="">Y2 Total</td><td id="{|_x" class="">40,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8024-be39-fd9a1c0231c5"><td id="CLeD" class="">Y3 Total</td><td id="{|_x" class="">60,000</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805b-85c9-d7f05ceaaff7"><td id="CLeD" class="">Y4 Total</td><td id="{|_x" class="">80,000</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8081-9c89-c63516c6c175"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-8033-a57a-f10f8c441f25" class=""><strong>M) Cash Flow</strong></h1></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8055-a894-f9f2de057608" class=""><strong>Beta</strong>: calculado como “cash in/out” del P&amp;L + CAPEX + inventario/working capital simplificado.</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80ec-b667-e4bc17499424" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807f-9497-fd55f2594aa3"><th id="KoMz" class="simple-table-header-color simple-table-header">Periodo</th><th id="Rk&gt;}" class="simple-table-header-color simple-table-header">Beginning Cash → Ending Cash (MXN)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8065-ab1d-e0ecc958bf27"><td id="KoMz" class="">Y1 Q1</td><td id="Rk&gt;}" class="">(cash inicial implícito) → ~ (baja moderada)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f7-9c71-c1efbff8a773"><td id="KoMz" class="">Y1 Q2</td><td id="Rk&gt;}" class="">baja</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8099-a04d-c9ae28f8de0e"><td id="KoMz" class="">Y1 Q3</td><td id="Rk&gt;}" class="">baja</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807a-ba6d-d1421affd052"><td id="KoMz" class="">Y1 Q4</td><td id="Rk&gt;}" class="">se estabiliza</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802a-a367-fa16c7468175"><td id="KoMz" class=""><strong>Y2</strong></td><td id="Rk&gt;}" class="">mejora (por turning point de recurrencia)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f0-821d-c79ef6df476f"><td id="KoMz" class=""><strong>Y3</strong></td><td id="Rk&gt;}" class="">positivo</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802a-8613-f3103d26236c"><td id="KoMz" class=""><strong>Y4</strong></td><td id="Rk&gt;}" class="">fuerte positivo</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-80eb-9069-cb2cc2e5eafe" class="">Para que el workbook quede “cerrado” exacto como Charlie Tillett (cash plug), necesito que me confirmes:<div style="display:contents" dir="auto"><p id="370f554f-2b83-802c-9892-d353057e971d" class=""><strong>si el SAFE $4M MXN entra en T1 completo o por tranches (4 tranches)</strong> y si el <strong>deposito Biotech $50k</strong> se paga completo en Q1/Q2. Con eso ajustamos el cash flow perfectamente.</p></div></blockquote></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-801a-b2fa-c9922d1fc646"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-808f-a652-ed25de3a4e6c" class=""><strong>N) Cash Flow Summary</strong></h1></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80a1-9ead-e39388d420c7" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8073-9c7e-cd8f7fec2aa8"><th id="GW;i" class="simple-table-header-color simple-table-header">Indicador</th><th id="@G~L" class="simple-table-header-color simple-table-header">Y1</th><th id="Dhsp" class="simple-table-header-color simple-table-header">Y2</th><th id="lK_T" class="simple-table-header-color simple-table-header">Y3</th><th id="bop&lt;" class="simple-table-header-color simple-table-header">Y4</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80be-8250-d3659440720b"><td id="GW;i" class="">Burn (neto)</td><td id="@G~L" class="">moderado (por inversión)</td><td id="Dhsp" class="">menor</td><td id="lK_T" class="">menor</td><td id="bop&lt;" class="">bajo/positivo</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800f-a567-f20306f20eed"><td id="GW;i" class="">Tiempo a “ramen profitability”</td><td id="@G~L" class="">Y2 (estimado)</td><td id="Dhsp" class="">—</td><td id="lK_T" class="">—</td><td id="bop&lt;" class="">—</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-803e-b8ae-f57491972b26"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-80bf-a5da-f114d6745165" class=""><strong>O) Assets (Balance Sheet – Snapshot)</strong></h1></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-807c-bd37-ca07c71e696c" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80cd-be88-c27e9060ab5f"><th id="zOMX" class="simple-table-header-color simple-table-header">Periodo</th><th id="|c?i" class="simple-table-header-color simple-table-header">Assets (MXN)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806d-b56a-f8748484805b"><td id="zOMX" class="">Y1 Q4</td><td id="|c?i" class="">inventario + caja</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8011-b40f-c9f65410e249"><td id="zOMX" class="">Y2 Q4</td><td id="|c?i" class="">más installed base + working capital</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d3-ba2e-d92d98d4b4d2"><td id="zOMX" class="">Y3 Q4</td><td id="|c?i" class="">se estabiliza</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e5-a63b-c7ff8bb0635b"><td id="zOMX" class="">Y4 Q4</td><td id="|c?i" class="">expansión + caja retenida</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-802b-96ff-ee7c63c61025" class="">Beta: Los valores exactos de assets requieren el “inventory days” (en tu workbook aparece como días en inventario). Aquí lo dejé cualitativo para no falsear números.</blockquote></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80fd-850c-c06f8591fffd"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-80b7-97ca-e4f73a46b719" class=""><strong>P) Liabilities</strong></h1></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-808c-8bbb-d9674a750e20" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ee-b83c-db0f2e2d9c59"><th id="XhFo" class="simple-table-header-color simple-table-header">Periodo</th><th id="{vcJ" class="simple-table-header-color simple-table-header">Liabilities (MXN)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8025-97c0-fa73b6faacf3"><td id="XhFo" class="">Y1 Q4</td><td id="{vcJ" class="">pasivos operativos bajos (proveedores/logística)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b6-b99f-c4b768b4282c"><td id="XhFo" class="">Y2+</td><td id="{vcJ" class="">crecen ligeramente si hay financiamiento proveedor</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8082-a3ae-e22b732cfdd4"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-80a3-a9bd-fac6a5f7fbe9" class=""><strong>Q) Equity &amp; Retained Earnings</strong></h1></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8011-9dbd-cf124d612e54" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8030-9110-f558c3ea200b"><th id="x:u&gt;" class="simple-table-header-color simple-table-header">Periodo</th><th id="F;K&gt;" class="simple-table-header-color simple-table-header">Equity / Retained Earnings</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b5-97a3-c1a0723aabc3"><td id="x:u&gt;" class="">Y1</td><td id="F;K&gt;" class="">disminuye ligeramente por pérdida operativa</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804d-ab80-ca89e9d92c1a"><td id="x:u&gt;" class="">Y2</td><td id="F;K&gt;" class="">empieza a recuperarse</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808d-ae29-fc4b1fbcd58a"><td id="x:u&gt;" class="">Y3–Y4</td><td id="F;K&gt;" class="">crece por utilidad</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8051-8116-e9632137b025"/></div><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-804e-b71f-fd775b15143a" class=""><strong>R) Statement of Cash Flow</strong></h1></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80be-8343-fa58286523ff" class="">Resumen:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a2-9287-cb1550097333" class="bulleted-list"><li style="list-style-type:disc">Operación: mejora desde Y2 por recurrencia.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80e2-8b83-e38a995da193" class="bulleted-list"><li style="list-style-type:disc">Inversión: CAPEX bajo.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80fb-a441-f7b087c34706" class="bulleted-list"><li style="list-style-type:disc">Financiamiento: SAFE/Mar+Fund (si entra por tranches, suaviza burn).</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80c9-996e-d19b3a7a7143"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80ce-96fe-ff13a6f0245a" class=""><strong>¿Dónde hice modificaciones? (respecto a tu input)</strong></h2></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8084-bcea-d95aaa75a88a" class="numbered-list" start="1"><li><strong>Ventas DTC vs Clínicas (precio efectivo clínico $255)</strong>: asignado para modelar trials sin contrato aún.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8061-a40b-c139c5cac332" class="numbered-list" start="2"><li><strong>Conversión de “recompra día 90 ≥40%” a retención anual (35%→48%)</strong>: para que el soporte crezca con installed base dentro del workbook.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8042-9dbc-e3ffeb5641f6" class="numbered-list" start="3"><li><strong>COGS como % de revenue (25%)</strong>: porque el BOM/RFQ unitario no está cerrado; ajustable en cuanto Biotech entregue BOM final.</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-807a-826b-c3f45a71237b" class="numbered-list" start="4"><li><strong>OPEX por fases</strong>: Y1 con setup/validación; Y2–Y4 con escalamiento.</li></ol></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Step 8 - Plan for Policy Sticks and Carrots</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="97ff554f-2b83-82ed-88b2-011c5c2db5cf" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/color-palette_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>Step 8 - Plan for Policy Sticks and Carrots</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h1 id="370f554f-2b83-80e6-9431-e55cbe3d28de" class=""><strong>Step 8 â€“ Policy Landscape Matrix</strong></h1></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-805e-a41b-e33a98a9adaa" class=""><strong>Field Explanations (Readable Version, Single-Idea Cells)</strong></h2></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8089-938d-ca2a0f76366a" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8041-844f-f5be63683f64"><th id="UiRA" class="simple-table-header-color simple-table-header">Policy</th><th id="B?wQ" class="simple-table-header-color simple-table-header">Stick or Carrot</th><th id="i?`w" class="simple-table-header-color simple-table-header">What potential impacts could this policy have on your venture (positive or negative)?</th><th id="N{:O" class="simple-table-header-color simple-table-header">If those impacts are realized, to what degree will this policy contribute to the success or failure of your venture? (High, Medium, Low)</th><th id="}_jQ" class="simple-table-header-color simple-table-header">Who are the key decision-makers and gatekeepers in this policy?</th><th id="{\~w" class="simple-table-header-color simple-table-header">Do you need to complete any applications or proposals? How long do these processes typically take?</th><th id="vzW_" class="simple-table-header-color simple-table-header">What data or other evidence do you need to show?</th><th id="~dt{" class="simple-table-header-color simple-table-header">Stick or Carrot</th><th id="w:AW" class="simple-table-header-color simple-table-header">For which market segments is this policy applicable?</th><th id="W=`G" class="simple-table-header-color simple-table-header">What potential impacts could this policy have on your potential customers (positive or negative)?</th><th id="lsEz" class="simple-table-header-color simple-table-header">To what extent can your solution help your customers realize the positive impacts and/or avoid the negative ones? (High, Medium, Low)</th><th id="Wbsl" class="simple-table-header-color simple-table-header">Stick or Carrot</th><th id="dB{c" class="simple-table-header-color simple-table-header">What is the realistic wiggle room on this policy?</th><th id="\vJF" class="simple-table-header-color simple-table-header">How feasible would it be to have an impact on this policy?</th><th id="=&lt;{&lt;" class="simple-table-header-color simple-table-header">If you were to make an impact on this policy, how long would it take to come into effect?</th><th id="tAyF" class="simple-table-header-color simple-table-header">What impact would changing this policy have on your venture?</th><th id="|pHJ" class="simple-table-header-color simple-table-header">How might other factors shape policy in this area?</th><th id="^w}A" class="simple-table-header-color simple-table-header">What impact would those externally driven changes have on your venture?</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d3-87d1-c5450f231bf8"><td id="UiRA" class="">NOM-259 BPF (Good Manufacturing Practices for the cosmetics industry)</td><td id="B?wQ" class="">Stick 🛑</td><td id="i?`w" class="">Exige cumplimiento de BPF en maquila, elevando costos y tiempos de operación pero asegurando calidad y tolerabilidad del producto.</td><td id="N{:O" class="">High</td><td id="}_jQ" class="">COFEPRIS and plantas BPF verificadas por auditorías y evaluación documental.</td><td id="{\~w" class="">Sí, se requiere operar bajo cumplimiento BPF y, cuando aplique, responder observaciones en inspecciones que suelen tardar semanas a meses.</td><td id="vzW_" class="">Evidencia de lotes, registros de control de calidad, validaciones de procesos, historial de estabilidad y trazabilidad.</td><td id="~dt{" class="">Stick 🛑</td><td id="w:AW" class="">Aplica a la manufactura y formulación para DTC, clínicas y clientes B2B.</td><td id="W=`G" class="">Incrementa carga documental y reduce flexibilidad para cambios rápidos de fórmula o proveedor.</td><td id="lsEz" class="">High</td><td id="Wbsl" class="">Stick 🛑</td><td id="dB{c" class="">La normativa suele ser rígida en requisitos mínimos, pero puede haber ajustes operativos por lineamientos.</td><td id="\vJF" class="">Medium</td><td id="=&lt;{&lt;" class="">Es posible influir vía cámaras, alianzas académicas y participación en mesas técnicas.</td><td id="tAyF" class="">12 a 24 meses</td><td id="|pHJ" class="">Cambios podrían reducir o incrementar barreras de entrada y el costo de cumplimiento para tu modelo de maquila.</td><td id="^w}A" class="">Presión por eventos de seguridad, capacidad instalada regulatoria y avance de lineamientos técnicos.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d4-8855-e5a195f33c06"><td id="UiRA" class="">NOM-141 (etiquetado y publicidad regulada de productos cosméticos)</td><td id="B?wQ" class="">Stick 🛑</td><td id="i?`w" class="">Restringe claims y forma de comunicación, evitando riesgos reputacionales por promesas no permitidas pero limitando marketing.</td><td id="N{:O" class="">Medium</td><td id="}_jQ" class="">COFEPRIS y autoridades de verificación de etiquetado y publicidad.</td><td id="{\~w" class="">Sí, se requiere revisión y actualización de etiqueta/claims antes de comercializar, con tiempos típicos de respuesta a observaciones en semanas.</td><td id="vzW_" class="">Evidencia de fórmulas, alcance de indicaciones permitidas, revisión legal/regulatoria y diseño final de empaque conforme norma.</td><td id="~dt{" class="">Stick 🛑</td><td id="w:AW" class="">Aplica al DTC y a clínicas que hacen comunicación al paciente.</td><td id="W=`G" class="">Puede frenar campañas agresivas y obligar a mensajes educativos más conservadores.</td><td id="lsEz" class="">Medium</td><td id="Wbsl" class="">Stick 🛑</td><td id="dB{c" class="">Hay poca flexibilidad en contenido obligatorio, pero puede variarse el lenguaje permitido.</td><td id="\vJF" class="">High</td><td id="=&lt;{&lt;" class="">La empresa puede impactar por asesoría regulatoria y práctica de cumplimiento, aunque no define la norma.</td><td id="tAyF" class="">0 a 6 meses</td><td id="|pHJ" class="">Mejor cumplimiento reduce riesgo de sanciones y mejora conversión por confianza regulatoria.</td><td id="^w}A" class="">Tendencias de comunicación, fiscalización y cambios en criterios de interpretación.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ac-bc1b-d9d6fa712720"><td id="UiRA" class="">HRIPT (verificación de tolerabilidad en condiciones de uso) como requisito/estándar de práctica regulatoria y acceso a mercado</td><td id="B?wQ" class="">Stick 🛑</td><td id="i?`w" class="">Obliga a pruebas con sujetos, elevando el costo inicial pero creando una barrera defensable por tolerabilidad verificada.</td><td id="N{:O" class="">High</td><td id="}_jQ" class="">COFEPRIS indirectamente vía aceptabilidad técnica, comités internos de calidad y terceros contratados de pruebas.</td><td id="{\~w" class="">Sí, se requiere planificar estudio; típico 3 a 6 semanas para ejecución, más tiempo de análisis y reporte.</td><td id="vzW_" class="">Protocolo, consentimiento informado, registro de resultados, análisis de HRIPT y documentación de seguridad/estabilidad relacionada.</td><td id="~dt{" class="">Stick 🛑</td><td id="w:AW" class="">Aplica a end-users con piel sensible, y a compradores clínicos y B2B que exigen evidencia.</td><td id="W=`G" class="">Aumenta la confianza y reduce miedo a irritación, pero puede elevar precio inicial por el costo de prueba.</td><td id="lsEz" class="">High</td><td id="Wbsl" class="">Carrot 🥇</td><td id="dB{c" class="">Puede volverse más valorado si la autoridad y el mercado premian evidencia de tolerabilidad.</td><td id="\vJF" class="">Medium</td><td id="=&lt;{&lt;" class="">Es factible influir mostrando resultados, datos de seguridad y casos de éxito en foros.</td><td id="tAyF" class="">6 a 18 meses</td><td id="|pHJ" class="">Mayor valoración de evidencia permitiría capturar más precio y acelerar adopción clínica.</td><td id="^w}A" class="">Aumenta la exigencia por seguridad del consumidor y reputación del sector.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b5-98ce-fc459c439465"><td id="UiRA" class="">Requisitos de registro, notificación y trámites sanitarios (COFEPRIS/COFEPRIS)</td><td id="B?wQ" class="">Stick 🛑</td><td id="i?`w" class="">Los trámites formales pueden retrasar lanzamientos, pero una vez aprobado crean continuidad de ventas y confianza.</td><td id="N{:O" class="">Medium</td><td id="}_jQ" class="">COFEPRIS como autoridad de revisión y ventanillas de gestión.</td><td id="{\~w" class="">Sí, suele requerir presentaciones y seguimiento que pueden tardar semanas a varios meses según complejidad.</td><td id="vzW_" class="">Expediente técnico completo, documentos de BPF, etiqueta conforme NOM, y resultados relevantes de seguridad/tolerabilidad.</td><td id="~dt{" class="">Stick 🛑</td><td id="w:AW" class="">Aplica a DTC y clínicas en el momento de incorporación a portafolio.</td><td id="W=`G" class="">Puede posponer disponibilidad en punto de venta y afectar planificación de stock.</td><td id="lsEz" class="">Medium</td><td id="Wbsl" class="">Stick 🛑</td><td id="dB{c" class="">La “wiggle room” suele ser baja porque el proceso depende de criterios de revisión.</td><td id="\vJF" class="">Low</td><td id="=&lt;{&lt;" class="">Influir es limitado porque el marco es administrativo y técnico.</td><td id="tAyF" class="">3 a 12 meses</td><td id="|pHJ" class="">Cambios administrativos podrían mejorar tu velocidad de comercialización o elevar riesgos de retraso.</td><td id="^w}A" class="">Carga de trabajo institucional y reformas administrativas.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b3-9457-c9470d523670"><td id="UiRA" class="">Lineamientos y fomento de economía circular y valorización de biomasa marina (programas y convocatorias)</td><td id="B?wQ" class="">Carrot 🌟</td><td id="i?`w" class="">Incentiva comunicación de impacto y posibles apoyos no dilutivos al usar sargazo como insumo, fortaleciendo marca y financiamiento.</td><td id="N{:O" class="">Medium</td><td id="}_jQ" class="">Instancias que administran convocatorias y evaluación de impacto ambiental (fondos y programas de innovación).</td><td id="{\~w" class="">No siempre requiere trámites formales, pero participar en convocatorias implica postulaciones que tardan 2 a 6 meses.</td><td id="vzW_" class="">Plan de impacto, trazabilidad de sargassum, métricas ambientales y métricas de escalabilidad productiva.</td><td id="~dt{" class="">Carrot 🌟</td><td id="w:AW" class="">Aplica a DTC con conciencia ambiental y a socios B2B que buscan diferenciación sostenible.</td><td id="W=`G" class="">Mejora percepción y preferencia del cliente, reduciendo fricción de compra y mejorando retención.</td><td id="lsEz" class="">Medium</td><td id="Wbsl" class="">Carrot 🌟</td><td id="dB{c" class="">Puede variar según ciclos políticos, pero tiende a crecer con prioridad ambiental.</td><td id="\vJF" class="">Medium</td><td id="=&lt;{&lt;" class="">Es viable por advocacy, alianzas con ONGs y presentación de métricas de ecosistema.</td><td id="tAyF" class="">6 a 24 meses</td><td id="|pHJ" class="">Si se amplía, aumenta capital no dilutivo y mejora narrativa de ventaja competitiva.</td><td id="^w}A" class="">Sensibilidad climática, presión social y resultados de auditorías ambientales.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8055-9121-f2a594d95be9"><td id="UiRA" class="">Reglas de importación/exportación y cumplimiento para exportación (fase US)</td><td id="B?wQ" class="">Stick 🛑</td><td id="i?`w" class="">Aumenta barreras por requisitos de empaque, etiquetado y documentación para entrar a mercados externos.</td><td id="N{:O" class="">Medium</td><td id="}_jQ" class="">Agencias regulatorias y aduaneras en destino, además de certificadores/asesores de cumplimiento.</td><td id="{\~w" class="">Sí, requiere preparación documental y coordinación; puede tardar semanas a meses por clasificación y revisión.</td><td id="vzW_" class="">Expedientes técnicos, etiquetado destino, certificados de proceso, y documentación de formulación.</td><td id="~dt{" class="">Stick 🛑</td><td id="w:AW" class="">Aplica a clientes B2B internacionales y a consumidores objetivo en exportación.</td><td id="W=`G" class="">Dificulta tiempos de lanzamiento y puede elevar precios por costos de cumplimiento y logística.</td><td id="lsEz" class="">Low</td><td id="Wbsl" class="">Stick 🛑</td><td id="dB{c" class="">La flexibilidad depende del cambio de reglas de destino y de la interpretación de clasificación.</td><td id="\vJF" class="">Low</td><td id="=&lt;{&lt;" class="">Es posible influir poco, pero se puede optimizar por compliance y consultoría experta.</td><td id="tAyF" class="">12 a 36 meses</td><td id="|pHJ" class="">Cambiar reglas puede mejorar o limitar tu roadmap de exportación y márgenes internacionales.</td><td id="^w}A" class="">Diplomacia comercial, seguridad de mercado y cambios regulatorios en EE. UU.</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80ac-9c16-db8947e17bdb" class="">Go to Update Idea in the toolbar above to update your idea, description, and additional critical information. You can also use this chatbot to request specific changes to your results. Please use the button below to proceed to the next step.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8069-afe6-d6a9405b2371" class="">CURSOS: </p></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8007-b44e-e21e694c6a8e" class=""><strong>Policy Landscape Matrix</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-808e-8c7e-ec7fca8ae880" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801e-9cc8-e6d22eda2d5c"><th id="q&gt;n?" class="simple-table-header-color simple-table-header">#</th><th id="Pd@I" class="simple-table-header-color simple-table-header">Field</th><th id="qZ_s" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8067-b1d6-e7b13b377ce1"><td id="q&gt;n?" class="">1</td><td id="Pd@I" class="">Relevant Policy Area</td><td id="qZ_s" class="">What category does this policy relate to? (e.g., energy, emissions, permitting, circularity)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80d1-a722-d3535deef0e9"><td id="q&gt;n?" class="">2</td><td id="Pd@I" class="">Specific Policy or Program</td><td id="qZ_s" class="">Name the law, regulation, standard, incentive, or agency program.</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805b-90e2-d2df240526aa"><td id="q&gt;n?" class="">3</td><td id="Pd@I" class="">Level of Government</td><td id="qZ_s" class="">Is it local, state/provincial, national, or international?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-805e-b8f7-f2c359a30644"><td id="q&gt;n?" class="">4</td><td id="Pd@I" class="">Type of Policy</td><td id="qZ_s" class="">Is it a “stick” (e.g., standard, mandate, penalty) or “carrot” (e.g., subsidy, credit, grant)?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807f-bf6b-fd1dd3dd44cd"><td id="q&gt;n?" class="">5</td><td id="Pd@I" class="">Mechanism</td><td id="qZ_s" class="">How exactly does the policy influence behavior or economics? (e.g., compliance requirement, cost reduction)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-806a-acdd-ef7cfd4ea346"><td id="q&gt;n?" class="">6</td><td id="Pd@I" class="">Impact on Solution</td><td id="qZ_s" class="">Would this help or hinder adoption of your solution? How?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802c-bba3-d76fa82a1f51"><td id="q&gt;n?" class="">7</td><td id="Pd@I" class="">Eligibility or Constraints</td><td id="qZ_s" class="">Are there criteria you would need to meet? Are there risks of exclusion?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8058-ac59-f048e5bdd08b"><td id="q&gt;n?" class="">8</td><td id="Pd@I" class="">Policy Timing</td><td id="qZ_s" class="">When does this take effect? Is it active, pending, or at risk of being repealed?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e3-b1cc-eb33d0f17c88"><td id="q&gt;n?" class="">9</td><td id="Pd@I" class="">Sources / Evidence</td><td id="qZ_s" class="">What is your source for this information (e.g., statute, agency website, industry guide)?</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8002-b531-e0aa305b0d62"><td id="q&gt;n?" class="">10</td><td id="Pd@I" class="">Strategic Implications</td><td id="qZ_s" class="">How might you change your approach, design, or messaging in light of this policy landscape?</td></tr></div></tbody></table></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

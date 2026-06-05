@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>STEP 10: ENGINEERING</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="370f554f-2b83-8072-957e-e12ff435e526" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://app.notion.com/icons/code_gray.svg"/></div><h1 class="page-title" dir="auto"><strong>STEP 10: ENGINEERING</strong></h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="370f554f-2b83-800f-a5e1-c37a62bee2ce" class="">A partir del MVBP (DTC + pilotos en clínica para una crema bioactiva para piel sensible con HRIPT/BPF y NOM-141), a continuación aterrizo una arquitectura “suficiente para salir al mercado” usando no-code/low-code primero y dejando claro el camino hacia un sistema más escalable conforme crezca la operación (leads → ventas → reorden → analítica) y tu equipo.</p></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-800b-b229-e0e2058039e8"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8087-9b0a-d4bf2e8bdf91" class=""><strong>a) No-Code Tools (evaluar y elegir plataformas)</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-80a5-a795-e05c4ce02af8" class="">Objetivo: lanzar rápido Tienda Nube + automatizaciones (leads, email/SMS, CRM) y medir funnel, sin construir software complejo al inicio. Incluyo <strong>Stack-AI.com</strong> si necesitas integración GenAI (p. ej., contenido educacional/FAQ o atención automatizada).</blockquote></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8005-8aa4-c5cf9024209d" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-804d-9a7c-cd21ab2a8821"><th id="?XMV" class="simple-table-header-color simple-table-header">Name</th><th id="DiN`" class="simple-table-header-color simple-table-header">Website</th><th id="{Nwe" class="simple-table-header-color simple-table-header">Specialty (para MVBP)</th><th id="X:pQ" class="simple-table-header-color simple-table-header">Pros</th><th id="i{wm" class="simple-table-header-color simple-table-header">Cons</th><th id="=B{[" class="simple-table-header-color simple-table-header">Pricing (referencia)</th><th id="aCVk" class="simple-table-header-color simple-table-header">Feasible (sí/no)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8071-8370-d5858b6bf66b"><td id="?XMV" class="">Tiendanube</td><td id="DiN`" class=""><strong><a href="https://tiendanube.com/">https://tiendanube.com/</a></strong></td><td id="{Nwe" class="">Ecommerce/checkout + operación</td><td id="X:pQ" class="">Rápido para empezar ventas DTC, integra pagos/fulfillment</td><td id="i{wm" class="">Menos control sobre lógica avanzada/experimentos</td><td id="=B{[" class="">Planes por volumen</td><td id="aCVk" class="">Sí (ya aplica)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c5-be98-fd9dee6f0760"><td id="?XMV" class="">Mercado Pago</td><td id="DiN`" class=""><strong><a href="https://www.mercadopago.com/">https://www.mercadopago.com/</a></strong></td><td id="{Nwe" class="">Pagos</td><td id="X:pQ" class="">Reduce fricción en cobro y reintentos</td><td id="i{wm" class="">Depende de su ecosistema</td><td id="=B{[" class="">Según volumen/condiciones</td><td id="aCVk" class="">Sí (ya aplica)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e7-900c-d2453d7059f2"><td id="?XMV" class="">Mailchimp</td><td id="DiN`" class=""><strong><a href="https://mailchimp.com/">https://mailchimp.com/</a></strong></td><td id="{Nwe" class="">Email sequences</td><td id="X:pQ" class="">Secuencias, segmentación básica, tracking</td><td id="i{wm" class="">Limitado para “personalización clínica” avanzada</td><td id="=B{[" class="">Freemium/tiers</td><td id="aCVk" class="">Sí (ya aplica)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801a-b396-fafb122f98ad"><td id="?XMV" class="">Zapier / n8n (si lo consideras “no-code”)</td><td id="DiN`" class=""><strong><a href="https://zapier.com/">https://zapier.com/</a></strong> / <strong><a href="https://n8n.io/">https://n8n.io/</a></strong></td><td id="{Nwe" class="">Integraciones y automatizaciones</td><td id="X:pQ" class="">Conecta CRM/GA4/Sheets/Email; acelera operación</td><td id="i{wm" class="">Complejidad con flujos grandes</td><td id="=B{[" class="">Freemium/tiers</td><td id="aCVk" class="">Sí</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fc-9779-d6764d5e574f"><td id="?XMV" class="">Notion (CRM ligero)</td><td id="DiN`" class=""><strong><a href="https://www.notion.so/">https://www.notion.so/</a></strong></td><td id="{Nwe" class="">CRM/trackers</td><td id="X:pQ" class="">Rápido para pipeline y seguimiento leads→venta</td><td id="i{wm" class="">No es CRM clínico/sofisticado</td><td id="=B{[" class="">Freemium/tiers</td><td id="aCVk" class="">Sí (ya aplica)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800e-8b2d-f7986f04bbfd"><td id="?XMV" class="">Stack-AI.com</td><td id="DiN`" class=""><strong><a href="https://stack-ai.com/">https://stack-ai.com/</a></strong></td><td id="{Nwe" class="">GenAI integrado</td><td id="X:pQ" class="">Útil si quieres automatizar: FAQ, dossier/explicaciones, mensajes de seguimiento, o copiloto para CS</td><td id="i{wm" class="">Puede requerir control de calidad (contenido regulatorio)</td><td id="=B{[" class="">Por uso/planes</td><td id="aCVk" class=""><strong>Sí (opcional si usas GenAI)</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8042-8289-efcf89115db3" class=""><strong>Decisión (no-code):</strong> usar <strong>Tienda Nube + Mercado Pago</strong> para conversión, y <strong>Zapier/n8n + Notion + Mailchimp + GA4</strong> para crecimiento del funnel y automatización. <strong>Stack-AI.com solo si</strong> necesitas GenAI para contenido/atención (con revisión legal y guías médicas).</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80cb-8e19-f7974fbdf28f" class=""><strong>Tradeoffs clave (para piel sensible + HRIPT):</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80c6-b703-dd4d983c18c7" class="bulleted-list"><li style="list-style-type:disc">Mantener mensajes con evidencia (HRIPT/BPF, pH 5.5) y evitar promesas médicas no permitidas.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8072-ae99-fd13cf2d7cc6" class="bulleted-list"><li style="list-style-type:disc">Todo contenido generado por GenAI debe pasar por aprobación interna (QFB/Legal/CS) antes de publicarse.</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80df-a03d-db580840d10c"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80f9-8e0f-ea022f8734c5" class=""><strong>b) Low-Code (valor único que agrega sobre no-code)</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-80bf-adf8-d08d15a65b57" class="">Objetivo: cuando el funnel crezca (métricas, segmentación por respuesta clínica, control de estados de leads, reporting diario para reorden), añadir “capa” de lógica con integraciones y reglas.</blockquote></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80e8-8af7-dccf47df0f8d" class="">Incluyo <strong>Stack-AI.com</strong> si la integración GenAI se vuelve parte del flujo (p. ej., “responder FAQ” dentro de límites).</p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8044-a69a-e1a823e07636" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8065-951a-f16d07057172"><th id="sRJF" class="simple-table-header-color simple-table-header">Name</th><th id="&lt;p@~" class="simple-table-header-color simple-table-header">Website</th><th id="E]CA" class="simple-table-header-color simple-table-header">Valor único (low-code)</th><th id="EteA" class="simple-table-header-color simple-table-header">Pros</th><th id="SQHE" class="simple-table-header-color simple-table-header">Cons</th><th id="oL&lt;C" class="simple-table-header-color simple-table-header">Integración con no-code</th><th id="f=af" class="simple-table-header-color simple-table-header">Feasible (sí/no)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8016-9276-eeb5cf870918"><td id="sRJF" class="">Retool</td><td id="&lt;p@~" class=""><strong><a href="https://retool.com/">https://retool.com/</a></strong></td><td id="E]CA" class="">Paneles internos + workflows</td><td id="EteA" class="">Rápido para backoffice y operaciones</td><td id="SQHE" class="">No reemplaza ecommerce</td><td id="oL&lt;C" class="">Se conecta a Sheets/DB/CRM</td><td id="f=af" class="">Sí (Month 2-4)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ca-b22f-c36bffff148a"><td id="sRJF" class="">n8n</td><td id="&lt;p@~" class=""><strong><a href="https://n8n.io/">https://n8n.io/</a></strong></td><td id="E]CA" class="">Orquestación avanzada</td><td id="EteA" class="">Mejor control que Zapier en flujos complejos</td><td id="SQHE" class="">Requiere algo más de mantenimiento</td><td id="oL&lt;C" class="">Conecta GA4, Notion, email</td><td id="f=af" class="">Sí (ya lo tienes como opción)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c3-a5f8-fd8dc4af5993"><td id="sRJF" class="">Zoho Creator</td><td id="&lt;p@~" class=""><strong><a href="https://www.zoho.com/creator/">https://www.zoho.com/creator/</a></strong></td><td id="E]CA" class="">App interna “tipo CRM”</td><td id="EteA" class="">Formularios/flows para clínica + DTC</td><td id="SQHE" class="">Ecosistema distinto; integración extra</td><td id="oL&lt;C" class="">Podría convivir con Notion/Sheets</td><td id="f=af" class="">Sí (si escala)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8080-90a5-d370f9deb5e7"><td id="sRJF" class="">Unqork / OutSystems (enterprise-ish)</td><td id="&lt;p@~" class=""><strong><a href="https://www.outsystems.com/">https://www.outsystems.com/</a></strong> / <strong><a href="https://unqork.com/">https://unqork.com/</a></strong></td><td id="E]CA" class="">Apps con lógica más robusta</td><td id="EteA" class="">Escalable para flujos complejos</td><td id="SQHE" class="">Overkill en early stage</td><td id="oL&lt;C" class="">Iría después de MVBP</td><td id="f=af" class="">No (aún)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8023-bd30-e125db952155"><td id="sRJF" class="">Internal.io</td><td id="&lt;p@~" class=""><strong><a href="https://internal.io/">https://internal.io/</a></strong></td><td id="E]CA" class="">Interfaces internas con datos</td><td id="EteA" class="">Muy útil para “ops”</td><td id="SQHE" class="">Costo/stack adicional</td><td id="oL&lt;C" class="">Se conecta a datos</td><td id="f=af" class="">Opcional</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8015-8203-cf046f0187b0"><td id="sRJF" class="">Stack-AI.com</td><td id="&lt;p@~" class=""><strong><a href="https://stack-ai.com/">https://stack-ai.com/</a></strong></td><td id="E]CA" class="">GenAI “guardrailed” en flujos</td><td id="EteA" class="">Automatiza contenido y asistencia CS con controles</td><td id="SQHE" class="">Requiere governance</td><td id="oL&lt;C" class="">Low-code + GenAI + no-code</td><td id="f=af" class=""><strong>Opcional</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80d4-adb8-ea0c25df686b" class=""><strong>Decisión (low-code):</strong> empezar con <strong>n8n/Zapier + Sheets/Notion</strong>, y cuando el reporting/operación lo pida, introducir <strong>Retool</strong> para:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-808d-ae7a-d83c13358f55" class="bulleted-list"><li style="list-style-type:disc">dashboards internos (CVR, leads, reorder, NPS)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8075-8bad-db5cf5ddea05" class="bulleted-list"><li style="list-style-type:disc">“tableros por clínica” (estado de kits, evaluaciones del trial HRIPT)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-807f-bce7-c341cb29ce24" class="bulleted-list"><li style="list-style-type:disc">flujos de escalamiento (batch issue → comunicación)</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-807f-bb66-e12842d786ba" class=""><strong>Integración low-code + no-code:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80df-b003-f3727e2e355f" class="bulleted-list"><li style="list-style-type:disc">Tienda Nube/GA4 → eventos → n8n/Zapier → Notion/Sheets → (opcional) Retool para tablero.</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80a1-a4a3-c908afbeb544"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80ba-832a-ca4a597f446d" class=""><strong>c) Frontend (explicado en términos simples + tecnologías)</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-80d9-a185-c7587b9625c9" class="">Para tu MVBP, el frontend es el “cara visible” donde el cliente ve: landing, checkout, emails estilo educacional, y pantallas de mensajes/FAQ (y el backoffice mínimo si usas paneles).</blockquote></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-809d-b0df-e9f38b44cfb5" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a6-b39b-d06d6dabba7c"><th id="@E[L" class="simple-table-header-color simple-table-header">Name</th><th id="~&gt;ah" class="simple-table-header-color simple-table-header">Pros</th><th id="qqGz" class="simple-table-header-color simple-table-header">Cons</th><th id="eSq~" class="simple-table-header-color simple-table-header">Feasible</th><th id="XexY" class="simple-table-header-color simple-table-header">Qué usarías aquí (MVBP)</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801b-986d-ff9e947954fe"><td id="@E[L" class="">Tienda Nube (frontstore)</td><td id="~&gt;ah" class="">checkout listo, rápido</td><td id="qqGz" class="">menos control UI avanzada</td><td id="eSq~" class="">Sí</td><td id="XexY" class="">Página de producto, carrito y post-compra</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ff-8145-df493ad13eb8"><td id="@E[L" class="">React</td><td id="~&gt;ah" class="">flexible, reusable</td><td id="qqGz" class="">sobrekill si no-code/tienda cubre</td><td id="eSq~" class="">No (early)</td><td id="XexY" class="">Solo si luego migras landing/experiencias</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ac-be0b-cce10a12a3f9"><td id="@E[L" class="">Next.js</td><td id="~&gt;ah" class="">SEO/SSR muy bueno</td><td id="qqGz" class="">requiere dev</td><td id="eSq~" class="">No (early)</td><td id="XexY" class="">Migración futura si haces web custom</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c2-aea6-e0d481b34a26"><td id="@E[L" class="">Vue.js</td><td id="~&gt;ah" class="">similar React</td><td id="qqGz" class="">requiere dev</td><td id="eSq~" class="">No (early)</td><td id="XexY" class="">No prioritario</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8065-9409-d7da20bbb6b3"><td id="@E[L" class="">HTML/CSS puro</td><td id="~&gt;ah" class="">simple</td><td id="qqGz" class="">poco escalable</td><td id="eSq~" class="">No (early)</td><td id="XexY" class="">No prioritario</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80c0-b4c1-db99c331af0c"><td id="@E[L" class="">Twilio SMS + Typeform (front conversacional)</td><td id="~&gt;ah" class="">engagement</td><td id="qqGz" class="">requiere orquestación</td><td id="eSq~" class="">Sí</td><td id="XexY" class="">SMS Nurture + captura NPS</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-805b-85da-c82a1ee5ee12" class=""><strong>Respuesta (best fit frontend):</strong> <strong>Tienda Nube</strong> como frontend principal para DTC, y <strong>landing/activos</strong> dentro del ecosistema de tu stack actual (GA4 + páginas del ecom), porque acelera el MVBP y reduce riesgo de ingeniería.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8007-8ee7-d49314aec8dc" class=""><strong>Escalabilidad (por qué conviene):</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8043-bf29-fb313153e0c0" class="bulleted-list"><li style="list-style-type:disc">Cambios de precio/banners/paquetes para clínica/DTC son más rápidos.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80da-ac66-fc2351e43e83" class="bulleted-list"><li style="list-style-type:disc">Menos “custom code” = menos deuda técnica mientras pruebas reorder ≥40%.</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-804a-9354-c9a017f2cc6a" class=""><strong>¿Mobile?</strong> sí: Tienda Nube y checkout suelen ser mobile-ready; si más adelante creas app móvil, se consideraría:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80a2-b475-ea35e0ee8aa0" class="bulleted-list"><li style="list-style-type:disc">primero optimización responsive web,</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8075-b9d5-ffcfe7cee621" class="bulleted-list"><li style="list-style-type:disc">después evaluar PWA o app nativa solo cuando tengas tracción estable (reorden + expansión US Hispanic).</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80f6-b56e-dcc0de27a68b"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80ac-a133-f1a7aaf930a5" class=""><strong>d) Backend (explicado en simple + tecnología)</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-801a-83ee-fcf587babf35" class="">Backend = “el cerebro” que recibe eventos/órdenes/leads, valida estados, coordina automatizaciones, y alimenta métricas y procesos de reorden/ops.</blockquote></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80d7-941a-d11b346e7bd9" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f3-9926-e225e6ec32d5"><th id="Ez&lt;N" class="simple-table-header-color simple-table-header">Name</th><th id="&lt;w\h" class="simple-table-header-color simple-table-header">Pros</th><th id="Kyk|" class="simple-table-header-color simple-table-header">Cons</th><th id="HH:P" class="simple-table-header-color simple-table-header">Feasible</th><th id="l~SB" class="simple-table-header-color simple-table-header">Fit a tu roadmap</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8065-b7b2-c417157a3bec"><td id="Ez&lt;N" class="">Node.js</td><td id="&lt;w\h" class="">flexible</td><td id="Kyk|" class="">requiere estructura</td><td id="HH:P" class="">No (early si no code cubre)</td><td id="l~SB" class="">Posible en una fase futura</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8017-928e-fc63af9ae57b"><td id="Ez&lt;N" class="">Python</td><td id="&lt;w\h" class="">rápido para automatizar</td><td id="Kyk|" class="">requiere dev</td><td id="HH:P" class="">No (early)</td><td id="l~SB" class="">Posible para integraciones internas</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80b2-9435-e5833d355608"><td id="Ez&lt;N" class="">Ruby</td><td id="&lt;w\h" class="">maduro web</td><td id="Kyk|" class="">no ideal si tu stack ya es no-code</td><td id="HH:P" class="">No</td><td id="l~SB" class=""></td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80dc-8573-fc358e4bc5a3"><td id="Ez&lt;N" class="">Firebase Functions</td><td id="&lt;w\h" class="">serverless rápido</td><td id="Kyk|" class="">lock-in / límites</td><td id="HH:P" class="">Opcional futuro</td><td id="l~SB" class="">Si construyes APIs internas</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803a-a569-c584fd82896c"><td id="Ez&lt;N" class="">No-code backend (n8n/Zapier + integraciones)</td><td id="&lt;w\h" class="">acelera MVBP</td><td id="Kyk|" class="">menos control “a nivel ingeniería”</td><td id="HH:P" class="">Sí (ahora)</td><td id="l~SB" class="">Coordinación de flujos, escalaciones, ETL ligero</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8044-b863-e8e027e51eca" class=""><strong>Best fit backend (para ahora):</strong> <strong>back-end operativo con n8n/Zapier + automatizaciones</strong>, integrando:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80c5-8121-da94a1e94e26" class="bulleted-list"><li style="list-style-type:disc">eventos de ecommerce (leads/compra)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80de-b11e-e854f761d582" class="bulleted-list"><li style="list-style-type:disc">GA4 funnel</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80f0-b883-e7a8f694ab57" class="bulleted-list"><li style="list-style-type:disc">envíos Mailchimp</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8015-8eac-decbe8533b55" class="bulleted-list"><li style="list-style-type:disc">CRM Notion</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ca-9abd-c07f2706be6f" class="bulleted-list"><li style="list-style-type:disc">reporting a Google Sheets</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80d8-a894-e7682bfcfce6" class=""><strong>Core functions del backend (para tu MVBP):</strong></p></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8034-8527-ce2e01a41ee5" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80dd-b8c4-dfd10ecd3536"><th id="ql?r" class="simple-table-header-color simple-table-header">Function</th><th id=":WM\" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80a5-b0f4-fdc3127f3654"><td id="ql?r" class="">Captura y enrutamiento de leads</td><td id=":WM\" class="">Leads de clínica/página landing entran a pipeline (Notion/Sheets), con estado y asignación</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-807b-b1d5-d17d409a4e7b"><td id="ql?r" class="">Automatización post-compra</td><td id=":WM\" class="">Secuencia Mailchimp día 3/7/14/30/60 + SMS opcional</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80ff-bf15-d444cb2d6ae4"><td id="ql?r" class="">NPS ingestion</td><td id=":WM\" class="">Typeform → registro → dashboard (y disparo de CS si es bajo)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e7-adf6-f103ba3af73c"><td id="ql?r" class="">Eventos de funnel</td><td id=":WM\" class="">GA4 eventos (landing→checkout→reorder)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808e-9d01-e5e2068e0f53"><td id="ql?r" class="">Escalamiento batch issue</td><td id=":WM\" class="">Si hay incidencia (QA/pH/consistencia/HRIPT), dispara comunicación y alerta interna en &lt;24h</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8082-8409-e2e932c11256" class=""><strong>Priorización (alineada con roadmap):</strong></p></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8033-8956-d724a0a2fbac" class="numbered-list" start="1"><li>Captura→CRM→email/SMS</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8000-8e39-e1672a692c3f" class="numbered-list" start="2"><li>NPS y reporting diario</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-80ab-a13a-e3ec61c0f249" class="numbered-list" start="3"><li>Automatización de escalamiento “batch issue”</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-807c-9b5e-ff5fbe156821" class="numbered-list" start="4"><li>Luego APIs/servicios backend más formales si Retool o app interna lo requiere</li></ol></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-8056-b08f-c8ace1c1d80e"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8013-842b-e9e7ab451af3" class=""><strong>e) Database (explicado en no-technical + decisión)</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-8093-a5b4-fa13ca2bc39f" class="">Base de datos = “bodega” donde guardas información de leads, clientes, pedidos, NPS y resultados de trial para poder tomar decisiones (reorden, calidad, comunicación).</blockquote></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80a4-8ce1-fbb8ae7bc441" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8094-8927-ff5852b7080e"><th id="&lt;~&gt;y" class="simple-table-header-color simple-table-header">Name</th><th id="kx]M" class="simple-table-header-color simple-table-header">Pros</th><th id="mQZ&gt;" class="simple-table-header-color simple-table-header">Cons</th><th id="}t&gt;b" class="simple-table-header-color simple-table-header">Feasible</th><th id="cLTY" class="simple-table-header-color simple-table-header">Por qué/para qué en tu caso</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802c-898f-f0c59285f3bb"><td id="&lt;~&gt;y" class="">Google Sheets</td><td id="kx]M" class="">súper rápido</td><td id="mQZ&gt;" class="">no es base de datos “formal”</td><td id="}t&gt;b" class="">Sí (ahora)</td><td id="cLTY" class="">Dashboard y control de métricas de MVBP</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800f-8038-d63c3d97dc1b"><td id="&lt;~&gt;y" class="">Airtable</td><td id="kx]M" class="">híbrida (tabla-relaciones)</td><td id="mQZ&gt;" class="">costo y límites</td><td id="}t&gt;b" class="">Sí (si quieres mejor UX)</td><td id="cLTY" class="">Útil para relacionar leads→compra→reorder</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-803a-8ab9-f9048e3354df"><td id="&lt;~&gt;y" class="">Notion database</td><td id="kx]M" class="">flexible</td><td id="mQZ&gt;" class="">menos robusta para reportes complejos</td><td id="}t&gt;b" class="">Sí (ligero)</td><td id="cLTY" class="">Pipeline de CRM</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802d-927b-c333f6ed211e"><td id="&lt;~&gt;y" class="">PostgreSQL</td><td id="kx]M" class="">muy escalable</td><td id="mQZ&gt;" class="">requiere dev/ops</td><td id="}t&gt;b" class="">No (early)</td><td id="cLTY" class="">Fase 2 si escalas y automatizas más</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-800e-bb14-e8d4bc3d8cae"><td id="&lt;~&gt;y" class="">Firebase/Firestore</td><td id="kx]M" class="">rápido serverless</td><td id="mQZ&gt;" class="">modelado distinto</td><td id="}t&gt;b" class="">Opcional futuro</td><td id="cLTY" class="">Si construyes app/API</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8073-b47d-fcadcf74298b"><td id="&lt;~&gt;y" class="">MariaDB/MySQL</td><td id="kx]M" class="">robusto</td><td id="mQZ&gt;" class="">requiere ops</td><td id="}t&gt;b" class="">No</td><td id="cLTY" class=""></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8071-a5ef-fcfb10ed19ab" class=""><strong>Best fit database (para ahora):</strong> <strong>Google Sheets + (opcional) Airtable o Notion tables</strong> para MVBP, porque:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8040-a003-c633ce293abd" class="bulleted-list"><li style="list-style-type:disc">necesitas rapidez para decisiones de semana 4–8 (landing live, 1,000 unidades)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8094-8b09-fd0359a703f0" class="bulleted-list"><li style="list-style-type:disc">el “riesgo regulatorio” hace preferible conservar controles y trazabilidad en hojas/pipeline antes de migrar</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80c5-b64b-d1cfc491b936" class=""><strong>¿Secundarias?</strong></p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-808b-947c-cb6894ccf111" class="">Sí, cuando tengas 2–3 ciclos de reorden y/o más clíncias:</p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-800e-8ef4-f915db385924" class="bulleted-list"><li style="list-style-type:disc">una base para <strong>comercial</strong> (leads, compras, reorder, NPS)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ef-a1cd-fa04aaff9939" class="bulleted-list"><li style="list-style-type:disc">otra para <strong>ensayo/operación clínica</strong> (protocolos del trial, observaciones, resultados agregados)</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-80f3-b096-d04c60ae729c"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8023-a2e9-dedfdbccaa50" class=""><strong>f) Data Design (tipos de datos + campos + relaciones)</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-8078-a9ab-d4d5d266e152" class="">Aquí defines “qué datos guardar” para que tu sistema funcione hoy y no se rompa cuando crezcas.</blockquote></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-800d-a338-d382cd64b7ab" class=""><strong>Tipos de datos principales (MVBP)</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8044-ba5d-dc73a9cca8c5" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8085-82b1-db03bf358597"><th id="OAA@" class="simple-table-header-color simple-table-header">Data Type</th><th id="MAiR" class="simple-table-header-color simple-table-header">Fields (ejemplos)</th><th id="d|E^" class="simple-table-header-color simple-table-header">Relaciones</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-801c-b139-c8e785818320"><td id="OAA@" class="">Lead</td><td id="MAiR" class="">id_lead, fuente (landing/clinic), ciudad (CDMX/MTY/GDL/SLP), fecha_lead, estado (nuevo/contactado/aprobado/convertido), campaña, consentimiento</td><td id="d|E^" class="">Un lead puede convertirse en “Cliente”</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8039-ac0f-f9f13207ecca"><td id="OAA@" class="">Cliente (DTC)</td><td id="MAiR" class="">id_cliente, lead_id, email/teléfono, plan/sku (50g), fecha_1ra_compra, canal (DTC/clinic sample), consentimiento marketing</td><td id="d|E^" class="">Cliente → pedidos</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-808b-9510-e8a44b5d59c1"><td id="OAA@" class="">Pedido</td><td id="MAiR" class="">id_pedido, id_cliente, fecha, cantidad, estado (pagado/enviado/entregado), COCA calculable</td><td id="d|E^" class="">Pedido → reorder</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80e6-9b7e-f5e168a98038"><td id="OAA@" class="">Reorden</td><td id="MAiR" class="">id_reorden, id_cliente, fecha_reorden, cantidad, motivo (trigger: día 45-60), lote asociado (si aplica)</td><td id="d|E^" class="">Reorden → métricas de day 90</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-802b-a6bf-f48c2eb18b15"><td id="OAA@" class="">NPS/Feedback</td><td id="MAiR" class="">id_nps, id_cliente, fecha_envio, score, comentario, tema (tolerabilidad/uso/envase), acción_CS (sí/no)</td><td id="d|E^" class="">NPS → CS follow-up</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8009-9e81-ea954f8c54f1"><td id="OAA@" class="">Trial Clínica (HRIPT)</td><td id="MAiR" class="">id_trial, ciudad, clínica_id, fecha_inicio, lote_producto, protocolo, observaciones (agregadas), score tolerabilidad, fecha_cierre</td><td id="d|E^" class="">Trial → evidencia HRIPT por lote</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-8014-b535-cc00d58889b1" class=""><strong>Plan para nuevos tipos de datos (cuando escales)</strong></h3></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-80b5-befd-c5188d82a520" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8015-8658-e4a905b4b9d3"><th id=";fV~" class="simple-table-header-color simple-table-header">Nuevo Data Type</th><th id="XAF:" class="simple-table-header-color simple-table-header">Cuándo</th><th id="\~jn" class="simple-table-header-color simple-table-header">Campos clave</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80f7-aa80-ee1f1f5eee9f"><td id=";fV~" class="">Farmacovigilancia / incidencias</td><td id="XAF:" class="">al crecer DTC + clínicas</td><td id="\~jn" class="">evento, severidad, fecha, lote, respuesta, reporte</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8054-8374-eb09807f076c"><td id=";fV~" class="">Inventario/lotes</td><td id="XAF:" class="">al pasar a run 2 (2,000)</td><td id="\~jn" class="">lote_id, fecha producción, parámetros pH/QA, TEWL proxy si aplica</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8031-a2aa-dbf266fceb48"><td id=";fV~" class="">Educación personalizada / interacciones CS</td><td id="XAF:" class="">Phase 3+</td><td id="\~jn" class="">ticket_id, motivos, respuestas, resolución</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-804c-a0b3-c04da4c66de8"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-8064-8dac-c276eb13e01b" class=""><strong>g) Talent (equipo, brechas y plan 12 meses)</strong></h2></div><div style="display:contents" dir="auto"><blockquote id="370f554f-2b83-8033-8759-d3ef41e2ce91" class="">Talento = cómo consigues capacidades de ingeniería/tech sin frenar cumplimiento regulatorio y velocidad comercial.</blockquote></div><div style="display:contents" dir="auto"><h3 id="370f554f-2b83-807e-83e9-c27b2b3b6084" class=""><strong>Estado del equipo (según tu info)</strong></h3></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-808e-80fd-efc9c2de0155" class="bulleted-list"><li style="list-style-type:disc"><strong>Operación/Producto:</strong> muy fuerte (spec/BOM, producción timeline, marketing y ventas DTC+clínicas ya definidos).</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8096-b164-f3a291097779" class="bulleted-list"><li style="list-style-type:disc"><strong>Engineering “early”:</strong> hoy se apoya en <strong>no-code (Tienda Nube), GA4, Zapier/n8n, Mailchimp, Notion, Sheets</strong>.</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-8038-9d3f-f8dc62d229ca" class="bulleted-list"><li style="list-style-type:disc"><strong>Brechas probables:</strong> ingeniería para integrar datos más formalmente, automatizaciones robustas y (si crece) un sistema interno con roles/permiso.</li></ul></div><div style="display:contents" dir="ltr"><table id="370f554f-2b83-8039-a28b-de44e6266bb0" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8036-a68e-f584ffb0b25c"><th id="_?F\" class="simple-table-header-color simple-table-header">Talent Approach</th><th id="]Q|h" class="simple-table-header-color simple-table-header">Pros</th><th id="K=Ij" class="simple-table-header-color simple-table-header">Cons</th><th id="HMek" class="simple-table-header-color simple-table-header">Cuándo</th><th id="gc&lt;p" class="simple-table-header-color simple-table-header">Fuentes / notas</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8031-ab0d-c1ad5a0b60ee"><td id="_?F\" class="">Recruiting (CTO/co-founder tech o FT)</td><td id="]Q|h" class="">capacidad interna, velocidad de build real</td><td id="K=Ij" class="">mayor burn + riesgo cultural/regulatorio</td><td id="HMek" class=""><strong>Month 6–12</strong> si dashboards/ops y automatizaciones requieren más backend</td><td id="gc&lt;p" class="">LinkedIn, redes biotech/healthtech (con enfoque compliance)</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-80fd-ad14-e4d81bfb2448"><td id="_?F\" class="">Learning (tú/equipo)</td><td id="]Q|h" class="">control, barato</td><td id="K=Ij" class="">lento y con curva técnica</td><td id="HMek" class="">inmediato (8–12 semanas)</td><td id="gc&lt;p" class="">cursos sobre n8n, GA4 events, data modeling, Retool</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-8087-935b-c5e57bd6ee44"><td id="_?F\" class="">Outsourcing (freelance/estudio)</td><td id="]Q|h" class="">rápido para “piezas”</td><td id="K=Ij" class="">costo, dependencia y handoff</td><td id="HMek" class=""><strong>Month 2–4</strong> para: tracking avanzado, Retool, integración de datos</td><td id="gc&lt;p" class="">freelancers con historial en ecom + automatización</td></tr></div><div style="display:contents" dir="ltr"><tr id="370f554f-2b83-809a-9603-d6906d746c84"><td id="_?F\" class="">DIY con no/low-code (principal 0–6 meses)</td><td id="]Q|h" class="">maximiza MVBP y reduce deuda</td><td id="K=Ij" class="">límites de escala/control</td><td id="HMek" class="">desde ahora hasta que day-90 reorder esté estable</td><td id="gc&lt;p" class="">tu ruta actual (Tienda Nube + Sheets + automations)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8011-8bb9-ec94ea1e4eff" class=""><strong>Brechas a cubrir (de forma concreta):</strong></p></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-80cb-a6fd-c352efd0a37c" class="numbered-list" start="1"><li>Integración más robusta de eventos (GA4 ↔ CRM ↔ reorder)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8092-ba12-c8e5069a585f" class="numbered-list" start="2"><li>Backoffice/Reporting (probable Retool)</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="370f554f-2b83-8042-b0bd-c9ccc638a81e" class="numbered-list" start="3"><li>Gobernanza de contenido si usas GenAI (Stack-AI): revisión + límites regulatorios</li></ol></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80f1-bb9f-e5678d58946e" class=""><strong>Plan de transición (12 meses):</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-809e-908b-ee347c1b5a68" class="bulleted-list"><li style="list-style-type:disc">Mes 0–3: DIY + no-code (con n8n/Zapier + Sheets + Typeform/Mailchimp)</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ea-b192-fc53429f8de6" class="bulleted-list"><li style="list-style-type:disc">Mes 3–6: 1 freelancer/contratista para dashboard y automatizaciones “hardening”</li></ul></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80ef-85a5-d2f0ad8044e5" class="bulleted-list"><li style="list-style-type:disc">Mes 6–12: decidir entre contratar FT (si Retool/APIs crecen) o seguir con contratas por proyecto</li></ul></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80a6-9ede-c71bc0eb9881" class=""><strong>Dónde encaja GenAI (Stack-AI) en talento/procesos:</strong></p></div><div style="display:contents" dir="auto"><ul id="370f554f-2b83-80de-871f-f6ed2847cc1e" class="bulleted-list"><li style="list-style-type:disc">No como “reemplazo de CS o legal”, sino como asistente para borradores de FAQ educacionales y textos de seguimiento, con aprobación.</li></ul></div><div style="display:contents" dir="auto"><hr id="370f554f-2b83-804c-962f-dd0784fbd39a"/></div><div style="display:contents" dir="auto"><h2 id="370f554f-2b83-80a2-b882-d862f34f705a" class=""><strong>Recordatorio para ti (para actualizar el documento)</strong></h2></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8078-b845-dfdf478e0143" class="">Puedes actualizar tu Startup Idea en <strong><a href="https://orbit.mit.edu/disciplined-entrepreneurship">https://orbit.mit.edu/disciplined-entrepreneurship</a></strong>. Ahí también puedes ver/ajustar los detalles que estás guardando. Finalmente, si quieres cambios en estos resultados, usa el <strong>chatbot</strong> en la parte superior de la página para solicitar modificaciones.</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-80bf-813e-f64b9be7dbea" class="">(En este momento, lo que ya queda incorporado en mis tablas es tu MVBP DTC + clínicas, HRIPT ≥98%, target day-90 reorder ≥40%, y el stack ya definido: Tienda Nube, GA4, Notion/Sheets, Mailchimp, Twilio/Typeform, Estafeta, y la posibilidad opcional de <strong>Stack-AI.com</strong> si integras GenAI.)</p></div><div style="display:contents" dir="auto"><p id="370f554f-2b83-8004-9f22-cdee928f5e3f" class=""><strong>¿Listo para la siguiente iteración?</strong> Puedes pedir que ajuste cualquier decisión (por ejemplo: cambiar “Google Sheets” por Airtable, o decidir explícitamente si Stack-AI se incluye o no).</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
